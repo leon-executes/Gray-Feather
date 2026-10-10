@@ -1,0 +1,6 @@
+# Preserve runtime-source bytes used by release_identity.py.
+* -text
+*.md text eol=lf
+*.svg text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf

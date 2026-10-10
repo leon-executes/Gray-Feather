@@ -1,0 +1,11 @@
+Required Notice: Copyright 2026 Parham (Leon) Faraji (https://github.com/leon-executes).
+Required Notice: Gray Feather original application code and documentation are licensed under PolyForm Noncommercial 1.0.0. See LICENSE.
+
+The application licence does not replace licences for third-party libraries,
+native runtimes, model weights, datasets, or their source archives. See
+THIRD-PARTY-NOTICES.md, licenses/, resources/ notices and runtime-source/.
+
+Permission is preserved to modify or replace LGPL-covered libraries and to
+reverse engineer the application for debugging modifications to those libraries.
+No restriction in the application licence is asserted over the independently
+licensed third-party components or their corresponding source.
