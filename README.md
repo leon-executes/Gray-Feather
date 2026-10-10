@@ -1,6 +1,6 @@
 # Gray Feather
 
-**Portable Translation and Interpretation Windows App.**
+**Multi-engine reinforced interpretation and translation. Portable Windows app.**
 
 [Download](https://github.com/leon-executes/Gray-Feather/releases/latest) · [Dependencies](DEPENDENCIES.md) · [Manual](docs/MANUAL.md) · [Build](BUILD.md) · [Licence](LICENSE)
 
