@@ -1,3 +1,4 @@
+![Gray Feather — interpret forward](https://github.com/user-attachments/assets/0ad7e03a-3c94-4e66-91b8-aab8feb5b87d)
 # Gray Feather
 
 **Multi-Engine Reinforced Translation with Voice and Dictation in a Portable Windows App.**
