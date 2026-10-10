@@ -1,6 +1,6 @@
 # Gray Feather
 
-**Multi-engine reinforced interpretation and translation. Portable Windows app.**
+**Multi-Engine Reinforced Translation with Voice and Dictation in a Portable Windows App.**
 
 [Download](https://github.com/leon-executes/Gray-Feather/releases/latest) · [Dependencies](DEPENDENCIES.md) · [Manual](docs/MANUAL.md) · [Build](BUILD.md) · [Licence](LICENSE)
 
