@@ -1,0 +1,36 @@
+{
+  "runtime": "whisper.cpp b5454 / v1.9.5",
+  "model": "multilingual small, Q5_1 quantized",
+  "records": [
+    {
+      "url": "https://github.com/ggml-org/whisper.cpp/releases/download/b5454/whisper-bin-x64.zip",
+      "path": "whisper-bin-x64-b5454.zip",
+      "bytes": 8928640,
+      "sha256": "6ba69e3482d7826214f90a6a9c84ca07782aec1e1d0c6a7c30c994fd5d816ccb"
+    },
+    {
+      "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small-q5_1.bin",
+      "path": "ggml-small-q5_1.bin",
+      "bytes": 190085487,
+      "sha256": "ae85e4a935d7a567bd102fe55afc16bb595bdb618e11b2fc7591bc08120411bb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/whisper.cpp/b5454/samples/jfk.wav",
+      "path": "jfk.wav",
+      "bytes": 352078,
+      "sha256": "59dfb9a4acb36fe2a2affc14bacbee2920ff435cb13cc314a08c13f66ba7860e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/whisper.cpp/b5454/LICENSE",
+      "path": "WHISPER-CPP-LICENSE.txt",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/whisper/main/LICENSE",
+      "path": "WHISPER-MODEL-LICENSE.txt",
+      "bytes": 1063,
+      "sha256": "b5d65a59060e68c4ff940e1eddfa6f94b2d68fdf58ed7f4dd57721c997e35e9d"
+    }
+  ]
+}

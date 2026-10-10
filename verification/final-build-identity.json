@@ -1,0 +1,21 @@
+{
+  "version": "1.3.0",
+  "executable_sha256": "137795f2782b149a55b2d7ac6476898208648b3e3835e10f55ae437a81157258",
+  "runtime_source_sha256": {
+    "app.py": "9e6f1f86ec424bd5c62039acfefa54c6ada1a66cdcf855271a91c984b94c46cc",
+    "engine.py": "036d6985fd68cde12f6c6f3b908d8fdd7d2504974c1e8bc808fb0cbf214d7705",
+    "ui.py": "b300d917a3631e90b1291140f6388b227e2840499c20062c0ac6d44642987dcf",
+    "speech.py": "c49402ba01ae441a62a8a8858fab809a36b105d572a25055340ed39112653366",
+    "offline_voice.py": "4e322a2fd6f99045a45963814db8cb20d621c9fc7e1f164f2aa223cb788e12ad",
+    "offline_omni.py": "7807318a90ea5abe203b4556a4532ae037b29a2c82194b2844c29b3fe3da718a",
+    "reinforcement.py": "ea27f7e430fca78fb010d200284f8062519d9bd5c7b9900bcc344b13a2d6adba",
+    "reinforced_engine.py": "e97a6881be190faa9d5dea4a6a61624b916590c10a80f1134c1bc36e8d466378",
+    "index_engine.py": "5ed7cc3f72eecb3db3271f7ce919d251fd26ee98076050eb6fd610905f60c3d0",
+    "local_ai.py": "f01a919fb90c5eee9188baff5e3467749cd65a73527b160c1410f59ff9ce2f05",
+    "settings.py": "ebeee2a18695c5afe234971538977335db279ffb7b6a871a81254937b6d91def",
+    "docx_export.py": "74da293151dd33b0d7b53bcf2b30ebc3239da963f18e4a9c7292a22b0732dc05",
+    "native_bundle_check.py": "b0dd9d6c91bb4adade98be4b49761b500f182680a85d63d893f38202b1a026c2",
+    "language_routes.json": "a2a96a814a2737b035fa40f39a3428d76c778991f6e0fbe12aa94c32dcca8017"
+  },
+  "sources_unchanged_during_build": true
+}

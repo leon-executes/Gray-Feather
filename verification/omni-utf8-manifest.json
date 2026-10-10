@@ -1,0 +1,9 @@
+{
+  "source": "upstream/sherpa-onnx-v1.13.8-win-x64-static-MT-Release-no-tts/bin/sherpa-onnx-offline.exe",
+  "destination": "resources/omni-asr/sherpa-onnx-offline.exe",
+  "upstream_sha256": "de366889e8cf3cde93121f2d11296749769c8624995030a44b86316f8b0c6779",
+  "patched_sha256": "3a0177956d7ffc3c4d4eda8cd2b5386984861574783b89afb50379c7822bd24a",
+  "change": "UTF-8 process active code page only; preserves upstream manifest settings",
+  "minimum_windows": "Windows10 version1903",
+  "publication_note": "Host-specific directory prefixes removed; binary hashes and modification evidence unchanged."
+}

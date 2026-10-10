@@ -1,0 +1,585 @@
+[
+  {
+    "id": "conditional-restart-fr",
+    "category": "Conditional instructions",
+    "source": "Do not restart the computer unless support asks you to. If the upload fails, keep the error message and retry once.",
+    "source_code": "en",
+    "target_code": "fr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Restarting is prohibited except when support requests it.",
+      "Keeping the error message and retrying once apply if the upload fails.",
+      "Retry is once, not repeated indefinitely."
+    ],
+    "legitimate_variations": [
+      "Natural French phrasing of unless/except is allowed.",
+      "Support may be rendered as technical support."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "approval-gate-ar",
+    "category": "Conditional permission",
+    "source": "You may open the document only after the owner approves. If approval is missing, do not share the link.",
+    "source_code": "en",
+    "target_code": "ar",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Opening requires prior approval from the owner.",
+      "Lack of approval prohibits sharing the link.",
+      "The text does not say that approval has already been given."
+    ],
+    "legitimate_variations": [
+      "Natural Arabic grammatical gender/address is allowed when consistent.",
+      "Approval and authorisation can use equivalent wording."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "double-negative-es",
+    "category": "Possibility and epistemic negation",
+    "source": "It is not impossible to finish today, but I cannot promise that we will. Please do not tell the client it is guaranteed.",
+    "source_code": "en",
+    "target_code": "es",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Finishing today is possible, not impossible.",
+      "The speaker makes no promise that completion will happen.",
+      "The client must not be told completion is guaranteed."
+    ],
+    "legitimate_variations": [
+      "Not impossible can naturally become possible if the reservation is retained.",
+      "Formal or informal address is allowed."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "uncertain-damage-fa",
+    "category": "Double negation and uncertainty",
+    "source": "I cannot confirm that the package contains no damaged items. This does not mean that damage has been found.",
+    "source_code": "en",
+    "target_code": "fa",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The absence of damage is unconfirmed.",
+      "The statement does not assert that damage exists or has been found.",
+      "Uncertainty about absence must not become certainty of presence."
+    ],
+    "legitimate_variations": [
+      "Natural Persian restructuring is allowed if both uncertainty statements remain."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "written-extension-pt",
+    "category": "Deadline and exception",
+    "source": "Submit the form by 17:00 on 12 March 2027, unless we extend the deadline in writing. A verbal promise does not change the deadline.",
+    "source_code": "en",
+    "target_code": "pt",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The deadline is 17:00 on 12 March 2027.",
+      "A written extension can change the deadline.",
+      "A verbal promise alone does not change it."
+    ],
+    "legitimate_variations": [
+      "17h00 or an unambiguous equivalent of 5 p.m. is allowed.",
+      "Natural Portugal Portuguese date order and phrasing are allowed."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "indicator-logic-zh",
+    "category": "Boolean conditions and UI labels",
+    "source": "If the indicator is green, press START. If it is red or flashing, do not press START; ask the technician.",
+    "source_code": "en",
+    "target_code": "zh",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "A green indicator permits pressing START.",
+      "Red OR flashing is sufficient to prohibit pressing START; the conditions must not become red AND flashing.",
+      "The prohibited case requires asking the technician."
+    ],
+    "legitimate_variations": [
+      "Natural Chinese conditional structure is allowed.",
+      "START can be kept as the button label, with a translated explanation if desired."
+    ],
+    "critical_literals": [
+      "START"
+    ],
+    "review_notes": "The capitalised label identifies a control; compare its identity, not exact surrounding wording."
+  },
+  {
+    "id": "idiom-day-fr",
+    "category": "Idiomatic wording",
+    "source": "Let's call it a day. We can pick this up tomorrow; nobody is asking you to make a phone call.",
+    "source_code": "en",
+    "target_code": "fr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The speaker proposes stopping the current work for today.",
+      "The work can resume tomorrow.",
+      "No phone call is being requested."
+    ],
+    "legitimate_variations": [
+      "A natural French idiom or a clear paraphrase is acceptable.",
+      "The English idiom does not need a literal word-for-word rendering."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "idiom-court-tr",
+    "category": "Idiomatic responsibility",
+    "source": "The ball is in your court now: we have sent the draft, and the next decision is yours. There is no sports meeting.",
+    "source_code": "en",
+    "target_code": "tr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The draft has already been sent by the speaker/group.",
+      "The recipient now has responsibility for the next decision.",
+      "The phrase is not an instruction about a real ball or sports meeting."
+    ],
+    "legitimate_variations": [
+      "A natural Turkish idiom or explanation of responsibility is acceptable."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "idiom-priority-ja",
+    "category": "Idiomatic urgency",
+    "source": "The deadline is tomorrow, so please do not put this on the back burner. Give it attention today.",
+    "source_code": "en",
+    "target_code": "ja",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The deadline is tomorrow.",
+      "The recipient should give the task attention today rather than postpone it.",
+      "No cooking appliance is involved."
+    ],
+    "legitimate_variations": [
+      "A Japanese paraphrase expressing priority is acceptable.",
+      "Politeness can be natural rather than literally mirroring English."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "polite-request-pt",
+    "category": "Politeness and reassurance",
+    "source": "Could you please send a clear photo when you have a moment? There is no need to apologise, and it is fine to ask for help.",
+    "source_code": "en",
+    "target_code": "pt",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "A clear photo is requested politely, with flexible timing.",
+      "An apology is not required.",
+      "Asking for help is permitted and welcome."
+    ],
+    "legitimate_variations": [
+      "Natural Portugal Portuguese politeness and address are allowed.",
+      "The request must not gain an urgent deadline."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "polite-refusal-es",
+    "category": "Tactful refusal",
+    "source": "Thank you for the invitation. I am sorry, but I will not be able to attend. I hope the event goes well.",
+    "source_code": "en",
+    "target_code": "es",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The speaker expresses thanks and regret.",
+      "The speaker will not attend; this must not become acceptance or a tentative promise to attend.",
+      "The event receives a positive wish without an invented explanation for absence."
+    ],
+    "legitimate_variations": [
+      "Natural Spanish politeness and future phrasing are allowed."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "empathy-choice-ar",
+    "category": "Emotional tone and optionality",
+    "source": "I am sorry this has been stressful. You do not have to decide today. We can talk again tomorrow if you would like.",
+    "source_code": "en",
+    "target_code": "ar",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The speaker acknowledges stress sympathetically.",
+      "A decision today is not required.",
+      "Another conversation tomorrow is optional, not an imposed appointment."
+    ],
+    "legitimate_variations": [
+      "Natural Arabic address and gender choices are allowed.",
+      "Equivalent sympathetic wording is acceptable."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "calm-boundary-fr",
+    "category": "Emotional tone and conditional boundary",
+    "source": "I understand that you are upset. I can discuss the issue calmly, but I cannot continue the conversation if you shout at me.",
+    "source_code": "en",
+    "target_code": "fr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The speaker acknowledges the other person is upset.",
+      "Calm discussion remains possible.",
+      "Shouting at the speaker is the condition under which the conversation cannot continue."
+    ],
+    "legitimate_variations": [
+      "Formal or familiar French address is allowed if consistent.",
+      "The conditional boundary must not become a blanket refusal to discuss the issue."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "ambiguous-caller-es",
+    "category": "Ambiguous pronoun",
+    "source": "Alex told Sam that they would call after the meeting.",
+    "source_code": "en",
+    "target_code": "es",
+    "assessment_kind": "source_ambiguity",
+    "critical_semantic_predicates": [
+      "Alex communicates something to Sam.",
+      "A call is expected after, not before, the meeting.",
+      "The source does not uniquely identify the caller or resolve singular/plural they."
+    ],
+    "legitimate_variations": [
+      "Different plausible antecedent or number choices may be grammatically necessary.",
+      "A translation that retains the ambiguity naturally is welcome but not mandatory."
+    ],
+    "critical_literals": [],
+    "review_notes": "Do not rank an interpretation as uniquely correct without more source context. Record which actor/number the output chooses and whether source clarification would be useful."
+  },
+  {
+    "id": "ambiguous-helper-ja",
+    "category": "Ambiguous causal pronoun",
+    "source": "Morgan thanked Casey because they had helped with the report.",
+    "source_code": "en",
+    "target_code": "ja",
+    "assessment_kind": "source_ambiguity",
+    "critical_semantic_predicates": [
+      "Morgan thanks Casey.",
+      "Help with the report is the stated reason for the thanks.",
+      "The source leaves the grammatical reference of they underdetermined."
+    ],
+    "legitimate_variations": [
+      "Japanese can naturally omit an explicit pronoun.",
+      "Casey as helper is a plausible reading, but the source alone is not a unique gold standard."
+    ],
+    "critical_literals": [],
+    "review_notes": "Record any resolved actor as an interpretation. Do not pretend the translation engine can establish the author’s intended antecedent."
+  },
+  {
+    "id": "london-time-fr",
+    "category": "Date, time and zone identity",
+    "source": "The call starts at 09:30 London time on 6 July 2027. Please join 10 minutes early. Do not convert the time to another time zone.",
+    "source_code": "en",
+    "target_code": "fr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The call starts at 09:30 in London local time on 6 July 2027.",
+      "The recipient should join 10 minutes before that start.",
+      "The time must not be converted to a different zone or labelled with an assumed fixed UTC offset."
+    ],
+    "legitimate_variations": [
+      "09h30 or an unambiguous equivalent is allowed.",
+      "The date can use natural French ordering."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "unresolved-date-ja",
+    "category": "Ambiguous printed date",
+    "source": "The label reads '04/05/2027'. Keep that date exactly as printed; the order of day and month has not been confirmed.",
+    "source_code": "en",
+    "target_code": "ja",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "04/05/2027 is retained exactly.",
+      "The day/month order remains unconfirmed.",
+      "The output must not silently resolve the date as either 4 May or April 5."
+    ],
+    "legitimate_variations": [
+      "Japanese quotation marks and explanatory phrasing may differ."
+    ],
+    "critical_literals": [
+      "04/05/2027"
+    ],
+    "review_notes": ""
+  },
+  {
+    "id": "overnight-tr",
+    "category": "Midnight and day transition",
+    "source": "The train leaves at 23:45 on Friday and arrives at 00:20 on Saturday. The arrival is the next day, not Friday.",
+    "source_code": "en",
+    "target_code": "tr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Departure is Friday at 23:45.",
+      "Arrival is Saturday at 00:20.",
+      "Arrival occurs on the next calendar day, not on Friday."
+    ],
+    "legitimate_variations": [
+      "Natural Turkish weekday/date-time wording is allowed.",
+      "Unambiguous 12-hour equivalents are allowed if midnight/day identity is preserved."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "ui-export-zh",
+    "category": "Technical UI and error identifier",
+    "source": "Choose Settings > Storage, then select 'Export a copy'. Do not choose 'Delete all data'. If error E_CONN_204 appears, leave the window open.",
+    "source_code": "en",
+    "target_code": "zh",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The navigation path is Settings then Storage.",
+      "The action is exporting a copy, while deleting all data is prohibited.",
+      "E_CONN_204 is retained exactly.",
+      "The window should remain open if that error appears."
+    ],
+    "legitimate_variations": [
+      "UI label translations are allowed if their functions remain unmistakable.",
+      "Labels may retain English alongside Chinese."
+    ],
+    "critical_literals": [
+      "E_CONN_204"
+    ],
+    "review_notes": ""
+  },
+  {
+    "id": "usb-order-fa",
+    "category": "Technical sequence and ongoing action",
+    "source": "After saving the file, disconnect the USB drive. If the file is still being copied, wait until copying has finished before disconnecting it.",
+    "source_code": "en",
+    "target_code": "fa",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Saving precedes disconnection.",
+      "A drive must not be disconnected while copying remains in progress.",
+      "Disconnection becomes permissible after copying has finished."
+    ],
+    "legitimate_variations": [
+      "Natural Persian ordering of the two instructions is allowed.",
+      "USB may remain a technical abbreviation."
+    ],
+    "critical_literals": [
+      "USB"
+    ],
+    "review_notes": ""
+  },
+  {
+    "id": "quoted-notice-fr",
+    "category": "Quoted draft clause",
+    "source": "The draft clause says: \"The tenant may end the agreement with 30 days' written notice.\" This is quoted text for translation, not a request for advice.",
+    "source_code": "en",
+    "target_code": "fr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The tenant, not the landlord, is the actor permitted to end the agreement.",
+      "May expresses permission, not a duty to terminate.",
+      "The condition is 30 days of written notice, not oral notice or a different duration.",
+      "The statement is identified as a quotation from a draft, not advice."
+    ],
+    "legitimate_variations": [
+      "French quotation marks and natural contract vocabulary are allowed.",
+      "No governing jurisdiction or legal validity needs to be invented."
+    ],
+    "critical_literals": [],
+    "review_notes": "Synthetic language test only; no legal advice or claim about enforceability."
+  },
+  {
+    "id": "quoted-exception-ar",
+    "category": "Quoted limitation and exception",
+    "source": "Translate this sentence from a draft: \"The supplier is liable only for direct losses, except where a court determines otherwise.\" Keep the exception attached to the limitation.",
+    "source_code": "en",
+    "target_code": "ar",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The supplier is the actor described as liable.",
+      "The ordinary limitation concerns direct losses only.",
+      "A contrary court determination is an exception to that limitation.",
+      "The output must not remove the exception or make indirect losses unconditionally included."
+    ],
+    "legitimate_variations": [
+      "Natural Arabic draft-clause wording and quotation marks are allowed."
+    ],
+    "critical_literals": [],
+    "review_notes": "Synthetic quoted wording; no legal validity or real-world rule is being assessed."
+  },
+  {
+    "id": "appointment-access-es",
+    "category": "Medical appointment logistics without advice",
+    "source": "Your appointment is at 10:15 on Monday. Please use the side entrance and check in at reception. If you need step-free access, call the number on the invitation before you travel.",
+    "source_code": "en",
+    "target_code": "es",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The appointment is Monday at 10:15.",
+      "Arrival uses the side entrance and reception check-in.",
+      "Calling before travel is conditional on needing step-free access.",
+      "The telephone number is the one on the invitation; no new number or treatment direction is invented."
+    ],
+    "legitimate_variations": [
+      "Unambiguous Spanish time formatting is allowed.",
+      "An equivalent accessibility phrase without steps is acceptable."
+    ],
+    "critical_literals": [],
+    "review_notes": "Arrival and accessibility instructions only; not medical advice."
+  },
+  {
+    "id": "appointment-list-zh",
+    "category": "Appointment documents and negated medication advice",
+    "source": "For the appointment, bring the referral letter and the current medicine list. This message gives arrival instructions only; it does not tell you to start, stop, or change any medicine.",
+    "source_code": "en",
+    "target_code": "zh",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Both a referral letter and the current medicine list should be brought.",
+      "The message describes arrival logistics only.",
+      "Starting, stopping and changing medicine are all explicitly outside the instruction.",
+      "The translation must not add a medication direction."
+    ],
+    "legitimate_variations": [
+      "Natural Chinese words for referral and medication list are allowed."
+    ],
+    "critical_literals": [],
+    "review_notes": "Synthetic non-advice message; no treatment recommendations are present."
+  },
+  {
+    "id": "code-paragraphs-tr",
+    "category": "Paragraph structure, list order and literal code",
+    "source": "Case GF-4821\n\nKeep this text exactly: config_key=user_id\n\n1. Save the draft.\n2. Export a copy.\n3. Do not delete the original.\n\nSend the exported copy to review@example.com.",
+    "source_code": "en",
+    "target_code": "tr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "GF-4821, config_key=user_id and review@example.com are retained exactly.",
+      "The ordered actions are saving the draft, exporting a copy, and not deleting the original.",
+      "Only the exported copy is sent to the stated email address.",
+      "The heading, code instruction, ordered list and destination remain distinguishable as blocks."
+    ],
+    "legitimate_variations": [
+      "Turkish surrounding prose and equivalent list punctuation are allowed.",
+      "Blank-line counts may vary; merging the code, list and address into an ambiguous instruction is not acceptable."
+    ],
+    "critical_literals": [
+      "GF-4821",
+      "config_key=user_id",
+      "review@example.com"
+    ],
+    "review_notes": ""
+  },
+  {
+    "id": "reverse-conditional-ar",
+    "category": "Reverse translation with conditional permission",
+    "source": "من فضلك، لا تلغِ الموعد قبل أن تتواصل معي. يمكنك تأجيله إذا اتفقنا على وقت آخر.",
+    "source_code": "ar",
+    "target_code": "en",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The recipient is politely asked not to cancel before contacting the speaker.",
+      "Postponement is permitted if both agree on another time.",
+      "Postponing and cancelling remain distinct actions."
+    ],
+    "legitimate_variations": [
+      "Polite natural English is allowed.",
+      "Reschedule/postpone can use equivalent wording if the agreement condition remains."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "reverse-copy-fa",
+    "category": "Reverse technical instruction",
+    "source": "اگر فایل هنوز کپی می‌شود، حافظهٔ USB را جدا نکنید. بعد از پایان کپی، می‌توانید آن را جدا کنید.",
+    "source_code": "fa",
+    "target_code": "en",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "The USB drive must not be disconnected while the file is still being copied.",
+      "Disconnection is permitted after copying completes.",
+      "The first prohibition is conditional, not a permanent ban."
+    ],
+    "legitimate_variations": [
+      "USB drive, USB storage device or equivalent English is allowed."
+    ],
+    "critical_literals": [
+      "USB"
+    ],
+    "review_notes": ""
+  },
+  {
+    "id": "reverse-reservation-pt",
+    "category": "Reverse modal scope",
+    "source": "Não é obrigatório cancelar a reserva. Só a cancele se tiver a certeza de que não vai utilizá-la.",
+    "source_code": "pt",
+    "target_code": "en",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Cancelling the reservation is not obligatory.",
+      "Cancellation is advised only if the recipient is certain they will not use it.",
+      "No obligation to cancel or absolute prohibition on cancelling is introduced."
+    ],
+    "legitimate_variations": [
+      "Natural English obligation/permission wording is allowed."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "need-not-must-not-fr",
+    "category": "Modal distinction",
+    "source": "You need not cancel the appointment. You must not change its time without checking with the organiser.",
+    "source_code": "en",
+    "target_code": "fr",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "Cancelling is not required; it is not described as forbidden.",
+      "Changing the time without consulting the organiser is prohibited.",
+      "The two modal scopes and their different actions remain distinct."
+    ],
+    "legitimate_variations": [
+      "Natural French phrasing of lack of obligation and prohibition is allowed.",
+      "Organiser/organizer spelling or equivalent role wording can vary."
+    ],
+    "critical_literals": [],
+    "review_notes": ""
+  },
+  {
+    "id": "per-person-allocation-ar",
+    "category": "Allocation versus total",
+    "source": "Pay each of the 3 people £12.50. Do not treat £12.50 as the total for the whole group.",
+    "source_code": "en",
+    "target_code": "ar",
+    "assessment_kind": "meaning",
+    "critical_semantic_predicates": [
+      "There are 3 recipients.",
+      "Each recipient receives GBP 12.50.",
+      "GBP 12.50 must not become the combined payment for the group.",
+      "The negative clarification applies to treating the amount as a group total."
+    ],
+    "legitimate_variations": [
+      "Arabic digits and unambiguous decimal formatting are allowed.",
+      "A correct written-out sterling amount is acceptable; no calculated group total needs to be added."
+    ],
+    "critical_literals": [],
+    "review_notes": "Identical numeric tokens can coexist with a wrong allocation relationship; token agreement alone cannot establish this predicate."
+  }
+]

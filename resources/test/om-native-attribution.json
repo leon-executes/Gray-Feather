@@ -1,0 +1,19 @@
+{
+  "audio_seconds": 4.8,
+  "audio_sha256": "8b8e2368763e5194ca337ccb7cf8088cae540505d650d48a43afa6ca6a51c353",
+  "reference": "Ispaaniyaardotatu sirna kolonii jarraa sadiif ture jalqabe.",
+  "dataset": "google/fleurs",
+  "dataset_config": "om_et",
+  "split": "validation",
+  "row_idx": 0,
+  "row_source": "https://datasets-server.huggingface.co/rows?dataset=google%2Ffleurs&config=om_et&split=validation&offset=0&length=20",
+  "speaker_id": null,
+  "licence": "CC-BY-4.0",
+  "native": true,
+  "audio_file": "om-native.wav",
+  "attribution": "FLEURS: Alexis Conneau et al., 2022; Google FLEURS dataset contributors.",
+  "dataset_card": "https://huggingface.co/datasets/google/fleurs",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Compressed audio decoded/resampled to 16 kHz mono 16-bit PCM; speech/text content not rewritten. No user recordings.",
+  "scope": "One public native Oromo recording for bounded native adapter execution; not a semantic accuracy benchmark."
+}

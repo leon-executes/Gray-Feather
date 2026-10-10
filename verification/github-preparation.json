@@ -1,0 +1,15 @@
+{
+  "version": "1.3.0",
+  "tests": 460,
+  "passed": 460,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "successful": true,
+  "elapsed_seconds": 17.46,
+  "scope": "Deterministic application correctness; mocked transports; no semantic translation accuracy claim.",
+  "runtime_sources_changed": false,
+  "official_license_unmodified": true,
+  "asset_restore_verified_files": 499,
+  "banner_render_checked": true
+}

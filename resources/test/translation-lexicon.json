@@ -1,0 +1,674 @@
+{
+  "schema": 1,
+  "scope": "Contrastive source-phrase lexicon and critical senses for testing; not a general multilingual dictionary or certified target-language gold corpus.",
+  "entries": [
+    {
+      "id": "bank",
+      "source_examples": [
+        "We sat on the river bank.",
+        "The bank holds the money."
+      ],
+      "meaning_contrast": [
+        "The first bank is the shore beside a river.",
+        "The second bank is a financial institution."
+      ]
+    },
+    {
+      "id": "charge",
+      "source_examples": [
+        "Charge the battery before travel.",
+        "There is no extra charge for delivery."
+      ],
+      "meaning_contrast": [
+        "The first charge replenishes electrical energy.",
+        "The second charge is a monetary fee and is explicitly absent."
+      ]
+    },
+    {
+      "id": "right",
+      "source_examples": [
+        "Turn right at the door.",
+        "Your answer is right."
+      ],
+      "meaning_contrast": [
+        "The first right is a direction.",
+        "The second right means correct."
+      ]
+    },
+    {
+      "id": "light",
+      "source_examples": [
+        "Switch on the light.",
+        "This empty bag is light."
+      ],
+      "meaning_contrast": [
+        "The first light is illumination.",
+        "The second light refers to low weight."
+      ]
+    },
+    {
+      "id": "modal",
+      "source_examples": [
+        "You need not cancel.",
+        "You must not cancel."
+      ],
+      "meaning_contrast": [
+        "The first removes an obligation to cancel, without prohibiting it.",
+        "The second prohibits cancellation."
+      ]
+    },
+    {
+      "id": "documents",
+      "source_examples": [
+        "Bring the medical referral letter.",
+        "Write a recommendation letter for the applicant."
+      ],
+      "meaning_contrast": [
+        "The referral letter is a healthcare referral document.",
+        "The recommendation endorses an applicant; the document types are distinct."
+      ]
+    },
+    {
+      "id": "transfer",
+      "source_examples": [
+        "Upload the file to the server.",
+        "Download the file from the server."
+      ],
+      "meaning_contrast": [
+        "Upload goes from the sender to the server.",
+        "Download goes from the server to the recipient."
+      ]
+    },
+    {
+      "id": "access",
+      "source_examples": [
+        "We need an entrance without stairs.",
+        "Follow the steps in the instructions."
+      ],
+      "meaning_contrast": [
+        "The first access concerns physical stairs.",
+        "The second steps are ordered actions, not physical stairs."
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "native": "English",
+      "locale": "en-US",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ar",
+      "name": "Arabic",
+      "native": "العربية",
+      "locale": "ar-SA",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "native": "Français",
+      "locale": "fr-FR",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "native": "Türkçe",
+      "locale": "tr-TR",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "fa",
+      "name": "Persian / Farsi",
+      "native": "فارسی",
+      "locale": "fa-IR",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "prs",
+      "name": "Dari",
+      "native": "دری",
+      "locale": "fa-AF",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ps",
+      "name": "Pashto",
+      "native": "پښتو",
+      "locale": "ps-AF",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "native": "اردو",
+      "locale": "ur-PK",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "native": "हिन्दी",
+      "locale": "hi-IN",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "bn",
+      "name": "Bengali / Bangla",
+      "native": "বাংলা",
+      "locale": "bn-BD",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi (Gurmukhi)",
+      "native": "ਪੰਜਾਬੀ",
+      "locale": "pa-IN",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "sd",
+      "name": "Sindhi",
+      "native": "سنڌي",
+      "locale": "sd-PK",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "am",
+      "name": "Amharic",
+      "native": "አማርኛ",
+      "locale": "am-ET",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ti",
+      "name": "Tigrinya",
+      "native": "ትግርኛ",
+      "locale": "ti-ET",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "om",
+      "name": "Oromo",
+      "native": "Afaan Oromoo",
+      "locale": "om-ET",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "so",
+      "name": "Somali",
+      "native": "Soomaali",
+      "locale": "so-SO",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "sw",
+      "name": "Swahili",
+      "native": "Kiswahili",
+      "locale": "sw-KE",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ckb",
+      "name": "Kurdish Sorani / Central Kurdish",
+      "native": "کوردیی ناوەندی",
+      "locale": "ckb-IQ",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "kmr",
+      "name": "Kurdish Kurmanji / Northern Kurdish",
+      "native": "Kurmancî",
+      "locale": "ku-TR",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "native": "Español",
+      "locale": "es-ES",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "native": "Deutsch",
+      "locale": "de-DE",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "native": "Italiano",
+      "locale": "it-IT",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese (Portugal)",
+      "native": "Português",
+      "locale": "pt-PT",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "native": "Русский",
+      "locale": "ru-RU",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "zh",
+      "name": "Chinese (Simplified)",
+      "native": "中文",
+      "locale": "zh-CN",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "native": "日本語",
+      "locale": "ja-JP",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "native": "한국어",
+      "locale": "ko-KR",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "native": "Nederlands",
+      "locale": "nl-NL",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "native": "Polski",
+      "locale": "pl-PL",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "ro",
+      "name": "Romanian",
+      "native": "Română",
+      "locale": "ro-RO",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "uk",
+      "name": "Ukrainian",
+      "native": "Українська",
+      "locale": "uk-UA",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "el",
+      "name": "Greek",
+      "native": "Ελληνικά",
+      "locale": "el-GR",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "he",
+      "name": "Hebrew",
+      "native": "עברית",
+      "locale": "he-IL",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    },
+    {
+      "code": "id",
+      "name": "Indonesian",
+      "native": "Bahasa Indonesia",
+      "locale": "id-ID",
+      "lexicon_entries": [
+        "bank",
+        "charge",
+        "right",
+        "light",
+        "modal",
+        "documents",
+        "transfer",
+        "access"
+      ],
+      "target_samples_status": "To be recorded from actual providers and then assessed against these criteria."
+    }
+  ]
+}

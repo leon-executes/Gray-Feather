@@ -1,0 +1,593 @@
+{
+  "source_review_path": "Historical 1.2.1 verification/domain-semantic-review.json (host path omitted for publication)",
+  "source_review_sha256": "da0262f7476787bc8d59608b9d57b84cde0903b04449a29ff71a66f2c5e55ad3",
+  "raw_report_sha256": "b0c99e2b05ab2824a29bbfbf11faf586584b63a762e3132fb5fbe0ee9ef9b819",
+  "limits": "Historical developer assessment of actual outputs, not native-certified reference translations. These are regression risks; collecting a fixture does not mean every semantic issue is automatically detected or repaired.",
+  "cases": [
+    {
+      "id": "ar-conditions-permission",
+      "source_code": "en",
+      "target_code": "ar",
+      "source": "You do not have to cancel the appointment. You must not change its time unless the organiser agrees.",
+      "text": "لا يجب عليك إلغاء الموعد. يجب ألا تغير الوقت إلا إذا وافق المنظم.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Cancellation not obligatory",
+        "Time change prohibited",
+        "Organiser agreement is exception"
+      ],
+      "observed_issue": "لا يجب عليك إلغاء can read as you should not cancel, instead of cancellation not being obligatory. Modal scope is ambiguous.",
+      "historical_text_sha256": "538326d56d80dec53f92e1ccc33cc4a35e2cd11851aeada54062dbfe9b724e08"
+    },
+    {
+      "id": "prs-safeguarding-reported-speech",
+      "source_code": "en",
+      "target_code": "prs",
+      "source": "The child said, \"He called me a bastard.\" Record the child’s exact words. Do not promise to keep abuse secret.",
+      "text": "طفل گفت، «او مرا ولدی نامید.» کلمات دقیق کودک را ثبت کنید. وعده ندهید که سوءاستفاده را مخفی نگه دارید.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Insult remains attributed to reported speaker",
+        "Exact words requested, not censored",
+        "No promise of abuse secrecy"
+      ],
+      "observed_issue": "ولدی does not clearly preserve the reported bastard insult. Exact Dari dialect quality is not certified.",
+      "historical_text_sha256": "ec75d4d0c61388c172ff72826dae662e81ea49ae947ce34c81e822c06fae530e"
+    },
+    {
+      "id": "ps-medical-allergy",
+      "source_code": "en",
+      "target_code": "ps",
+      "source": "I am allergic to penicillin. I am not allergic to latex. My daughter has asthma; I do not.",
+      "text": "زه د پینیسلین الرجی لرم. زه د لیټیکس الرجی نه لرم. زما لور د تنفسي ناروغۍ لري؛ زه نه لرم.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Speaker penicillin allergy",
+        "Speaker no latex allergy",
+        "Daughter, not speaker, has asthma"
+      ],
+      "observed_issue": "تنفسي ناروغۍ generalizes asthma to respiratory disease, losing the specific diagnosis.",
+      "historical_text_sha256": "be8c9290d2c8e83f3eec2fb6e5267b80e282c5e28a411244782a5cecd17866c6"
+    },
+    {
+      "id": "ps-safeguarding-privacy",
+      "source_code": "en",
+      "target_code": "ps",
+      "source": "She says her partner threatened her. Speak with her privately. Do not tell her partner where she is staying.",
+      "text": "هغې وویل چې د هغې شریک هغې ته ګواښ کړی دی. له هغې سره په شخصي توګه خبرې وکړئ. خپل شریک ته مه وایئ چې هغې چرته مېشت ده.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Reported threat by partner",
+        "Private conversation with her",
+        "Do not reveal her location to partner"
+      ],
+      "observed_issue": "خپل شریک changes the nondisclosure recipient towards your/own partner rather than clearly her partner.",
+      "historical_text_sha256": "8e6ca2fc6095a53c79fedfbf0a480ee4d03b7a1d6693f156533016abfb61995b"
+    },
+    {
+      "id": "bn-safeguarding-reported-speech",
+      "source_code": "en",
+      "target_code": "bn",
+      "source": "The child said, \"He called me a bastard.\" Record the child’s exact words. Do not promise to keep abuse secret.",
+      "text": "বাচ্চাটি বলল, \"সে আমাকে কাপুরুষ বলেছে।\" বাচ্চাটির সঠিক কথাগুলো রেকর্ড করুন। গোপন রাখতে প্রতিশ্রুতি দেবেন না।",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Insult remains attributed to reported speaker",
+        "Exact words requested, not censored",
+        "No promise of abuse secrecy"
+      ],
+      "observed_issue": "The insult becomes coward (কাপুরুষ), and the final secrecy sentence omits explicit abuse. Reporting/recording survive.",
+      "historical_text_sha256": "6ef7a6e4b092ae1dd58c5fee4381e03bb3b3d7cfe2b2d56e1937dbf4476ea3cc"
+    },
+    {
+      "id": "pa-safeguarding-reported-speech",
+      "source_code": "en",
+      "target_code": "pa",
+      "source": "The child said, \"He called me a bastard.\" Record the child’s exact words. Do not promise to keep abuse secret.",
+      "text": "ਬੱਚੇ ਨੇ ਕਿਹਾ, \"ਉਸਨੇ ਮੈਨੂੰ ਨਸ਼ਲੀ ਬੱਚਾ ਕਿਹਾ।\" ਬੱਚੇ ਦੇ ਸਹੀ ਸ਼ਬਦਾਂ ਨੂੰ ਦਰਜ ਕਰੋ। ਦੁਰਵਿਵਹਾਰ ਨੂੰ ਗੁਪਤ ਰੱਖਣ ਦਾ ਵਾਅਦਾ ਨਾ ਕਰੋ।",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Insult remains attributed to reported speaker",
+        "Exact words requested, not censored",
+        "No promise of abuse secrecy"
+      ],
+      "observed_issue": "ਨਸ਼ਲੀ ਬੱਚਾ is a nonstandard/altered description; the source insult is not reliably preserved.",
+      "historical_text_sha256": "18058f67a51110f601f2022e3797af400accf961389a1be7fa5447b8879e5581"
+    },
+    {
+      "id": "pa-conditions-permission",
+      "source_code": "en",
+      "target_code": "pa",
+      "source": "You do not have to cancel the appointment. You must not change its time unless the organiser agrees.",
+      "text": "ਤੁਹਾਨੂੰ ਮੁਲਾਕਾਤ ਰੱਦ ਕਰਨ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ। ਇਸਦਾ ਸਮਾਂ ਬਦਲਣਾ ਤਾਂ ਬੁਝਾਰਤਿਕਾਰਕ ਦੀ ਸਹਿਮਤੀ ਬਗੈਰ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Cancellation not obligatory",
+        "Time change prohibited",
+        "Organiser agreement is exception"
+      ],
+      "observed_issue": "ਬੁਝਾਰਤਿਕਾਰਕ does not reliably express organiser; permission authority is garbled.",
+      "historical_text_sha256": "2e7b1b56d14dc02998d14628c313fd2e4a3a8327e428bb5293c0071dba1704cb"
+    },
+    {
+      "id": "sd-safeguarding-privacy",
+      "source_code": "en",
+      "target_code": "sd",
+      "source": "She says her partner threatened her. Speak with her privately. Do not tell her partner where she is staying.",
+      "text": "هوءَ چوندي آهي ته سندس ساٿي هن کي ڌمڪي ڏني. ان سان گوشوارو ڳالهايو. هن جي ساٿي کي نه ٻڌايو ته هوءَ ڪٿي رهي ٿي.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Reported threat by partner",
+        "Private conversation with her",
+        "Do not reveal her location to partner"
+      ],
+      "observed_issue": "گوشوارو does not clearly express a private conversation in this sentence; confidentiality wording needs a Sindhi reader.",
+      "historical_text_sha256": "939da6eaad851ad12f1de3e5af6df1b6e60a4d495b9b2e619b2e3de72e7765d1"
+    },
+    {
+      "id": "am-numbers-quantities",
+      "source_code": "en",
+      "target_code": "am",
+      "source": "Bring 2 copies, not 3. The temperature is minus 5 degrees Celsius, not plus 5.",
+      "text": "2 ቅጂዎችን አምጡ, 3 አይደለም. የሙቀት መጠኑ ከ 5 ዲግሪ ሴንቲ ግሬድ ሲቀነስ ነው, ሲደመር 5 አይደለም.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Two copies rather than three",
+        "Negative five Celsius",
+        "Positive five rejected"
+      ],
+      "observed_issue": "The temperature is phrased as subtracting from five rather than unambiguously negative five.",
+      "historical_text_sha256": "b349a4c5e79d8a33904631da768db7f1328828a5c8b952a21dada5e2bef2b916"
+    },
+    {
+      "id": "am-medical-label",
+      "source_code": "en",
+      "target_code": "am",
+      "source": "The label says 0.5 mg, not 5 mg. The patient has not taken it today. Ask the pharmacist to check the label.",
+      "text": "መለያው 0.5 mg ሳይሆን 5 mg ይላል. በሽተኛው ዛሬ አልወሰደም. መለያውን እንዲፈትሽ ፋርማሲስቱ ይጠይቁ።",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "0.5 mg rather than 5 mg",
+        "No dose taken today",
+        "Pharmacist checks label"
+      ],
+      "observed_issue": "0.5 mg ሳይሆን 5 mg reverses the dose contrast: not 0.5 mg but 5 mg. Both numbers survive, so number multiset checks cannot detect this.",
+      "historical_text_sha256": "369098cc2e4652d6785e0329590df6737ad26117afd8cf69f9f84813509625bf"
+    },
+    {
+      "id": "am-conditions-permission",
+      "source_code": "en",
+      "target_code": "am",
+      "source": "You do not have to cancel the appointment. You must not change its time unless the organiser agrees.",
+      "text": "ቀጠሮውን መሰረዝ የለብዎትም። አደራጁ ካልተስማማ በስተቀር ጊዜውን መቀየር የለብዎትም.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Cancellation not obligatory",
+        "Time change prohibited",
+        "Organiser agreement is exception"
+      ],
+      "observed_issue": "መሰረዝ የለብዎትም reads as should/must not cancel, changing the not-obligatory distinction.",
+      "historical_text_sha256": "54f3cf4ddadd30a8068513a589b898e5c734f07feba6c5e56746ba7544c3290f"
+    },
+    {
+      "id": "ti-numbers-quantities",
+      "source_code": "en",
+      "target_code": "ti",
+      "source": "Bring 2 copies, not 3. The temperature is minus 5 degrees Celsius, not plus 5.",
+      "text": "3 ዘይኰነስ 2 ቅዳሓት ኣምጽእ። እቲ ሙቐት ትሕቲ 5 ዲግሪ ሰልሲየስ ደኣ እምበር 5 ኣይኰነን።",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Two copies rather than three",
+        "Negative five Celsius",
+        "Positive five rejected"
+      ],
+      "observed_issue": "ትሕቲ 5 says below five rather than minus five, and the positive-five contrast is weakened.",
+      "historical_text_sha256": "db4b03b75348e7d60b184b7b7e414c7977f7d43f2878c245137d22c76a6541eb"
+    },
+    {
+      "id": "ti-calendar-deadline",
+      "source_code": "en",
+      "target_code": "ti",
+      "source": "Submit the form by Friday at noon. The office is closed next Monday and reopens on Tuesday at 08:00.",
+      "text": "ነቲ ፎርም ክሳዕ ዓርቢ ቀትሪ ኣቕርቦ። እቲ ቤት ጽሕፈት ሰኑይ ሰኑይ ይዕጾ ሰሉስ ድማ ሰዓት 08 00 እንደገና ይኽፈት።",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Deadline Friday noon",
+        "Closed next Monday",
+        "Reopens Tuesday 08:00"
+      ],
+      "observed_issue": "The next-Monday phrase becomes a repeated Monday, losing the explicit next relation; 08:00 is also reformatted.",
+      "historical_text_sha256": "5ed49b318ab033f21ab2f1aa6915373ba077271b174090e3ec21c7e9b04f0aac"
+    },
+    {
+      "id": "ti-safeguarding-privacy",
+      "source_code": "en",
+      "target_code": "ti",
+      "source": "She says her partner threatened her. Speak with her privately. Do not tell her partner where she is staying.",
+      "text": "መገላግልታ ኸም ዘፈራርሃ ትዛረብ። ብውልቂ ተዘራረብ። ንመጻምድትኻ ኣበይ ከም እትቕመጥ ኣይትንገራ።",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Reported threat by partner",
+        "Private conversation with her",
+        "Do not reveal her location to partner"
+      ],
+      "observed_issue": "The recipient shifts to your partner (መጻምድትኻ), rather than clearly her partner.",
+      "historical_text_sha256": "70f2e74fa55a77e4b00a9021ac04fc80ddf8c0cc80334bcf1fbce45bacb28ae6"
+    },
+    {
+      "id": "ti-conditions-roles",
+      "source_code": "en",
+      "target_code": "ti",
+      "source": "If Alice is absent, give the folder to Bob in room 12. Otherwise, wait for Alice. Bob must not sign for her.",
+      "text": "ኣሊስ እንተ ዘይኰይና ነቲ ኣቃውማ ኣብ ክፍሊ 12 ንቦብ ሃቦ። እንተ ዘይኰይኑ ንኣሊስ ተጸበ። ቦብ ንዓኣ ኺፍርም የብሉን።",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Alice absent: folder to Bob in room 12",
+        "Otherwise wait for Alice",
+        "Bob cannot sign on Alice’s behalf"
+      ],
+      "observed_issue": "The folder noun becomes an unclear structure/arrangement term; the conditional object is unreliable.",
+      "historical_text_sha256": "1c64add7c3ba12d071b0f89684ede05b1974eb5d2e25b0b1b577caa0e5d6c65b"
+    },
+    {
+      "id": "ti-terminology-ambiguity",
+      "source_code": "en",
+      "target_code": "ti",
+      "source": "The bank charged a fee. We then sat on the river bank. The map is correct, but the right-hand door is locked.",
+      "text": "እቲ ባንክ ክፍሊት ከፊሉ ነበረ። ድሕሪኡ ኣብ ገምገም ፈለግ ኮፍ በልና። እቲ ካርታ ቅኑዕ እኳ እንተ ዀነ የማነይቲ ማዕጾ ግን ተዓጽዩ እዩ።",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Financial bank and fee",
+        "River bank distinct",
+        "Correct map versus right-side locked door"
+      ],
+      "observed_issue": "The bank is described as paying a fee instead of charging it, and locked is weakened to closed.",
+      "historical_text_sha256": "2c30fe73b361779c0eb597695441ea91402f7d8f45237774a825468c251bb17c"
+    },
+    {
+      "id": "om-calendar-appointment",
+      "source_code": "en",
+      "target_code": "om",
+      "source": "The appointment is on Tuesday, 13 October 2026, at 09:30, not Thursday at 19:30.",
+      "text": "Beellamni kun Kibxata, Waxabajjii 13, 2026, sa’aatii 09:30tti malee Kamisa sa’aatii 19:30tti miti.",
+      "provider": "mymemory",
+      "critical_meaning_predicates": [
+        "Tuesday 13 October 2026",
+        "09:30 appointment",
+        "Thursday 19:30 rejected"
+      ],
+      "observed_issue": "Waxabajjii is June, replacing October. The date digits survive but the month is wrong.",
+      "historical_text_sha256": "914e4be9aa13347be42c9aef9f243071c80ac34ccc5edd57b1d062d0f18d064a"
+    },
+    {
+      "id": "om-calendar-deadline",
+      "source_code": "en",
+      "target_code": "om",
+      "source": "Submit the form by Friday at noon. The office is closed next Monday and reopens on Tuesday at 08:00.",
+      "text": "Unka kana hanga Jimaata sa'aatii walakkaatti galchaa. Waajjirri kun Isniina dhufu cufamee Kibxata sa'aatii 08:00 irratti banama.",
+      "provider": "mymemory",
+      "critical_meaning_predicates": [
+        "Deadline Friday noon",
+        "Closed next Monday",
+        "Reopens Tuesday 08:00"
+      ],
+      "observed_issue": "sa’aatii walakkaatti suggests half-time/half-hour rather than an explicit noon deadline.",
+      "historical_text_sha256": "c8631106c92c8ec406e481e5ca15d4f8a9c631ca77416f04004d4c845bd6c373"
+    },
+    {
+      "id": "om-conditions-permission",
+      "source_code": "en",
+      "target_code": "om",
+      "source": "You do not have to cancel the appointment. You must not change its time unless the organiser agrees.",
+      "text": "Beellama haquu hin qabdu. Qindeessaan yoo walii galte malee yeroo isaa jijjiiruu hin qabdu.",
+      "provider": "mymemory",
+      "critical_meaning_predicates": [
+        "Cancellation not obligatory",
+        "Time change prohibited",
+        "Organiser agreement is exception"
+      ],
+      "observed_issue": "haquu hin qabdu can read as must not cancel, rather than not needing to cancel.",
+      "historical_text_sha256": "76834fc82b033ecda35efbb8083e47587ea6c3409b144a106ac3413b78b9806c"
+    },
+    {
+      "id": "om-conditions-roles",
+      "source_code": "en",
+      "target_code": "om",
+      "source": "If Alice is absent, give the folder to Bob in room 12. Otherwise, wait for Alice. Bob must not sign for her.",
+      "text": "Yoo Aliis hin jirre galmee sana Boobiif kutaa 12. Yoo kana hin taane Aliis eegi. Boob isheef mallatteessuu hin qabu.",
+      "provider": "mymemory",
+      "critical_meaning_predicates": [
+        "Alice absent: folder to Bob in room 12",
+        "Otherwise wait for Alice",
+        "Bob cannot sign on Alice’s behalf"
+      ],
+      "observed_issue": "The first conditional clause lacks an explicit give/deliver verb, leaving the folder handoff incomplete.",
+      "historical_text_sha256": "beee54f6b52cdaa2693a03af7506e77983ad33288291e2f47f743d51a2bf23bc"
+    },
+    {
+      "id": "om-terminology-ambiguity",
+      "source_code": "en",
+      "target_code": "om",
+      "source": "The bank charged a fee. We then sat on the river bank. The map is correct, but the right-hand door is locked.",
+      "text": "Baankichi kaffaltii kaffale. Sana booda qarqara lagaa teenye. Kaartaan sirrii dha, garuu balballi harka mirgaa cufaadha.",
+      "provider": "mymemory",
+      "critical_meaning_predicates": [
+        "Financial bank and fee",
+        "River bank distinct",
+        "Correct map versus right-side locked door"
+      ],
+      "observed_issue": "Baankichi kaffaltii kaffale says the bank paid a fee, reversing charge direction; locked is also less explicit.",
+      "historical_text_sha256": "5b5e8691f777dd742332db0537e055815e63eea2164999aa0a3213d270f1b74d"
+    },
+    {
+      "id": "so-numbers-quantities",
+      "source_code": "en",
+      "target_code": "so",
+      "source": "Bring 2 copies, not 3. The temperature is minus 5 degrees Celsius, not plus 5.",
+      "text": "Keel laba nuqul, ma ahan saddex. Heerkulku waa shan darajo hoose, ma ahan shan darajo sare.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Two copies rather than three",
+        "Negative five Celsius",
+        "Positive five rejected"
+      ],
+      "observed_issue": "The Celsius unit is omitted and below/above phrasing does not clearly state signed five degrees.",
+      "historical_text_sha256": "580cfeb8e0dd011adb88ee314a74a810f9c8ee734b96d08d426ed595f4ea3883"
+    },
+    {
+      "id": "so-conditions-permission",
+      "source_code": "en",
+      "target_code": "so",
+      "source": "You do not have to cancel the appointment. You must not change its time unless the organiser agrees.",
+      "text": "Ma aha inaad baajiso ballanta. Waa inaad aan bedelin waqtigeeda ilaa uu qabanqaabiyaha ogolaado.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Cancellation not obligatory",
+        "Time change prohibited",
+        "Organiser agreement is exception"
+      ],
+      "observed_issue": "Ma aha inaad can read as you are not to cancel; the non-obligation/prohibition distinction is ambiguous.",
+      "historical_text_sha256": "bd92c2ab4b44bba70f437864bb60483635dc37f17894675505e00ecfeca61335"
+    },
+    {
+      "id": "so-terminology-ambiguity",
+      "source_code": "en",
+      "target_code": "so",
+      "source": "The bank charged a fee. We then sat on the river bank. The map is correct, but the right-hand door is locked.",
+      "text": "Bangigu wuxuu soo rogay khidmad. Kadib waxaan ku fadhinay barkadda wabiga. Khariidaddu waa sax, laakiin albaabka gacanta midig waa la xidhay.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Financial bank and fee",
+        "River bank distinct",
+        "Correct map versus right-side locked door"
+      ],
+      "observed_issue": "barkadda wabiga suggests river pool rather than river bank; the locked distinction is also weaker.",
+      "historical_text_sha256": "47fb2ca7a50ee28d93b7c1b6b46181d7005fba6f396664aca7f6ceaaffe77b09"
+    },
+    {
+      "id": "sw-safeguarding-privacy",
+      "source_code": "en",
+      "target_code": "sw",
+      "source": "She says her partner threatened her. Speak with her privately. Do not tell her partner where she is staying.",
+      "text": "Anasema mwenzi wake alimshitumu. Zungumza naye kwa faragha. Usimwambie mwenzi wake anakaa wapi.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Reported threat by partner",
+        "Private conversation with her",
+        "Do not reveal her location to partner"
+      ],
+      "observed_issue": "alimshitumu means accused/reproached rather than threatened. The actual safeguarding event changes.",
+      "historical_text_sha256": "ff8fe119b08d595570b929986f92592cb56db13d6e37756b9146131f6c3dd0b9"
+    },
+    {
+      "id": "sw-safeguarding-reported-speech",
+      "source_code": "en",
+      "target_code": "sw",
+      "source": "The child said, \"He called me a bastard.\" Record the child’s exact words. Do not promise to keep abuse secret.",
+      "text": "Mtoto alisema, \"Alinitaja mimi kuwa mtoto wa kike kinyume cha sheria.\" Rekodi maneno halisi ya mtoto. Usiahidi kushika siri ya unyanyasaji.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Insult remains attributed to reported speaker",
+        "Exact words requested, not censored",
+        "No promise of abuse secrecy"
+      ],
+      "observed_issue": "The insult becomes an illegal female-child description, adding sex and altering the reported words materially.",
+      "historical_text_sha256": "29b971b2930d84a23d2d1a3e163e59f1fc9dd90089f3e58eed8275c316ac3865"
+    },
+    {
+      "id": "ckb-numbers-allocation",
+      "source_code": "en",
+      "target_code": "ckb",
+      "source": "Pay each of the 3 people GBP 12.50. Do not pay GBP 12.50 for the whole group.",
+      "text": "12.50 پاوەند بدە بە هەر 3 کەسێک. 12.50 پاوەند بۆ هەموو گرووپەکە مەدە.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Three recipients",
+        "12.50 GBP per recipient",
+        "Not a group total"
+      ],
+      "observed_issue": "بە هەر 3 کەسێک can distribute the amount to each three people instead of each of the three recipients.",
+      "historical_text_sha256": "cd4b233e051474a6f8b59daa6c006d280a2fbd23941314e758cd881488135759"
+    },
+    {
+      "id": "ckb-medical-allergy",
+      "source_code": "en",
+      "target_code": "ckb",
+      "source": "I am allergic to penicillin. I am not allergic to latex. My daughter has asthma; I do not.",
+      "text": "من هەستیاریم بە پێنیسیلین هەیە. من هەستیاریم بە لاتکس نییە. کچەکەم تەنگەنەفەسی هەیە. من نایکەم.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Speaker penicillin allergy",
+        "Speaker no latex allergy",
+        "Daughter, not speaker, has asthma"
+      ],
+      "observed_issue": "Asthma is generalized to breathlessness/shortness of breath; the specific diagnosis is not preserved clearly.",
+      "historical_text_sha256": "4b7708c5e5f31ba0efbbe168e2461b4601f7da5829b56502431c146292ca69b7"
+    },
+    {
+      "id": "ckb-medical-label",
+      "source_code": "en",
+      "target_code": "ckb",
+      "source": "The label says 0.5 mg, not 5 mg. The patient has not taken it today. Ask the pharmacist to check the label.",
+      "text": "لەیبڵەکە دەڵێت 0.5 میلی گرام نەک 5 میلی گرام. نەخۆشەکە ئەمڕۆ نەیخواردووە. داوا لە دەرمانساز بکە سەیری پلیتەکە بکات.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "0.5 mg rather than 5 mg",
+        "No dose taken today",
+        "Pharmacist checks label"
+      ],
+      "observed_issue": "The final label object becomes پلیتەکە (plate), weakening what the pharmacist must check. The dose contrast survives.",
+      "historical_text_sha256": "d989a1e5b46a0c3bf602ea3712bef98046b806de3ab32c86612b3a2b204f26bb"
+    },
+    {
+      "id": "ckb-safeguarding-reported-speech",
+      "source_code": "en",
+      "target_code": "ckb",
+      "source": "The child said, \"He called me a bastard.\" Record the child’s exact words. Do not promise to keep abuse secret.",
+      "text": "منداڵەکە گوتی: «ئەو بە زۆڵ بانگی کردم.» وشەکانی منداڵەکە بە تەواوی تۆمار بکە. بەڵێن مەدە کە دەستدرێژی سێکسی بە نهێنی بهێڵیتەوە.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Insult remains attributed to reported speaker",
+        "Exact words requested, not censored",
+        "No promise of abuse secrecy"
+      ],
+      "observed_issue": "Generic abuse is narrowed to sexual assault (دەستدرێژی سێکسی), adding a fact absent from the source.",
+      "historical_text_sha256": "13623cf11564b9797e21c84d994158d0544fa2242445b34a178dc9862d86338d"
+    },
+    {
+      "id": "kmr-numbers-allocation",
+      "source_code": "en",
+      "target_code": "kmr",
+      "source": "Pay each of the 3 people GBP 12.50. Do not pay GBP 12.50 for the whole group.",
+      "text": "Ji bo her 3 kesan 12.50 GBP bidin. Ji bo tevahiya komê 12.50 GBP nedin.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Three recipients",
+        "12.50 GBP per recipient",
+        "Not a group total"
+      ],
+      "observed_issue": "Ji bo her 3 kesan does not clearly allocate 12.50 to each individual; the group-size construction is ambiguous.",
+      "historical_text_sha256": "e589423ca5f13d303f9e24bbf9a4fdad4caa556084a61de18583c0617c84f4a7"
+    },
+    {
+      "id": "kmr-numbers-quantities",
+      "source_code": "en",
+      "target_code": "kmr",
+      "source": "Bring 2 copies, not 3. The temperature is minus 5 degrees Celsius, not plus 5.",
+      "text": "2 kopî bînin, ne 3. Germahî kêm 5 derece Celsius e, ne plus 5.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Two copies rather than three",
+        "Negative five Celsius",
+        "Positive five rejected"
+      ],
+      "observed_issue": "kêm 5 means less five/fewer five and does not unambiguously state minus five.",
+      "historical_text_sha256": "b8b592bbf60366c5d9ecaba4dfa175b9d9a00f1ba92bc9b0cf787f5e13737b7d"
+    },
+    {
+      "id": "kmr-safeguarding-privacy",
+      "source_code": "en",
+      "target_code": "kmr",
+      "source": "She says her partner threatened her. Speak with her privately. Do not tell her partner where she is staying.",
+      "text": "Ew dibêje ku hevjînê wê ew tehdît kir. Bi wê re bi taybetî biaxivin. Ji hevjînê xwe re nebêjin ku ew li ku dimîne.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Reported threat by partner",
+        "Private conversation with her",
+        "Do not reveal her location to partner"
+      ],
+      "observed_issue": "hevjînê xwe shifts toward your own partner, losing the explicit her-partner recipient.",
+      "historical_text_sha256": "cef1c3a64456f71d7c79002b6f7925541e47b70f6539a95825b469e228165867"
+    },
+    {
+      "id": "it-conditions-permission",
+      "source_code": "en",
+      "target_code": "it",
+      "source": "You do not have to cancel the appointment. You must not change its time unless the organiser agrees.",
+      "text": "Non devi cancellare l'appuntamento. Non devi cambiare l'orario a meno che l'organizzatore non sia d'accordo.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Cancellation not obligatory",
+        "Time change prohibited",
+        "Organiser agreement is exception"
+      ],
+      "observed_issue": "Non devi cancellare can mean must not cancel; non è necessario would unambiguously express no obligation. The source distinction is not dependable.",
+      "historical_text_sha256": "5b324a6444aa525c2f496c370f603089fa4a9f21743bb0752f7e0803a0627fd5"
+    },
+    {
+      "id": "zh-numbers-allocation",
+      "source_code": "en",
+      "target_code": "zh",
+      "source": "Pay each of the 3 people GBP 12.50. Do not pay GBP 12.50 for the whole group.",
+      "text": "支付每个人 12.50 英镑。不要为整个小组支付 12.50 英镑。",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Three recipients",
+        "12.50 GBP per recipient",
+        "Not a group total"
+      ],
+      "observed_issue": "The count of three recipients is omitted even though the per-person amount survives.",
+      "historical_text_sha256": "cc5ac68f3737bf705218d9c66f4b9fead5ab951c6fa3fca7fce8dfe7d2484568"
+    },
+    {
+      "id": "nl-calendar-deadline",
+      "source_code": "en",
+      "target_code": "nl",
+      "source": "Submit the form by Friday at noon. The office is closed next Monday and reopens on Tuesday at 08:00.",
+      "text": "Dien het formulier uiterlijk vrijdagmiddag in. Het kantoor is volgende maandag gesloten en heropent dinsdag om 08:00 uur.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Deadline Friday noon",
+        "Closed next Monday",
+        "Reopens Tuesday 08:00"
+      ],
+      "observed_issue": "vrijdagmiddag means Friday afternoon, not the exact Friday-noon deadline.",
+      "historical_text_sha256": "c7ec3237b42d69d78c72f9d5b5e9a20419c4a26e3fb81f50324e4d741c153799"
+    },
+    {
+      "id": "nl-safeguarding-reported-speech",
+      "source_code": "en",
+      "target_code": "nl",
+      "source": "The child said, \"He called me a bastard.\" Record the child’s exact words. Do not promise to keep abuse secret.",
+      "text": "Het kind zei: \"Hij noemde me een bastaard.\" Noteer de exacte woorden van het kind. Bel niet dat je het misbruik geheim zult houden.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Insult remains attributed to reported speaker",
+        "Exact words requested, not censored",
+        "No promise of abuse secrecy"
+      ],
+      "observed_issue": "Bel niet means do not call instead of do not promise (beloof niet); the secrecy-promise instruction is corrupted.",
+      "historical_text_sha256": "f104d754c107da7daaa735e22abab73a3e2508e3e71d82eb4c5392f71b0387f6"
+    },
+    {
+      "id": "he-safeguarding-reported-speech",
+      "source_code": "en",
+      "target_code": "he",
+      "source": "The child said, \"He called me a bastard.\" Record the child’s exact words. Do not promise to keep abuse secret.",
+      "text": "הילד אמר, \"הוא קרא לי מתחזה.\" רשום את דברי הילד במדויק. אל תבטיח לשמור את ההתעללות בסוד.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Insult remains attributed to reported speaker",
+        "Exact words requested, not censored",
+        "No promise of abuse secrecy"
+      ],
+      "observed_issue": "מתחזה means impostor rather than the reported bastard insult.",
+      "historical_text_sha256": "3f155285797e89bf5bc8f61a48ff4e1f43a19d5970e19035eec220dac83834c2"
+    },
+    {
+      "id": "he-conditions-roles",
+      "source_code": "en",
+      "target_code": "he",
+      "source": "If Alice is absent, give the folder to Bob in room 12. Otherwise, wait for Alice. Bob must not sign for her.",
+      "text": "אם אליס נעדרת, תן את התיק לבוב בחדר 12. אחרת, המתן לאליס. בוב לא צריך לחתום בשמה.",
+      "provider": "bing_web",
+      "critical_meaning_predicates": [
+        "Alice absent: folder to Bob in room 12",
+        "Otherwise wait for Alice",
+        "Bob cannot sign on Alice’s behalf"
+      ],
+      "observed_issue": "לא צריך can mean does not need to sign rather than must not sign; prohibition is weakened materially.",
+      "historical_text_sha256": "d80233c0c2216b31fe524098d11d11f4fc1cb8a365d6fbf6ba36dd5ef3dd2438"
+    }
+  ]
+}

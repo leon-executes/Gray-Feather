@@ -1,0 +1,25 @@
+{
+  "engine": "sherpa-onnx1.13.8 staticMTRelease noTTS, CPU",
+  "model": "Omnilingual CTC300M int8, conversion2025-11-12",
+  "model_url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-omnilingual-asr-1600-languages-300M-ctc-int8-2025-11-12.tar.bz2",
+  "native_release": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/v1.13.8",
+  "change": "Added process activeCodePage=UTF-8 manifest; Windows10 1903+.",
+  "files": {
+    "LICENSE": {
+      "bytes": 581,
+      "sha256": "a70a523bafbb595c2844104feb313d204904dac91c3d186c05f22a10a71c7a94"
+    },
+    "model.int8.onnx": {
+      "bytes": 365352120,
+      "sha256": "e7c4e54ee4c4c47829cc6667d5d00ed8ea7bef1dcfeef0fce766f77752a2726c"
+    },
+    "sherpa-onnx-offline.exe": {
+      "bytes": 18751488,
+      "sha256": "3a0177956d7ffc3c4d4eda8cd2b5386984861574783b89afb50379c7822bd24a"
+    },
+    "tokens.txt": {
+      "bytes": 86423,
+      "sha256": "a7a044c52cb29cbe8b0dc1953e92cefd4ca16b0ed968177b6beab21f9a7d0b31"
+    }
+  }
+}

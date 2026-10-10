@@ -1,0 +1,3150 @@
+{
+  "schema": 1,
+  "source": "Unicode CLDR frozen main snapshot",
+  "license": "Unicode-3.0",
+  "license_url": "https://www.unicode.org/license.txt",
+  "license_sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+  "sources": {
+    "am": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/am.xml",
+      "sha256": "c082ddd6922a73faa7d948027c9124578e1ab3661ef47560977db77c4fee836e"
+    },
+    "ar": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ar.xml",
+      "sha256": "68258620324e96ce3c219598c7676db3f1e97cd45a8dbf21250c8df8822be94c"
+    },
+    "bn": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/bn.xml",
+      "sha256": "b0b0499a915143c37ae589928c555b720c2c3ac87c0befef44b180f3384ab02f"
+    },
+    "ckb": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ckb.xml",
+      "sha256": "7e30e0c6f13fe36870d254c3a0ba0f73edc10f83c76bf35e69a339b3ee53ef56"
+    },
+    "de": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/de.xml",
+      "sha256": "e5289a46e85cd2384660eeac0f1665a9aa90299f4e6c2864ec138402c0fff632"
+    },
+    "el": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/el.xml",
+      "sha256": "b9b4a664a07ca53e841973f3931c05ae2bf8f5681ce7ff9f1b5ca559c218c334"
+    },
+    "en": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/en.xml",
+      "sha256": "f8cbf26964d0e349fc96d9e5a56292edcbaab25c8e64177ca4f111773dfb79cf"
+    },
+    "es": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/es.xml",
+      "sha256": "85eb95dea0f020b13f7f615b09c86ebe568d71fd71f59c3720e23a65b9cddf50"
+    },
+    "fa": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/fa.xml",
+      "sha256": "bdf831e65d92bfe3691ea1bb80934a9b97df49be3063419326b8b98fc7f87b8d"
+    },
+    "fa_AF": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/fa_AF.xml",
+      "sha256": "e6c79d1b7df4148e66347097977ca927a36e56c10b8d113b2615ed27ee2faffa"
+    },
+    "fr": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/fr.xml",
+      "sha256": "7aa6b2f783d3223fb7e8fd1b4e0f3782d9731f2f91f829e93747e20ac7b3c268"
+    },
+    "he": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/he.xml",
+      "sha256": "751c06b1d548f2f12db869efb96a8c01feadf9961740f8c2e1922240ca52bfad"
+    },
+    "hi": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/hi.xml",
+      "sha256": "c638f6040f5413994820fdccb5d2bb18227c3806986119dd825d6284145cec7f"
+    },
+    "id": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/id.xml",
+      "sha256": "3ca7ab10ff06007266cb1800627cce7a4af171e5c12268153f5197ae239ce27a"
+    },
+    "it": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/it.xml",
+      "sha256": "a9e8612bd4b80477de74bfac9ad2e86f1d73cf7d4c4bec1b365debb6469cbde8"
+    },
+    "ja": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ja.xml",
+      "sha256": "d42a5c7327f6708cb9f13384ae2b7638ccaeafc17dc80a0a56dfe1491bc21c54"
+    },
+    "ko": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ko.xml",
+      "sha256": "b30f1aef13eca1c0067f5155736676cdcdea37b5a1f8e236aaebbf6d18dca8fd"
+    },
+    "ku": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ku.xml",
+      "sha256": "98e07348c1503e1d3a5a8a14bc9f98e603828eb171734648f363a57174369c90"
+    },
+    "nl": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/nl.xml",
+      "sha256": "d423c9f9a880650153fc548bc8cbbc575c3478dd16b208d467ee30d0d0d52332"
+    },
+    "om": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/om.xml",
+      "sha256": "df97a3a013d2a3223ff64b8b15c334360571ff2dda57856c6e5c6360789e0a6e"
+    },
+    "pa": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/pa.xml",
+      "sha256": "961c09a9c782caa5335a5130389b281a203cd6e112d77ed8424624e65cf14ef0"
+    },
+    "pl": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/pl.xml",
+      "sha256": "544d6f4bca919d0442ec9cfb285f1bdbe45e151941d18f057088b38feaad78d1"
+    },
+    "ps": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ps.xml",
+      "sha256": "87af88cb12103e5254806398207c730862f138561e9e96354fe5d57be942ad9e"
+    },
+    "pt": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/pt.xml",
+      "sha256": "f5511280d86e4382116882525ae0c88c906dd6fe0cbc892122f768f2fafd46ec"
+    },
+    "pt_PT": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/pt_PT.xml",
+      "sha256": "be53d30e86da0687e5492df134bbbfa4b7bd61b37e2bfe132dce7fd28e80ec38"
+    },
+    "ro": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ro.xml",
+      "sha256": "cefaee91749db3a7a9b622fbbd664f0cbcb2eaea9312592ba824b65c65784603"
+    },
+    "ru": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ru.xml",
+      "sha256": "560c49327a1ccf53fe680be779718b7a67cc304ca0044c9d8a7a571d90e05502"
+    },
+    "sd": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/sd.xml",
+      "sha256": "b123f77fcd43ee94789acdd00118cedebd5a208221f7668ac75e53669add3e5c"
+    },
+    "so": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/so.xml",
+      "sha256": "4c638cc42aaeae6271af979ef18f99427d6a2cf374b3c92f456514ce33ba087e"
+    },
+    "sw": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/sw.xml",
+      "sha256": "3ed8ee3a74ee1550bf2aff085f286fff146ee88ff53f6c98a4b766cc0406968c"
+    },
+    "ti": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ti.xml",
+      "sha256": "b310cc585c067558114db2c6a5a39af34a5a092e5cafe11eb8b06f80a0cdb9b2"
+    },
+    "tr": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/tr.xml",
+      "sha256": "5193729c7cc9e12034f8ad405ca1a58f5c558f44f1e9ce8c7246b65dfda30ad4"
+    },
+    "uk": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/uk.xml",
+      "sha256": "2505f6305981b3b899f5d328e083f119adeb2fa06ba62462222ee96aab81f23b"
+    },
+    "ur": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ur.xml",
+      "sha256": "116681c6d2a6b163cc2e7c7b89d5e1f084b0c4eaa02890fdb6369f3e4f0ca2a2"
+    },
+    "zh": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/zh.xml",
+      "sha256": "95a7bf986c594389498b7c9243e255d3c466ab27df7efed8be11e9a1fccfa6ec"
+    },
+    "zh_Hans": {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/zh_Hans.xml",
+      "sha256": "5e84f410a0d715051dddcf7fa3ac6bf346e9edbf3b885d6f5e86b807b63bede2"
+    }
+  },
+  "languages": {
+    "en": {
+      "locales": [
+        "en"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "January",
+          "stand-alone": "January"
+        },
+        "2": {
+          "format": "February",
+          "stand-alone": "February"
+        },
+        "3": {
+          "format": "March",
+          "stand-alone": "March"
+        },
+        "4": {
+          "format": "April",
+          "stand-alone": "April"
+        },
+        "5": {
+          "format": "May",
+          "stand-alone": "May"
+        },
+        "6": {
+          "format": "June",
+          "stand-alone": "June"
+        },
+        "7": {
+          "format": "July",
+          "stand-alone": "July"
+        },
+        "8": {
+          "format": "August",
+          "stand-alone": "August"
+        },
+        "9": {
+          "format": "September",
+          "stand-alone": "September"
+        },
+        "10": {
+          "format": "October",
+          "stand-alone": "October"
+        },
+        "11": {
+          "format": "November",
+          "stand-alone": "November"
+        },
+        "12": {
+          "format": "December",
+          "stand-alone": "December"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Sunday",
+          "stand-alone": "Sunday"
+        },
+        "mon": {
+          "format": "Monday",
+          "stand-alone": "Monday"
+        },
+        "tue": {
+          "format": "Tuesday",
+          "stand-alone": "Tuesday"
+        },
+        "wed": {
+          "format": "Wednesday",
+          "stand-alone": "Wednesday"
+        },
+        "thu": {
+          "format": "Thursday",
+          "stand-alone": "Thursday"
+        },
+        "fri": {
+          "format": "Friday",
+          "stand-alone": "Friday"
+        },
+        "sat": {
+          "format": "Saturday",
+          "stand-alone": "Saturday"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ar": {
+      "locales": [
+        "ar"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "يناير",
+          "stand-alone": "يناير"
+        },
+        "2": {
+          "format": "فبراير",
+          "stand-alone": "فبراير"
+        },
+        "3": {
+          "format": "مارس",
+          "stand-alone": "مارس"
+        },
+        "4": {
+          "format": "أبريل",
+          "stand-alone": "أبريل"
+        },
+        "5": {
+          "format": "مايو",
+          "stand-alone": "مايو"
+        },
+        "6": {
+          "format": "يونيو",
+          "stand-alone": "يونيو"
+        },
+        "7": {
+          "format": "يوليو",
+          "stand-alone": "يوليو"
+        },
+        "8": {
+          "format": "أغسطس",
+          "stand-alone": "أغسطس"
+        },
+        "9": {
+          "format": "سبتمبر",
+          "stand-alone": "سبتمبر"
+        },
+        "10": {
+          "format": "أكتوبر",
+          "stand-alone": "أكتوبر"
+        },
+        "11": {
+          "format": "نوفمبر",
+          "stand-alone": "نوفمبر"
+        },
+        "12": {
+          "format": "ديسمبر",
+          "stand-alone": "ديسمبر"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "الأحد",
+          "stand-alone": "الأحد"
+        },
+        "mon": {
+          "format": "الاثنين",
+          "stand-alone": "الاثنين"
+        },
+        "tue": {
+          "format": "الثلاثاء",
+          "stand-alone": "الثلاثاء"
+        },
+        "wed": {
+          "format": "الأربعاء",
+          "stand-alone": "الأربعاء"
+        },
+        "thu": {
+          "format": "الخميس",
+          "stand-alone": "الخميس"
+        },
+        "fri": {
+          "format": "الجمعة",
+          "stand-alone": "الجمعة"
+        },
+        "sat": {
+          "format": "السبت",
+          "stand-alone": "السبت"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "fr": {
+      "locales": [
+        "fr"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "janvier",
+          "stand-alone": "janvier"
+        },
+        "2": {
+          "format": "février",
+          "stand-alone": "février"
+        },
+        "3": {
+          "format": "mars",
+          "stand-alone": "mars"
+        },
+        "4": {
+          "format": "avril",
+          "stand-alone": "avril"
+        },
+        "5": {
+          "format": "mai",
+          "stand-alone": "mai"
+        },
+        "6": {
+          "format": "juin",
+          "stand-alone": "juin"
+        },
+        "7": {
+          "format": "juillet",
+          "stand-alone": "juillet"
+        },
+        "8": {
+          "format": "août",
+          "stand-alone": "août"
+        },
+        "9": {
+          "format": "septembre",
+          "stand-alone": "septembre"
+        },
+        "10": {
+          "format": "octobre",
+          "stand-alone": "octobre"
+        },
+        "11": {
+          "format": "novembre",
+          "stand-alone": "novembre"
+        },
+        "12": {
+          "format": "décembre",
+          "stand-alone": "décembre"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "dimanche",
+          "stand-alone": "dimanche"
+        },
+        "mon": {
+          "format": "lundi",
+          "stand-alone": "lundi"
+        },
+        "tue": {
+          "format": "mardi",
+          "stand-alone": "mardi"
+        },
+        "wed": {
+          "format": "mercredi",
+          "stand-alone": "mercredi"
+        },
+        "thu": {
+          "format": "jeudi",
+          "stand-alone": "jeudi"
+        },
+        "fri": {
+          "format": "vendredi",
+          "stand-alone": "vendredi"
+        },
+        "sat": {
+          "format": "samedi",
+          "stand-alone": "samedi"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "tr": {
+      "locales": [
+        "tr"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "Ocak",
+          "stand-alone": "Ocak"
+        },
+        "2": {
+          "format": "Şubat",
+          "stand-alone": "Şubat"
+        },
+        "3": {
+          "format": "Mart",
+          "stand-alone": "Mart"
+        },
+        "4": {
+          "format": "Nisan",
+          "stand-alone": "Nisan"
+        },
+        "5": {
+          "format": "Mayıs",
+          "stand-alone": "Mayıs"
+        },
+        "6": {
+          "format": "Haziran",
+          "stand-alone": "Haziran"
+        },
+        "7": {
+          "format": "Temmuz",
+          "stand-alone": "Temmuz"
+        },
+        "8": {
+          "format": "Ağustos",
+          "stand-alone": "Ağustos"
+        },
+        "9": {
+          "format": "Eylül",
+          "stand-alone": "Eylül"
+        },
+        "10": {
+          "format": "Ekim",
+          "stand-alone": "Ekim"
+        },
+        "11": {
+          "format": "Kasım",
+          "stand-alone": "Kasım"
+        },
+        "12": {
+          "format": "Aralık",
+          "stand-alone": "Aralık"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Pazar",
+          "stand-alone": "Pazar"
+        },
+        "mon": {
+          "format": "Pazartesi",
+          "stand-alone": "Pazartesi"
+        },
+        "tue": {
+          "format": "Salı",
+          "stand-alone": "Salı"
+        },
+        "wed": {
+          "format": "Çarşamba",
+          "stand-alone": "Çarşamba"
+        },
+        "thu": {
+          "format": "Perşembe",
+          "stand-alone": "Perşembe"
+        },
+        "fri": {
+          "format": "Cuma",
+          "stand-alone": "Cuma"
+        },
+        "sat": {
+          "format": "Cumartesi",
+          "stand-alone": "Cumartesi"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "fa": {
+      "locales": [
+        "fa"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "ژانویه",
+          "stand-alone": "ژانویه"
+        },
+        "2": {
+          "format": "فوریه",
+          "stand-alone": "فوریه"
+        },
+        "3": {
+          "format": "مارس",
+          "stand-alone": "مارس"
+        },
+        "4": {
+          "format": "آوریل",
+          "stand-alone": "آوریل"
+        },
+        "5": {
+          "format": "مه",
+          "stand-alone": "مه"
+        },
+        "6": {
+          "format": "ژوئن",
+          "stand-alone": "ژوئن"
+        },
+        "7": {
+          "format": "ژوئیه",
+          "stand-alone": "ژوئیه"
+        },
+        "8": {
+          "format": "اوت",
+          "stand-alone": "اوت"
+        },
+        "9": {
+          "format": "سپتامبر",
+          "stand-alone": "سپتامبر"
+        },
+        "10": {
+          "format": "اکتبر",
+          "stand-alone": "اکتبر"
+        },
+        "11": {
+          "format": "نوامبر",
+          "stand-alone": "نوامبر"
+        },
+        "12": {
+          "format": "دسامبر",
+          "stand-alone": "دسامبر"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "یکشنبه",
+          "stand-alone": "یکشنبه"
+        },
+        "mon": {
+          "format": "دوشنبه",
+          "stand-alone": "دوشنبه"
+        },
+        "tue": {
+          "format": "سه‌شنبه",
+          "stand-alone": "سه‌شنبه"
+        },
+        "wed": {
+          "format": "چهارشنبه",
+          "stand-alone": "چهارشنبه"
+        },
+        "thu": {
+          "format": "پنجشنبه",
+          "stand-alone": "پنجشنبه"
+        },
+        "fri": {
+          "format": "جمعه",
+          "stand-alone": "جمعه"
+        },
+        "sat": {
+          "format": "شنبه",
+          "stand-alone": "شنبه"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ps": {
+      "locales": [
+        "ps"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "جنوري",
+          "stand-alone": "جنوري"
+        },
+        "2": {
+          "format": "فبروري",
+          "stand-alone": "فېبروري"
+        },
+        "3": {
+          "format": "مارچ",
+          "stand-alone": "مارچ"
+        },
+        "4": {
+          "format": "اپریل",
+          "stand-alone": "اپریل"
+        },
+        "5": {
+          "format": "مۍ",
+          "stand-alone": "مۍ"
+        },
+        "6": {
+          "format": "جون",
+          "stand-alone": "جون"
+        },
+        "7": {
+          "format": "جولای",
+          "stand-alone": "جولای"
+        },
+        "8": {
+          "format": "اګست",
+          "stand-alone": "اګست"
+        },
+        "9": {
+          "format": "سېپتمبر",
+          "stand-alone": "سپتمبر"
+        },
+        "10": {
+          "format": "اکتوبر",
+          "stand-alone": "اکتوبر"
+        },
+        "11": {
+          "format": "نومبر",
+          "stand-alone": "نومبر"
+        },
+        "12": {
+          "format": "دسمبر",
+          "stand-alone": "دسمبر"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "یکشنبه",
+          "stand-alone": "یکشنبه"
+        },
+        "mon": {
+          "format": "دوشنبه",
+          "stand-alone": "دوشنبه"
+        },
+        "tue": {
+          "format": "سه شنبه",
+          "stand-alone": "سه شنبه"
+        },
+        "wed": {
+          "format": "چهارشنبه",
+          "stand-alone": "چهارشنبه"
+        },
+        "thu": {
+          "format": "پنج شنبه",
+          "stand-alone": "پنج شنبه"
+        },
+        "fri": {
+          "format": "جمعه",
+          "stand-alone": "جمعه"
+        },
+        "sat": {
+          "format": "اونۍ",
+          "stand-alone": "شنبه"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ur": {
+      "locales": [
+        "ur"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "جنوری",
+          "stand-alone": "جنوری"
+        },
+        "2": {
+          "format": "فروری",
+          "stand-alone": "فروری"
+        },
+        "3": {
+          "format": "مارچ",
+          "stand-alone": "مارچ"
+        },
+        "4": {
+          "format": "اپریل",
+          "stand-alone": "اپریل"
+        },
+        "5": {
+          "format": "مئی",
+          "stand-alone": "مئی"
+        },
+        "6": {
+          "format": "جون",
+          "stand-alone": "جون"
+        },
+        "7": {
+          "format": "جولائی",
+          "stand-alone": "جولائی"
+        },
+        "8": {
+          "format": "اگست",
+          "stand-alone": "اگست"
+        },
+        "9": {
+          "format": "ستمبر",
+          "stand-alone": "ستمبر"
+        },
+        "10": {
+          "format": "اکتوبر",
+          "stand-alone": "اکتوبر"
+        },
+        "11": {
+          "format": "نومبر",
+          "stand-alone": "نومبر"
+        },
+        "12": {
+          "format": "دسمبر",
+          "stand-alone": "دسمبر"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "اتوار",
+          "stand-alone": "اتوار"
+        },
+        "mon": {
+          "format": "پیر",
+          "stand-alone": "پیر"
+        },
+        "tue": {
+          "format": "منگل",
+          "stand-alone": "منگل"
+        },
+        "wed": {
+          "format": "بدھ",
+          "stand-alone": "بدھ"
+        },
+        "thu": {
+          "format": "جمعرات",
+          "stand-alone": "جمعرات"
+        },
+        "fri": {
+          "format": "جمعہ",
+          "stand-alone": "جمعہ"
+        },
+        "sat": {
+          "format": "ہفتہ",
+          "stand-alone": "ہفتہ"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "hi": {
+      "locales": [
+        "hi"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "जनवरी",
+          "stand-alone": "जनवरी"
+        },
+        "2": {
+          "format": "फ़रवरी",
+          "stand-alone": "फ़रवरी"
+        },
+        "3": {
+          "format": "मार्च",
+          "stand-alone": "मार्च"
+        },
+        "4": {
+          "format": "अप्रैल",
+          "stand-alone": "अप्रैल"
+        },
+        "5": {
+          "format": "मई",
+          "stand-alone": "मई"
+        },
+        "6": {
+          "format": "जून",
+          "stand-alone": "जून"
+        },
+        "7": {
+          "format": "जुलाई",
+          "stand-alone": "जुलाई"
+        },
+        "8": {
+          "format": "अगस्त",
+          "stand-alone": "अगस्त"
+        },
+        "9": {
+          "format": "सितंबर",
+          "stand-alone": "सितंबर"
+        },
+        "10": {
+          "format": "अक्टूबर",
+          "stand-alone": "अक्टूबर"
+        },
+        "11": {
+          "format": "नवंबर",
+          "stand-alone": "नवंबर"
+        },
+        "12": {
+          "format": "दिसंबर",
+          "stand-alone": "दिसंबर"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "रविवार",
+          "stand-alone": "रविवार"
+        },
+        "mon": {
+          "format": "सोमवार",
+          "stand-alone": "सोमवार"
+        },
+        "tue": {
+          "format": "मंगलवार",
+          "stand-alone": "मंगलवार"
+        },
+        "wed": {
+          "format": "बुधवार",
+          "stand-alone": "बुधवार"
+        },
+        "thu": {
+          "format": "गुरुवार",
+          "stand-alone": "गुरुवार"
+        },
+        "fri": {
+          "format": "शुक्रवार",
+          "stand-alone": "शुक्रवार"
+        },
+        "sat": {
+          "format": "शनिवार",
+          "stand-alone": "शनिवार"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "bn": {
+      "locales": [
+        "bn"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "জানুয়ারি",
+          "stand-alone": "জানুয়ারি"
+        },
+        "2": {
+          "format": "ফেব্রুয়ারি",
+          "stand-alone": "ফেব্রুয়ারি"
+        },
+        "3": {
+          "format": "মার্চ",
+          "stand-alone": "মার্চ"
+        },
+        "4": {
+          "format": "এপ্রিল",
+          "stand-alone": "এপ্রিল"
+        },
+        "5": {
+          "format": "মে",
+          "stand-alone": "মে"
+        },
+        "6": {
+          "format": "জুন",
+          "stand-alone": "জুন"
+        },
+        "7": {
+          "format": "জুলাই",
+          "stand-alone": "জুলাই"
+        },
+        "8": {
+          "format": "আগস্ট",
+          "stand-alone": "আগস্ট"
+        },
+        "9": {
+          "format": "সেপ্টেম্বর",
+          "stand-alone": "সেপ্টেম্বর"
+        },
+        "10": {
+          "format": "অক্টোবর",
+          "stand-alone": "অক্টোবর"
+        },
+        "11": {
+          "format": "নভেম্বর",
+          "stand-alone": "নভেম্বর"
+        },
+        "12": {
+          "format": "ডিসেম্বর",
+          "stand-alone": "ডিসেম্বর"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "রবিবার",
+          "stand-alone": "রবিবার"
+        },
+        "mon": {
+          "format": "সোমবার",
+          "stand-alone": "সোমবার"
+        },
+        "tue": {
+          "format": "মঙ্গলবার",
+          "stand-alone": "মঙ্গলবার"
+        },
+        "wed": {
+          "format": "বুধবার",
+          "stand-alone": "বুধবার"
+        },
+        "thu": {
+          "format": "বৃহস্পতিবার",
+          "stand-alone": "বৃহস্পতিবার"
+        },
+        "fri": {
+          "format": "শুক্রবার",
+          "stand-alone": "শুক্রবার"
+        },
+        "sat": {
+          "format": "শনিবার",
+          "stand-alone": "শনিবার"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "pa": {
+      "locales": [
+        "pa"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "ਜਨਵਰੀ",
+          "stand-alone": "ਜਨਵਰੀ"
+        },
+        "2": {
+          "format": "ਫ਼ਰਵਰੀ",
+          "stand-alone": "ਫ਼ਰਵਰੀ"
+        },
+        "3": {
+          "format": "ਮਾਰਚ",
+          "stand-alone": "ਮਾਰਚ"
+        },
+        "4": {
+          "format": "ਅਪ੍ਰੈਲ",
+          "stand-alone": "ਅਪ੍ਰੈਲ"
+        },
+        "5": {
+          "format": "ਮਈ",
+          "stand-alone": "ਮਈ"
+        },
+        "6": {
+          "format": "ਜੂਨ",
+          "stand-alone": "ਜੂਨ"
+        },
+        "7": {
+          "format": "ਜੁਲਾਈ",
+          "stand-alone": "ਜੁਲਾਈ"
+        },
+        "8": {
+          "format": "ਅਗਸਤ",
+          "stand-alone": "ਅਗਸਤ"
+        },
+        "9": {
+          "format": "ਸਤੰਬਰ",
+          "stand-alone": "ਸਤੰਬਰ"
+        },
+        "10": {
+          "format": "ਅਕਤੂਬਰ",
+          "stand-alone": "ਅਕਤੂਬਰ"
+        },
+        "11": {
+          "format": "ਨਵੰਬਰ",
+          "stand-alone": "ਨਵੰਬਰ"
+        },
+        "12": {
+          "format": "ਦਸੰਬਰ",
+          "stand-alone": "ਦਸੰਬਰ"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "ਐਤਵਾਰ",
+          "stand-alone": "ਐਤਵਾਰ"
+        },
+        "mon": {
+          "format": "ਸੋਮਵਾਰ",
+          "stand-alone": "ਸੋਮਵਾਰ"
+        },
+        "tue": {
+          "format": "ਮੰਗਲਵਾਰ",
+          "stand-alone": "ਮੰਗਲਵਾਰ"
+        },
+        "wed": {
+          "format": "ਬੁੱਧਵਾਰ",
+          "stand-alone": "ਬੁੱਧਵਾਰ"
+        },
+        "thu": {
+          "format": "ਵੀਰਵਾਰ",
+          "stand-alone": "ਵੀਰਵਾਰ"
+        },
+        "fri": {
+          "format": "ਸ਼ੁੱਕਰਵਾਰ",
+          "stand-alone": "ਸ਼ੁੱਕਰਵਾਰ"
+        },
+        "sat": {
+          "format": "ਸ਼ਨੀਵਾਰ",
+          "stand-alone": "ਸ਼ਨੀਵਾਰ"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "sd": {
+      "locales": [
+        "sd"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "جنوري",
+          "stand-alone": "جنوري"
+        },
+        "2": {
+          "format": "فيبروري",
+          "stand-alone": "فيبروري"
+        },
+        "3": {
+          "format": "مارچ",
+          "stand-alone": "مارچ"
+        },
+        "4": {
+          "format": "اپريل",
+          "stand-alone": "اپريل"
+        },
+        "5": {
+          "format": "مئي",
+          "stand-alone": "مئي"
+        },
+        "6": {
+          "format": "جون",
+          "stand-alone": "جون"
+        },
+        "7": {
+          "format": "جولاءِ",
+          "stand-alone": "جولاءِ"
+        },
+        "8": {
+          "format": "آگسٽ",
+          "stand-alone": "آگسٽ"
+        },
+        "9": {
+          "format": "سيپٽمبر",
+          "stand-alone": "سيپٽمبر"
+        },
+        "10": {
+          "format": "آڪٽوبر",
+          "stand-alone": "آڪٽوبر"
+        },
+        "11": {
+          "format": "نومبر",
+          "stand-alone": "نومبر"
+        },
+        "12": {
+          "format": "ڊسمبر",
+          "stand-alone": "ڊسمبر"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "آچر",
+          "stand-alone": "آچر"
+        },
+        "mon": {
+          "format": "سومر",
+          "stand-alone": "سومر"
+        },
+        "tue": {
+          "format": "اڱارو",
+          "stand-alone": "اڱارو"
+        },
+        "wed": {
+          "format": "اربع",
+          "stand-alone": "اربع"
+        },
+        "thu": {
+          "format": "خميس",
+          "stand-alone": "خميس"
+        },
+        "fri": {
+          "format": "جمعو",
+          "stand-alone": "جمعو"
+        },
+        "sat": {
+          "format": "ڇنڇر",
+          "stand-alone": "ڇنڇر"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "am": {
+      "locales": [
+        "am"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "ጃንዋሪ",
+          "stand-alone": "ጃንዋሪ"
+        },
+        "2": {
+          "format": "ፌብሩዋሪ",
+          "stand-alone": "ፌብሩዋሪ"
+        },
+        "3": {
+          "format": "ማርች",
+          "stand-alone": "ማርች"
+        },
+        "4": {
+          "format": "ኤፕሪል",
+          "stand-alone": "ኤፕሪል"
+        },
+        "5": {
+          "format": "ሜይ",
+          "stand-alone": "ሜይ"
+        },
+        "6": {
+          "format": "ጁን",
+          "stand-alone": "ጁን"
+        },
+        "7": {
+          "format": "ጁላይ",
+          "stand-alone": "ጁላይ"
+        },
+        "8": {
+          "format": "ኦገስት",
+          "stand-alone": "ኦገስት"
+        },
+        "9": {
+          "format": "ሴፕቴምበር",
+          "stand-alone": "ሴፕቴምበር"
+        },
+        "10": {
+          "format": "ኦክቶበር",
+          "stand-alone": "ኦክቶበር"
+        },
+        "11": {
+          "format": "ኖቬምበር",
+          "stand-alone": "ኖቬምበር"
+        },
+        "12": {
+          "format": "ዲሴምበር",
+          "stand-alone": "ዲሴምበር"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "እሑድ",
+          "stand-alone": "እሑድ"
+        },
+        "mon": {
+          "format": "ሰኞ",
+          "stand-alone": "ሰኞ"
+        },
+        "tue": {
+          "format": "ማክሰኞ",
+          "stand-alone": "ማክሰኞ"
+        },
+        "wed": {
+          "format": "ረቡዕ",
+          "stand-alone": "ረቡዕ"
+        },
+        "thu": {
+          "format": "ሐሙስ",
+          "stand-alone": "ሐሙስ"
+        },
+        "fri": {
+          "format": "ዓርብ",
+          "stand-alone": "ዓርብ"
+        },
+        "sat": {
+          "format": "ቅዳሜ",
+          "stand-alone": "ቅዳሜ"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ti": {
+      "locales": [
+        "ti"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "ጥሪ",
+          "stand-alone": "ጥሪ"
+        },
+        "2": {
+          "format": "ለካቲት",
+          "stand-alone": "ለካቲት"
+        },
+        "3": {
+          "format": "መጋቢት",
+          "stand-alone": "መጋቢት"
+        },
+        "4": {
+          "format": "ሚያዝያ",
+          "stand-alone": "ሚያዝያ"
+        },
+        "5": {
+          "format": "ጉንበት",
+          "stand-alone": "ጉንበት"
+        },
+        "6": {
+          "format": "ሰነ",
+          "stand-alone": "ሰነ"
+        },
+        "7": {
+          "format": "ሓምለ",
+          "stand-alone": "ሓምለ"
+        },
+        "8": {
+          "format": "ነሓሰ",
+          "stand-alone": "ነሓሰ"
+        },
+        "9": {
+          "format": "መስከረም",
+          "stand-alone": "መስከረም"
+        },
+        "10": {
+          "format": "ጥቅምቲ",
+          "stand-alone": "ጥቅምቲ"
+        },
+        "11": {
+          "format": "ሕዳር",
+          "stand-alone": "ሕዳር"
+        },
+        "12": {
+          "format": "ታሕሳስ",
+          "stand-alone": "ታሕሳስ"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "ሰንበት",
+          "stand-alone": "ሰንበት"
+        },
+        "mon": {
+          "format": "ሰኑይ",
+          "stand-alone": "ሰኑይ"
+        },
+        "tue": {
+          "format": "ሰሉስ",
+          "stand-alone": "ሰሉስ"
+        },
+        "wed": {
+          "format": "ረቡዕ",
+          "stand-alone": "ረቡዕ"
+        },
+        "thu": {
+          "format": "ሓሙስ",
+          "stand-alone": "ሓሙስ"
+        },
+        "fri": {
+          "format": "ዓርቢ",
+          "stand-alone": "ዓርቢ"
+        },
+        "sat": {
+          "format": "ቀዳም",
+          "stand-alone": "ቀዳም"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "om": {
+      "locales": [
+        "om"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "Amajjii",
+          "stand-alone": "Amajjii"
+        },
+        "2": {
+          "format": "Guraandhala",
+          "stand-alone": "Guraandhala"
+        },
+        "3": {
+          "format": "Bitootessa",
+          "stand-alone": "Bitootessa"
+        },
+        "4": {
+          "format": "Eebila",
+          "stand-alone": "Eebila"
+        },
+        "5": {
+          "format": "Caamsaa",
+          "stand-alone": "Caamsaa"
+        },
+        "6": {
+          "format": "Waxabajjii",
+          "stand-alone": "Waxabajjii"
+        },
+        "7": {
+          "format": "Adoolessa",
+          "stand-alone": "Adoolessa"
+        },
+        "8": {
+          "format": "Hagayya",
+          "stand-alone": "Hagayya"
+        },
+        "9": {
+          "format": "Fulbaana",
+          "stand-alone": "Fulbaana"
+        },
+        "10": {
+          "format": "Onkoloolessa",
+          "stand-alone": "Onkoloolessa"
+        },
+        "11": {
+          "format": "Sadaasa",
+          "stand-alone": "Sadaasa"
+        },
+        "12": {
+          "format": "Mudde",
+          "stand-alone": "Mudde"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Dilbata",
+          "stand-alone": "Dilbata"
+        },
+        "mon": {
+          "format": "Wiixata",
+          "stand-alone": "Wiixata"
+        },
+        "tue": {
+          "format": "Kibxata",
+          "stand-alone": "Kibxata"
+        },
+        "wed": {
+          "format": "Roobii",
+          "stand-alone": "Roobii"
+        },
+        "thu": {
+          "format": "Kamisa",
+          "stand-alone": "Kamisa"
+        },
+        "fri": {
+          "format": "Jimaata",
+          "stand-alone": "Jimaata"
+        },
+        "sat": {
+          "format": "Sanbata",
+          "stand-alone": "Sanbata"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "so": {
+      "locales": [
+        "so"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "Janaayo",
+          "stand-alone": "Jannaayo"
+        },
+        "2": {
+          "format": "Febraayo",
+          "stand-alone": "Febraayo"
+        },
+        "3": {
+          "format": "Maarso",
+          "stand-alone": "Maarso"
+        },
+        "4": {
+          "format": "Abriil",
+          "stand-alone": "Abriil"
+        },
+        "5": {
+          "format": "Maayo",
+          "stand-alone": "Maayo"
+        },
+        "6": {
+          "format": "Juun",
+          "stand-alone": "Juun"
+        },
+        "7": {
+          "format": "Luulyo",
+          "stand-alone": "Luulyo"
+        },
+        "8": {
+          "format": "Agosto",
+          "stand-alone": "Ogosto"
+        },
+        "9": {
+          "format": "Sebtembar",
+          "stand-alone": "Sebteembar"
+        },
+        "10": {
+          "format": "Oktoobar",
+          "stand-alone": "Oktoobar"
+        },
+        "11": {
+          "format": "Noofeembar",
+          "stand-alone": "Noofeembar"
+        },
+        "12": {
+          "format": "Diseembar",
+          "stand-alone": "Diseembar"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Axad",
+          "stand-alone": "Axad"
+        },
+        "mon": {
+          "format": "Isniin",
+          "stand-alone": "Isniin"
+        },
+        "tue": {
+          "format": "Talaado",
+          "stand-alone": "Talaado"
+        },
+        "wed": {
+          "format": "Arbaco",
+          "stand-alone": "Arbaco"
+        },
+        "thu": {
+          "format": "Khamiis",
+          "stand-alone": "Khamiis"
+        },
+        "fri": {
+          "format": "Jimco",
+          "stand-alone": "Jimco"
+        },
+        "sat": {
+          "format": "Sabti",
+          "stand-alone": "Sabti"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "sw": {
+      "locales": [
+        "sw"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "Januari",
+          "stand-alone": "Januari"
+        },
+        "2": {
+          "format": "Februari",
+          "stand-alone": "Februari"
+        },
+        "3": {
+          "format": "Machi",
+          "stand-alone": "Machi"
+        },
+        "4": {
+          "format": "Aprili",
+          "stand-alone": "Aprili"
+        },
+        "5": {
+          "format": "Mei",
+          "stand-alone": "Mei"
+        },
+        "6": {
+          "format": "Juni",
+          "stand-alone": "Juni"
+        },
+        "7": {
+          "format": "Julai",
+          "stand-alone": "Julai"
+        },
+        "8": {
+          "format": "Agosti",
+          "stand-alone": "Agosti"
+        },
+        "9": {
+          "format": "Septemba",
+          "stand-alone": "Septemba"
+        },
+        "10": {
+          "format": "Oktoba",
+          "stand-alone": "Oktoba"
+        },
+        "11": {
+          "format": "Novemba",
+          "stand-alone": "Novemba"
+        },
+        "12": {
+          "format": "Desemba",
+          "stand-alone": "Desemba"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Jumapili",
+          "stand-alone": "Jumapili"
+        },
+        "mon": {
+          "format": "Jumatatu",
+          "stand-alone": "Jumatatu"
+        },
+        "tue": {
+          "format": "Jumanne",
+          "stand-alone": "Jumanne"
+        },
+        "wed": {
+          "format": "Jumatano",
+          "stand-alone": "Jumatano"
+        },
+        "thu": {
+          "format": "Alhamisi",
+          "stand-alone": "Alhamisi"
+        },
+        "fri": {
+          "format": "Ijumaa",
+          "stand-alone": "Ijumaa"
+        },
+        "sat": {
+          "format": "Jumamosi",
+          "stand-alone": "Jumamosi"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ckb": {
+      "locales": [
+        "ckb"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "کانوونی دووەم",
+          "stand-alone": "کانوونی دووەم"
+        },
+        "2": {
+          "format": "شوبات",
+          "stand-alone": "شوبات"
+        },
+        "3": {
+          "format": "ئازار",
+          "stand-alone": "ئازار"
+        },
+        "4": {
+          "format": "نیسان",
+          "stand-alone": "نیسان"
+        },
+        "5": {
+          "format": "ئایار",
+          "stand-alone": "ئایار"
+        },
+        "6": {
+          "format": "حوزەیران",
+          "stand-alone": "حوزەیران"
+        },
+        "7": {
+          "format": "تەمووز",
+          "stand-alone": "تەمووز"
+        },
+        "8": {
+          "format": "ئاب",
+          "stand-alone": "ئاب"
+        },
+        "9": {
+          "format": "ئەیلوول",
+          "stand-alone": "ئەیلوول"
+        },
+        "10": {
+          "format": "تشرینی یەکەم",
+          "stand-alone": "تشرینی یەکەم"
+        },
+        "11": {
+          "format": "تشرینی دووەم",
+          "stand-alone": "تشرینی دووەم"
+        },
+        "12": {
+          "format": "کانونی یەکەم",
+          "stand-alone": "کانونی یەکەم"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "یەکشەممە",
+          "stand-alone": "یەکشەممە"
+        },
+        "mon": {
+          "format": "دووشەممە",
+          "stand-alone": "دووشەممە"
+        },
+        "tue": {
+          "format": "سێشەممە",
+          "stand-alone": "سێشەممە"
+        },
+        "wed": {
+          "format": "چوارشەممە",
+          "stand-alone": "چوارشەممە"
+        },
+        "thu": {
+          "format": "پێنجشەممە",
+          "stand-alone": "پێنجشەممە"
+        },
+        "fri": {
+          "format": "ھەینی",
+          "stand-alone": "ھەینی"
+        },
+        "sat": {
+          "format": "شەممە",
+          "stand-alone": "شەممە"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "es": {
+      "locales": [
+        "es"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "enero",
+          "stand-alone": "enero"
+        },
+        "2": {
+          "format": "febrero",
+          "stand-alone": "febrero"
+        },
+        "3": {
+          "format": "marzo",
+          "stand-alone": "marzo"
+        },
+        "4": {
+          "format": "abril",
+          "stand-alone": "abril"
+        },
+        "5": {
+          "format": "mayo",
+          "stand-alone": "mayo"
+        },
+        "6": {
+          "format": "junio",
+          "stand-alone": "junio"
+        },
+        "7": {
+          "format": "julio",
+          "stand-alone": "julio"
+        },
+        "8": {
+          "format": "agosto",
+          "stand-alone": "agosto"
+        },
+        "9": {
+          "format": "septiembre",
+          "stand-alone": "septiembre"
+        },
+        "10": {
+          "format": "octubre",
+          "stand-alone": "octubre"
+        },
+        "11": {
+          "format": "noviembre",
+          "stand-alone": "noviembre"
+        },
+        "12": {
+          "format": "diciembre",
+          "stand-alone": "diciembre"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "domingo",
+          "stand-alone": "domingo"
+        },
+        "mon": {
+          "format": "lunes",
+          "stand-alone": "lunes"
+        },
+        "tue": {
+          "format": "martes",
+          "stand-alone": "martes"
+        },
+        "wed": {
+          "format": "miércoles",
+          "stand-alone": "miércoles"
+        },
+        "thu": {
+          "format": "jueves",
+          "stand-alone": "jueves"
+        },
+        "fri": {
+          "format": "viernes",
+          "stand-alone": "viernes"
+        },
+        "sat": {
+          "format": "sábado",
+          "stand-alone": "sábado"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "de": {
+      "locales": [
+        "de"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "Januar",
+          "stand-alone": "Januar"
+        },
+        "2": {
+          "format": "Februar",
+          "stand-alone": "Februar"
+        },
+        "3": {
+          "format": "März",
+          "stand-alone": "März"
+        },
+        "4": {
+          "format": "April",
+          "stand-alone": "April"
+        },
+        "5": {
+          "format": "Mai",
+          "stand-alone": "Mai"
+        },
+        "6": {
+          "format": "Juni",
+          "stand-alone": "Juni"
+        },
+        "7": {
+          "format": "Juli",
+          "stand-alone": "Juli"
+        },
+        "8": {
+          "format": "August",
+          "stand-alone": "August"
+        },
+        "9": {
+          "format": "September",
+          "stand-alone": "September"
+        },
+        "10": {
+          "format": "Oktober",
+          "stand-alone": "Oktober"
+        },
+        "11": {
+          "format": "November",
+          "stand-alone": "November"
+        },
+        "12": {
+          "format": "Dezember",
+          "stand-alone": "Dezember"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Sonntag",
+          "stand-alone": "Sonntag"
+        },
+        "mon": {
+          "format": "Montag",
+          "stand-alone": "Montag"
+        },
+        "tue": {
+          "format": "Dienstag",
+          "stand-alone": "Dienstag"
+        },
+        "wed": {
+          "format": "Mittwoch",
+          "stand-alone": "Mittwoch"
+        },
+        "thu": {
+          "format": "Donnerstag",
+          "stand-alone": "Donnerstag"
+        },
+        "fri": {
+          "format": "Freitag",
+          "stand-alone": "Freitag"
+        },
+        "sat": {
+          "format": "Samstag",
+          "stand-alone": "Samstag"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "it": {
+      "locales": [
+        "it"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "gennaio",
+          "stand-alone": "gennaio"
+        },
+        "2": {
+          "format": "febbraio",
+          "stand-alone": "febbraio"
+        },
+        "3": {
+          "format": "marzo",
+          "stand-alone": "marzo"
+        },
+        "4": {
+          "format": "aprile",
+          "stand-alone": "aprile"
+        },
+        "5": {
+          "format": "maggio",
+          "stand-alone": "maggio"
+        },
+        "6": {
+          "format": "giugno",
+          "stand-alone": "giugno"
+        },
+        "7": {
+          "format": "luglio",
+          "stand-alone": "luglio"
+        },
+        "8": {
+          "format": "agosto",
+          "stand-alone": "agosto"
+        },
+        "9": {
+          "format": "settembre",
+          "stand-alone": "settembre"
+        },
+        "10": {
+          "format": "ottobre",
+          "stand-alone": "ottobre"
+        },
+        "11": {
+          "format": "novembre",
+          "stand-alone": "novembre"
+        },
+        "12": {
+          "format": "dicembre",
+          "stand-alone": "dicembre"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "domenica",
+          "stand-alone": "domenica"
+        },
+        "mon": {
+          "format": "lunedì",
+          "stand-alone": "lunedì"
+        },
+        "tue": {
+          "format": "martedì",
+          "stand-alone": "martedì"
+        },
+        "wed": {
+          "format": "mercoledì",
+          "stand-alone": "mercoledì"
+        },
+        "thu": {
+          "format": "giovedì",
+          "stand-alone": "giovedì"
+        },
+        "fri": {
+          "format": "venerdì",
+          "stand-alone": "venerdì"
+        },
+        "sat": {
+          "format": "sabato",
+          "stand-alone": "sabato"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ru": {
+      "locales": [
+        "ru"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "января",
+          "stand-alone": "январь"
+        },
+        "2": {
+          "format": "февраля",
+          "stand-alone": "февраль"
+        },
+        "3": {
+          "format": "марта",
+          "stand-alone": "март"
+        },
+        "4": {
+          "format": "апреля",
+          "stand-alone": "апрель"
+        },
+        "5": {
+          "format": "мая",
+          "stand-alone": "май"
+        },
+        "6": {
+          "format": "июня",
+          "stand-alone": "июнь"
+        },
+        "7": {
+          "format": "июля",
+          "stand-alone": "июль"
+        },
+        "8": {
+          "format": "августа",
+          "stand-alone": "август"
+        },
+        "9": {
+          "format": "сентября",
+          "stand-alone": "сентябрь"
+        },
+        "10": {
+          "format": "октября",
+          "stand-alone": "октябрь"
+        },
+        "11": {
+          "format": "ноября",
+          "stand-alone": "ноябрь"
+        },
+        "12": {
+          "format": "декабря",
+          "stand-alone": "декабрь"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "воскресенье",
+          "stand-alone": "воскресенье"
+        },
+        "mon": {
+          "format": "понедельник",
+          "stand-alone": "понедельник"
+        },
+        "tue": {
+          "format": "вторник",
+          "stand-alone": "вторник"
+        },
+        "wed": {
+          "format": "среда",
+          "stand-alone": "среда"
+        },
+        "thu": {
+          "format": "четверг",
+          "stand-alone": "четверг"
+        },
+        "fri": {
+          "format": "пятница",
+          "stand-alone": "пятница"
+        },
+        "sat": {
+          "format": "суббота",
+          "stand-alone": "суббота"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ja": {
+      "locales": [
+        "ja"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "1月",
+          "stand-alone": "1月"
+        },
+        "2": {
+          "format": "2月",
+          "stand-alone": "2月"
+        },
+        "3": {
+          "format": "3月",
+          "stand-alone": "3月"
+        },
+        "4": {
+          "format": "4月",
+          "stand-alone": "4月"
+        },
+        "5": {
+          "format": "5月",
+          "stand-alone": "5月"
+        },
+        "6": {
+          "format": "6月",
+          "stand-alone": "6月"
+        },
+        "7": {
+          "format": "7月",
+          "stand-alone": "7月"
+        },
+        "8": {
+          "format": "8月",
+          "stand-alone": "8月"
+        },
+        "9": {
+          "format": "9月",
+          "stand-alone": "9月"
+        },
+        "10": {
+          "format": "10月",
+          "stand-alone": "10月"
+        },
+        "11": {
+          "format": "11月",
+          "stand-alone": "11月"
+        },
+        "12": {
+          "format": "12月",
+          "stand-alone": "12月"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "日曜日",
+          "stand-alone": "日曜日"
+        },
+        "mon": {
+          "format": "月曜日",
+          "stand-alone": "月曜日"
+        },
+        "tue": {
+          "format": "火曜日",
+          "stand-alone": "火曜日"
+        },
+        "wed": {
+          "format": "水曜日",
+          "stand-alone": "水曜日"
+        },
+        "thu": {
+          "format": "木曜日",
+          "stand-alone": "木曜日"
+        },
+        "fri": {
+          "format": "金曜日",
+          "stand-alone": "金曜日"
+        },
+        "sat": {
+          "format": "土曜日",
+          "stand-alone": "土曜日"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ko": {
+      "locales": [
+        "ko"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "1월",
+          "stand-alone": "1월"
+        },
+        "2": {
+          "format": "2월",
+          "stand-alone": "2월"
+        },
+        "3": {
+          "format": "3월",
+          "stand-alone": "3월"
+        },
+        "4": {
+          "format": "4월",
+          "stand-alone": "4월"
+        },
+        "5": {
+          "format": "5월",
+          "stand-alone": "5월"
+        },
+        "6": {
+          "format": "6월",
+          "stand-alone": "6월"
+        },
+        "7": {
+          "format": "7월",
+          "stand-alone": "7월"
+        },
+        "8": {
+          "format": "8월",
+          "stand-alone": "8월"
+        },
+        "9": {
+          "format": "9월",
+          "stand-alone": "9월"
+        },
+        "10": {
+          "format": "10월",
+          "stand-alone": "10월"
+        },
+        "11": {
+          "format": "11월",
+          "stand-alone": "11월"
+        },
+        "12": {
+          "format": "12월",
+          "stand-alone": "12월"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "일요일",
+          "stand-alone": "일요일"
+        },
+        "mon": {
+          "format": "월요일",
+          "stand-alone": "월요일"
+        },
+        "tue": {
+          "format": "화요일",
+          "stand-alone": "화요일"
+        },
+        "wed": {
+          "format": "수요일",
+          "stand-alone": "수요일"
+        },
+        "thu": {
+          "format": "목요일",
+          "stand-alone": "목요일"
+        },
+        "fri": {
+          "format": "금요일",
+          "stand-alone": "금요일"
+        },
+        "sat": {
+          "format": "토요일",
+          "stand-alone": "토요일"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "nl": {
+      "locales": [
+        "nl"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "januari",
+          "stand-alone": "januari"
+        },
+        "2": {
+          "format": "februari",
+          "stand-alone": "februari"
+        },
+        "3": {
+          "format": "maart",
+          "stand-alone": "maart"
+        },
+        "4": {
+          "format": "april",
+          "stand-alone": "april"
+        },
+        "5": {
+          "format": "mei",
+          "stand-alone": "mei"
+        },
+        "6": {
+          "format": "juni",
+          "stand-alone": "juni"
+        },
+        "7": {
+          "format": "juli",
+          "stand-alone": "juli"
+        },
+        "8": {
+          "format": "augustus",
+          "stand-alone": "augustus"
+        },
+        "9": {
+          "format": "september",
+          "stand-alone": "september"
+        },
+        "10": {
+          "format": "oktober",
+          "stand-alone": "oktober"
+        },
+        "11": {
+          "format": "november",
+          "stand-alone": "november"
+        },
+        "12": {
+          "format": "december",
+          "stand-alone": "december"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "zondag",
+          "stand-alone": "zondag"
+        },
+        "mon": {
+          "format": "maandag",
+          "stand-alone": "maandag"
+        },
+        "tue": {
+          "format": "dinsdag",
+          "stand-alone": "dinsdag"
+        },
+        "wed": {
+          "format": "woensdag",
+          "stand-alone": "woensdag"
+        },
+        "thu": {
+          "format": "donderdag",
+          "stand-alone": "donderdag"
+        },
+        "fri": {
+          "format": "vrijdag",
+          "stand-alone": "vrijdag"
+        },
+        "sat": {
+          "format": "zaterdag",
+          "stand-alone": "zaterdag"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "pl": {
+      "locales": [
+        "pl"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "stycznia",
+          "stand-alone": "styczeń"
+        },
+        "2": {
+          "format": "lutego",
+          "stand-alone": "luty"
+        },
+        "3": {
+          "format": "marca",
+          "stand-alone": "marzec"
+        },
+        "4": {
+          "format": "kwietnia",
+          "stand-alone": "kwiecień"
+        },
+        "5": {
+          "format": "maja",
+          "stand-alone": "maj"
+        },
+        "6": {
+          "format": "czerwca",
+          "stand-alone": "czerwiec"
+        },
+        "7": {
+          "format": "lipca",
+          "stand-alone": "lipiec"
+        },
+        "8": {
+          "format": "sierpnia",
+          "stand-alone": "sierpień"
+        },
+        "9": {
+          "format": "września",
+          "stand-alone": "wrzesień"
+        },
+        "10": {
+          "format": "października",
+          "stand-alone": "październik"
+        },
+        "11": {
+          "format": "listopada",
+          "stand-alone": "listopad"
+        },
+        "12": {
+          "format": "grudnia",
+          "stand-alone": "grudzień"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "niedziela",
+          "stand-alone": "niedziela"
+        },
+        "mon": {
+          "format": "poniedziałek",
+          "stand-alone": "poniedziałek"
+        },
+        "tue": {
+          "format": "wtorek",
+          "stand-alone": "wtorek"
+        },
+        "wed": {
+          "format": "środa",
+          "stand-alone": "środa"
+        },
+        "thu": {
+          "format": "czwartek",
+          "stand-alone": "czwartek"
+        },
+        "fri": {
+          "format": "piątek",
+          "stand-alone": "piątek"
+        },
+        "sat": {
+          "format": "sobota",
+          "stand-alone": "sobota"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "ro": {
+      "locales": [
+        "ro"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "ianuarie",
+          "stand-alone": "ianuarie"
+        },
+        "2": {
+          "format": "februarie",
+          "stand-alone": "februarie"
+        },
+        "3": {
+          "format": "martie",
+          "stand-alone": "martie"
+        },
+        "4": {
+          "format": "aprilie",
+          "stand-alone": "aprilie"
+        },
+        "5": {
+          "format": "mai",
+          "stand-alone": "mai"
+        },
+        "6": {
+          "format": "iunie",
+          "stand-alone": "iunie"
+        },
+        "7": {
+          "format": "iulie",
+          "stand-alone": "iulie"
+        },
+        "8": {
+          "format": "august",
+          "stand-alone": "august"
+        },
+        "9": {
+          "format": "septembrie",
+          "stand-alone": "septembrie"
+        },
+        "10": {
+          "format": "octombrie",
+          "stand-alone": "octombrie"
+        },
+        "11": {
+          "format": "noiembrie",
+          "stand-alone": "noiembrie"
+        },
+        "12": {
+          "format": "decembrie",
+          "stand-alone": "decembrie"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "duminică",
+          "stand-alone": "duminică"
+        },
+        "mon": {
+          "format": "luni",
+          "stand-alone": "luni"
+        },
+        "tue": {
+          "format": "marți",
+          "stand-alone": "marți"
+        },
+        "wed": {
+          "format": "miercuri",
+          "stand-alone": "miercuri"
+        },
+        "thu": {
+          "format": "joi",
+          "stand-alone": "joi"
+        },
+        "fri": {
+          "format": "vineri",
+          "stand-alone": "vineri"
+        },
+        "sat": {
+          "format": "sâmbătă",
+          "stand-alone": "sâmbătă"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "uk": {
+      "locales": [
+        "uk"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "січня",
+          "stand-alone": "січень"
+        },
+        "2": {
+          "format": "лютого",
+          "stand-alone": "лютий"
+        },
+        "3": {
+          "format": "березня",
+          "stand-alone": "березень"
+        },
+        "4": {
+          "format": "квітня",
+          "stand-alone": "квітень"
+        },
+        "5": {
+          "format": "травня",
+          "stand-alone": "травень"
+        },
+        "6": {
+          "format": "червня",
+          "stand-alone": "червень"
+        },
+        "7": {
+          "format": "липня",
+          "stand-alone": "липень"
+        },
+        "8": {
+          "format": "серпня",
+          "stand-alone": "серпень"
+        },
+        "9": {
+          "format": "вересня",
+          "stand-alone": "вересень"
+        },
+        "10": {
+          "format": "жовтня",
+          "stand-alone": "жовтень"
+        },
+        "11": {
+          "format": "листопада",
+          "stand-alone": "листопад"
+        },
+        "12": {
+          "format": "грудня",
+          "stand-alone": "грудень"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "неділя",
+          "stand-alone": "неділя"
+        },
+        "mon": {
+          "format": "понеділок",
+          "stand-alone": "понеділок"
+        },
+        "tue": {
+          "format": "вівторок",
+          "stand-alone": "вівторок"
+        },
+        "wed": {
+          "format": "середа",
+          "stand-alone": "середа"
+        },
+        "thu": {
+          "format": "четвер",
+          "stand-alone": "четвер"
+        },
+        "fri": {
+          "format": "пʼятниця",
+          "stand-alone": "пʼятниця"
+        },
+        "sat": {
+          "format": "субота",
+          "stand-alone": "субота"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "el": {
+      "locales": [
+        "el"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "Ιανουαρίου",
+          "stand-alone": "Ιανουάριος"
+        },
+        "2": {
+          "format": "Φεβρουαρίου",
+          "stand-alone": "Φεβρουάριος"
+        },
+        "3": {
+          "format": "Μαρτίου",
+          "stand-alone": "Μάρτιος"
+        },
+        "4": {
+          "format": "Απριλίου",
+          "stand-alone": "Απρίλιος"
+        },
+        "5": {
+          "format": "Μαΐου",
+          "stand-alone": "Μάιος"
+        },
+        "6": {
+          "format": "Ιουνίου",
+          "stand-alone": "Ιούνιος"
+        },
+        "7": {
+          "format": "Ιουλίου",
+          "stand-alone": "Ιούλιος"
+        },
+        "8": {
+          "format": "Αυγούστου",
+          "stand-alone": "Αύγουστος"
+        },
+        "9": {
+          "format": "Σεπτεμβρίου",
+          "stand-alone": "Σεπτέμβριος"
+        },
+        "10": {
+          "format": "Οκτωβρίου",
+          "stand-alone": "Οκτώβριος"
+        },
+        "11": {
+          "format": "Νοεμβρίου",
+          "stand-alone": "Νοέμβριος"
+        },
+        "12": {
+          "format": "Δεκεμβρίου",
+          "stand-alone": "Δεκέμβριος"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Κυριακή",
+          "stand-alone": "Κυριακή"
+        },
+        "mon": {
+          "format": "Δευτέρα",
+          "stand-alone": "Δευτέρα"
+        },
+        "tue": {
+          "format": "Τρίτη",
+          "stand-alone": "Τρίτη"
+        },
+        "wed": {
+          "format": "Τετάρτη",
+          "stand-alone": "Τετάρτη"
+        },
+        "thu": {
+          "format": "Πέμπτη",
+          "stand-alone": "Πέμπτη"
+        },
+        "fri": {
+          "format": "Παρασκευή",
+          "stand-alone": "Παρασκευή"
+        },
+        "sat": {
+          "format": "Σάββατο",
+          "stand-alone": "Σάββατο"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "he": {
+      "locales": [
+        "he"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "ינואר",
+          "stand-alone": "ינואר"
+        },
+        "2": {
+          "format": "פברואר",
+          "stand-alone": "פברואר"
+        },
+        "3": {
+          "format": "מרץ",
+          "stand-alone": "מרץ"
+        },
+        "4": {
+          "format": "אפריל",
+          "stand-alone": "אפריל"
+        },
+        "5": {
+          "format": "מאי",
+          "stand-alone": "מאי"
+        },
+        "6": {
+          "format": "יוני",
+          "stand-alone": "יוני"
+        },
+        "7": {
+          "format": "יולי",
+          "stand-alone": "יולי"
+        },
+        "8": {
+          "format": "אוגוסט",
+          "stand-alone": "אוגוסט"
+        },
+        "9": {
+          "format": "ספטמבר",
+          "stand-alone": "ספטמבר"
+        },
+        "10": {
+          "format": "אוקטובר",
+          "stand-alone": "אוקטובר"
+        },
+        "11": {
+          "format": "נובמבר",
+          "stand-alone": "נובמבר"
+        },
+        "12": {
+          "format": "דצמבר",
+          "stand-alone": "דצמבר"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "יום ראשון",
+          "stand-alone": "יום ראשון"
+        },
+        "mon": {
+          "format": "יום שני",
+          "stand-alone": "יום שני"
+        },
+        "tue": {
+          "format": "יום שלישי",
+          "stand-alone": "יום שלישי"
+        },
+        "wed": {
+          "format": "יום רביעי",
+          "stand-alone": "יום רביעי"
+        },
+        "thu": {
+          "format": "יום חמישי",
+          "stand-alone": "יום חמישי"
+        },
+        "fri": {
+          "format": "יום שישי",
+          "stand-alone": "יום שישי"
+        },
+        "sat": {
+          "format": "יום שבת",
+          "stand-alone": "יום שבת"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "id": {
+      "locales": [
+        "id"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "Januari",
+          "stand-alone": "Januari"
+        },
+        "2": {
+          "format": "Februari",
+          "stand-alone": "Februari"
+        },
+        "3": {
+          "format": "Maret",
+          "stand-alone": "Maret"
+        },
+        "4": {
+          "format": "April",
+          "stand-alone": "April"
+        },
+        "5": {
+          "format": "Mei",
+          "stand-alone": "Mei"
+        },
+        "6": {
+          "format": "Juni",
+          "stand-alone": "Juni"
+        },
+        "7": {
+          "format": "Juli",
+          "stand-alone": "Juli"
+        },
+        "8": {
+          "format": "Agustus",
+          "stand-alone": "Agustus"
+        },
+        "9": {
+          "format": "September",
+          "stand-alone": "September"
+        },
+        "10": {
+          "format": "Oktober",
+          "stand-alone": "Oktober"
+        },
+        "11": {
+          "format": "November",
+          "stand-alone": "November"
+        },
+        "12": {
+          "format": "Desember",
+          "stand-alone": "Desember"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "Minggu",
+          "stand-alone": "Minggu"
+        },
+        "mon": {
+          "format": "Senin",
+          "stand-alone": "Senin"
+        },
+        "tue": {
+          "format": "Selasa",
+          "stand-alone": "Selasa"
+        },
+        "wed": {
+          "format": "Rabu",
+          "stand-alone": "Rabu"
+        },
+        "thu": {
+          "format": "Kamis",
+          "stand-alone": "Kamis"
+        },
+        "fri": {
+          "format": "Jumat",
+          "stand-alone": "Jumat"
+        },
+        "sat": {
+          "format": "Sabtu",
+          "stand-alone": "Sabtu"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "prs": {
+      "locales": [
+        "fa_AF",
+        "fa"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "جنوری",
+          "stand-alone": "جنوری"
+        },
+        "2": {
+          "format": "فبروری",
+          "stand-alone": "فبروری"
+        },
+        "3": {
+          "format": "مارچ",
+          "stand-alone": "مارچ"
+        },
+        "4": {
+          "format": "اپریل",
+          "stand-alone": "اپریل"
+        },
+        "5": {
+          "format": "می",
+          "stand-alone": "می"
+        },
+        "6": {
+          "format": "جون",
+          "stand-alone": "جون"
+        },
+        "7": {
+          "format": "جولای",
+          "stand-alone": "جولای"
+        },
+        "8": {
+          "format": "اگست",
+          "stand-alone": "اگست"
+        },
+        "9": {
+          "format": "سپتمبر",
+          "stand-alone": "سپتمبر"
+        },
+        "10": {
+          "format": "اکتوبر",
+          "stand-alone": "اکتوبر"
+        },
+        "11": {
+          "format": "نومبر",
+          "stand-alone": "نومبر"
+        },
+        "12": {
+          "format": "دسمبر",
+          "stand-alone": "دسمبر"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "یکشنبه",
+          "stand-alone": "یکشنبه"
+        },
+        "mon": {
+          "format": "دوشنبه",
+          "stand-alone": "دوشنبه"
+        },
+        "tue": {
+          "format": "سه‌شنبه",
+          "stand-alone": "سه‌شنبه"
+        },
+        "wed": {
+          "format": "چهارشنبه",
+          "stand-alone": "چهارشنبه"
+        },
+        "thu": {
+          "format": "پنجشنبه",
+          "stand-alone": "پنجشنبه"
+        },
+        "fri": {
+          "format": "جمعه",
+          "stand-alone": "جمعه"
+        },
+        "sat": {
+          "format": "شنبه",
+          "stand-alone": "شنبه"
+        }
+      },
+      "scope": "CLDR native Gregorian names; Dari uses fa_AF/fa locale data"
+    },
+    "kmr": {
+      "locales": [
+        "ku"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "rêbendan",
+          "stand-alone": "rêbendan"
+        },
+        "2": {
+          "format": "sibat",
+          "stand-alone": "sibat"
+        },
+        "3": {
+          "format": "adar",
+          "stand-alone": "adar"
+        },
+        "4": {
+          "format": "nîsan",
+          "stand-alone": "nîsan"
+        },
+        "5": {
+          "format": "gulan",
+          "stand-alone": "gulan"
+        },
+        "6": {
+          "format": "hezîran",
+          "stand-alone": "hezîran"
+        },
+        "7": {
+          "format": "tîrmeh",
+          "stand-alone": "tîrmeh"
+        },
+        "8": {
+          "format": "tebax",
+          "stand-alone": "tebax"
+        },
+        "9": {
+          "format": "îlon",
+          "stand-alone": "îlon"
+        },
+        "10": {
+          "format": "cotmeh",
+          "stand-alone": "cotmeh"
+        },
+        "11": {
+          "format": "mijdar",
+          "stand-alone": "mijdar"
+        },
+        "12": {
+          "format": "berfanbar",
+          "stand-alone": "berfanbar"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "yekşem",
+          "stand-alone": "yekşem"
+        },
+        "mon": {
+          "format": "duşem",
+          "stand-alone": "duşem"
+        },
+        "tue": {
+          "format": "sêşem",
+          "stand-alone": "sêşem"
+        },
+        "wed": {
+          "format": "çarşem",
+          "stand-alone": "çarşem"
+        },
+        "thu": {
+          "format": "pêncşem",
+          "stand-alone": "pêncşem"
+        },
+        "fri": {
+          "format": "înî",
+          "stand-alone": "înî"
+        },
+        "sat": {
+          "format": "şemî",
+          "stand-alone": "şemî"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "pt": {
+      "locales": [
+        "pt_PT",
+        "pt"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "janeiro",
+          "stand-alone": "janeiro"
+        },
+        "2": {
+          "format": "fevereiro",
+          "stand-alone": "fevereiro"
+        },
+        "3": {
+          "format": "março",
+          "stand-alone": "março"
+        },
+        "4": {
+          "format": "abril",
+          "stand-alone": "abril"
+        },
+        "5": {
+          "format": "maio",
+          "stand-alone": "maio"
+        },
+        "6": {
+          "format": "junho",
+          "stand-alone": "junho"
+        },
+        "7": {
+          "format": "julho",
+          "stand-alone": "julho"
+        },
+        "8": {
+          "format": "agosto",
+          "stand-alone": "agosto"
+        },
+        "9": {
+          "format": "setembro",
+          "stand-alone": "setembro"
+        },
+        "10": {
+          "format": "outubro",
+          "stand-alone": "outubro"
+        },
+        "11": {
+          "format": "novembro",
+          "stand-alone": "novembro"
+        },
+        "12": {
+          "format": "dezembro",
+          "stand-alone": "dezembro"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "domingo",
+          "stand-alone": "domingo"
+        },
+        "mon": {
+          "format": "segunda-feira",
+          "stand-alone": "segunda-feira"
+        },
+        "tue": {
+          "format": "terça-feira",
+          "stand-alone": "terça-feira"
+        },
+        "wed": {
+          "format": "quarta-feira",
+          "stand-alone": "quarta-feira"
+        },
+        "thu": {
+          "format": "quinta-feira",
+          "stand-alone": "quinta-feira"
+        },
+        "fri": {
+          "format": "sexta-feira",
+          "stand-alone": "sexta-feira"
+        },
+        "sat": {
+          "format": "sábado",
+          "stand-alone": "sábado"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    },
+    "zh": {
+      "locales": [
+        "zh_Hans",
+        "zh"
+      ],
+      "complete": true,
+      "calendar": "gregorian",
+      "months": {
+        "1": {
+          "format": "一月",
+          "stand-alone": "一月"
+        },
+        "2": {
+          "format": "二月",
+          "stand-alone": "二月"
+        },
+        "3": {
+          "format": "三月",
+          "stand-alone": "三月"
+        },
+        "4": {
+          "format": "四月",
+          "stand-alone": "四月"
+        },
+        "5": {
+          "format": "五月",
+          "stand-alone": "五月"
+        },
+        "6": {
+          "format": "六月",
+          "stand-alone": "六月"
+        },
+        "7": {
+          "format": "七月",
+          "stand-alone": "七月"
+        },
+        "8": {
+          "format": "八月",
+          "stand-alone": "八月"
+        },
+        "9": {
+          "format": "九月",
+          "stand-alone": "九月"
+        },
+        "10": {
+          "format": "十月",
+          "stand-alone": "十月"
+        },
+        "11": {
+          "format": "十一月",
+          "stand-alone": "十一月"
+        },
+        "12": {
+          "format": "十二月",
+          "stand-alone": "十二月"
+        }
+      },
+      "days": {
+        "sun": {
+          "format": "星期日",
+          "stand-alone": "星期日"
+        },
+        "mon": {
+          "format": "星期一",
+          "stand-alone": "星期一"
+        },
+        "tue": {
+          "format": "星期二",
+          "stand-alone": "星期二"
+        },
+        "wed": {
+          "format": "星期三",
+          "stand-alone": "星期三"
+        },
+        "thu": {
+          "format": "星期四",
+          "stand-alone": "星期四"
+        },
+        "fri": {
+          "format": "星期五",
+          "stand-alone": "星期五"
+        },
+        "sat": {
+          "format": "星期六",
+          "stand-alone": "星期六"
+        }
+      },
+      "scope": "CLDR native Gregorian names"
+    }
+  }
+}
