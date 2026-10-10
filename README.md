@@ -1,4 +1,4 @@
-![Gray Feather — interpret forward](https://github.com/user-attachments/assets/0ad7e03a-3c94-4e66-91b8-aab8feb5b87d)
+![Gray Feather — interpret forward](https://github.com/user-attachments/assets/088d7f6f-97ae-4e9b-b584-715e4299b8b6)
 # Gray Feather
 
 **Multi-Engine Reinforced Translation with Voice and Dictation in a Portable Windows App.**
@@ -6,8 +6,6 @@
 [Download](https://github.com/leon-executes/Gray-Feather/releases/latest) · [Dependencies](DEPENDENCIES.md) · [Manual](docs/MANUAL.md) · [Build](BUILD.md) · [Licence](LICENSE)
 
 <!-- Banner slot: replace assets/banner.svg with your final wide artwork. See assets/README.md. -->
-<br>
-
 ![Gray Feather — interpret ahead](https://github.com/user-attachments/assets/cc9c591f-48bc-4b73-b226-9782cd770bf3)
 
 
