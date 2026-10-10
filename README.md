@@ -1,3 +1,4 @@
+![Gray Feather — a workspace for two voices](assets/banner.svg)
 # Gray Feather
 
 **Two speakers. Free translation. One portable Windows workspace.**
@@ -5,8 +6,10 @@
 [Download](https://github.com/leon-executes/Gray-Feather/releases/latest) · [Dependencies](DEPENDENCIES.md) · [Manual](docs/MANUAL.md) · [Build](BUILD.md) · [Licence](LICENSE)
 
 <!-- Banner slot: replace assets/banner.svg with your final wide artwork. See assets/README.md. -->
-![Gray Feather — a workspace for two voices](assets/banner.svg)
-![Gray Feather — interpret ahead](https://github.com/user-attachments/assets/bfd7001c-880c-4e31-b799-bab10a181223)
+<br>
+
+![Gray Feather — interpret ahead](https://github.com/user-attachments/assets/cc9c591f-48bc-4b73-b226-9782cd770bf3)
+
 
 ## Run
 
