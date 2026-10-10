@@ -1,0 +1,37 @@
+{
+  "scope": "Actual upstream notices and reproducible sherpa source tag; ONNX1.28.2 version occurs in the native binary and upstream tag CMake.",
+  "modified_native_binary": "Only the process UTF-8 manifest was added by Gray Feather. See verification/omni-utf8-manifest.json and patch_native_utf8.py.",
+  "items": [
+    {
+      "file": "licenses\\omnilingual\\sherpa-onnx-Apache-2.0.txt",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/v1.13.8/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses\\omnilingual\\Meta-Omnilingual-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/facebookresearch/omnilingual-asr/main/LICENSE",
+      "bytes": 581,
+      "sha256": "a70a523bafbb595c2844104feb313d204904dac91c3d186c05f22a10a71c7a94"
+    },
+    {
+      "file": "licenses\\omnilingual\\ONNX-Runtime-1.28.2-MIT.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "file": "licenses\\omnilingual\\ONNX-Runtime-1.28.2-ThirdPartyNotices.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/ThirdPartyNotices.txt",
+      "bytes": 325054,
+      "sha256": "0e07b95f3a8d6230037707c5c4a2b554d12c4cb67369669ac255635528ffcee2"
+    },
+    {
+      "file": "runtime-source\\omnilingual\\sherpa-onnx-1.13.8.tar.gz",
+      "url": "https://codeload.github.com/k2-fsa/sherpa-onnx/tar.gz/refs/tags/v1.13.8",
+      "bytes": 11642707,
+      "sha256": "b0374cc56dbc186d442ae73d5de743bb092470b640c4c50ce7b029044c0c4fa8"
+    }
+  ],
+  "failures": []
+}

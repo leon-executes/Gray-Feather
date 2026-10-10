@@ -1,0 +1,190 @@
+[
+  {
+    "name": "miniaudio",
+    "version": "1.71",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\miniaudio\\licenses\\LICENSE",
+        "sha256": "4482296e839c04238db06e728b1f7d33cf636039ac90456e645d25455199809b"
+      }
+    ]
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "license": "MIT-0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\cffi\\licenses\\LICENSE",
+        "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+      }
+    ]
+  },
+  {
+    "name": "pycparser",
+    "version": "3.0",
+    "license": "BSD-3-Clause",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\pycparser\\licenses\\LICENSE",
+        "sha256": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1"
+      }
+    ]
+  },
+  {
+    "name": "edge-tts",
+    "version": "7.2.8",
+    "license": null,
+    "files": [
+      {
+        "path": "licenses\\free-speech\\edge-tts\\licenses\\LICENSE",
+        "sha256": "3613045a46a5bce847f80eadbbf013e4260ef19d728ffd061d61e792689ec3a8"
+      }
+    ]
+  },
+  {
+    "name": "aiohttp",
+    "version": "3.14.4",
+    "license": "Apache-2.0 AND MIT",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\aiohttp\\licenses\\LICENSE.txt",
+        "sha256": "2e4be5fc6c4c72a466fcb665d726e049a6891981fe536c4f04b6366749461d23"
+      },
+      {
+        "path": "licenses\\free-speech\\aiohttp\\licenses\\vendor\\llhttp\\LICENSE",
+        "sha256": "628168d68bb5a8a17e0bbefb3bd74e326e1edc20583d76f52f457c82c921867d"
+      }
+    ]
+  },
+  {
+    "name": "aiohappyeyeballs",
+    "version": "2.7.1",
+    "license": "PSF-2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\aiohappyeyeballs\\licenses\\LICENSE",
+        "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+      }
+    ]
+  },
+  {
+    "name": "aiosignal",
+    "version": "1.4.0",
+    "license": "Apache 2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\aiosignal\\licenses\\LICENSE",
+        "sha256": "6fd5243e92dd7f98ec69c7ac377728e74905709ff527a5bf98d6d0263c04f5b6"
+      }
+    ]
+  },
+  {
+    "name": "attrs",
+    "version": "26.1.0",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\attrs\\licenses\\LICENSE",
+        "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+      }
+    ]
+  },
+  {
+    "name": "certifi",
+    "version": "2026.7.22",
+    "license": "MPL-2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\certifi\\licenses\\LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+      }
+    ]
+  },
+  {
+    "name": "frozenlist",
+    "version": "1.8.0",
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\frozenlist\\licenses\\LICENSE",
+        "sha256": "6fd5243e92dd7f98ec69c7ac377728e74905709ff527a5bf98d6d0263c04f5b6"
+      }
+    ]
+  },
+  {
+    "name": "multidict",
+    "version": "6.9.1",
+    "license": "Apache License 2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\multidict\\licenses\\LICENSE",
+        "sha256": "2e4be5fc6c4c72a466fcb665d726e049a6891981fe536c4f04b6366749461d23"
+      }
+    ]
+  },
+  {
+    "name": "propcache",
+    "version": "0.5.4",
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\propcache\\licenses\\LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "licenses\\free-speech\\propcache\\licenses\\NOTICE",
+        "sha256": "56d6ac6c8105c0a51304c21db060e361af9a8ea0af9a75c239c28b5d13693838"
+      }
+    ]
+  },
+  {
+    "name": "yarl",
+    "version": "1.25.1",
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\yarl\\licenses\\LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "licenses\\free-speech\\yarl\\licenses\\NOTICE",
+        "sha256": "56d6ac6c8105c0a51304c21db060e361af9a8ea0af9a75c239c28b5d13693838"
+      }
+    ]
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "license": "BSD-3-Clause",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\idna\\licenses\\LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+      }
+    ]
+  },
+  {
+    "name": "tabulate",
+    "version": "0.10.0",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\tabulate\\licenses\\LICENSE",
+        "sha256": "cdfab50d37d8ead06468fb76a3abafcd05c16749ec8a18eebfa50fd48c7cb2d2"
+      }
+    ]
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license": "PSF-2.0",
+    "files": [
+      {
+        "path": "licenses\\free-speech\\typing_extensions\\licenses\\LICENSE",
+        "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+      }
+    ]
+  }
+]

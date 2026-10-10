@@ -1,0 +1,18 @@
+Supplemental runtime license inventory
+======================================
+
+OpenSSL source: exact openssl-3.5.8 tag. LICENSE.txt is the Apache 2.0 text.
+No NOTICE file was found at that tag; download status is recorded in manifest.json.
+
+QtBase source: exact v6.11.2 tag. Upstream qt_attribution.json files retain names,
+versions, copyright notices, usage conditions and license file references. The
+referenced full license/copyright files are included where retrievable. This is
+a supplemental catalog for the upstream Qt components; optional source modules
+listed here are not all necessarily compiled into the supplied Windows wheel.
+
+The application is based in part on the work of the FreeType Team.
+HarfBuzz, PCRE2, libpng, libjpeg-turbo, zlib and other relevant upstream authors
+are acknowledged by their unchanged attribution records and license texts.
+
+The manifest lists exact source URLs, hashes and retrieval outcomes. Existing
+Qt LGPL/GPL, CPython and pywin32 notices remain alongside this catalog.

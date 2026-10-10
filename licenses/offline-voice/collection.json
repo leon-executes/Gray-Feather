@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "licences": [
+    {
+      "file": "licenses\\offline-voice\\Piper-MIT.txt",
+      "url": "https://raw.githubusercontent.com/rhasspy/piper/2023.11.14-2/LICENSE.md",
+      "bytes": 1071,
+      "sha256": "4cd71dece7037f1d6d93cce7570c57ab75ea9ac566fd4990be2f3ab08d15b47f"
+    },
+    {
+      "file": "licenses\\offline-voice\\eSpeak-NG-GPL.txt",
+      "url": "https://raw.githubusercontent.com/rhasspy/espeak-ng/0f65aa301e0d6bae5e172cc74197d32a6182200f/COPYING",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "file": "licenses\\offline-voice\\ONNX-Runtime-MIT.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.14.1/LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "file": "licenses\\offline-voice\\ONNX-Runtime-ThirdPartyNotices.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.14.1/ThirdPartyNotices.txt",
+      "bytes": 299762,
+      "sha256": "cc63920441c5681cfb1663caf1de1858349b517fc1bed9ca669a85bc526cd13e"
+    },
+    {
+      "file": "licenses\\offline-voice\\spdlog-1.12.0-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/gabime/spdlog/v1.12.0/LICENSE",
+      "bytes": 1348,
+      "sha256": "a7241a379cb98d37788f82c2fc2e484c3ae85dae881fd3406f0637644850926f"
+    },
+    {
+      "file": "licenses\\offline-voice\\nlohmann-json-3.11.2-MIT.txt",
+      "url": "https://raw.githubusercontent.com/nlohmann/json/v3.11.2/LICENSE.MIT",
+      "bytes": 1076,
+      "sha256": "86b998c792894ccb911a1cb7994f7a9652894e7a094c0b5e45be2f553f45cf14"
+    },
+    {
+      "file": "licenses\\offline-voice\\utf8cpp-Piper-header-notice.txt",
+      "url": "https://raw.githubusercontent.com/rhasspy/piper/2023.11.14-2/src/cpp/utf8.h",
+      "bytes": 1521,
+      "sha256": "90643c1044a58020af389dc8eb73099fc8327a12d0731a1101acb277e03e6a3b"
+    },
+    {
+      "file": "licenses\\offline-voice\\Persian-Amir-MODEL_CARD.txt",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/fa/fa_IR/amir/medium/MODEL_CARD",
+      "bytes": 264,
+      "sha256": "0d7d315699945ac830162f82d485d79af51a33081a7649e8992726bd4bba2384"
+    },
+    {
+      "file": "licenses\\offline-voice\\Persian-Gyro-MODEL_CARD.txt",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/fa/fa_IR/gyro/medium/MODEL_CARD",
+      "bytes": 262,
+      "sha256": "a51ac7671fae4cf3f4e2448328ca192d934a9057ceb2fda60c4378dc80067778"
+    },
+    {
+      "file": "licenses\\offline-voice\\Persian-Gyro-creator-MIT-README.txt",
+      "url": "https://huggingface.co/gyroing/Persian-Piper-Model-gyro/raw/main/README.md",
+      "bytes": 588,
+      "sha256": "ffade647972c3a578eb4352a2deece2efb2cf3a8c54b48617eef6f896768224e"
+    },
+    {
+      "file": "licenses\\offline-voice\\Amir-Lessac-training-attribution.txt",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/MODEL_CARD",
+      "bytes": 351,
+      "sha256": "ce49eb457742208166d399a40cdec2c7fa9db77960930031564ab56f12882645"
+    },
+    {
+      "file": "licenses\\offline-voice\\fmt-10.0.0-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/fmtlib/fmt/10.0.0/LICENSE.rst",
+      "bytes": 1431,
+      "sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8"
+    },
+    {
+      "file": "licenses\\offline-voice\\Piper-phonemize-MIT.txt",
+      "url": "https://raw.githubusercontent.com/rhasspy/piper-phonemize/fccd4f335aa68ac0b72600822f34d84363daa2bf/LICENSE.md",
+      "bytes": 1071,
+      "sha256": "13746d509d74e55ea2265fbef204bb7cdbf84a8315b0207e988326cb54387028"
+    }
+  ],
+  "sources": [
+    {
+      "file": "runtime-source\\offline-voice\\espeak-ng-0f65aa301e0d6bae5e172cc74197d32a6182200f.tar.gz",
+      "url": "https://codeload.github.com/rhasspy/espeak-ng/tar.gz/0f65aa301e0d6bae5e172cc74197d32a6182200f",
+      "bytes": 16321475,
+      "sha256": "37ebbabb010200be8ec26c61b770e93f964f4503a329d7d74c239a1a40051e43"
+    },
+    {
+      "file": "runtime-source\\offline-voice\\fmt-10.0.0.tar.gz",
+      "url": "https://codeload.github.com/fmtlib/fmt/tar.gz/refs/tags/10.0.0",
+      "bytes": 851582,
+      "sha256": "ede1b6b42188163a3f2e0f25ad5c0637eca564bd8df74d02e31a311dd6b37ad8"
+    },
+    {
+      "file": "runtime-source\\offline-voice\\spdlog-1.12.0.tar.gz",
+      "url": "https://codeload.github.com/gabime/spdlog/tar.gz/refs/tags/v1.12.0",
+      "bytes": 251037,
+      "sha256": "4dccf2d10f410c1e2feaff89966bfc49a1abb29ef6f08246335b110e001e09a9"
+    },
+    {
+      "file": "runtime-source\\offline-voice\\piper-2023.11.14-2.tar.gz",
+      "url": "https://codeload.github.com/rhasspy/piper/tar.gz/refs/tags/2023.11.14-2",
+      "bytes": 25602353,
+      "sha256": "8b684e102cfe23af097830db9555a8641f17735725853c531a1daeb34b6ed1a8"
+    },
+    {
+      "file": "runtime-source\\offline-voice\\piper-phonemize-fccd4f335aa68ac0b72600822f34d84363daa2bf.tar.gz",
+      "url": "https://codeload.github.com/rhasspy/piper-phonemize/tar.gz/fccd4f335aa68ac0b72600822f34d84363daa2bf",
+      "bytes": 9788138,
+      "sha256": "625cc8f76b3ba2c0e0e7c7e47c1c5aaaf163df9b8296fcf42b9628231f3e264a"
+    },
+    {
+      "file": "runtime-source\\offline-voice\\onnxruntime-1.14.1.tar.gz",
+      "url": "https://codeload.github.com/microsoft/onnxruntime/tar.gz/refs/tags/v1.14.1",
+      "bytes": 199524576,
+      "sha256": "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de"
+    }
+  ],
+  "failures": [],
+  "source_scope": "The original Piper release build fetched phonemizer floating master. This collection records the nearest dated helper source, actual runtime file hashes and build scripts; it does not claim bit-reproducible provenance of the upstream binary.",
+  "piper_phonemize_dated_commit": "fccd4f335aa68ac0b72600822f34d84363daa2bf",
+  "dated_commit_endpoint": "https://api.github.com/repos/rhasspy/piper-phonemize/commits?until=2023-11-15T23:59:59Z&per_page=1",
+  "combined_helper_contains_GPL_eSpeak": true,
+  "licensing": "Piper/Piper-phonemize/ONNX/fmt/spdlog/json have their own permissive notices. eSpeak NG and its data retain their GPL notices and source. Models retain creator and dataset notices. System redistributable CRT has separate Microsoft terms."
+}
