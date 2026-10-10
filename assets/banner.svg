@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="420" viewBox="0 0 1600 420" role="img" aria-labelledby="title desc">
+<title id="title">Gray Feather</title><desc id="desc">A workspace for two voices. Portable Windows translation.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#10181e"/><stop offset="1" stop-color="#213236"/></linearGradient></defs>
+<rect width="1600" height="420" rx="18" fill="url(#bg)"/>
+<path d="M1324 62c-116 12-218 83-242 187 53 18 151-17 195-74 26-35 42-73 47-113Z" fill="#c9d3bb" opacity=".92"/>
+<path d="m1060 321 218-218M1114 267l-8-74m50 27 75-4m-28-51-2-65" fill="none" stroke="#15242a" stroke-width="8" stroke-linecap="round"/>
+<path d="m1060 321 45-47" fill="none" stroke="#c9d3bb" stroke-width="7" stroke-linecap="round"/>
+<text x="88" y="92" fill="#c9d3bb" font-family="Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="5">WINDOWS · PORTABLE · TWO SPEAKERS</text>
+<text x="83" y="209" fill="#f2f2e9" font-family="Georgia,serif" font-size="91">Gray Feather</text>
+<text x="88" y="270" fill="#bac9c9" font-family="Segoe UI,Arial,sans-serif" font-size="29">A workspace for two voices.</text>
+<path d="M88 317h738" stroke="#617371" stroke-width="1" opacity=".65"/>
+<text x="88" y="361" fill="#b0beb9" font-family="Segoe UI,Arial,sans-serif" font-size="18">Translation · Speech · Local history</text>
+</svg>
