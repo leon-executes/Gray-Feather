@@ -1,0 +1,200 @@
+{
+  "source-tests": {
+    "version": "1.3.1",
+    "frozen": false,
+    "tests": 487,
+    "passed": 487,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "elapsed_seconds": 18.883,
+    "successful": true,
+    "scope": "Deterministic application correctness; mocked transports; no semantic translation accuracy claim."
+  },
+  "packaged-tests": {
+    "version": "1.3.1",
+    "frozen": true,
+    "tests": 487,
+    "passed": 482,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 5,
+    "elapsed_seconds": 14.183,
+    "successful": true,
+    "scope": "Deterministic application correctness; mocked transports; no semantic translation accuracy claim."
+  },
+  "native": {
+    "scope": "Actual bundled CPU helper execution, synthetic translation/voice text and public Oromo native speech. No network, playback, user data or aggregate accuracy claim.",
+    "successful": true,
+    "checks": [
+      {
+        "kind": "index_translation",
+        "successful": true,
+        "source": "Please bring two copies.",
+        "source_code": "en",
+        "target_code": "fr",
+        "text": "Veuillez apporter deux copies.",
+        "provider": "index_local",
+        "model": "Index-Translate-2B.Q4_K_M.gguf",
+        "peak_working_set_bytes": 2115424256,
+        "complete": true,
+        "elapsed_ms": 4157
+      },
+      {
+        "kind": "persian_voice",
+        "successful": true,
+        "source": "دو نسخه بیاورید. در را باز نکنید.",
+        "locale": "fa-IR",
+        "provider": "offline_piper",
+        "model": "fa_IR-gyro-medium",
+        "audio_seconds": 2.513,
+        "wav_bytes": 80460,
+        "wav_sha256": "2f8bb106472ce25af55f8f106b1b7d7033ef6cb68e89cca12e6d2ede8d0a19a8",
+        "complete_preparation": true,
+        "played": false,
+        "elapsed_ms": 1312
+      },
+      {
+        "kind": "oromo_dictation",
+        "successful": true,
+        "locale": "om-ET",
+        "text": "ispanio dottatuun sirnaan kolooniin jara sadiif turee jalqabe",
+        "reference": "Ispaaniyaardotatu sirna kolonii jarraa sadiif ture jalqabe.",
+        "provider": "omnilingual",
+        "engine": "Omnilingual CTC 300M int8 · sherpa-onnx 1.13.8",
+        "complete": true,
+        "fixture_sha256": "8b8e2368763e5194ca337ccb7cf8088cae540505d650d48a43afa6ca6a51c353",
+        "fixture_licence": "CC-BY-4.0",
+        "language_conditioned": false,
+        "elapsed_ms": 1938
+      },
+      {
+        "kind": "voice_tigrinya",
+        "successful": true,
+        "provider": "offline_neural",
+        "locale": "ti-ET",
+        "voice": "MMS tir · offline neural",
+        "offline": true,
+        "approximate": false,
+        "complete_preparation": true,
+        "sample_rate": 16000,
+        "warnings": [],
+        "played": false,
+        "wav_bytes": 151340,
+        "wav_sha256": "97c98a9e145483ee2184d93341855fec3ad977a6f1ba773d616b3654dd25cdec",
+        "elapsed_ms": 11078
+      },
+      {
+        "kind": "voice_oromo",
+        "successful": true,
+        "provider": "offline_neural",
+        "locale": "om-ET",
+        "voice": "MMS orm · offline neural",
+        "offline": true,
+        "approximate": false,
+        "complete_preparation": true,
+        "sample_rate": 16000,
+        "warnings": [],
+        "played": false,
+        "wav_bytes": 55084,
+        "wav_sha256": "3c41f3f825e4865b1c2a6a0feccce94865ce7435961ac920b7d83ed06cdf584c",
+        "elapsed_ms": 2218
+      },
+      {
+        "kind": "voice_sorani",
+        "successful": true,
+        "provider": "offline_neural",
+        "locale": "ckb-IQ",
+        "voice": "Vekol Sorani · offline neural",
+        "offline": true,
+        "approximate": false,
+        "complete_preparation": true,
+        "sample_rate": 16000,
+        "warnings": [],
+        "played": false,
+        "wav_bytes": 97134,
+        "wav_sha256": "af5735797c6bd908e3e40d0ca9ba6fc708ec140313f79dfa6e824bfb56642493",
+        "elapsed_ms": 2125
+      },
+      {
+        "kind": "voice_somali",
+        "successful": true,
+        "provider": "offline_neural",
+        "locale": "so-SO",
+        "voice": "Somali · MMS (bundled)",
+        "offline": true,
+        "approximate": false,
+        "complete_preparation": true,
+        "sample_rate": 16000,
+        "warnings": [],
+        "played": false,
+        "wav_bytes": 84780,
+        "wav_sha256": "4a3cf004cbf395f925f0307dc8165a84d0cfc82b58cc4ac3b988920e3ab99f8e",
+        "elapsed_ms": 2469
+      },
+      {
+        "kind": "basic_kurmanji",
+        "successful": true,
+        "provider": "offline_basic",
+        "locale": "ku-TR",
+        "voice": "Basic ku · eSpeak NG",
+        "offline": true,
+        "approximate": false,
+        "complete_preparation": true,
+        "sample_rate": 16000,
+        "warnings": [
+          "Robotic fallback voice; pronunciation can be weak."
+        ],
+        "played": false,
+        "wav_bytes": 57292,
+        "wav_sha256": "9553d6a4ac6a886289e25cb70dc96eeafee6d769f4da990b4c07e6583ad2b8a8",
+        "elapsed_ms": 360
+      },
+      {
+        "kind": "basic_sindhi",
+        "successful": true,
+        "provider": "offline_basic",
+        "locale": "sd-PK",
+        "voice": "Basic sd · eSpeak NG",
+        "offline": true,
+        "approximate": false,
+        "complete_preparation": true,
+        "sample_rate": 16000,
+        "warnings": [
+          "Robotic fallback voice; pronunciation can be weak."
+        ],
+        "played": false,
+        "wav_bytes": 66114,
+        "wav_sha256": "750526fc2a8dd640c86d5cc88f4bd01f05555dfc2d5dbca599bf0802c6d2ad40",
+        "elapsed_ms": 390
+      },
+      {
+        "kind": "basic_french",
+        "successful": true,
+        "provider": "offline_basic",
+        "locale": "fr-FR",
+        "voice": "Basic fr · eSpeak NG",
+        "offline": true,
+        "approximate": false,
+        "complete_preparation": true,
+        "sample_rate": 16000,
+        "warnings": [
+          "Robotic fallback voice; pronunciation can be weak."
+        ],
+        "played": false,
+        "wav_bytes": 27674,
+        "wav_sha256": "1df200aa13bfe49ac36661a33e3faef012a33d2f14d062f8cad25d51f43fc4e1",
+        "elapsed_ms": 406
+      }
+    ],
+    "private_scratch_removed": true,
+    "version": "1.3.1",
+    "frozen": true
+  },
+  "interface": {
+    "successful": true,
+    "languages": 34,
+    "layout_preserved": true
+  },
+  "scope": "Software and real bundled CPU adapter checks; no physical microphone/playback, native-listener certification or clean-PC claim."
+}

@@ -1,0 +1,274 @@
+{
+  "scope": "Synthetic common-use passages; real complete synthesis/decoding, not native-listener pronunciation certification. Public text only.",
+  "rows": [
+    {
+      "locale": "fa-IR",
+      "provider": "edge_free",
+      "text": "سلام. لطفاً فردا ساعت نه صبح بیایید. دارو را دو بار مصرف نکنید.",
+      "successful": false,
+      "error": "Free Edge voice synthesis exceeded its time budget.",
+      "prepare_seconds": 10.0
+    },
+    {
+      "locale": "fa-AF",
+      "provider": "edge_persian_approx",
+      "text": "سلام. لطفاً فردا ساعت نه صبح به شفاخانه بیایید.",
+      "successful": true,
+      "seconds_audio": 5.136,
+      "voice": "Persian pronunciation · approximate Dari",
+      "approximate": true,
+      "audio_file": "fa-AF-edge_persian_approx.wav",
+      "prepare_seconds": 2.906
+    },
+    {
+      "locale": "ku-TR",
+      "provider": "reference:tr-TR",
+      "text": "Silav. Ji kerema xwe sibê saet nehê sibehê were. Spas dikim.",
+      "successful": true,
+      "seconds_audio": 7.008,
+      "voice": "tr-TR-EmelNeural",
+      "approximate": true,
+      "audio_file": "ku-TR-reference-tr-TR.wav",
+      "prepare_seconds": 2.985
+    },
+    {
+      "locale": "ku-TR",
+      "provider": "reference_google:tr-TR",
+      "text": "Silav. Ji kerema xwe sibê saet nehê sibehê were. Spas dikim.",
+      "successful": true,
+      "seconds_audio": 6.768,
+      "voice": "Google tr-TR pronunciation",
+      "approximate": true,
+      "audio_file": "ku-TR-reference_google-tr-TR.wav",
+      "prepare_seconds": 0.75
+    },
+    {
+      "locale": "ku-TR",
+      "provider": "reference:tr-TR-male",
+      "text": "Silav. Ji kerema xwe sibê saet nehê sibehê were. Spas dikim.",
+      "successful": true,
+      "seconds_audio": 7.32,
+      "voice": "tr-TR-AhmetNeural",
+      "approximate": true,
+      "audio_file": "ku-TR-reference-tr-TR-male.wav",
+      "prepare_seconds": 6.625
+    },
+    {
+      "locale": "ku-TR",
+      "provider": "reference:en-US-multilingual",
+      "text": "Silav. Ji kerema xwe sibê saet nehê sibehê were. Spas dikim.",
+      "successful": true,
+      "seconds_audio": 5.736,
+      "voice": "en-US-AvaMultilingualNeural",
+      "approximate": true,
+      "audio_file": "ku-TR-reference-en-US-multilingual.wav",
+      "prepare_seconds": 4.235
+    },
+    {
+      "locale": "sd-PK",
+      "provider": "reference:ur-PK",
+      "text": "سلام. مهرباني ڪري سڀاڻي صبح جو نائين وڳي اچو. توهان جي مهرباني.",
+      "successful": true,
+      "seconds_audio": 6.384,
+      "voice": "ur-PK-UzmaNeural",
+      "approximate": true,
+      "audio_file": "sd-PK-reference-ur-PK.wav",
+      "prepare_seconds": 1.953
+    },
+    {
+      "locale": "sd-PK",
+      "provider": "reference_google:ur-PK",
+      "text": "سلام. مهرباني ڪري سڀاڻي صبح جو نائين وڳي اچو. توهان جي مهرباني.",
+      "successful": true,
+      "seconds_audio": 7.296,
+      "voice": "Google ur-PK pronunciation",
+      "approximate": true,
+      "audio_file": "sd-PK-reference_google-ur-PK.wav",
+      "prepare_seconds": 0.828
+    },
+    {
+      "locale": "sd-PK",
+      "provider": "reference:ur-PK-male",
+      "text": "سلام. مهرباني ڪري سڀاڻي صبح جو نائين وڳي اچو. توهان جي مهرباني.",
+      "successful": true,
+      "seconds_audio": 6.624,
+      "voice": "ur-PK-AsadNeural",
+      "approximate": true,
+      "audio_file": "sd-PK-reference-ur-PK-male.wav",
+      "prepare_seconds": 2.343
+    },
+    {
+      "locale": "ti-ET",
+      "provider": "offline_neural",
+      "text": "ሰላም። በጃኻ ጽባሕ ንግሆ ሰዓት ትሽዓተ ንዓ።",
+      "successful": true,
+      "seconds_audio": 3.64,
+      "voice": "MMS tir · offline neural",
+      "approximate": false,
+      "audio_file": "ti-ET-offline_neural.wav",
+      "prepare_seconds": 4.672
+    },
+    {
+      "locale": "ti-ET",
+      "provider": "reference:am-ET",
+      "text": "ሰላም። በጃኻ ጽባሕ ንግሆ ሰዓት ትሽዓተ ንዓ።",
+      "successful": true,
+      "seconds_audio": 3.408,
+      "voice": "am-ET-MekdesNeural",
+      "approximate": true,
+      "audio_file": "ti-ET-reference-am-ET.wav",
+      "prepare_seconds": 2.094
+    },
+    {
+      "locale": "ti-ET",
+      "provider": "reference_google:am-ET",
+      "text": "ሰላም። በጃኻ ጽባሕ ንግሆ ሰዓት ትሽዓተ ንዓ።",
+      "successful": true,
+      "seconds_audio": 4.464,
+      "voice": "Google am-ET pronunciation",
+      "approximate": true,
+      "audio_file": "ti-ET-reference_google-am-ET.wav",
+      "prepare_seconds": 0.75
+    },
+    {
+      "locale": "ckb-IQ",
+      "provider": "offline_neural",
+      "text": "سڵاو. تکایە سبەی کاتژمێر نۆی بەیانی وەرە. سوپاس.",
+      "successful": true,
+      "seconds_audio": 3.835,
+      "voice": "Vekol Sorani · offline neural",
+      "approximate": false,
+      "audio_file": "ckb-IQ-offline_neural.wav",
+      "prepare_seconds": 2.172
+    },
+    {
+      "locale": "ckb-IQ",
+      "provider": "reference:ar-IQ",
+      "text": "سڵاو. تکایە سبەی کاتژمێر نۆی بەیانی وەرە. سوپاس.",
+      "successful": true,
+      "seconds_audio": 5.616,
+      "voice": "ar-IQ-RanaNeural",
+      "approximate": true,
+      "audio_file": "ckb-IQ-reference-ar-IQ.wav",
+      "prepare_seconds": 2.078
+    },
+    {
+      "locale": "ckb-IQ",
+      "provider": "reference_google:ar-SA",
+      "text": "سڵاو. تکایە سبەی کاتژمێر نۆی بەیانی وەرە. سوپاس.",
+      "successful": true,
+      "seconds_audio": 6.576,
+      "voice": "Google ar-SA pronunciation",
+      "approximate": true,
+      "audio_file": "ckb-IQ-reference_google-ar-SA.wav",
+      "prepare_seconds": 0.968
+    },
+    {
+      "locale": "ckb-IQ",
+      "provider": "reference:fa-IR",
+      "text": "سڵاو. تکایە سبەی کاتژمێر نۆی بەیانی وەرە. سوپاس.",
+      "successful": true,
+      "seconds_audio": 6.168,
+      "voice": "fa-IR-DilaraNeural",
+      "approximate": true,
+      "audio_file": "ckb-IQ-reference-fa-IR.wav",
+      "prepare_seconds": 3.344
+    },
+    {
+      "locale": "ckb-IQ",
+      "provider": "reference:ar-SA",
+      "text": "سڵاو. تکایە سبەی کاتژمێر نۆی بەیانی وەرە. سوپاس.",
+      "successful": true,
+      "seconds_audio": 5.448,
+      "voice": "ar-SA-ZariyahNeural",
+      "approximate": true,
+      "audio_file": "ckb-IQ-reference-ar-SA.wav",
+      "prepare_seconds": 2.0
+    },
+    {
+      "locale": "om-ET",
+      "provider": "offline_neural",
+      "text": "Akkam. Maaloo boru saʼaatii sagal ganama kottu. Galatoomi.",
+      "successful": false,
+      "error": "This local voice cannot read every letter, number or symbol in this passage.\n",
+      "prepare_seconds": 1.906
+    },
+    {
+      "locale": "om-ET",
+      "provider": "reference:so-SO",
+      "text": "Akkam. Maaloo boru saʼaatii sagal ganama kottu. Galatoomi.",
+      "successful": true,
+      "seconds_audio": 6.288,
+      "voice": "so-SO-UbaxNeural",
+      "approximate": true,
+      "audio_file": "om-ET-reference-so-SO.wav",
+      "prepare_seconds": 1.891
+    },
+    {
+      "locale": "om-ET",
+      "provider": "reference_google:sw-KE",
+      "text": "Akkam. Maaloo boru saʼaatii sagal ganama kottu. Galatoomi.",
+      "successful": true,
+      "seconds_audio": 6.6,
+      "voice": "Google sw-KE pronunciation",
+      "approximate": true,
+      "audio_file": "om-ET-reference_google-sw-KE.wav",
+      "prepare_seconds": 0.813
+    },
+    {
+      "locale": "om-ET",
+      "provider": "reference:so-SO-male",
+      "text": "Akkam. Maaloo boru saʼaatii sagal ganama kottu. Galatoomi.",
+      "successful": true,
+      "seconds_audio": 6.144,
+      "voice": "so-SO-MuuseNeural",
+      "approximate": true,
+      "audio_file": "om-ET-reference-so-SO-male.wav",
+      "prepare_seconds": 1.609
+    },
+    {
+      "locale": "om-ET",
+      "provider": "reference:sw-KE",
+      "text": "Akkam. Maaloo boru saʼaatii sagal ganama kottu. Galatoomi.",
+      "successful": true,
+      "seconds_audio": 6.984,
+      "voice": "sw-KE-ZuriNeural",
+      "approximate": true,
+      "audio_file": "om-ET-reference-sw-KE.wav",
+      "prepare_seconds": 2.656
+    },
+    {
+      "locale": "ps-AF",
+      "provider": "edge_free",
+      "text": "سلام. مهرباني وکړئ سبا سهار نهه بجې راشئ. مننه.",
+      "successful": true,
+      "seconds_audio": 6.0,
+      "voice": "ps-AF-LatifaNeural",
+      "approximate": false,
+      "audio_file": "ps-AF-edge_free.wav",
+      "prepare_seconds": 2.328
+    },
+    {
+      "locale": "ps-AF",
+      "provider": "reference:ps-AF-male",
+      "text": "سلام. مهرباني وکړئ سبا سهار نهه بجې راشئ. مننه.",
+      "successful": true,
+      "seconds_audio": 5.832,
+      "voice": "ps-AF-GulNawazNeural",
+      "approximate": false,
+      "audio_file": "ps-AF-reference-ps-AF-male.wav",
+      "prepare_seconds": 1.891
+    },
+    {
+      "locale": "ps-AF",
+      "provider": "reference:fa-IR",
+      "text": "سلام. مهرباني وکړئ سبا سهار نهه بجې راشئ. مننه.",
+      "successful": true,
+      "seconds_audio": 6.6,
+      "voice": "fa-IR-DilaraNeural",
+      "approximate": true,
+      "audio_file": "ps-AF-reference-fa-IR.wav",
+      "prepare_seconds": 1.719
+    }
+  ]
+}

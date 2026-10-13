@@ -1,0 +1,34 @@
+{
+  "version": "1.3.3",
+  "scope": "Inset Voice and Safe Speech controls only; speech engines and routing unchanged from 1.3.2.",
+  "source-tests": {
+    "version": "1.3.3",
+    "frozen": false,
+    "tests": 498,
+    "passed": 498,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "elapsed_seconds": 20.925,
+    "successful": true
+  },
+  "packaged-tests": {
+    "version": "1.3.3",
+    "frozen": true,
+    "tests": 498,
+    "passed": 493,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 5,
+    "elapsed_seconds": 19.461,
+    "successful": true
+  },
+  "packaged-ui": {
+    "successful": true,
+    "size": [
+      1180,
+      1000
+    ],
+    "frozen": true
+  }
+}

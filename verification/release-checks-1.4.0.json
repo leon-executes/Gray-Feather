@@ -1,0 +1,54 @@
+{
+  "version": "1.4.0",
+  "scope": "Software, native execution and synthetic live checks. Not a universal translation or pronunciation certification.",
+  "source-tests": {
+    "frozen": false,
+    "tests": 514,
+    "passed": 514,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "elapsed_seconds": 24.056,
+    "successful": true
+  },
+  "packaged-tests": {
+    "frozen": true,
+    "tests": 514,
+    "passed": 503,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 11,
+    "elapsed_seconds": 21.227,
+    "successful": true
+  },
+  "packaged-ui": {
+    "successful": true,
+    "size": [
+      1180,
+      1000
+    ],
+    "frozen": true
+  },
+  "native_checks": 10,
+  "speech_checks": 15,
+  "live_translation_cases": 20,
+  "live_translation_completed": 20,
+  "live_translation_median_seconds": 3.09,
+  "user_data_touched": false,
+  "playback": [
+    {
+      "silent_audio_seconds": 0.4,
+      "cancel_after": null,
+      "complete": true,
+      "elapsed_seconds": 0.453,
+      "successful": true
+    },
+    {
+      "silent_audio_seconds": 2.0,
+      "cancel_after": 0.15,
+      "complete": false,
+      "elapsed_seconds": 0.172,
+      "successful": true
+    }
+  ]
+}

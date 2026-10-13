@@ -1,7 +1,7 @@
 """Whole-candidate consultation and bounded source-anchored automatic repair.
 
 The base HTTP engine remains responsible for complete responses, quotas and
-transport cancellation. Local selections are strictly offline. No majority vote
+transport cancellation. No majority vote
 or back-translation similarity is treated as evidence of semantic correctness.
 """
 from __future__ import annotations
@@ -11,12 +11,11 @@ import time
 import math
 
 import engine
-from local_ai import LocalAI, LocalAIError, LocalAICancelled
+from settings import RETIRED_TRANSLATION_PROVIDERS
 from index_engine import IndexTranslator, supports as index_supports
 from reinforcement import Candidate, critical_checks, reinforce, route_order
 
-LOCAL = ('index_local', 'hy_mt_local', 'gemma_local')
-FAMILIES = {**engine.PROVIDER_FAMILIES, 'index_local':'bilibili_index', 'hy_mt_local': 'tencent_hy_mt2', 'gemma_local': 'google_gemma4'}
+FAMILIES = engine.PROVIDER_FAMILIES
 
 
 def _warnings(source_text, translated, source_code, target_code):
@@ -51,15 +50,11 @@ class _Stop:
 
 
 class ReinforcedTranslator:
-    def __init__(self, base, *, local_factory=LocalAI, index_factory=IndexTranslator, shutdown=None):
+    def __init__(self, base, *, index_factory=IndexTranslator, shutdown=None):
         self.base = base
-        self.models = {name: local_factory(model=name) for name in LOCAL}
         self.index = index_factory(transport=base.transport, timeout=12) if index_factory else None
         self.shutdown = shutdown or threading.Event()
 
-    def local_available(self, provider, source, target):
-        model = self.models[provider]
-        return model.capabilities(source, target)['supported'] and model.available()['available']
 
     def _candidate(self, provider, text, source, target, deadline, stop, context=''):
         engine._state(deadline, stop)
@@ -70,15 +65,6 @@ class ReinforcedTranslator:
             result = self.index.translate(text,source,target,cancel_event=stop,
                 deadline_seconds=max(.1,deadline-time.monotonic()))
             return Candidate(result['text'],provider,'bilibili_index',metadata=result['metadata']), list(result['metadata'].get('trace',())), result.get('cached',False)
-        if provider in LOCAL:
-            try:
-                result = self.models[provider].translate(text, source, target,
-                    cancel_event=stop, deadline_seconds=max(.1, deadline - time.monotonic()))
-                return Candidate(result['text'], provider, FAMILIES[provider], metadata=result.get('metadata', {})), list(result.get('trace', ())), False
-            except LocalAICancelled as error:
-                raise engine.Cancelled() from error
-            except LocalAIError as error:
-                raise engine.TranslationError('local', str(error)) from error
         output, cached = self.base._translate_with(provider, text, source, target,
             deadline, stop, context if provider == 'deepl' else '', None, trace)
         config = self.base.configs.get(provider)
@@ -87,6 +73,8 @@ class ReinforcedTranslator:
 
     def translate(self, text, source, target, *, provider='auto', cancel=None,
                   context='', backtranslate=False, deadline_seconds=60, improve=True):
+        if provider in RETIRED_TRANSLATION_PROVIDERS:
+            raise engine.TranslationError('settings', 'Offline text translation was removed. Choose an online translation engine.')
         engine.validate_text(text, 'Source')
         engine.validate_text(context, 'Context', engine.MAX_CONTEXT_CHARS, True)
         if source not in engine.LANG_BY_CODE or target not in engine.LANG_BY_CODE:
@@ -102,8 +90,7 @@ class ReinforcedTranslator:
         if provider == 'index_web' and not index_supports(source,target):
             from index_engine import build_prompt
             build_prompt(text,source,target)  # Specific measured exclusion, before any request.
-        # An explicitly local engine never transmits text to an online reserve.
-        if provider in LOCAL or provider == 'index_web' and not improve:
+        if provider == 'index_web' and not improve:
             item, events, cached = self._candidate(provider, text, source, target, deadline, stop)
             decision = reinforce(text,source,target,item,(),context=bool(context)) if improve else None
             final_text = decision.text if decision else item.text
@@ -119,7 +106,7 @@ class ReinforcedTranslator:
                 raise engine.Cancelled()
             return engine.TranslationResult(final_text, provider, source, target, tuple(warnings),
                 int((time.monotonic()-started)*1000), review_text=original,review_provider=provider if original else '',
-                trace=tuple(events + [{'provider':provider,'status':'offline_complete' if provider in LOCAL else 'complete'}]))
+                trace=tuple(events + [{'provider':provider,'status':'complete'}]))
         if not improve and provider != 'reinforced':
             return self.base.translate(text,source,target,provider=None if provider in ('auto',None) else provider,
                 cancel=cancel,context=context,backtranslate=backtranslate,deadline_seconds=deadline_seconds)
@@ -165,8 +152,6 @@ class ReinforcedTranslator:
                 raise errors[required_primary]
             if not candidates:
                 reserves = [p for p in order if p not in parallel]
-                # Native trials found meaning regressions in all small models.
-                # They remain explicit offline choices, never silent substitutes.
                 for p in reserves if self.base.allow_fallback else ():
                     try:
                         candidate, events, cached = self._candidate(p,text,source,target,deadline,stop,context)
@@ -186,7 +171,7 @@ class ReinforcedTranslator:
             checks = critical_checks(text, decision.text, source, target)
             if (not context and not protected_glossary and len(text) <= 1200 and time.monotonic() + 2 < deadline
                     and self.index is not None and index_supports(source,target)
-                    and checks.get('needs_consultation')):
+                    and 'index_web' not in errors and checks.get('needs_consultation')):
                 try:
                     fixed = self.index.repair(text, decision.text, source, target,
                         other_candidates=tuple(c.text for c in candidates if c.text != decision.text)[:2],
@@ -202,8 +187,7 @@ class ReinforcedTranslator:
             if stop.is_set():
                 raise engine.Cancelled()
             warnings = _warnings(text, decision.text, source, target)
-            if decision.provider not in LOCAL:
-                warnings += engine._route_warnings(decision.provider, source, target)
+            warnings += engine._route_warnings(decision.provider, source, target)
             warnings += list(engine.source_review_aids(text, source))
             if protected_glossary or context:
                 warnings.append(engine.TranslationWarning('review_conditions','Alternatives do not share the selected glossary or context; the primary wording was preserved.'))

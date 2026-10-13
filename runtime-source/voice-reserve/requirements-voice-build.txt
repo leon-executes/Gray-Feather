@@ -1,0 +1,15 @@
+# Separate helper build only. Nothing here is installed on an end-user PC.
+PyInstaller==6.22.3
+pyinstaller-hooks-contrib==2026.8
+numpy==2.2.6
+onnxruntime==1.23.2
+uroman==1.3.1.1
+regex==2026.9.29
+coloredlogs==15.0.1
+humanfriendly==10.0
+flatbuffers==25.12.19
+packaging==26.3
+protobuf==7.36.2
+sympy==1.14.0
+mpmath==1.3.0
+setuptools==78.1.0

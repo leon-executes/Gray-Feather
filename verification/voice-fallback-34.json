@@ -1,0 +1,1200 @@
+{
+  "scope": "Actual speech synthesis and worker execution. Primary outages injected, physical playback intercepted. One phrase per language, no listener-quality rating.",
+  "results": [
+    {
+      "language": "English",
+      "locale": "en-US",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.625
+    },
+    {
+      "language": "English",
+      "locale": "en-US",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.141
+    },
+    {
+      "language": "Arabic",
+      "locale": "ar-SA",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.484
+    },
+    {
+      "language": "Arabic",
+      "locale": "ar-SA",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.281
+    },
+    {
+      "language": "French",
+      "locale": "fr-FR",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.312
+    },
+    {
+      "language": "French",
+      "locale": "fr-FR",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.703
+    },
+    {
+      "language": "Turkish",
+      "locale": "tr-TR",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.344
+    },
+    {
+      "language": "Turkish",
+      "locale": "tr-TR",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.812
+    },
+    {
+      "language": "Persian / Farsi",
+      "locale": "fa-IR",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "offline_piper",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "offline_piper",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.438
+    },
+    {
+      "language": "Persian / Farsi",
+      "locale": "fa-IR",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "offline_piper",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "offline_piper",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.172
+    },
+    {
+      "language": "Dari",
+      "locale": "fa-AF",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "offline_persian_approx",
+        "edge_persian_approx",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "offline_persian_approx",
+      "approximate": true,
+      "warnings": [
+        "Dari is read with Persian pronunciation; this is not a dedicated Dari voice."
+      ],
+      "play_calls": 1,
+      "seconds": 0.844
+    },
+    {
+      "language": "Dari",
+      "locale": "fa-AF",
+      "case": "primary_unavailable",
+      "disabled_provider": "offline_persian_approx",
+      "configured_routes": [
+        "offline_persian_approx",
+        "edge_persian_approx",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "edge_persian_approx",
+      "approximate": true,
+      "warnings": [
+        "Dari is read with Persian pronunciation; this is not a dedicated Dari voice."
+      ],
+      "play_calls": 1,
+      "seconds": 3.39
+    },
+    {
+      "language": "Pashto",
+      "locale": "ps-AF",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "windows"
+      ],
+      "complete": true,
+      "provider": "edge_free",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.359
+    },
+    {
+      "language": "Pashto",
+      "locale": "ps-AF",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "windows"
+      ],
+      "complete": false,
+      "error": "No matching-language voice could prepare the complete passage. edge_free: Injected primary-provider outage windows: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147200967), None)",
+      "seconds": 0.61
+    },
+    {
+      "language": "Urdu",
+      "locale": "ur-PK",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.594
+    },
+    {
+      "language": "Urdu",
+      "locale": "ur-PK",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.187
+    },
+    {
+      "language": "Hindi",
+      "locale": "hi-IN",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.25
+    },
+    {
+      "language": "Hindi",
+      "locale": "hi-IN",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.625
+    },
+    {
+      "language": "Bengali / Bangla",
+      "locale": "bn-BD",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.031
+    },
+    {
+      "language": "Bengali / Bangla",
+      "locale": "bn-BD",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.719
+    },
+    {
+      "language": "Punjabi (Gurmukhi)",
+      "locale": "pa-IN",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.188
+    },
+    {
+      "language": "Punjabi (Gurmukhi)",
+      "locale": "pa-IN",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.719
+    },
+    {
+      "language": "Sindhi",
+      "locale": "sd-PK",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "offline_basic",
+      "approximate": false,
+      "warnings": [
+        "Robotic fallback voice; pronunciation can be weak."
+      ],
+      "play_calls": 1,
+      "seconds": 1.062
+    },
+    {
+      "language": "Sindhi",
+      "locale": "sd-PK",
+      "case": "primary_unavailable",
+      "disabled_provider": "offline_basic",
+      "configured_routes": [
+        "windows",
+        "offline_basic"
+      ],
+      "complete": false,
+      "error": "No matching-language voice could prepare the complete passage. windows: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147200967), None) offline_basic: Injected primary-provider outage",
+      "seconds": 0.672
+    },
+    {
+      "language": "Amharic",
+      "locale": "am-ET",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.875
+    },
+    {
+      "language": "Amharic",
+      "locale": "am-ET",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.0
+    },
+    {
+      "language": "Oromo",
+      "locale": "om-ET",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "offline_neural",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "offline_neural",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 3.703
+    },
+    {
+      "language": "Oromo",
+      "locale": "om-ET",
+      "case": "primary_unavailable",
+      "disabled_provider": "offline_neural",
+      "configured_routes": [
+        "offline_neural",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "offline_basic",
+      "approximate": false,
+      "warnings": [
+        "Robotic fallback voice; pronunciation can be weak."
+      ],
+      "play_calls": 1,
+      "seconds": 1.25
+    },
+    {
+      "language": "Somali",
+      "locale": "so-SO",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "offline_neural",
+        "windows"
+      ],
+      "complete": true,
+      "provider": "edge_free",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.75
+    },
+    {
+      "language": "Somali",
+      "locale": "so-SO",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "offline_neural",
+        "windows"
+      ],
+      "complete": true,
+      "provider": "offline_neural",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 2.188
+    },
+    {
+      "language": "Swahili",
+      "locale": "sw-KE",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.016
+    },
+    {
+      "language": "Swahili",
+      "locale": "sw-KE",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.781
+    },
+    {
+      "language": "Kurdish Kurmanji / Northern Kurdish",
+      "locale": "ku-TR",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "offline_basic",
+      "approximate": false,
+      "warnings": [
+        "Robotic fallback voice; pronunciation can be weak."
+      ],
+      "play_calls": 1,
+      "seconds": 0.875
+    },
+    {
+      "language": "Kurdish Kurmanji / Northern Kurdish",
+      "locale": "ku-TR",
+      "case": "primary_unavailable",
+      "disabled_provider": "offline_basic",
+      "configured_routes": [
+        "windows",
+        "offline_basic"
+      ],
+      "complete": false,
+      "error": "No matching-language voice could prepare the complete passage. windows: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147200967), None) offline_basic: Injected primary-provider outage",
+      "seconds": 0.515
+    },
+    {
+      "language": "Spanish",
+      "locale": "es-ES",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.062
+    },
+    {
+      "language": "Spanish",
+      "locale": "es-ES",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.75
+    },
+    {
+      "language": "German",
+      "locale": "de-DE",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.282
+    },
+    {
+      "language": "German",
+      "locale": "de-DE",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.937
+    },
+    {
+      "language": "Italian",
+      "locale": "it-IT",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.14
+    },
+    {
+      "language": "Italian",
+      "locale": "it-IT",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.829
+    },
+    {
+      "language": "Portuguese (Portugal)",
+      "locale": "pt-PT",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.937
+    },
+    {
+      "language": "Portuguese (Portugal)",
+      "locale": "pt-PT",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.625
+    },
+    {
+      "language": "Russian",
+      "locale": "ru-RU",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.156
+    },
+    {
+      "language": "Russian",
+      "locale": "ru-RU",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.765
+    },
+    {
+      "language": "Chinese (Simplified)",
+      "locale": "zh-CN",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.125
+    },
+    {
+      "language": "Chinese (Simplified)",
+      "locale": "zh-CN",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.781
+    },
+    {
+      "language": "Japanese",
+      "locale": "ja-JP",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.235
+    },
+    {
+      "language": "Japanese",
+      "locale": "ja-JP",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.765
+    },
+    {
+      "language": "Korean",
+      "locale": "ko-KR",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.188
+    },
+    {
+      "language": "Korean",
+      "locale": "ko-KR",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.625
+    },
+    {
+      "language": "Dutch",
+      "locale": "nl-NL",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.312
+    },
+    {
+      "language": "Dutch",
+      "locale": "nl-NL",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.813
+    },
+    {
+      "language": "Polish",
+      "locale": "pl-PL",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.969
+    },
+    {
+      "language": "Polish",
+      "locale": "pl-PL",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.75
+    },
+    {
+      "language": "Romanian",
+      "locale": "ro-RO",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.125
+    },
+    {
+      "language": "Romanian",
+      "locale": "ro-RO",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.844
+    },
+    {
+      "language": "Ukrainian",
+      "locale": "uk-UA",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.312
+    },
+    {
+      "language": "Ukrainian",
+      "locale": "uk-UA",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.0
+    },
+    {
+      "language": "Greek",
+      "locale": "el-GR",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.203
+    },
+    {
+      "language": "Greek",
+      "locale": "el-GR",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.765
+    },
+    {
+      "language": "Hebrew",
+      "locale": "he-IL",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.141
+    },
+    {
+      "language": "Hebrew",
+      "locale": "he-IL",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.735
+    },
+    {
+      "language": "Indonesian",
+      "locale": "id-ID",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 1.156
+    },
+    {
+      "language": "Indonesian",
+      "locale": "id-ID",
+      "case": "primary_unavailable",
+      "disabled_provider": "edge_free",
+      "configured_routes": [
+        "edge_free",
+        "google_web",
+        "windows",
+        "offline_basic"
+      ],
+      "complete": true,
+      "provider": "google_web",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 0.688
+    },
+    {
+      "language": "Tigrinya",
+      "locale": "ti-ET",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "offline_neural",
+        "windows"
+      ],
+      "complete": true,
+      "provider": "offline_neural",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 17.688
+    },
+    {
+      "language": "Tigrinya",
+      "locale": "ti-ET",
+      "case": "primary_unavailable",
+      "disabled_provider": "offline_neural",
+      "configured_routes": [
+        "offline_neural",
+        "windows"
+      ],
+      "complete": false,
+      "error": "No matching-language voice could prepare the complete passage. offline_neural: Injected primary-provider outage windows: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147200967), None)",
+      "seconds": 1.766
+    },
+    {
+      "language": "Kurdish Sorani / Central Kurdish",
+      "locale": "ckb-IQ",
+      "case": "automatic",
+      "disabled_provider": null,
+      "configured_routes": [
+        "offline_neural",
+        "windows"
+      ],
+      "complete": true,
+      "provider": "offline_neural",
+      "approximate": false,
+      "warnings": [],
+      "play_calls": 1,
+      "seconds": 6.61
+    },
+    {
+      "language": "Kurdish Sorani / Central Kurdish",
+      "locale": "ckb-IQ",
+      "case": "primary_unavailable",
+      "disabled_provider": "offline_neural",
+      "configured_routes": [
+        "offline_neural",
+        "windows"
+      ],
+      "complete": false,
+      "error": "No matching-language voice could prepare the complete passage. offline_neural: Injected primary-provider outage windows: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147200967), None)",
+      "seconds": 1.593
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "scope": "Actual synthesis and complete decode in automatic routing, with primary outages injected; only physical playback intercepted. Synthetic text, no native pronunciation certification.",
+  "rows": [
+    {
+      "locale": "fa-IR",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "edge_free",
+      "voice": "fa-IR-DilaraNeural",
+      "approximate": false,
+      "play_calls": 1,
+      "trace": [],
+      "seconds": 1.969
+    },
+    {
+      "locale": "fa-IR",
+      "mode": "primary_unavailable",
+      "successful": true,
+      "provider": "offline_piper",
+      "voice": "Persian · Gyro (bundled)",
+      "approximate": false,
+      "play_calls": 1,
+      "trace": [
+        "edge_free: Injected primary outage"
+      ],
+      "seconds": 0.828
+    },
+    {
+      "locale": "fa-AF",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "edge_persian_approx",
+      "voice": "Persian pronunciation · approximate Dari",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [],
+      "seconds": 2.578
+    },
+    {
+      "locale": "fa-AF",
+      "mode": "primary_unavailable",
+      "successful": true,
+      "provider": "offline_persian_approx",
+      "voice": "Persian pronunciation · approximate Dari",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [
+        "edge_persian_approx: Injected primary outage"
+      ],
+      "seconds": 0.75
+    },
+    {
+      "locale": "ku-TR",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "reference:tr-TR",
+      "voice": "tr-TR-EmelNeural",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [],
+      "seconds": 1.36
+    },
+    {
+      "locale": "ku-TR",
+      "mode": "primary_unavailable",
+      "successful": true,
+      "provider": "reference_google:tr-TR",
+      "voice": "Google tr-TR pronunciation",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [
+        "reference:tr-TR: Injected primary outage"
+      ],
+      "seconds": 0.859
+    },
+    {
+      "locale": "sd-PK",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "reference:ur-PK",
+      "voice": "ur-PK-UzmaNeural",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [],
+      "seconds": 1.484
+    },
+    {
+      "locale": "sd-PK",
+      "mode": "primary_unavailable",
+      "successful": true,
+      "provider": "reference_google:ur-PK",
+      "voice": "Google ur-PK pronunciation",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [
+        "reference:ur-PK: Injected primary outage"
+      ],
+      "seconds": 0.797
+    },
+    {
+      "locale": "ti-ET",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "offline_neural",
+      "voice": "MMS tir · offline neural",
+      "approximate": false,
+      "play_calls": 1,
+      "trace": [],
+      "seconds": 4.563
+    },
+    {
+      "locale": "ti-ET",
+      "mode": "primary_unavailable",
+      "successful": true,
+      "provider": "reference_google:am-ET",
+      "voice": "Google am-ET pronunciation",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [
+        "offline_neural: Injected primary outage"
+      ],
+      "seconds": 0.875
+    },
+    {
+      "locale": "ckb-IQ",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "offline_neural",
+      "voice": "Vekol Sorani · offline neural",
+      "approximate": false,
+      "play_calls": 1,
+      "trace": [],
+      "seconds": 2.093
+    },
+    {
+      "locale": "ckb-IQ",
+      "mode": "primary_unavailable",
+      "successful": true,
+      "provider": "reference_google:ar-SA",
+      "voice": "Google ar-SA pronunciation",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [
+        "offline_neural: Injected primary outage"
+      ],
+      "seconds": 0.718
+    },
+    {
+      "locale": "om-ET",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "reference_google:sw-KE",
+      "voice": "Google sw-KE pronunciation",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [
+        "offline_neural: This local voice cannot read every letter, number or symbol in this passage.\n"
+      ],
+      "seconds": 2.641
+    },
+    {
+      "locale": "om-ET",
+      "mode": "primary_unavailable",
+      "successful": true,
+      "provider": "reference_google:sw-KE",
+      "voice": "Google sw-KE pronunciation",
+      "approximate": true,
+      "play_calls": 1,
+      "trace": [
+        "offline_neural: Injected primary outage"
+      ],
+      "seconds": 0.813
+    },
+    {
+      "locale": "ps-AF",
+      "mode": "automatic",
+      "successful": true,
+      "provider": "reference:ps-AF-male",
+      "voice": "ps-AF-GulNawazNeural",
+      "approximate": false,
+      "play_calls": 1,
+      "trace": [
+        "Preferred edge_free voice was not ready within the short quality grace; used the complete reference:ps-AF-male reserve."
+      ],
+      "seconds": 1.843
+    },
+    {
+      "locale": "ps-AF",
+      "mode": "primary_unavailable",
+      "successful": false,
+      "error": "No matching-language voice could prepare the complete passage. edge_free: Injected primary outage reference:ps-AF-male: Injected primary outage reference:fa-IR: Injected primary outage windows: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147200967), None)",
+      "seconds": 0.531
+    }
+  ]
+}

@@ -1028,6 +1028,7 @@ class Store:
             connection.execute("PRAGMA foreign_keys=ON")
             connection.execute("PRAGMA journal_mode=DELETE")
             connection.execute("PRAGMA synchronous=FULL")
+            connection.execute("PRAGMA secure_delete=ON")
             connection.execute("PRAGMA busy_timeout=5000")
             if write:
                 connection.execute("BEGIN IMMEDIATE")
@@ -1198,6 +1199,31 @@ class Store:
             if expected_revision is not None and existing["revision"] != expected_revision:
                 raise RevisionConflict("Conversation changed. Reload before deleting.")
             connection.execute("DELETE FROM conversations WHERE id=?", (conversation_id,))
+    def delete_conversations(self, identifiers):
+        # Validate the whole selection before deleting any member.
+        identities = list(dict.fromkeys(identifiers))
+        with self._lock, self._connection(write=True) as connection:
+            for identity in identities:
+                self._get(connection, identity)
+            connection.executemany("DELETE FROM conversations WHERE id=?", [(identity,) for identity in identities])
+        return len(identities)
+
+    def shred_history(self):
+        with self._lock:
+            with self._connection(write=True) as connection:
+                count = connection.execute("SELECT COUNT(*) FROM conversations").fetchone()[0]
+                connection.execute("DELETE FROM conversations")
+            # Deletion has committed. Compaction failure must not resurrect UI drafts.
+            issues = []
+            try:
+                with self._connection() as connection:
+                    connection.execute("VACUUM")
+                    if connection.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+                        issues.append("Database integrity check failed after deletion.")
+            except sqlite3.Error:
+                issues.append("History was deleted, but database compaction could not finish. Retry Shred History.")
+            return {"deleted": count, "issues": issues}
+
     def export(self, conversation_id, format="txt", destination=None, *, snapshot=None):
         conversation = self.get_conversation(conversation_id) if snapshot is None else snapshot
         if snapshot is not None:

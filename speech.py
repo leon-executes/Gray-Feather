@@ -24,6 +24,7 @@ import uuid
 import urllib.error
 import urllib.parse
 import urllib.request
+import unicodedata
 import wave
 import winsound
 from xml.sax.saxutils import escape
@@ -41,7 +42,7 @@ AZURE_STT_LOCALES = frozenset(('en-US', 'ar-SA', 'fr-FR', 'tr-TR', 'fa-IR', 'ps-
     'hi-IN', 'pa-IN', 'am-ET', 'so-SO', 'sw-KE', 'es-ES', 'de-DE', 'it-IT', 'pt-PT',
     'ru-RU', 'zh-CN', 'ja-JP', 'ko-KR', 'nl-NL', 'pl-PL', 'ro-RO', 'uk-UA', 'el-GR',
     'he-IL', 'id-ID'))
-GOOGLE_STT_LOCALES = frozenset(('en-US', 'ar-SA', 'fr-FR', 'tr-TR', 'fa-IR', 'ur-PK',
+GOOGLE_STT_LOCALES = frozenset(('en-US', 'ar-SA', 'fr-FR', 'tr-TR', 'fa-IR', 'ur-PK', 'am-ET', 'ti-ET', 'om-ET', 'fa-AF', 'so-SO',
     'hi-IN', 'bn-BD', 'pa-IN', 'sw-KE', 'es-ES', 'de-DE', 'it-IT', 'pt-PT', 'ru-RU',
     'zh-CN', 'ja-JP', 'ko-KR', 'nl-NL', 'pl-PL', 'ro-RO', 'uk-UA', 'el-GR', 'he-IL', 'id-ID'))
 
@@ -54,7 +55,20 @@ WHISPER_LOCALES = {code: code.split('-')[0] for code in (
     'bn-BD', 'pa-IN', 'sd-PK', 'am-ET', 'so-SO', 'sw-KE', 'es-ES', 'de-DE',
     'it-IT', 'pt-PT', 'ru-RU', 'zh-CN', 'ja-JP', 'ko-KR', 'nl-NL', 'pl-PL',
     'ro-RO', 'uk-UA', 'el-GR', 'he-IL', 'id-ID')}
-OMNILINGUAL_LOCALES = frozenset(('om-ET','ckb-IQ'))
+OMNILINGUAL_LOCALES = frozenset(('om-ET','ckb-IQ','fa-IR','am-ET','ti-ET','ku-TR','so-SO','ps-AF','sd-PK','fa-AF'))
+# Paired native-recording evidence: verification/gap-validation-20261012.md.
+OMNI_FIRST = frozenset(('om-ET','ckb-IQ','am-ET','ku-TR','so-SO','ps-AF','sd-PK'))
+AUTO_WHISPER_SIDELINED = frozenset(('am-ET','so-SO','sd-PK','bn-BD','pa-IN'))
+
+def recognition_routes(lang):
+    """Single policy shared by runtime, capabilities and generated documentation."""
+    routes=[]
+    if lang in ('en-US','fr-FR'):routes.append('offline')
+    if lang in OMNI_FIRST:routes.append('omnilingual')
+    if lang in GOOGLE_STT_LOCALES:routes.append('google_web')
+    if lang in WHISPER_LOCALES and lang not in AUTO_WHISPER_SIDELINED and 'offline' not in routes:routes.append('offline')
+    if lang in OMNILINGUAL_LOCALES and 'omnilingual' not in routes:routes.append('omnilingual')
+    return routes
 
 def recognition_supported(lang, provider):
     return lang in (AZURE_STT_LOCALES if provider == 'azure' else GOOGLE_STT_LOCALES if provider in ('google', 'google_web') else WHISPER_LOCALES if provider == 'offline' else OMNILINGUAL_LOCALES if provider=='omnilingual' else (GOOGLE_STT_LOCALES | WHISPER_LOCALES.keys() | OMNILINGUAL_LOCALES) if provider in ('auto', 'free') else ())
@@ -512,6 +526,10 @@ def recognize_offline(audio, lang, config=None, cancel=None):
                 raise SpeechError('No clear speech was recognized offline. Try again or type the turn.')
             if cancel and cancel.is_set():
                 raise SpeechError('Speech cancelled.')
+            script={'am-ET':'ETHIOPIC','sd-PK':'ARABIC','ps-AF':'ARABIC'}.get(lang)
+            letters=[unicodedata.name(c,'') for c in text if c.isalpha()]
+            if script and letters and not any(script in name for name in letters):
+                raise SpeechError('Offline dictation returned an unexpected script. Retry or type this turn.')
             return text
         except OSError as error:
             raise SpeechError('Offline dictation could not read its completed transcript.') from error
@@ -546,19 +564,9 @@ def recognize_with_fallback(audio, lang, config=None, cancel=None):
         return {'text': text, 'provider': route, 'warnings': warnings, 'trace': trace + failures + [description]}
     if provider not in ('auto', 'free'):
         return completed(recognize_wav(audio, lang, config, cancel), provider, [])
-    routes = []
-    # Paired clean/quiet/noisy fixtures retained English and French quantities
-    # better locally. Other supported locales prefer the free online route.
-    if lang in ('en-US', 'fr-FR'):
-        routes.append('offline')
-    if lang in GOOGLE_STT_LOCALES:
-        routes.append('google_web')
-    if lang in WHISPER_LOCALES and 'offline' not in routes:
-        routes.append('offline')
-    if lang in OMNILINGUAL_LOCALES:
-        routes.append('omnilingual')
+    routes = recognition_routes(lang)
     if lang == 'fa-IR':
-        trace.append('Offline Persian route sidelined after local quality checks.')
+        trace.append('Persian Whisper sidelined; measured Omnilingual is the offline reserve.')
     if not routes:
         raise SpeechError('This exact language is not supported by the available dictation routes. Type the turn instead.')
     failures = []
@@ -695,6 +703,8 @@ GOOGLE_TTS_LOCALES.update({'pt-PT': 'pt-PT', 'zh-CN': 'zh-CN', 'he-IL': 'iw', 'a
 def _voice_chunks(text, maximum=100):
     if not isinstance(text, str) or not text.strip() or len(text) > 6000:
         raise SpeechError('Voice needs nonempty text of at most 6,000 characters.')
+    if any(ord(c)<32 and c not in '\t\r\n' for c in text):
+        raise SpeechError('Voice text contains an unsupported control character. Nothing was omitted or played.')
     parts = []
     while text:
         cut = min(maximum, len(text))
@@ -783,14 +793,14 @@ def _play_mp3(path, stop):
 
 
 def _edge_tts_audio_inprocess(text, lang, stop, timeout=60):
-    if lang not in AZURE_VOICES:
+    if lang not in EDGE_VOICES:
         raise SpeechError('No exact free Edge voice exists for this language.')
     if stop.is_set():
         raise SpeechError('Voice cancelled.')
     async def collect():
         import edge_tts
         result = bytearray()
-        communicator = edge_tts.Communicate(text, AZURE_VOICES[lang], connect_timeout=8, receive_timeout=12)
+        communicator = edge_tts.Communicate(text, EDGE_VOICES[lang], connect_timeout=8, receive_timeout=12)
         async for part in communicator.stream():
             if stop.is_set():
                 raise SpeechError('Voice cancelled.')
@@ -841,7 +851,7 @@ def run_edge_voice_worker(input_path, output_path):
         if not isinstance(payload, dict) or payload.get('version') != 1:
             return 1
         text, lang, timeout = payload.get('text'), payload.get('locale'), payload.get('timeout')
-        if not isinstance(text, str) or not text.strip() or len(text) > 6000 or lang not in AZURE_VOICES:
+        if not isinstance(text, str) or not text.strip() or len(text) > 6000 or lang not in EDGE_VOICES:
             return 1
         if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not .1 <= timeout <= 60:
             return 1
@@ -863,7 +873,7 @@ def _edge_worker_command(input_path, output_path):
 
 
 def edge_tts_audio(text, lang, stop, timeout=60, directory=None):
-    if lang not in AZURE_VOICES or not isinstance(text, str) or not text.strip() or len(text) > 6000:
+    if lang not in EDGE_VOICES or not isinstance(text, str) or not text.strip() or len(text) > 6000:
         raise SpeechError('Free Edge voice needs valid text and an exact supported language.')
     if stop.is_set():
         raise SpeechError('Voice cancelled.')
@@ -917,6 +927,9 @@ class VoiceSession:
     """Only actual failures in this service session affect short retry ordering."""
     def __init__(self): self.lock, self.failures = threading.Lock(), {}
     def failed(self, provider, lang, error):
+        # A quantity/unsupported symbol in one passage is not evidence that
+        # the neural voice is unavailable for the next ordinary sentence.
+        if provider in ('offline_neural','offline_basic'):return
         with self.lock: self.failures[(provider, lang)] = (time.monotonic() + 30, str(error)[:1000])
     def order(self, providers, lang):
         with self.lock:
@@ -927,21 +940,41 @@ class VoiceSession:
 
 def voice_route_plan(lang, config=None):
     config = config or {}; selected = config.get('voice_provider', 'auto')
-    if selected not in ('auto', 'edge_free', 'google_web', 'windows', 'azure', 'offline'):
+    if selected not in ('auto', 'edge_free', 'google_web', 'windows', 'azure', 'offline', 'basic'):
         raise SpeechError('Select a supported voice provider.')
-    offline = ['offline_piper'] if offline_voice_available(lang, config) else []
-    providers = (['edge_free'] if lang in AZURE_VOICES else []) + offline + (['google_web'] if lang in GOOGLE_TTS_LOCALES else []) + ['windows']
+    import offline_reserve
+    neural = ['offline_neural'] if offline_reserve.available(lang, 'neural', config) else []
+    basic = ['offline_basic'] if offline_reserve.available(lang, 'basic', config) else []
+    offline = (['offline_piper'] if offline_voice_available(lang, config) else []) + neural
+    if lang == 'fa-AF' and offline_voice_available('fa-IR', config): offline.insert(0, 'offline_persian_approx')
+    providers = (['edge_free'] if lang in AZURE_VOICES else []) + offline + (['google_web'] if lang in GOOGLE_TTS_LOCALES else []) + ['windows'] + basic
+    references = ['reference:' + locale for locale in REFERENCE_VOICES.get(lang, ())]
+    google_reference = {'ku-TR':'tr-TR', 'sd-PK':'ur-PK', 'ti-ET':'am-ET',
+                        'ckb-IQ':'ar-SA', 'om-ET':'sw-KE'}.get(lang)
+    if google_reference:
+        references.insert(1, 'reference_google:' + google_reference)
+    if lang in ('ku-TR', 'sd-PK'):
+        providers = references + providers
+    elif references:
+        position = next((i for i,p in enumerate(providers) if p in ('windows','offline_basic')), len(providers))
+        providers[position:position] = references
+    if lang == 'fa-AF':
+        providers.insert(0, 'edge_persian_approx')
     if selected == 'offline':
-        providers = offline + ['windows']
+        providers = offline + ['windows'] + basic
+    if selected == 'basic':
+        providers = basic + offline + ['windows']
     if selected == 'azure' and lang in AZURE_VOICES and config.get('speech_key'):
         providers.insert(0, 'azure')
+    elif selected == 'edge_free' and lang == 'fa-AF':
+        providers.remove('edge_persian_approx'); providers.insert(0, 'edge_persian_approx')
     elif selected in providers:
         providers.remove(selected); providers.insert(0, selected)
     session = config.get('_voice_session')
     if selected == 'auto' and isinstance(session, VoiceSession): providers = session.order(providers, lang)
     return {'selected_provider': selected, 'preferred_provider': providers[0], 'providers': providers,
-            'local_only': selected == 'offline',
-            'basis': 'Mapped neural Edge voice, a bundled exact-locale reserve where available, supported Google voice, then exact installed Windows. Explicit Offline keeps synthesis local. Complete reserves can provide faster fallback.'}
+            'local_only': selected in ('offline', 'basic'),
+            'basis': 'Local voices with restored webapp pronunciation reserves. Kurmanji/Tigrinya/Sorani/Oromo/Sindhi cross-language voices and Persian-for-Dari are labelled approximate. Offline and Basic never send text online.'}
 
 
 def offline_voice_available(lang, config=None):
@@ -951,10 +984,12 @@ def offline_voice_available(lang, config=None):
 
 def voice_supported(lang, config=None, native_voices=()):
     config = config or {}
+    import offline_reserve
+    reserve = offline_reserve.available(lang, 'neural', config) or offline_reserve.available(lang, 'basic', config) or (lang == 'fa-AF' and offline_voice_available('fa-IR',config))
     native = bool(matching_sapi_voice(lang, native_voices, exact=True))
-    if config.get('voice_provider') == 'offline':
-        return offline_voice_available(lang, config) or native
-    return lang in FREE_VOICE_LOCALES or offline_voice_available(lang, config) or native
+    if config.get('voice_provider') in ('offline', 'basic'):
+        return offline_voice_available(lang, config) or reserve or native
+    return lang in FREE_VOICE_LOCALES or lang in REFERENCE_VOICES or lang == 'fa-AF' or offline_voice_available(lang, config) or reserve or native
 
 
 def clear_voice_cache():
@@ -963,10 +998,13 @@ def clear_voice_cache():
 
 def _voice_cache_key(provider, text, lang, config):
     credentials = (config.get('speech_key', '') + '\0' + config.get('speech_region', '')) if provider == 'azure' else ''
-    identity = AZURE_VOICES.get(lang, '') if provider in ('azure', 'edge_free') else GOOGLE_TTS_LOCALES.get(lang, '')
+    identity = EDGE_VOICES.get(lang, '') if provider in ('azure', 'edge_free') else GOOGLE_TTS_LOCALES.get(lang, '')
     if provider == 'offline_piper':
         import offline_voice
         identity = offline_voice.cache_identity(lang)
+    if provider in ('offline_basic', 'offline_neural'):
+        import offline_reserve
+        identity = offline_reserve.identity(lang, provider.split('_', 1)[1], config)
     return provider, lang, identity, hashlib.sha256((text + '\0' + credentials).encode('utf-8')).digest()
 
 
@@ -1047,7 +1085,7 @@ def _prepare_voice_direct(provider, text, lang, config, stop, timeout):
         audio = _azure_voice_audio(text, lang, config, stop, timeout)
         _voice_pcm(audio)
         return {'audio': audio, 'voice': AZURE_VOICES[lang], 'provider': provider, 'locale': lang}
-    if provider not in ('edge_free', 'google_web') or lang not in (AZURE_VOICES if provider == 'edge_free' else GOOGLE_TTS_LOCALES):
+    if provider not in ('edge_free', 'google_web') or lang not in (EDGE_VOICES if provider == 'edge_free' else GOOGLE_TTS_LOCALES):
         raise SpeechError('No verified voice exists for this exact language and provider.')
     deadline = time.monotonic() + timeout
     attempts = 2 if provider == 'edge_free' else 1
@@ -1067,7 +1105,7 @@ def _prepare_voice_direct(provider, text, lang, config, stop, timeout):
             if stop.is_set(): raise SpeechError('Voice cancelled.')
             if time.monotonic() > deadline: raise SpeechError('Complete voice preparation exceeded its time budget.')
             audio = _wav_from_pcm(b''.join(blocks)); _voice_pcm(audio)
-            return {'audio': audio, 'voice': AZURE_VOICES[lang] if provider == 'edge_free' else 'Free Google Translate voice',
+            return {'audio': audio, 'voice': EDGE_VOICES[lang] if provider == 'edge_free' else 'Free Google Translate voice',
                     'provider': provider, 'locale': lang, 'characters': len(text), 'decoded': True,
                     'synthesis_attempts': attempt + 1,
                     'preparation_trace': ['Retried the complete Edge passage once after a missing worker result; discarded all earlier chunks.'] if attempt else []}
@@ -1081,6 +1119,29 @@ def _prepare_voice_direct(provider, text, lang, config, stop, timeout):
 
 
 def _prepare_voice(provider, text, lang, config, stop, timeout):
+    if provider.startswith('reference_google:'):
+        locale = provider.split(':',1)[1]
+        allowed = {'ku-TR':'tr-TR','sd-PK':'ur-PK','ti-ET':'am-ET','ckb-IQ':'ar-SA','om-ET':'sw-KE'}
+        if allowed.get(lang) != locale:
+            raise SpeechError('Unknown reference voice route.')
+        value = _prepare_voice('google_web', text, locale, config, stop, timeout)
+        return {**value,'provider':provider,'locale':lang,'approximate':True,
+                'voice':'Google ' + locale + ' pronunciation',
+                'warnings':['Approximate pronunciation using ' + locale + '; not a native voice for this language.']}
+    if provider.startswith('reference:'):
+        locale = provider.split(':',1)[1]
+        if locale not in REFERENCE_VOICES.get(lang, ()):
+            raise SpeechError('Unknown reference voice route.')
+        value = _prepare_voice('edge_free', text, locale, config, stop, timeout)
+        exact = lang == 'ps-AF' and locale == 'ps-AF-male'
+        return {**value, 'provider': provider, 'locale': lang, 'approximate': not exact,
+                'warnings': [] if exact else ['Approximate pronunciation using ' + value['voice'] + '; not a native voice for this language.']}
+    if provider in ('offline_persian_approx', 'edge_persian_approx'):
+        original = 'offline_piper' if provider == 'offline_persian_approx' else 'edge_free'
+        value = _prepare_voice(original,text,'fa-IR',config,stop,timeout)
+        return {**value,'provider':provider,'locale':lang,'approximate':True,
+                'voice':'Persian pronunciation · approximate Dari',
+                'warnings':['Dari is read with Persian pronunciation; this is not a dedicated Dari voice.']}
     # Installed Windows voices can change independently of app settings. Keep
     # that optional renderer fresh instead of caching an unidentified token.
     key = _voice_cache_key(provider, text, lang, config); cached = _voice_cache_get(key) if provider != 'windows' else None
@@ -1091,6 +1152,10 @@ def _prepare_voice(provider, text, lang, config, stop, timeout):
         import offline_voice
         try: value = offline_voice.prepare(text, lang, config, stop, timeout)
         except offline_voice.OfflineVoiceError as error: raise SpeechError(str(error)) from error
+    elif provider in ('offline_basic', 'offline_neural'):
+        import offline_reserve
+        try: value = offline_reserve.prepare(text, lang, provider.split('_', 1)[1], config, stop, timeout)
+        except offline_reserve.ReserveError as error: raise SpeechError(str(error)) from error
     elif provider == 'edge_free': value = _prepare_voice_direct(provider, text, lang, config, stop, timeout)
     else: value = _speech_cloud_worker('voice', text, lang, {**config, 'voice_provider': provider}, stop, timeout)
     if stop.is_set(): raise SpeechError('Voice cancelled.')
@@ -1099,9 +1164,55 @@ def _prepare_voice(provider, text, lang, config, stop, timeout):
     return {**value, 'cache_hit': False}
 
 
+def _waveout_device():
+    dll = ctypes.WinDLL('winmm')
+    dll.waveOutOpen.argtypes = [ctypes.POINTER(ctypes.c_void_p), wintypes.UINT, ctypes.POINTER(WaveFormat), ctypes.c_size_t, ctypes.c_size_t, wintypes.DWORD]
+    for name in ('waveOutPrepareHeader','waveOutUnprepareHeader','waveOutWrite'):
+        getattr(dll,name).argtypes = [ctypes.c_void_p, ctypes.POINTER(WaveHeader), wintypes.UINT]
+    for name in ('waveOutReset','waveOutClose'):
+        getattr(dll,name).argtypes = [ctypes.c_void_p]
+    return dll
+
+
+# If a broken driver refuses to release a buffer, retain its memory until exit
+# rather than hand a freed address to that driver. Normal playback leaves none.
+_HELD_AUDIO_BUFFERS = []
+
+
+def _play_pcm_audio(pcm, stop):
+    if stop.is_set(): return False
+    dll = _waveout_device(); handle = ctypes.c_void_p()
+    fmt = WaveFormat(1,1,16000,32000,2,16,0)
+    if dll.waveOutOpen(ctypes.byref(handle),0xFFFFFFFF,ctypes.byref(fmt),0,0,0):
+        raise SpeechError('The Windows playback device could not open. Check the default output device.')
+    buffer = ctypes.create_string_buffer(pcm, len(pcm))
+    header = WaveHeader(ctypes.cast(buffer,ctypes.c_void_p),len(pcm),0,0,0,0,None,0)
+    prepared = False
+    try:
+        if dll.waveOutPrepareHeader(handle,ctypes.byref(header),ctypes.sizeof(header)):
+            raise SpeechError('The Windows playback buffer could not be prepared.')
+        prepared = True
+        if stop.is_set(): return False
+        if dll.waveOutWrite(handle,ctypes.byref(header),ctypes.sizeof(header)):
+            raise SpeechError('The Windows playback device could not start.')
+        deadline = time.monotonic() + len(pcm)/32000 + 30
+        while not header.flags & 1:  # WHDR_DONE means the driver consumed the buffer.
+            if stop.wait(.015): return False
+            if time.monotonic() > deadline:
+                raise SpeechError('The audio device stopped responding. Check the output device and retry.')
+        return not stop.is_set()
+    finally:
+        # Reset returns pending buffers and also provides immediate cancellation.
+        dll.waveOutReset(handle)
+        released = not prepared or dll.waveOutUnprepareHeader(handle,ctypes.byref(header),ctypes.sizeof(header)) == 0
+        if released:
+            dll.waveOutClose(handle)
+        else:
+            _HELD_AUDIO_BUFFERS.append((dll,handle,buffer,header))
+
+
 def _play_wav_audio(audio, stop, directory=None):
-    _, duration = _voice_pcm(audio)
-    directory = Path(directory or tempfile.gettempdir()); directory.mkdir(parents=True, exist_ok=True)
+    pcm, _ = _voice_pcm(audio)
     acquired = False
     try:
         queue_deadline = time.monotonic() + 5
@@ -1110,20 +1221,21 @@ def _play_wav_audio(audio, stop, directory=None):
             if time.monotonic() >= queue_deadline:
                 raise SpeechError('The previous voice is still playing. Stop it, then retry Listen.')
         if not acquired or stop.is_set(): return False
-        with tempfile.TemporaryDirectory(prefix='voice-play-', dir=directory) as scratch:
-            path = Path(scratch)/'complete.wav'; path.write_bytes(audio)
-            if stop.is_set(): return False
-            try:
-                winsound.PlaySound(str(path), winsound.SND_FILENAME | winsound.SND_ASYNC | winsound.SND_NODEFAULT)
-                deadline = time.monotonic() + duration + .2
-                while time.monotonic() < deadline and not stop.wait(.025): pass
-                return not stop.is_set()
-            finally: winsound.PlaySound(None, 0)
+        if _HELD_AUDIO_BUFFERS:
+            raise SpeechError('The audio driver did not release its last buffer. Restart the app after checking the output device.')
+        return _play_pcm_audio(pcm, stop)
     finally:
         if acquired: _VOICE_PLAYBACK_LOCK.release()
 
 
 def speak_free(text, lang, config, stop):
+    from safe_speech import mask
+    original_text = text
+    text = mask(text, (config or {}).get('safe_speech', True), 'tts')
+    if text != original_text and not any(ch.isalnum() for ch in text):
+        if stop.is_set(): raise SpeechError('Voice cancelled.')
+        return {'complete': True, 'cancelled': False, 'filtered': True,
+                'warnings': ['Safe Speech muted the filtered words.']}
     _voice_chunks(text)
     if stop.is_set(): raise SpeechError('Voice cancelled.')
     config = dict(config or {}); plan = voice_route_plan(lang, config)
@@ -1137,14 +1249,15 @@ def speak_free(text, lang, config, stop):
         def run():
             acquired = False
             try:
-                if provider not in ('windows', 'offline_piper'):
+                if provider not in ('windows', 'offline_piper', 'offline_neural', 'offline_basic', 'offline_persian_approx'):
                     while not cancel.is_set():
                         if _VOICE_PREPARE_SLOTS.acquire(timeout=.025): acquired = True; break
                         if time.monotonic() >= deadline: raise SpeechError('Voice preparation is busy.')
                     if not acquired: raise SpeechError('Voice cancelled.')
                 remaining = deadline - time.monotonic()
                 if remaining <= 0: raise SpeechError('Voice preparation exceeded its one-minute limit.')
-                value = _prepare_voice(provider, text, lang, config, cancel, remaining)
+                budget = min(remaining, 15 + len(text) / 80) if provider in ('edge_free', 'google_web', 'azure', 'edge_persian_approx') or provider.startswith('reference:') else remaining
+                value = _prepare_voice(provider, text, lang, config, cancel, budget)
                 with changed: job['value'] = value
             except Exception as error:
                 with changed: job['error'] = str(error)
@@ -1158,8 +1271,8 @@ def speak_free(text, lang, config, stop):
     start(preferred)
     # Windows is an exact-locale, lazy local fallback. An explicitly selected
     # Windows route gets the first attempt without speculative cloud uploads.
-    if preferred not in ('windows', 'offline_piper'):
-        reserve = next((provider for provider in providers[1:] if provider != 'windows'), None)
+    if preferred not in ('windows', 'offline_piper', 'offline_neural', 'offline_basic', 'offline_persian_approx'):
+        reserve = next((provider for provider in providers[1:] if provider not in ('windows', 'offline_basic')), None)
         if reserve: start(reserve)
     reserve_ready_at = None
     try:
@@ -1172,21 +1285,25 @@ def speak_free(text, lang, config, stop):
                 if preferred in ready: chosen = jobs[preferred]['value']; break
                 if ready:
                     if reserve_ready_at is None: reserve_ready_at = time.monotonic()
-                    if preferred not in active or time.monotonic() - reserve_ready_at >= VOICE_QUALITY_GRACE:
+                    quality_grace = (5.0 if lang in ('fa-IR','fa-AF') and preferred in ('edge_free','edge_persian_approx')
+                                     else 2.0 if lang in ('ku-TR','sd-PK') and preferred.startswith('reference:') else VOICE_QUALITY_GRACE)
+                    if preferred not in active or time.monotonic() - reserve_ready_at >= quality_grace:
                         selected = ready[0]; chosen = jobs[selected]['value']
                         if preferred in active: errors.append('Preferred ' + preferred + ' voice was not ready within the short quality grace; used the complete ' + selected + ' reserve.')
                         break
                 # At most two online providers are prepared. Only move to the
                 # exact-locale Windows renderer after every online attempt fails.
                 unstarted = [provider for provider in providers if provider not in jobs]
-                online_active = sum(provider not in ('windows', 'offline_piper') for provider in active)
+                online_active = sum(provider not in ('windows', 'offline_piper', 'offline_neural', 'offline_basic', 'offline_persian_approx') for provider in active)
                 for provider in unstarted:
                     if provider == 'windows':
-                        if not active and not ready: start(provider)
-                    elif provider == 'offline_piper':
-                        if not active and not ready: start(provider)
-                    elif online_active < 2 and (preferred not in ('windows', 'offline_piper') or jobs[preferred]['done']):
-                        start(provider); online_active += 1
+                        if not active and not ready:
+                            start(provider); active.append(provider)
+                    elif provider in ('offline_piper', 'offline_neural', 'offline_basic', 'offline_persian_approx'):
+                        if not active and not ready:
+                            start(provider); active.append(provider)
+                    elif online_active < 2 and (preferred not in ('windows', 'offline_piper', 'offline_neural', 'offline_basic', 'offline_persian_approx') or jobs[preferred]['done']):
+                        start(provider); active.append(provider); online_active += 1
                 if not ready and all(job['done'] for job in jobs.values()) and len(jobs) == len(providers):
                     errors = [provider + ': ' + str(job['error']) for provider, job in jobs.items()]
                     raise SpeechError('No matching-language voice could prepare the complete passage. ' + ' '.join(errors))
@@ -1194,6 +1311,10 @@ def speak_free(text, lang, config, stop):
         for provider, job in jobs.items():
             if chosen.get('provider') != provider: job['cancel'].set()
             if job['error'] and 'cancelled' not in job['error'].lower(): errors.append(provider + ': ' + job['error'])
+        if stop.is_set(): raise SpeechError('Voice cancelled.')
+        notify = config.get('_voice_ready')
+        if callable(notify):
+            notify({key:value for key,value in chosen.items() if key in ('provider','voice','locale','approximate','warnings')})
         if stop.is_set(): raise SpeechError('Voice cancelled.')
         complete = _play_wav_audio(chosen['audio'], stop, directory)
         return {key: value for key, value in {**chosen, 'complete': complete, 'cancelled': not complete,
@@ -1273,6 +1394,21 @@ AZURE_VOICES = {'en-US': 'en-US-JennyNeural', 'ar-SA': 'ar-SA-ZariyahNeural', 'f
  'zh-CN': 'zh-CN-XiaoxiaoNeural', 'ja-JP': 'ja-JP-NanamiNeural', 'ko-KR': 'ko-KR-SunHiNeural',
  'nl-NL': 'nl-NL-ColetteNeural', 'pl-PL': 'pl-PL-ZofiaNeural', 'ro-RO': 'ro-RO-AlinaNeural',
  'uk-UA': 'uk-UA-PolinaNeural', 'el-GR': 'el-GR-AthinaNeural', 'he-IL': 'he-IL-HilaNeural', 'id-ID': 'id-ID-GadisNeural'}
+# Exact voice identifiers remain private worker inputs, not invented language support.
+EDGE_VOICES = {**AZURE_VOICES, 'ar-IQ': 'ar-IQ-RanaNeural',
+ 'ps-AF-male': 'ps-AF-GulNawazNeural', 'tr-TR-male': 'tr-TR-AhmetNeural',
+ 'ur-PK-male': 'ur-PK-AsadNeural', 'so-SO-male': 'so-SO-MuuseNeural',
+ 'en-US-multilingual': 'en-US-AvaMultilingualNeural'}
+# Web v19C: TI -> Amharic; CKB -> Iraqi Arabic/Persian; OM -> Somali/Swahili;
+# KU -> Turkish/multilingual. SD had no dedicated web override: Urdu is a
+# clearly labelled practical approximation, never claimed to be native Sindhi.
+REFERENCE_VOICES = {
+ 'ti-ET': ('am-ET',), 'ckb-IQ': ('ar-IQ','fa-IR','ar-SA'),
+ 'om-ET': ('so-SO','so-SO-male','sw-KE'),
+ 'ku-TR': ('tr-TR','tr-TR-male','en-US-multilingual'),
+ 'sd-PK': ('ur-PK','ur-PK-male'),
+ 'ps-AF': ('ps-AF-male','fa-IR'),
+}
 FREE_VOICE_LOCALES = frozenset(AZURE_VOICES) | frozenset(GOOGLE_TTS_LOCALES)
 
 def _azure_voice_audio(text, lang, config, stop, timeout=20):

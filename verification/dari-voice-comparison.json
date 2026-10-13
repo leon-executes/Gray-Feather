@@ -1,0 +1,195 @@
+[
+  {
+    "case": 0,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 1.906,
+    "complete": true,
+    "word_edits": 1,
+    "words": 7,
+    "char_edits": 2,
+    "chars": 29
+  },
+  {
+    "case": 0,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.766,
+    "complete": true,
+    "word_edits": 2,
+    "words": 7,
+    "char_edits": 3,
+    "chars": 29
+  },
+  {
+    "case": 1,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 1.515,
+    "complete": true,
+    "word_edits": 1,
+    "words": 8,
+    "char_edits": 2,
+    "chars": 35
+  },
+  {
+    "case": 1,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.734,
+    "complete": true,
+    "word_edits": 1,
+    "words": 8,
+    "char_edits": 2,
+    "chars": 35
+  },
+  {
+    "case": 2,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 1.718,
+    "complete": true,
+    "word_edits": 0,
+    "words": 13,
+    "char_edits": 0,
+    "chars": 47
+  },
+  {
+    "case": 2,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.734,
+    "complete": true,
+    "word_edits": 0,
+    "words": 13,
+    "char_edits": 0,
+    "chars": 47
+  },
+  {
+    "case": 3,
+    "provider": "edge_persian_approx",
+    "complete": false,
+    "error": "The free Edge voice worker returned no complete audio."
+  },
+  {
+    "case": 3,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.812,
+    "complete": true,
+    "word_edits": 2,
+    "words": 23,
+    "char_edits": 0,
+    "chars": 80
+  },
+  {
+    "case": 4,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 1.531,
+    "complete": true,
+    "word_edits": 0,
+    "words": 12,
+    "char_edits": 0,
+    "chars": 44
+  },
+  {
+    "case": 4,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.797,
+    "complete": true,
+    "word_edits": 0,
+    "words": 12,
+    "char_edits": 0,
+    "chars": 44
+  },
+  {
+    "case": 5,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 2.156,
+    "complete": true,
+    "word_edits": 2,
+    "words": 29,
+    "char_edits": 0,
+    "chars": 118
+  },
+  {
+    "case": 5,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 1.0,
+    "complete": true,
+    "word_edits": 2,
+    "words": 29,
+    "char_edits": 0,
+    "chars": 118
+  },
+  {
+    "case": 6,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 1.641,
+    "complete": true,
+    "word_edits": 0,
+    "words": 6,
+    "char_edits": 0,
+    "chars": 27
+  },
+  {
+    "case": 6,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.703,
+    "complete": true,
+    "word_edits": 0,
+    "words": 6,
+    "char_edits": 0,
+    "chars": 27
+  },
+  {
+    "case": 7,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 1.984,
+    "complete": true,
+    "word_edits": 0,
+    "words": 11,
+    "char_edits": 0,
+    "chars": 45
+  },
+  {
+    "case": 7,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.75,
+    "complete": true,
+    "word_edits": 0,
+    "words": 11,
+    "char_edits": 0,
+    "chars": 45
+  },
+  {
+    "case": 8,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 9.734,
+    "complete": true,
+    "word_edits": 2,
+    "words": 28,
+    "char_edits": 2,
+    "chars": 107
+  },
+  {
+    "case": 8,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 1.0,
+    "complete": true,
+    "word_edits": 1,
+    "words": 28,
+    "char_edits": 1,
+    "chars": 107
+  },
+  {
+    "case": 9,
+    "provider": "edge_persian_approx",
+    "synthesis_seconds": 1.469,
+    "complete": true,
+    "word_edits": 2,
+    "words": 6,
+    "char_edits": 1,
+    "chars": 18
+  },
+  {
+    "case": 9,
+    "provider": "offline_persian_approx",
+    "synthesis_seconds": 0.672,
+    "complete": false,
+    "error": "No clear speech was recognized online. Retry or choose offline dictation."
+  }
+]

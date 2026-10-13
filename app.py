@@ -20,7 +20,7 @@ import traceback
 import unittest
 import uuid
 
-VERSION = '1.3.0'
+VERSION = '1.4.1'
 
 def portable_root():
     return Path(sys.executable).resolve().parent if getattr(sys, 'frozen', False) else Path(__file__).resolve().parent
@@ -99,10 +99,14 @@ class Service:
         return self._translator
 
     def translate(self, text, source, target, provider='auto', reinforce=None, cancel_event=None, context=''):
+        from settings import RETIRED_TRANSLATION_PROVIDERS
+        if provider in RETIRED_TRANSLATION_PROVIDERS:
+            import engine
+            raise engine.TranslationError('settings', 'Offline text translation was removed. Choose an online translation engine.')
         settings = self.settings()
         translator = self._make_translator()
         improved = bool(settings.get('reinforce', True) if reinforce is None else reinforce)
-        if improved or provider in ('reinforced', 'index_web', 'index_local', 'hy_mt_local', 'gemma_local'):
+        if improved or provider in ('reinforced', 'index_web'):
             if self._reinforced_translator is None:
                 from reinforced_engine import ReinforcedTranslator
                 self._reinforced_translator = ReinforcedTranslator(translator, shutdown=self._shutting_down)
@@ -125,9 +129,9 @@ class Service:
                 allow_fallback=bool(self.settings().get('free_fallback', True)), cache_size=12, cache_chars=200_000)
         settings = self.settings()
         provider = settings.get('provider', 'auto')
-        if provider in ('index_local', 'hy_mt_local', 'gemma_local'):
-            # A local-only choice must never silently upload provisional speech.
-            raise engine.TranslationError('preview', 'The offline engine translates the completed recording.')
+        from settings import RETIRED_TRANSLATION_PROVIDERS
+        if provider in RETIRED_TRANSLATION_PROVIDERS:
+            raise engine.TranslationError('settings', 'Offline text translation was removed. Choose an online translation engine.')
         if provider == 'index_web':
             from index_engine import IndexTranslator
             value = IndexTranslator().translate(text,source,target,cancel_event=cancel_event,deadline_seconds=6)
@@ -142,21 +146,14 @@ class Service:
         return value
 
     def available_opinion_providers(self, source_code, target_code, used_providers=()):
-        from local_ai import LocalAI
         from index_engine import supports as index_supports
-        local_names = ('index_local', 'hy_mt_local', 'gemma_local')
-        local_only = self.settings().get('provider') in local_names
+        from settings import RETIRED_TRANSLATION_PROVIDERS
         used = tuple(used_providers)
-        web_used = tuple(p for p in used if p not in local_names and p != 'index_web')
-        options = [] if local_only else list(self._make_translator().available_opinion_providers(source_code, target_code, web_used))
-        if not local_only and 'index_web' not in used and index_supports(source_code,target_code):
-            options.insert(0, {'provider':'index_web','label':'Index Translate · free AI',
-                'family':'bilibili_index','independent':'index_local' not in used})
-        for name in local_names:
-            model = LocalAI(model=name)
-            if name not in used and model.capabilities(source_code,target_code)['supported'] and model.available()['available']:
-                options.append({'provider':name,'label':{'index_local':'Index · offline AI','hy_mt_local':'Hy-MT · local AI','gemma_local':'Gemma · local AI'}[name],
-                    'family':{'index_local':'bilibili_index','hy_mt_local':'tencent_hy_mt2','gemma_local':'google_gemma4'}[name],'independent':False})
+        web_used = tuple(p for p in used if p not in RETIRED_TRANSLATION_PROVIDERS and p != 'index_web')
+        options = list(self._make_translator().available_opinion_providers(source_code, target_code, web_used))
+        if source_code != target_code and 'index_web' not in used and index_supports(source_code, target_code):
+            options.insert(0, {'provider': 'index_web', 'label': 'Index Translate · free AI',
+                'family': 'bilibili_index', 'independent': 'index_local' not in used})
         return tuple(options)
 
     def add_opinion(self, source, source_code, target_code, used_providers=(), cancel_event=None):
@@ -164,16 +161,17 @@ class Service:
         options = self.available_opinion_providers(source_code, target_code, used_providers)
         if not options:
             raise engine.TranslationError('opinion_unavailable', 'No further available engine supports this exact language pair.')
-        local_names = ('index_local', 'hy_mt_local', 'gemma_local')
-        if options[0]['provider'] in local_names or options[0]['provider'] == 'index_web':
+        if options[0]['provider'] == 'index_web':
             from reinforced_engine import ReinforcedTranslator
             if self._reinforced_translator is None:
                 self._reinforced_translator = ReinforcedTranslator(self._make_translator(), shutdown=self._shutting_down)
-            result = self._reinforced_translator.translate(source,source_code,target_code,
-                provider=options[0]['provider'],cancel=cancel_event,improve=False)
+            result = self._reinforced_translator.translate(source, source_code, target_code,
+                provider='index_web', cancel=cancel_event, improve=False)
         else:
+            from settings import RETIRED_TRANSLATION_PROVIDERS
+            web_used = tuple(p for p in used_providers if p not in RETIRED_TRANSLATION_PROVIDERS and p != 'index_web')
             result = self._make_translator().additional_opinion(source, source_code, target_code,
-                used_providers=tuple(p for p in used_providers if p not in local_names and p != 'index_web'), cancel=cancel_event)
+                used_providers=web_used, cancel=cancel_event)
         value = dataclasses.asdict(result)
         value['checks'] = copy.deepcopy(value.get('warnings', []))
         value['warnings'] = [w.get('message', str(w)) if isinstance(w, dict) else str(w) for w in value.get('warnings', [])]
@@ -214,9 +212,55 @@ class Service:
         self._dirty_history = True
         return self.store.delete_conversation(identifier)
 
+    def delete_conversations(self, identifiers):
+        with self._save_lock:
+            count = self.store.delete_conversations(identifiers)
+            self._dirty_history = True
+            return count
+
+    def shred_history(self):
+        with self._save_lock:
+            result = self.store.shred_history()
+            self._dirty_history = False
+            self._translator = self._preview_translator = self._reinforced_translator = None
+            # Only the app-managed backup names; never follow links or delete user exports.
+            root = self.data_dir.resolve()
+            backup_dir = self.data_dir / 'backups'
+            paths = [backup_dir / name for name in ('latest.sqlite3', 'previous.sqlite3', 'next.sqlite3')]
+            try:
+                # A crash during automatic backup can leave its private staging file.
+                if backup_dir.resolve() == root / 'backups' and not backup_dir.is_symlink():
+                    paths.extend(backup_dir.glob('.next.sqlite3.*.tmp'))
+            except OSError:
+                result['issues'].append('Could not check interrupted automatic backups. Retry Shred History.')
+            for path in paths:
+                name = path.name
+                try:
+                    if not path.exists():
+                        continue
+                    if path.is_symlink() or path.parent.is_symlink() or path.resolve().parent != root / 'backups':
+                        raise OSError('Linked backup location')
+                    with path.open('r+b', buffering=0) as stream:
+                        remaining = path.stat().st_size
+                        zeros = bytes(1024 * 1024)
+                        while remaining:
+                            written = stream.write(zeros[:min(remaining, len(zeros))])
+                            if not written:
+                                raise OSError('Backup overwrite failed')
+                            remaining -= written
+                        os.fsync(stream.fileno())
+                        stream.truncate(0)
+                        os.fsync(stream.fileno())
+                    path.unlink()
+                except OSError:
+                    result['issues'].append('Could not purge automatic backup ' + name + '. Close any program using it and retry Shred History.')
+            return result
+
     def backup_history(self, path):
-        destination = self._safe_output_path(path)
-        self.store.backup(destination)
+        # Include backup publication in the purge lock, not just SQLite copying.
+        with self._save_lock:
+            destination = self._safe_output_path(path)
+            self.store.backup(destination)
         return {'path': str(path), 'verified': True}
 
     def _safe_output_path(self, path):
@@ -258,17 +302,17 @@ class Service:
             import offline_omni
             mic = mic and offline_omni.available(locale_code, settings)
         free_voice = speech.voice_supported(locale_code, settings)
-        if settings.get('voice_provider') == 'offline':
-            free_voice = speech.offline_voice_available(locale_code, settings)
         if mic and keyless:
             if selected in ('offline', 'omnilingual') or locale_code not in speech.GOOGLE_STT_LOCALES:
                 reason = 'Bundled local dictation. Press Record Speech, speak, then Stop.'
             elif selected == 'google_web':
                 reason = 'Free online dictation. Press Record Speech, speak, then Stop.'
-            elif locale_code in ('en-US', 'fr-FR'):
+            elif locale_code in ('en-US', 'fr-FR') or locale_code in speech.OMNI_FIRST:
                 reason = 'Bundled local dictation with free online fallback. Press Record Speech, speak, then Stop.'
             elif locale_code == 'fa-IR':
-                reason = 'Free online dictation. Offline Persian is unavailable after quality checks.'
+                reason = 'Free online dictation with bundled multilingual fallback.'
+            elif len(speech.recognition_routes(locale_code)) == 1:
+                reason = 'Free online dictation. No verified automatic offline reserve for this language.'
             else:
                 reason = 'Free online dictation with supported local fallback. Press Record Speech, speak, then Stop.'
         elif not mic:
@@ -278,6 +322,7 @@ class Service:
             reason = 'Press Record Speech, speak, then Stop.'
         return {'mic_enabled': mic, 'voice_enabled': azure_voice or native or free_voice,
                 'reason': reason,
+                'voice_reason': ('Dari uses approximate Persian pronunciation.' if locale_code == 'fa-AF' else 'Dedicated voice where available; basic robotic or explicitly approximate pronunciation is the last reserve.'),
                 'native_voice_checked': self._voice_checked}
 
     def check_native_voices(self):
@@ -307,7 +352,7 @@ class Service:
         result = speech.recognize_with_fallback(audio, self._locale(source_lang), settings, abort)
         return {**result, **metadata}
 
-    def speak(self, text, lang, cancel_event):
+    def speak(self, text, lang, cancel_event, on_prepared=None):
         import speech
         self._audio_stop = cancel_event
         settings = self.settings()
@@ -316,7 +361,11 @@ class Service:
         if self._voice_session is None:
             self._voice_session = speech.VoiceSession()
         settings['_voice_session'] = self._voice_session
+        if on_prepared is not None: settings['_voice_ready'] = on_prepared
         return speech.speak_free(text, locale_code, settings, cancel_event)
+
+    def speak_with_feedback(self, text, lang, cancel_event, callback):
+        return self.speak(text, lang, cancel_event, callback)
 
     def stop_audio(self):
         self._audio_stop.set()
@@ -360,7 +409,7 @@ def diagnose(data_dir):
             'free_translation_providers': ['google_web', 'bing_web', 'index_web', 'mymemory'],
             'speech_configured': True, 'speech_mode': settings.get('speech_provider', 'auto'),
             'provider_credentials': 'Windows user-bound DPAPI; re-enter on another account',
-            'online_services_required': settings.get('provider') not in ('index_local','hy_mt_local','gemma_local'), 'transcript_contents_in_report': False}
+            'online_services_required': True, 'transcript_contents_in_report': False}
 
 def write_report(path, report):
     from settings import atomic_json
@@ -373,24 +422,27 @@ def self_test(report_path):
     temporary_root = Path(report_path).parent / '.self-test-temp'
     temporary_root.mkdir(parents=True, exist_ok=True)
     tempfile.tempdir = str(temporary_root)
-    import test_engine
-    import test_app
-    import test_app_extra
-    import test_ui
-    import test_ui_storage
-    import test_free_speech
-    import test_ui_speech_integration
-    import test_speech_model_policy
-    import test_workflow_service
-    import test_ui_ux
-    import test_live_speech
-    import test_reinforcement
-    import test_reinforced_engine
-    import test_local_ai
-    import test_offline_voice
-    import test_index_engine
-    import test_offline_omni
-    suite = unittest.TestSuite([unittest.defaultTestLoader.loadTestsFromModule(module) for module in (test_engine, test_app, test_app_extra, test_ui, test_ui_storage, test_free_speech, test_ui_speech_integration, test_speech_model_policy, test_workflow_service, test_ui_ux, test_live_speech, test_reinforcement, test_reinforced_engine, test_local_ai, test_offline_voice, test_index_engine, test_offline_omni)])
+    from tests import test_engine
+    from tests import test_app
+    from tests import test_app_extra
+    from tests import test_ui
+    from tests import test_ui_storage
+    from tests import test_free_speech
+    from tests import test_ui_speech_integration
+    from tests import test_speech_model_policy
+    from tests import test_workflow_service
+    from tests import test_ui_ux
+    from tests import test_live_speech
+    from tests import test_reinforcement
+    from tests import test_reinforced_engine
+    from tests import test_translation_removal
+    from tests import test_offline_voice
+    from tests import test_index_engine
+    from tests import test_offline_omni
+    from tests import test_voice_reserve
+    from tests import test_speech_hotfix
+    from tests import test_release_package
+    suite = unittest.TestSuite([unittest.defaultTestLoader.loadTestsFromModule(module) for module in (test_engine, test_app, test_app_extra, test_ui, test_ui_storage, test_free_speech, test_ui_speech_integration, test_speech_model_policy, test_workflow_service, test_ui_ux, test_live_speech, test_reinforcement, test_reinforced_engine, test_translation_removal, test_offline_voice, test_index_engine, test_offline_omni, test_voice_reserve, test_speech_hotfix, test_release_package)])
     import io
     log = io.StringIO()
     started = time.perf_counter()
@@ -443,7 +495,7 @@ def main():
         if args.self_test:
             return self_test(report)
         if args.native_self_test:
-            from native_bundle_check import run
+            from tests.native_bundle_check import run
             result = run()
             result.update(version=VERSION, frozen=bool(getattr(sys,'frozen',False)))
             write_report(report,result)
@@ -452,17 +504,17 @@ def main():
             write_report(report, diagnose(data_dir))
             return 0
         if args.speech_check:
-            from runtime_checks import run
+            from tests.runtime_checks import run
             result = run()
             write_report(report, result)
             return 0 if result['successful'] else 1
         if args.live_benchmark or args.translation_types_check or args.all_language_check:
             if args.all_language_check:
-                from language_corpus_check import run
+                from tests.language_corpus_check import run
             elif args.translation_types_check:
                 from translation_types_check import run
             else:
-                from live_benchmark import run
+                from tests.live_benchmark import run
             service = Service(data_dir)
             try:
                 if args.all_language_check:
@@ -503,7 +555,7 @@ def main():
         window.show()
         application.aboutToQuit.connect(service.shutdown)
         if args.ui_live_check:
-            import ui_live_check
+            from tests import ui_live_check
             QTimer.singleShot(200,lambda: ui_live_check.start(window,service,application,report))
         if args.ui_smoke:
             def finish_smoke():

@@ -1,0 +1,653 @@
+{
+  "scope": "Default automatic reinforced free translation. Synthetic text; completion is not native-language accuracy certification.",
+  "cases": [
+    {
+      "source": "en",
+      "target": "ar",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "يرجى إحضار نسختين. لا تدفع 50 جنيهًا إسترلينيًا. مرجع GF-4821. اتصل بـ test@example.com.",
+      "provider": "google_web",
+      "warnings": [
+        "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "currencies",
+          "message": "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+          "source_values": [
+            "GBP"
+          ],
+          "target_values": []
+        },
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "يرجى إحضار نسختين. لا تدفع 50 جنيهًا إسترلينيًا. المرجع GF-4821. اتصل بـ test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 3.09
+    },
+    {
+      "source": "en",
+      "target": "fr",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Merci d'apporter 2 exemplaires. Ne payez pas 50 £. Référence GF-4821. Contactez test@example.com.",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Veuillez apporter 2 copies. Ne payez pas 50 £. Référence GF-4821. Contactez test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 2.47
+    },
+    {
+      "source": "en",
+      "target": "fa",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "لطفاً ۲ نسخه بیاورید. ۵۰ پوند پرداخت نکنید. شماره مرجع GF-4821. با test@example.com تماس بگیرید.",
+      "provider": "bing_web",
+      "warnings": [
+        "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "currencies",
+          "message": "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+          "source_values": [
+            "GBP"
+          ],
+          "target_values": []
+        },
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "لطفا 2 نسخه همراه داشته باشید. 50 پوند پرداخت نکنید. مرجع GF-4821. با test@example.com تماس بگیرید.",
+      "second_provider": "google_web",
+      "seconds": 1.7
+    },
+    {
+      "source": "en",
+      "target": "prs",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "لطفاً ۲ نسخه بیاورید. ۵۰ پوند نپردازید. شماره مرجع GF-4821. با test@example.com تماس بگیرید.",
+      "provider": "bing_web",
+      "warnings": [
+        "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "currencies",
+          "message": "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+          "source_values": [
+            "GBP"
+          ],
+          "target_values": []
+        },
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "",
+      "second_provider": "",
+      "seconds": 1.66
+    },
+    {
+      "source": "en",
+      "target": "ti",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "2 ቅዳሓት ሒዝኩም ክትመጹ ንላቦ። £50 ኣይትኽፈሉ። መወከሲ GF-4821። test@example.com ተወከሱ።",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "በጃኻ 2 ቅዳሓት ሒዝካ ምጻእ። £50 ኣይትክፈል። መወከሲ GF-4821። ምስ test@example.com ተራኸብ።",
+      "second_provider": "bing_web",
+      "seconds": 2.92
+    },
+    {
+      "source": "en",
+      "target": "am",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "እባኮትን 2 ኮፒ ይዘው ይምጡ። £50 አትክፈል። ማጣቀሻ GF-4821. test@example.com ያግኙ።",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "እባክዎን 2 ቅጂዎችን ይዘው ይምጡ። £ 50 አይክፈሉ። ማጣቀሻ GF-4821. test@example.com ያነጋግሩ።",
+      "second_provider": "bing_web",
+      "seconds": 2.83
+    },
+    {
+      "source": "en",
+      "target": "ps",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "مهرباني وکړئ 2 کاپي راوړي. 50 پونډه مه ورکوئ. حواله GF-4821. test@example.com سره اړیکه ونیسئ.",
+      "provider": "google_web",
+      "warnings": [
+        "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "currencies",
+          "message": "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+          "source_values": [
+            "GBP"
+          ],
+          "target_values": []
+        },
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "مهرباني وکړئ ۲ کاپي راوړئ. £۵۰ مه تاديه کوئ. د حوالې شمېره GF-4821. له test@example.com سره اړیکه ونیسئ.",
+      "second_provider": "bing_web",
+      "seconds": 2.61
+    },
+    {
+      "source": "en",
+      "target": "so",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Fadlan keen 2 nuqul Ha bixin £50. Tixraaca GF-4821. La xidhiidh test@example.com",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Fadlan keen 2 nuqul. Ha bixin £50. Tixraac GF-4821. La xiriir test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 2.66
+    },
+    {
+      "source": "en",
+      "target": "tr",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Lütfen 2 kopya getirin. 50 £ ödemeyin. Referans GF-4821. test@example.com ile iletişime geçin.",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Lütfen 2 kopya getirin. £50 ödemeyin. Referans GF-4821. İletişim test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 5.3
+    },
+    {
+      "source": "en",
+      "target": "ckb",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "تکایە ٢ کۆپی لەگەڵ خۆتان بهێنن. 50 پاوەند مەدە. ئاماژە GF-4821. پەیوەندی بکەن بە test@example.com.",
+      "provider": "google_web",
+      "warnings": [
+        "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "currencies",
+          "message": "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+          "source_values": [
+            "GBP"
+          ],
+          "target_values": []
+        },
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "تکایە 2 کۆپی بهێنە. 50 پاوەند مەدە. سەرچاوەی GF-4821. پەیوەندی test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 2.52
+    },
+    {
+      "source": "en",
+      "target": "kmr",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Ji kerema xwe 2 nusxeyan bînin. 50 lîre nedin. Çavkanî GF-4821. Têkilî test@example.com.",
+      "provider": "google_web",
+      "warnings": [
+        "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "currencies",
+          "message": "Currency markers differ. Verify the currency; translated currency names or symbol placement can vary.",
+          "source_values": [
+            "GBP"
+          ],
+          "target_values": []
+        },
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Ji kerema xwe 2 kopî bînin. 50 £ nedin. Referans GF-4821. Têkilî test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 2.69
+    },
+    {
+      "source": "en",
+      "target": "de",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Bitte bringen Sie 2 Exemplare mit. Zahlen Sie nicht 50 £. Referenz GF-4821. Kontaktieren Sie test@example.com.",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Bitte bringen Sie 2 Kopien mit. Zahlen Sie nicht £50. Referenz GF-4821. Kontaktieren Sie test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 2.42
+    },
+    {
+      "source": "en",
+      "target": "nl",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Breng alstublieft 2 kopieën mee. Betaal geen £50. Referentie GF-4821. Neem contact op met test@example.com.",
+      "provider": "bing_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "The main translation was improved using source-anchored checks; the earlier wording is retained in Review.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "reinforcement_applied",
+          "message": "The main translation was improved using source-anchored checks; the earlier wording is retained in Review.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Gelieve 2 exemplaren mee te brengen. Betaal geen € 50,-. Referentie GF-4821. Neem contact op met test@example.com.",
+      "second_provider": "google_web",
+      "seconds": 2.62
+    },
+    {
+      "source": "en",
+      "target": "uk",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Будь ласка, принесіть 2 примірники. Не платіть £50. Посилання GF-4821. Зверніться до test@example.com.",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Будь ласка, принесіть 2 копії. Не сплачуйте £50. Посилання GF-4821. Зв'яжіться з test@example.com.",
+      "second_provider": "bing_web",
+      "seconds": 2.84
+    },
+    {
+      "source": "en",
+      "target": "ur",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "براہ کرم 2 کاپیاں لائیں۔ £50 ادا نہ کریں۔ حوالہ GF-4821۔ test@example.com سے رابطہ کریں۔",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "براہ مہربانی 2 کاپیاں لائیں۔ £50 ادا نہ کریں۔ حوالہ GF-4821۔ رابطہ کریں test@example.com۔",
+      "second_provider": "bing_web",
+      "seconds": 2.41
+    },
+    {
+      "source": "en",
+      "target": "om",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Mee kooppii 2 fidaa. £50 hin kaffalinaa. Wabii GF-4821. test@example.com qunnamaa.",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "Maaloo, kopi 2 fidee tuqa. £50 hin kaffalin. Wabii GF-4821. test@example.com qunnamii.",
+      "second_provider": "index_web",
+      "seconds": 2.8
+    },
+    {
+      "source": "en",
+      "target": "sd",
+      "input": "Please bring 2 copies. Do not pay £50. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "مهرباني ڪري 2 ڪاپيون آڻيو. £50 ادا نه ڪريو. حوالو GF-4821. رابطو ڪريو test@example.com.",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "مهرباني ڪري 2 نقلون آڻيو. £50 ادا نه ڪريو. حوالو GF-4821. test@example.com تي رابطو ڪريو.",
+      "second_provider": "index_web",
+      "seconds": 2.39
+    },
+    {
+      "source": "fa",
+      "target": "en",
+      "input": "قرار ملاقات سه‌شنبه ساعت ۹:۳۰ است. دو نسخه بیاورید. پنجاه پوند پرداخت نکنید.",
+      "successful": true,
+      "text": "The appointment is on Tuesday at 9:30. Bring two copies. Do not pay fifty pounds.",
+      "provider": "bing_web",
+      "warnings": [
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "The appointment is scheduled for Tuesday at 9:30. Bring two copies. Do not pay fifty pounds.",
+      "second_provider": "index_web",
+      "seconds": 1.76
+    },
+    {
+      "source": "ar",
+      "target": "en",
+      "input": "لم أوافق. لا تلغ الموعد. أحضر نسختين.",
+      "successful": true,
+      "text": "I did not agree. Do not cancel the appointment. Bring two copies.",
+      "provider": "google_web",
+      "warnings": [
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "",
+      "second_provider": "",
+      "seconds": 2.31
+    },
+    {
+      "source": "fr",
+      "target": "en",
+      "input": "Le rendez-vous est mardi à 9 h 30. Apportez deux copies. Ne payez pas 50 livres.",
+      "successful": true,
+      "text": "The appointment is Tuesday at 9:30 a.m. Bring two copies. Don't pay 50 pounds.",
+      "provider": "google_web",
+      "warnings": [
+        "Numeric details differ. Review amounts, dates, times and quantities; formatting can vary by language.",
+        "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+        "Back translation is advisory; it does not certify meaning."
+      ],
+      "checks": [
+        {
+          "code": "numbers",
+          "message": "Numeric details differ. Review amounts, dates, times and quantities; formatting can vary by language.",
+          "source_values": [
+            "9",
+            "30",
+            "50"
+          ],
+          "target_values": [
+            "9:30",
+            "50"
+          ]
+        },
+        {
+          "code": "negation",
+          "message": "The source contains a possible negation. Confirm that the translated meaning retains it; fact checks cannot establish this.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "second_opinion": "The appointment is on Tuesday at 9:30 a.m. Bring two copies. Do not pay 50 pounds.",
+      "second_provider": "bing_web",
+      "seconds": 2.17
+    }
+  ]
+}

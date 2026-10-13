@@ -8,7 +8,7 @@
 | `ui.py` | Native two-speaker Qt workspace, settings, manual and review pane |
 | `engine.py` | Provider adapters, language mappings, history and transport controls |
 | `reinforced_engine.py` / `reinforcement.py` | Complete-candidate consultation, protected-detail checks and bounded repair |
-| `index_engine.py` / `local_ai.py` | Online Index adapter and isolated local-model inference |
+| `index_engine.py` | Online Index translation and source-bound repair |
 | `speech.py` | Recording, interim/final recognition, prepared voice reserves and playback |
 | `offline_omni.py` / `offline_voice.py` | Bundled native recognition and Persian voice adapters |
 | `settings.py` / `docx_export.py` | Validated settings and Unicode document export |
@@ -35,10 +35,15 @@ Voice output prepares eligible reserves in bounded parallel slots. Only one comp
 
 SQLite stores local history, revisions and drafts. Writes and exports use explicit durability/replacement behavior; backups are verified. Optional credentials use Windows DPAPI, which is account-bound. History is not encrypted by this application. Automatic translation, online recognition and online voice send their respective text or audio to their providers; there is no claim that the default workflow is wholly offline.
 
-The explicit Index 2B offline option uses a pinned local model and a cancellable CPU helper. It has bounded threads, memory checks and integrity verification. Native helpers use private transient files/pipes rather than a resident server. The bundled model is a translation option, not an always-running semantic authority.
+Offline text translation was removed in 1.4.1. Bundled recognition and voice helpers remain, using private transient files/pipes rather than a resident server. Old offline-engine preferences migrate to Automatic with a visible notice; other preferences remain unchanged.
 
 ## Small dependency surface at runtime
 
 Qt supplies the native interface. Python's standard library handles SQLite, structured exports and DOCX ZIP/XML assembly. Word and a database server are unnecessary. The portable directory carries the required shared libraries, native helpers and model weights. Large upstream source archives are release assets, so the Git repository stays practical to clone.
 
 Implementation and product direction: [Parham (Leon) Faraji](https://github.com/leon-executes).
+
+
+## Speech update · 1.3.1
+
+See [speech coverage](SPEECH-COVERAGE.md) and the [measured gap-validation report](../verification/gap-validation-20261012.md) for current routes, native-reference tests, approximation labels and remaining weaknesses. Earlier version results above remain historical evidence.

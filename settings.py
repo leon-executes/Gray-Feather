@@ -9,6 +9,8 @@ import os
 from pathlib import Path
 import threading
 
+RETIRED_TRANSLATION_PROVIDERS = frozenset(('index_local', 'hy_mt_local', 'gemma_local'))
+
 DEFAULTS = {
     'provider': 'auto', 'reinforce': True, 'backtranslate': True, 'free_fallback': True,
     'theme': 'dark', 'source1': 'en', 'source2': 'fr',
@@ -16,7 +18,7 @@ DEFAULTS = {
                   'google': {'key': '', 'endpoint': ''},
                   'deepl': {'key': '', 'endpoint': ''}},
     'speech_provider': 'auto', 'speech_key': '', 'speech_region': '',
-    'voice_provider': 'auto', 'voice_enabled': True,
+    'voice_provider': 'auto', 'voice_enabled': True, 'safe_speech': True,
     'window_geometry': '',
     'auto_speak': True, 'restore_last': True, 'text_size': 12, 'context': '',
 }
@@ -75,7 +77,11 @@ class Settings:
             doc = json.loads(path.read_text(encoding='utf-8'))
             if not isinstance(doc, dict) or doc.get('version') != 1:
                 raise ValueError('Unknown settings format')
-            self._merge(doc.get('settings', {}))
+            saved = doc.get('settings', {})
+            if isinstance(saved, dict) and saved.get('provider') in RETIRED_TRANSLATION_PROVIDERS:
+                saved = {**saved, 'provider': 'auto'}
+                self.notice = 'Offline text translation was removed. Translation now uses online services; other preferences are unchanged.'
+            self._merge(saved)
             if doc.get('credentials'):
                 try:
                     values = json.loads(protect(base64.b64decode(doc['credentials'], validate=True), True))
@@ -125,11 +131,11 @@ class Settings:
                 merged[key] = value
         if merged['theme'] not in ('dark', 'light'):
             raise ValueError('Choose a supported theme')
-        if merged['provider'] not in ('auto', 'reinforced', 'index_web', 'index_local', 'hy_mt_local', 'gemma_local', 'google_web', 'bing_web', 'mymemory', 'lingva', 'azure', 'google', 'deepl'):
+        if merged['provider'] not in ('auto', 'reinforced', 'index_web', 'google_web', 'bing_web', 'mymemory', 'lingva', 'azure', 'google', 'deepl'):
             raise ValueError('Choose a supported translation provider')
         if merged['speech_provider'] not in ('auto', 'google_web', 'offline', 'omnilingual', 'azure', 'google'):
             raise ValueError('Choose a supported speech provider')
-        if merged['voice_provider'] not in ('auto', 'offline', 'edge_free', 'google_web', 'windows', 'azure'):
+        if merged['voice_provider'] not in ('auto', 'offline', 'basic', 'edge_free', 'google_web', 'windows', 'azure'):
             raise ValueError('Choose a supported voice provider')
         if not 10 <= merged['text_size'] <= 24:
             raise ValueError('Reading size must be between 10 and 24')

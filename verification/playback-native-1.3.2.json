@@ -1,0 +1,19 @@
+{
+  "scope": "Actual Windows waveOut completion/cancellation using silent PCM. No audible-word or speaker intelligibility claim.",
+  "rows": [
+    {
+      "silent_audio_seconds": 0.4,
+      "cancel_after": null,
+      "complete": true,
+      "elapsed_seconds": 0.453,
+      "successful": true
+    },
+    {
+      "silent_audio_seconds": 2.0,
+      "cancel_after": 0.15,
+      "complete": false,
+      "elapsed_seconds": 0.157,
+      "successful": true
+    }
+  ]
+}

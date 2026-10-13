@@ -1,0 +1,1193 @@
+{
+  "version": "1.3.1",
+  "scope": "Evidence inventory, not equal quality confidence. Small native-recording samples and historical translation references; risky changes deferred.",
+  "cer_definition": "NFC/casefold; retain Unicode letters/numbers/combining marks, exclude spaces and punctuation. No semantic number normalization. Lower is better. CER may exceed 100. Failed requests excluded and counted separately. Earlier report used alphanumeric-only normalization; its numbers are not directly interchangeable for combining-mark scripts.",
+  "historical_translation_source_sha256": "83bf2d1d374f3b997dd2537651bad26d81f13892d66a05045a61466e4637aba1",
+  "historical_translation_coverage": {
+    "language_identities": [
+      "am",
+      "ar",
+      "bn",
+      "ckb",
+      "de",
+      "el",
+      "en",
+      "es",
+      "fa",
+      "fr",
+      "he",
+      "hi",
+      "id",
+      "it",
+      "ja",
+      "kmr",
+      "ko",
+      "nl",
+      "om",
+      "pa",
+      "pl",
+      "prs",
+      "ps",
+      "pt",
+      "ro",
+      "ru",
+      "sd",
+      "so",
+      "sw",
+      "ti",
+      "tr",
+      "uk",
+      "ur",
+      "zh"
+    ],
+    "directions": 66,
+    "records": 2112,
+    "completed_outputs": 1350,
+    "availability_by_provider": {
+      "bing_web": {
+        "completed": 512,
+        "unsupported_identity": 16
+      },
+      "google_web": {
+        "skipped_observed_quota_pause": 426,
+        "completed": 90,
+        "http_429": 12
+      },
+      "index_web": {
+        "completed": 512,
+        "unsupported_identity": 16
+      },
+      "mymemory": {
+        "completed": 236,
+        "skipped_after_observed_mymemory_usage_limit": 291,
+        "http_429": 1
+      }
+    }
+  },
+  "voice_scope": "Actual speech synthesis and worker execution. Primary outages injected, physical playback intercepted. One phrase per language, no listener-quality rating.",
+  "rows": [
+    {
+      "language": "English",
+      "code": "en",
+      "locale": "en-US",
+      "dictation_order": [
+        "offline",
+        "google_web"
+      ],
+      "native_recording_evidence": {
+        "offline": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 3.47,
+          "source": "asr-results.jsonl",
+          "median_seconds": 3.01,
+          "reference_characters": 2075
+        },
+        "google_web": null
+      },
+      "translation_reference_directions": 66,
+      "historical_completed_reference_outputs": 1350,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Arabic",
+      "code": "ar",
+      "locale": "ar-SA",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 11.66,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.68,
+          "reference_characters": 1990
+        },
+        "offline": null
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 64,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "FLEURS ar_eg is Egyptian, not a Saudi-accent certification."
+    },
+    {
+      "language": "French",
+      "code": "fr",
+      "locale": "fr-FR",
+      "dictation_order": [
+        "offline",
+        "google_web"
+      ],
+      "native_recording_evidence": {
+        "offline": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 4.76,
+          "source": "asr-results.jsonl",
+          "median_seconds": 3.45,
+          "reference_characters": 2877
+        },
+        "google_web": null
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 64,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Turkish",
+      "code": "tr",
+      "locale": "tr-TR",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 6.28,
+          "source": "asr-results.jsonl",
+          "median_seconds": 1.75,
+          "reference_characters": 2324
+        },
+        "offline": null
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 64,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Persian / Farsi",
+      "code": "fa",
+      "locale": "fa-IR",
+      "dictation_order": [
+        "google_web",
+        "omnilingual"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 50,
+          "completed": 50,
+          "cer_percent": 3.16,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.89,
+          "reference_characters": 4934
+        },
+        "omnilingual": {
+          "attempts": 50,
+          "completed": 50,
+          "cer_percent": 6.22,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.84,
+          "reference_characters": 4934
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 64,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "offline_piper",
+      "voice_outage_used": "offline_piper",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Keep Google recognition with Omnilingual reserve and bundled Persian voice; Whisper stays sidelined.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Dari",
+      "code": "prs",
+      "locale": "fa-AF",
+      "dictation_order": [
+        "google_web",
+        "omnilingual"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 30,
+          "completed": 30,
+          "cer_percent": 2.97,
+          "source": "additional-asr.jsonl",
+          "median_seconds": 1.13,
+          "reference_characters": 1551
+        },
+        "omnilingual": {
+          "attempts": 30,
+          "completed": 30,
+          "cer_percent": 6.19,
+          "source": "additional-asr.jsonl",
+          "median_seconds": 1.57,
+          "reference_characters": 1551
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "offline_persian_approx",
+      "voice_outage_used": "edge_persian_approx",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Use labelled Persian Piper/Edge. Native Dari voice adoption deferred until clear licence and listener evidence.",
+      "dialect_limit": "Dari-labelled corpus; accent authenticity not independently established."
+    },
+    {
+      "language": "Pashto",
+      "code": "ps",
+      "locale": "ps-AF",
+      "dictation_order": [
+        "omnilingual",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "omnilingual": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 17.31,
+          "source": "extra-asr.jsonl",
+          "median_seconds": 2.42,
+          "reference_characters": 1906
+        },
+        "offline": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 51.0,
+          "source": "asr-results.jsonl",
+          "median_seconds": 4.13,
+          "reference_characters": 1906
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 58,
+      "voice_automatic": true,
+      "voice_outage_survived": false,
+      "voice_used": "edge_free",
+      "voice_outage_used": null,
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Keep Edge; independent local voice deferred. Pashto Ghag/YourTTS is a later-pass candidate, not integrated.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Urdu",
+      "code": "ur",
+      "locale": "ur-PK",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 9.51,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.53,
+          "reference_characters": 2030
+        },
+        "offline": null
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Hindi",
+      "code": "hi",
+      "locale": "hi-IN",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 7.08,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.01,
+          "reference_characters": 1088
+        },
+        "offline": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 22.24,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 5.19,
+          "reference_characters": 1088
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Bengali / Bangla",
+      "code": "bn",
+      "locale": "bn-BD",
+      "dictation_order": [
+        "google_web"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 5.19,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 1.72,
+          "reference_characters": 1079
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Keep Google dictation. Poor small-Whisper automatic reserve is sidelined; test bundled Omnilingual as a later-pass replacement.",
+      "dialect_limit": "FLEURS bn_in, not Bangladesh-specific certification."
+    },
+    {
+      "language": "Punjabi (Gurmukhi)",
+      "code": "pa",
+      "locale": "pa-IN",
+      "dictation_order": [
+        "google_web"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 9.65,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 1.62,
+          "reference_characters": 1005
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Keep Google dictation. Poor small-Whisper automatic reserve is sidelined; test Gurmukhi-specific Omnilingual recognition in a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Sindhi",
+      "code": "sd",
+      "locale": "sd-PK",
+      "dictation_order": [
+        "omnilingual"
+      ],
+      "native_recording_evidence": {
+        "omnilingual": {
+          "attempts": 50,
+          "completed": 50,
+          "cer_percent": 14.36,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.12,
+          "reference_characters": 3982
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": false,
+      "voice_used": "offline_basic",
+      "voice_outage_used": null,
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Basic Sindhi voice is weak; Indic Parler is a later-pass candidate requiring Arabic-script, CPU and packaging tests.",
+      "dialect_limit": "FLEURS sd_in, not Pakistan-specific certification."
+    },
+    {
+      "language": "Amharic",
+      "code": "am",
+      "locale": "am-ET",
+      "dictation_order": [
+        "omnilingual",
+        "google_web"
+      ],
+      "native_recording_evidence": {
+        "omnilingual": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 9.57,
+          "source": "extra-asr.jsonl",
+          "median_seconds": 2.18,
+          "reference_characters": 1359
+        },
+        "google_web": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 16.26,
+          "source": "additional-asr.jsonl",
+          "median_seconds": 3.07,
+          "reference_characters": 1359
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Keep improved Omnilingual recognition with Google reserve; validate spontaneous speech and consequential terminology.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Tigrinya",
+      "code": "ti",
+      "locale": "ti-ET",
+      "dictation_order": [
+        "google_web",
+        "omnilingual"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 50,
+          "completed": 50,
+          "cer_percent": 26.17,
+          "source": "additional-asr.jsonl",
+          "median_seconds": 2.92,
+          "reference_characters": 4219
+        },
+        "omnilingual": {
+          "attempts": 50,
+          "completed": 50,
+          "cer_percent": 25.34,
+          "source": "ti-native-asr.jsonl",
+          "median_seconds": 2.35,
+          "reference_characters": 4219
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 48,
+      "voice_automatic": true,
+      "voice_outage_survived": false,
+      "voice_used": "offline_neural",
+      "voice_outage_used": null,
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Dedicated local voice; no unverified Amharic substitute. Recognition variability and second voice deferred.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Oromo",
+      "code": "om",
+      "locale": "om-ET",
+      "dictation_order": [
+        "omnilingual",
+        "google_web"
+      ],
+      "native_recording_evidence": {
+        "omnilingual": {
+          "attempts": 41,
+          "completed": 41,
+          "cer_percent": 22.85,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.04,
+          "reference_characters": 4061
+        },
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 23.51,
+          "source": "google-candidate-asr.jsonl",
+          "median_seconds": 2.94,
+          "reference_characters": 1055
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "offline_neural",
+      "voice_outage_used": "offline_basic",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Keep neural/basic voice and measured ASR reserve. Calendar/semantic issues require native reference work; no inferred date repair.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Somali",
+      "code": "so",
+      "locale": "so-SO",
+      "dictation_order": [
+        "omnilingual",
+        "google_web"
+      ],
+      "native_recording_evidence": {
+        "omnilingual": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 15.91,
+          "source": "extra-asr.jsonl",
+          "median_seconds": 2.21,
+          "reference_characters": 2370
+        },
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 17.5,
+          "source": "additional-google.jsonl",
+          "median_seconds": null,
+          "reference_characters": 1223
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 44,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "edge_free",
+      "voice_outage_used": "offline_neural",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Local voice reserve handles ordinary text/plain integers; complex numeric notation remains an online-voice dependency.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Swahili",
+      "code": "sw",
+      "locale": "sw-KE",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 11.67,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.17,
+          "reference_characters": 1088
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 17.99,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 8.8,
+          "reference_characters": 467
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Kurdish Sorani / Central Kurdish",
+      "code": "ckb",
+      "locale": "ckb-IQ",
+      "dictation_order": [
+        "omnilingual"
+      ],
+      "native_recording_evidence": {
+        "omnilingual": {
+          "attempts": 50,
+          "completed": 50,
+          "cer_percent": 10.21,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.12,
+          "reference_characters": 5132
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": false,
+      "voice_used": "offline_neural",
+      "voice_outage_used": null,
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Dedicated local voice; no unverified Persian substitute. Unsupported-symbol handling and second exact voice deferred.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Kurdish Kurmanji / Northern Kurdish",
+      "code": "kmr",
+      "locale": "ku-TR",
+      "dictation_order": [
+        "omnilingual"
+      ],
+      "native_recording_evidence": {
+        "omnilingual": {
+          "attempts": 50,
+          "completed": 50,
+          "cer_percent": 9.01,
+          "source": "extra-asr.jsonl",
+          "median_seconds": 1.46,
+          "reference_characters": 1632
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": false,
+      "voice_used": "offline_basic",
+      "voice_outage_used": null,
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Keep basic Kurmanji. The tested MMS model was worse and remains sidelined; native-listener work needed.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Spanish",
+      "code": "es",
+      "locale": "es-ES",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 0.94,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.25,
+          "reference_characters": 1167
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 2.19,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 7.92,
+          "reference_characters": 639
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "FLEURS es_419, not Spain-specific certification."
+    },
+    {
+      "language": "German",
+      "code": "de",
+      "locale": "de-DE",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 2.22,
+          "source": "asr-results.jsonl",
+          "median_seconds": 3.66,
+          "reference_characters": 2432
+        },
+        "offline": null
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Italian",
+      "code": "it",
+      "locale": "it-IT",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 0.85,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.94,
+          "reference_characters": 1175
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 1.01,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 9.14,
+          "reference_characters": 596
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Portuguese (Portugal)",
+      "code": "pt",
+      "locale": "pt-PT",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 5.28,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.8,
+          "reference_characters": 1307
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 4.69,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 8.89,
+          "reference_characters": 640
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "FLEURS pt_br, not Portugal-specific certification."
+    },
+    {
+      "language": "Russian",
+      "code": "ru",
+      "locale": "ru-RU",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 4.98,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 1.53,
+          "reference_characters": 1204
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 1.7,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 8.3,
+          "reference_characters": 588
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Chinese (Simplified)",
+      "code": "zh",
+      "locale": "zh-CN",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 16.08,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.77,
+          "reference_characters": 367
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 18.97,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 8.17,
+          "reference_characters": 195
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Japanese",
+      "code": "ja",
+      "locale": "ja-JP",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 9.26,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 1.82,
+          "reference_characters": 443
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 16.4,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 9.23,
+          "reference_characters": 250
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Korean",
+      "code": "ko",
+      "locale": "ko-KR",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 11.63,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 1.44,
+          "reference_characters": 447
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 5.24,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 8.73,
+          "reference_characters": 229
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Dutch",
+      "code": "nl",
+      "locale": "nl-NL",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 4.09,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.21,
+          "reference_characters": 2372
+        },
+        "offline": null
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Polish",
+      "code": "pl",
+      "locale": "pl-PL",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 2.39,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.24,
+          "reference_characters": 1173
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 7.81,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 8.66,
+          "reference_characters": 512
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Romanian",
+      "code": "ro",
+      "locale": "ro-RO",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 14.59,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 3.0,
+          "reference_characters": 1295
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 9.08,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 9.11,
+          "reference_characters": 617
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Ukrainian",
+      "code": "uk",
+      "locale": "uk-UA",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 20,
+          "completed": 20,
+          "cer_percent": 9.99,
+          "source": "asr-results.jsonl",
+          "median_seconds": 2.16,
+          "reference_characters": 2042
+        },
+        "offline": null
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Greek",
+      "code": "el",
+      "locale": "el-GR",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 6,
+          "cer_percent": 8.64,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 3.88,
+          "reference_characters": 845
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 4,
+          "cer_percent": 8.83,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 10.91,
+          "reference_characters": 532
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Hebrew",
+      "code": "he",
+      "locale": "he-IL",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 9,
+          "cer_percent": 14.86,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.56,
+          "reference_characters": 841
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 11.34,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 3.72,
+          "reference_characters": 476
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    },
+    {
+      "language": "Indonesian",
+      "code": "id",
+      "locale": "id-ID",
+      "dictation_order": [
+        "google_web",
+        "offline"
+      ],
+      "native_recording_evidence": {
+        "google_web": {
+          "attempts": 10,
+          "completed": 10,
+          "cer_percent": 2.3,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 1.03,
+          "reference_characters": 913
+        },
+        "offline": {
+          "attempts": 5,
+          "completed": 5,
+          "cer_percent": 2.09,
+          "source": "remaining-language-asr.jsonl",
+          "median_seconds": 2.86,
+          "reference_characters": 430
+        }
+      },
+      "translation_reference_directions": 2,
+      "historical_completed_reference_outputs": 32,
+      "voice_automatic": true,
+      "voice_outage_survived": true,
+      "voice_used": "google_web",
+      "voice_outage_used": "google_web",
+      "voice_quality_status": "No native-listener certification; completion is not pronunciation fidelity.",
+      "next_pass": "Preserve current routes. Native-listener/domain validation and any offline voice upgrades remain a later pass.",
+      "dialect_limit": "Read-speech sample; accents and spontaneous conversation are not certified."
+    }
+  ]
+}

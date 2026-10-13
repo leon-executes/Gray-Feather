@@ -1,0 +1,34 @@
+{
+  "version": "1.3.4",
+  "scope": "Checkbox multi-delete and confirmed history purge; real SQLite and synthetic UI regression checks. No user data was deleted.",
+  "source-tests": {
+    "version": "1.3.4",
+    "frozen": false,
+    "tests": 507,
+    "passed": 507,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "elapsed_seconds": 22.234,
+    "successful": true
+  },
+  "packaged-tests": {
+    "version": "1.3.4",
+    "frozen": true,
+    "tests": 507,
+    "passed": 502,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 5,
+    "elapsed_seconds": 21.549,
+    "successful": true
+  },
+  "packaged-ui": {
+    "successful": true,
+    "size": [
+      1180,
+      1000
+    ],
+    "frozen": true
+  }
+}

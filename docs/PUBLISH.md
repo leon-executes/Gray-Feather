@@ -1,36 +1,27 @@
-# Publish on GitHub
+# Publish 1.4.1
 
-## Repository
+## Update the repository
 
-Prepared owner/name: **leon-executes/Gray-Feather**. If you choose another repository name, update the GitHub links before uploading. No repository or release has been published by this preparation.
+Use the prepared **Repository** folder or extract `GrayFeather-1.4.1-Source.zip`. Upload its contents, not the enclosing folder. Do not upload the development app folder, portable binaries or `GrayFeather-data`.
 
-1. Create an empty public repository named `Gray-Feather`. Do not generate another licence or README.
-2. Upload the contents of the prepared `GitHub` folder, including hidden `.gitignore`, `.gitattributes` and `.github` files. Or use Git:
+The cleanest update is through GitHub Desktop:
 
-```powershell
-git init -b main
-git add .
-git commit -m "Prepare Gray Feather 1.3.0 for GitHub"
-git remote add origin https://github.com/leon-executes/Gray-Feather.git
-git push -u origin main
-```
+1. Clone `leon-executes/Gray-Feather` into a **new empty folder**. This leaves your working app and data alone.
+2. In that fresh clone, keep the hidden `.git` folder. Replace the other repository files with the prepared Repository contents. This removes old root test files as well as adding `tests/` and `tools/`.
+3. Review the changes in GitHub Desktop. Commit **Prepare Gray Feather 1.4.1**, then **Push origin**.
 
-3. About description: **Portable Windows translation for two speakers. Free online engines, optional offline AI, speech and local history.**
-4. Suggested topics: `windows`, `translation`, `speech-recognition`, `text-to-speech`, `portable`, `pyside6`, `offline-translation`.
+Developers can instead run `python tools/stage_github_update.py "C:/Path/FreshClone"`, review its dry-run summary, then repeat with `--apply`. It requires a clean Git clone, removes only the listed old paths, and never commits or pushes.
 
-## Release
+**README only:** on GitHub, use **Add file → Upload files**, choose the prepared root `README.md`, and commit directly to `main`. The same filename at the same path replaces the existing README. Both published artwork links are already retained. Uploading files alone does not remove old root test files; use Desktop for the complete cleanup.
 
-Create release tag **v1.3.0** from the uploaded source. Use [release notes](RELEASE-NOTES.md). Attach these files from the application's `dist` folder:
+## Publish the release
 
-- `GrayFeather-1.3.0-GitHub-Windows-x64.zip` — users download this.
-- `GrayFeather-1.3.0-GitHub-Source.zip` — clean application source.
-- `GrayFeather-1.3.0-ThirdParty-Sources.zip` — corresponding upstream source collection.
-- `GrayFeather-1.3.0-GitHub-SHA256SUMS.txt` — download checksums.
+1. Create a **new release**, tag **v1.4.1**, target **main**. Keep v1.3.0 available for rollback.
+2. Paste [RELEASE-NOTES.md](RELEASE-NOTES.md).
+3. Upload **GrayFeather-1.4.1-Windows-x64.zip**. This one file includes every speech resource.
+4. Also upload `GrayFeather-1.4.1-Source.zip`, `GrayFeather-1.4.1-ThirdParty-Sources.zip` and `GrayFeather-1.4.1-SHA256SUMS.txt`.
+5. Set it as the latest release. Publish after reviewing the [verification report](VERIFICATION.md).
 
-Upload the third-party source asset with the portable release. It contains the ONNX Runtime source archive moved out of the portable ZIP, plus the complete supplied native-source collection. It is not another user installation step.
+The Windows ZIP fits in one GitHub release asset. Users extract it with Windows **Extract All**.
 
-The original 1.3.0 portable ZIP is over GitHub's documented 2 GiB per-asset limit. Use the newly prepared GitHub ZIP; do not upload the old archive or model weights into the Git tree. [GitHub release limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases#storage-and-bandwidth-quotas).
-
-Before publishing: run `python tools/check_repository.py`, confirm the archive checksums and preview the README. The banner is replaceable at [assets/banner.svg](../assets/banner.svg); see [artwork instructions](../assets/README.md).
-
-Application licence: **PolyForm Noncommercial 1.0.0**, source-available. Keep that wording; do not describe the application licence as OSI-approved open source. Third-party licences remain separate.
+The third-party source archive is for developers and redistribution compliance; it is not required to run the app. Publish it beside the app ZIP. No remote upload is performed by the packaging tools.

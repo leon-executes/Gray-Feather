@@ -1,0 +1,626 @@
+{
+  "scope": "Live Google/Bing transport with synthetic Index outage. Completion is not semantic certification.",
+  "cases": [
+    {
+      "source": "en",
+      "target": "fr",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Apporter 2 exemplaires le 8 octobre 2028. Référence GF-4821. Contactez test@example.com.",
+      "provider": "google_web",
+      "checks": [
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 312,
+          "family": "google",
+          "access": "public"
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1297,
+          "family": "microsoft",
+          "access": "public"
+        },
+        {
+          "provider": "index_web",
+          "status": "timeout",
+          "phase": "consultation"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "unchanged",
+          "changed": false,
+          "provider": "google_web",
+          "reasons": [],
+          "audit": [
+            {
+              "method": "unchanged",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "5e37f49733d27e5ba8dd22908142731167e70041941d4c553c4f5b964c295fd0",
+              "selected_sha256": "5e37f49733d27e5ba8dd22908142731167e70041941d4c553c4f5b964c295fd0",
+              "original_provider": "google_web",
+              "selected_provider": "google_web",
+              "edit": null,
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 780,
+          "family": "microsoft",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 2.11
+    },
+    {
+      "source": "en",
+      "target": "fa",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "دو نسخه در تاریخ ۸ اکتبر ۲۰۲۸ بیاورید. مرجع GF-4821. با test@example.com تماس بگیرید.",
+      "provider": "bing_web",
+      "checks": [
+        {
+          "code": "numbers",
+          "message": "Numeric details differ. Review amounts, dates, times and quantities; formatting can vary by language.",
+          "source_values": [
+            "2",
+            "8",
+            "2028"
+          ],
+          "target_values": [
+            "8",
+            "2028"
+          ]
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1079,
+          "family": "microsoft",
+          "access": "public"
+        },
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 532,
+          "family": "google",
+          "access": "public"
+        },
+        {
+          "provider": "index_web",
+          "status": "timeout",
+          "phase": "consultation"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "unchanged",
+          "changed": false,
+          "provider": "bing_web",
+          "reasons": [],
+          "audit": [
+            {
+              "method": "unchanged",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "491e5313d26ab1beba2a0fb28c7d0da85e27c3e00d65a47932c5cb98fc87f532",
+              "selected_sha256": "491e5313d26ab1beba2a0fb28c7d0da85e27c3e00d65a47932c5cb98fc87f532",
+              "original_provider": "bing_web",
+              "selected_provider": "bing_web",
+              "edit": null,
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1234,
+          "family": "google",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 2.33
+    },
+    {
+      "source": "en",
+      "target": "prs",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "دو نسخه را در تاریخ ۸ اکتبر ۲۰۲۸ بیاورید. ارجاع GF-۴۸۲۱. با test@example.com تماس بگیرید.",
+      "provider": "bing_web",
+      "checks": [
+        {
+          "code": "numbers",
+          "message": "Numeric details differ. Review amounts, dates, times and quantities; formatting can vary by language.",
+          "source_values": [
+            "2",
+            "8",
+            "2028"
+          ],
+          "target_values": [
+            "8",
+            "2028",
+            "4821"
+          ]
+        },
+        {
+          "code": "references",
+          "message": "A reference or identifier differs. Check the exact letters and digits.",
+          "source_values": [
+            "GF-4821"
+          ],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1217,
+          "family": "microsoft",
+          "access": "public"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "unchanged",
+          "changed": false,
+          "provider": "bing_web",
+          "reasons": [],
+          "audit": [
+            {
+              "method": "unchanged",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "9df9b3c76ad4769d8e66bf673c59f85eb10059bd07943adfe952f62e915674fc",
+              "selected_sha256": "9df9b3c76ad4769d8e66bf673c59f85eb10059bd07943adfe952f62e915674fc",
+              "original_provider": "bing_web",
+              "selected_provider": "bing_web",
+              "edit": null,
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 827,
+          "family": "google",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 2.06
+    },
+    {
+      "source": "en",
+      "target": "ti",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "2 ቅዳሓት ብዕለት 8 ጥቅምቲ 2028 ሒዝኩም ምጹ።መወከሲ GF-4821። test@example.com ተወከሱ።",
+      "provider": "google_web",
+      "checks": [
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1125,
+          "family": "google",
+          "access": "public"
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1047,
+          "family": "microsoft",
+          "access": "public"
+        },
+        {
+          "provider": "index_web",
+          "status": "timeout",
+          "phase": "consultation"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "unchanged",
+          "changed": false,
+          "provider": "google_web",
+          "reasons": [],
+          "audit": [
+            {
+              "method": "unchanged",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "57161ec64566ebf72197b558c7c23060ab7ffad3131257dd61655bfa721a5699",
+              "selected_sha256": "57161ec64566ebf72197b558c7c23060ab7ffad3131257dd61655bfa721a5699",
+              "original_provider": "google_web",
+              "selected_provider": "google_web",
+              "edit": null,
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1000,
+          "family": "microsoft",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 2.12
+    },
+    {
+      "source": "en",
+      "target": "om",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Onkoloolessa 8 bara 2028 kooppii 2 fidaa.Wabii GF-4821. test@example.com qunnamaa.",
+      "provider": "google_web",
+      "checks": [
+        {
+          "code": "reinforcement_applied",
+          "message": "The main translation was improved using source-anchored checks; the earlier wording is retained in Review.",
+          "source_values": [],
+          "target_values": []
+        },
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1391,
+          "family": "google",
+          "access": "public"
+        },
+        {
+          "provider": "index_web",
+          "status": "timeout",
+          "phase": "consultation"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "calendar_repair",
+          "changed": true,
+          "provider": "google_web",
+          "reasons": [
+            "Unique Gregorian day/year alignment retained; named month restored from the source using Unicode CLDR."
+          ],
+          "audit": [
+            {
+              "method": "calendar_repair",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "9792b0e553ac8c6ba4ef06956600e7544b2cb37f4d007fe6ce3889c12e445e39",
+              "selected_sha256": "e1fc3ef6190344192d1401bf609de43d7f4f60920fc472b83f1ac43e8145b7ce",
+              "original_provider": "google_web",
+              "selected_provider": "google_web",
+              "edit": {
+                "start": 0,
+                "end": 10,
+                "before": "Waxabajjii",
+                "after": "Onkoloolessa",
+                "source_month": 10,
+                "target_month_before": 6,
+                "anchor": [
+                  8,
+                  2028
+                ]
+              },
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1484,
+          "family": "google",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 2.89
+    },
+    {
+      "source": "en",
+      "target": "ckb",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "2 دانە لە 8ی تشرینی یەکەمی 2028 لەگەڵ خۆت بهێنە. ئاماژە GF-4821. پەیوەندی بکەن بە test@example.com.",
+      "provider": "google_web",
+      "checks": [
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1375,
+          "family": "google",
+          "access": "public"
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1031,
+          "family": "microsoft",
+          "access": "public"
+        },
+        {
+          "provider": "index_web",
+          "status": "timeout",
+          "phase": "consultation"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "unchanged",
+          "changed": false,
+          "provider": "google_web",
+          "reasons": [],
+          "audit": [
+            {
+              "method": "unchanged",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "f0e8d04935003903470063b39a6d1f67e73236ce897e5f7acebd4db8c6e65ca1",
+              "selected_sha256": "f0e8d04935003903470063b39a6d1f67e73236ce897e5f7acebd4db8c6e65ca1",
+              "original_provider": "google_web",
+              "selected_provider": "google_web",
+              "edit": null,
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 1032,
+          "family": "microsoft",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 2.42
+    },
+    {
+      "source": "en",
+      "target": "kmr",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "Di 8ê Cotmeha 2028an de 2 kopiyan bînin. Çavkanî GF-4821. Têkilî test@example.com.",
+      "provider": "google_web",
+      "checks": [
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 406,
+          "family": "google",
+          "access": "public"
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 952,
+          "family": "microsoft",
+          "access": "public"
+        },
+        {
+          "provider": "index_web",
+          "status": "timeout",
+          "phase": "consultation"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "unchanged",
+          "changed": false,
+          "provider": "google_web",
+          "reasons": [],
+          "audit": [
+            {
+              "method": "unchanged",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "b30cb2e2ce98cfc022d16b499e55410a9f20676d3c67e99d64bb34143463ea29",
+              "selected_sha256": "b30cb2e2ce98cfc022d16b499e55410a9f20676d3c67e99d64bb34143463ea29",
+              "original_provider": "google_web",
+              "selected_provider": "google_web",
+              "edit": null,
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 875,
+          "family": "microsoft",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 1.84
+    },
+    {
+      "source": "en",
+      "target": "sd",
+      "input": "Bring 2 copies on 8 October 2028. Reference GF-4821. Contact test@example.com.",
+      "successful": true,
+      "text": "8 آڪٽوبر 2028 تي 2 ڪاپيون آڻيو. حوالو GF-4821. رابطو ڪريو test@example.com.",
+      "provider": "google_web",
+      "checks": [
+        {
+          "code": "backtranslation",
+          "message": "Back translation is advisory; it does not certify meaning.",
+          "source_values": [],
+          "target_values": []
+        }
+      ],
+      "trace": [
+        {
+          "provider": "google_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 813,
+          "family": "google",
+          "access": "public"
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 875,
+          "family": "microsoft",
+          "access": "public"
+        },
+        {
+          "provider": "index_web",
+          "status": "timeout",
+          "phase": "consultation"
+        },
+        {
+          "phase": "reinforcement",
+          "status": "unchanged",
+          "changed": false,
+          "provider": "google_web",
+          "reasons": [],
+          "audit": [
+            {
+              "method": "unchanged",
+              "source_sha256": "57742a1ac7a33ef467a2329e28fa991ccbafaf1198003967d3ccc22c1ad6fef3",
+              "original_sha256": "bf19514d22fbc3eaff0289a722fa8ff4544ec6efd42eb4b83481c8e7148e81d0",
+              "selected_sha256": "bf19514d22fbc3eaff0289a722fa8ff4544ec6efd42eb4b83481c8e7148e81d0",
+              "original_provider": "google_web",
+              "selected_provider": "google_web",
+              "edit": null,
+              "limits": "Literal preservation does not establish negation, role allocation, terminology or overall translation accuracy."
+            }
+          ]
+        },
+        {
+          "provider": "bing_web",
+          "status": "ok",
+          "chunk": 1,
+          "chunks": 1,
+          "attempt": 1,
+          "elapsed_ms": 766,
+          "family": "microsoft",
+          "access": "public"
+        }
+      ],
+      "repair_attempts": 0,
+      "seconds": 1.64
+    }
+  ]
+}

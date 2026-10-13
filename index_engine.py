@@ -114,7 +114,7 @@ def parse_response(response, source):
 class IndexTranslator:
     def __init__(self, *, transport=None, timeout=15.0, cache_size=32, allow_approximation=False, calendar_constraints=True, signed_quantity_constraints=True):
         if not isinstance(timeout, (float, int)) or isinstance(timeout, bool) or not math.isfinite(timeout) or not .1 <= timeout <= 60:
-            raise TranslationError("settings", "Index request timeout must be between0.1and60seconds.")
+            raise TranslationError("settings", "Index request timeout must be between 0.1 and 60 seconds.")
         # The shared HTTP transport needs the provider display name to classify
         # HTTP429. This additive registration also permits standalone probes.
         from engine import PROVIDER_NAMES
@@ -128,6 +128,7 @@ class IndexTranslator:
         self._cache = OrderedDict()
         self._lock = threading.Lock()
         self._paused_until = 0.0
+        self._pause_kind = "quota"
 
     def translate(self, text, source_code, target_code, *, cancel_event=None, deadline_seconds=45, glossary=None, context="", candidate_text="", other_candidates=()):
         validate_text(text, "Source")
@@ -147,7 +148,7 @@ class IndexTranslator:
         if not supports(source_code, target_code, allow_approximation=self.allow_approximation):
             raise TranslationError("unsupported", "Index Translate has no exact published support for this language identity.")
         if not isinstance(deadline_seconds, (int, float)) or isinstance(deadline_seconds, bool) or not math.isfinite(deadline_seconds) or not .1 <= deadline_seconds <= 180:
-            raise TranslationError("settings", "Index deadline must be between0.1and180seconds.")
+            raise TranslationError("settings", "Index deadline must be between 0.1 and 180 seconds.")
         begin = time.monotonic()
         deadline = begin + deadline_seconds
         _state(deadline, cancel_event)
@@ -158,16 +159,17 @@ class IndexTranslator:
         key = (text, source_code, target_code, tuple(sorted((glossary or {}).items())), context, candidate_text, tuple(other_candidates))
         with self._lock:
             cached = self._cache.get(key)
-            paused = self._paused_until > time.monotonic()
+            remaining_pause = max(0, self._paused_until - time.monotonic())
+            pause_kind = self._pause_kind
         if cached is not None:
             _state(deadline, cancel_event)
             return {**cached, "cached": True}
-        if paused:
-            raise TranslationError("quota", "Index Translate is briefly paused after an observed HTTP429; try another route.", retry_after_seconds=max(0, self._paused_until - time.monotonic()))
+        if remaining_pause:
+            raise TranslationError(pause_kind, "Index Translate is briefly paused after a service failure; other routes remain available.", retry_after_seconds=remaining_pause)
         if candidate_text and len(text) > 1200:
             # Never misalign candidate chunks or pretend a partial repair covered
             # an entire long source; independent translation remains available.
-            raise TranslationError("input", "Index source-bound repair currently accepts up to1,200sourcecharacters; use an independent full translation for longer text.")
+            raise TranslationError("input", "Index source-bound repair currently accepts up to 1,200 source characters; use an independent full translation for longer text.")
         chunks = split_text(text, max_chars=1200, max_bytes=6000)
         outputs, trace = [], []
         for index, chunk in enumerate(chunks):
@@ -189,6 +191,11 @@ class IndexTranslator:
                 if error.status_code == 429:
                     with self._lock:
                         self._paused_until = time.monotonic() + _quota_pause_seconds(error.retry_after_seconds)
+                        self._pause_kind = "quota"
+                elif error.kind in ("timeout", "network", "service", "response"):
+                    with self._lock:
+                        self._paused_until = time.monotonic() + 30
+                        self._pause_kind = error.kind
                 raise
             _state(deadline, cancel_event)
             outputs.append(leading + output + trailing)

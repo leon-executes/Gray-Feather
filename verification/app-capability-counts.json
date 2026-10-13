@@ -1,0 +1,12 @@
+{
+  "languages": 34,
+  "default_dictation": 34,
+  "whisper_dictation": 28,
+  "omnilingual_dictation": 10,
+  "free_or_bundled_voice": 34,
+  "bundled_voice": 33,
+  "index_exact_mapping": 33,
+  "dictation_gaps": [],
+  "voice_gaps": [],
+  "scope": "Configured routes include explicitly labelled pronunciation approximations; counts are not accuracy, native-voice certification or service availability measurements."
+}

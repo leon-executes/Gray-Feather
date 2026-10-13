@@ -1,0 +1,59 @@
+{
+  "version": "1.3.2",
+  "scope": "Software regression and bundled native checks; pronunciation approximations are not native-language certification.",
+  "source-tests": {
+    "version": "1.3.2",
+    "frozen": false,
+    "tests": 498,
+    "passed": 498,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "elapsed_seconds": 19.251,
+    "successful": true
+  },
+  "packaged-tests": {
+    "version": "1.3.2",
+    "frozen": true,
+    "tests": 498,
+    "passed": 493,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 5,
+    "elapsed_seconds": 19.085,
+    "successful": true
+  },
+  "packaged-ui": {
+    "successful": true,
+    "size": [
+      1180,
+      1000
+    ],
+    "frozen": true
+  },
+  "packaged-native": {
+    "successful": true,
+    "version": "1.3.2",
+    "frozen": true,
+    "native_checks": 10
+  },
+  "playback": {
+    "scope": "Actual Windows waveOut completion/cancellation using silent PCM. No audible-word or speaker intelligibility claim.",
+    "rows": [
+      {
+        "silent_audio_seconds": 0.4,
+        "cancel_after": null,
+        "complete": true,
+        "elapsed_seconds": 0.453,
+        "successful": true
+      },
+      {
+        "silent_audio_seconds": 2.0,
+        "cancel_after": 0.15,
+        "complete": false,
+        "elapsed_seconds": 0.157,
+        "successful": true
+      }
+    ]
+  }
+}

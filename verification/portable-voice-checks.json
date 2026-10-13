@@ -1,0 +1,26 @@
+[
+  {
+    "locale": "so-SO",
+    "unicode_relocation": true,
+    "successful": true,
+    "bytes": 83244
+  },
+  {
+    "locale": "ckb-IQ",
+    "unicode_relocation": true,
+    "successful": true,
+    "bytes": 48094
+  },
+  {
+    "locale": "fr-FR",
+    "unicode_relocation": true,
+    "successful": true,
+    "bytes": 27674
+  },
+  {
+    "cancelled": true,
+    "successful": true,
+    "elapsed_seconds": 0.703,
+    "scratch_cleaned": true
+  }
+]

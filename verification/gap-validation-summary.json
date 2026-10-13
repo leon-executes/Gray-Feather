@@ -1,0 +1,696 @@
+{
+  "date": "2026-10-12",
+  "unique_public_audio_files": 545,
+  "asr_attempts": 1136,
+  "normalization": "Unicode NFC and casefold; punctuation removed; character distance excludes spaces. Numbers are not semantically normalized. Errors can exceed 100 percent. Failed trials excluded from CER and separately counted.",
+  "limitations": [
+    "Public corpora are not guaranteed absent from model training.",
+    "Dari-labelled corpus accents not independently verified.",
+    "No physical microphone, native listener panel, phone or Raspberry Pi validation.",
+    "Paired recognition comparisons are not meaning or safety certification.",
+    "50 blocked Persian Whisper policy probes were excluded from model-quality metrics.",
+    "The ten initial fa-AF probes in google-candidate-asr.jsonl used Persian FLEURS proxy recordings. The Dari table uses the separate 30-recording Dari-labelled corpus trial."
+  ],
+  "groups": [
+    {
+      "file": "asr-results.jsonl",
+      "locale": "am-ET",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 19,
+      "cer_percent": 154.06,
+      "wer_percent": 123.77,
+      "median_seconds": 4.857
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "ar-SA",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 10.08,
+      "wer_percent": 39.07,
+      "median_seconds": 2.684
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "ckb-IQ",
+      "engine": "auto",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 10.21,
+      "wer_percent": 52.55,
+      "median_seconds": 2.117
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "ckb-IQ",
+      "engine": "omni_candidate",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 10.21,
+      "wer_percent": 52.55,
+      "median_seconds": 2.021
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "de-DE",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 2.22,
+      "wer_percent": 9.69,
+      "median_seconds": 3.662
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "en-US",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 3.47,
+      "wer_percent": 6.82,
+      "median_seconds": 3.013
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "fa-IR",
+      "engine": "auto",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 3.16,
+      "wer_percent": 8.17,
+      "median_seconds": 2.894
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "fa-IR",
+      "engine": "omni_candidate",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 6.2,
+      "wer_percent": 30.43,
+      "median_seconds": 2.843
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "fr-FR",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 4.76,
+      "wer_percent": 12.18,
+      "median_seconds": 3.446
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "nl-NL",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 4.09,
+      "wer_percent": 15.18,
+      "median_seconds": 2.21
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "om-ET",
+      "engine": "auto",
+      "attempts": 41,
+      "completed": 41,
+      "cer_percent": 22.85,
+      "wer_percent": 80.76,
+      "median_seconds": 2.035
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "om-ET",
+      "engine": "omni_candidate",
+      "attempts": 41,
+      "completed": 41,
+      "cer_percent": 22.85,
+      "wer_percent": 80.76,
+      "median_seconds": 1.979
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "ps-AF",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 51.02,
+      "wer_percent": 94.66,
+      "median_seconds": 4.134
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "sd-PK",
+      "engine": "auto",
+      "attempts": 50,
+      "completed": 37,
+      "cer_percent": 114.17,
+      "wer_percent": 110.2,
+      "median_seconds": 4.56
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "sd-PK",
+      "engine": "omni_candidate",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 13.92,
+      "wer_percent": 40.65,
+      "median_seconds": 2.118
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "so-SO",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 100.0,
+      "wer_percent": 109.17,
+      "median_seconds": 4.229
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "tr-TR",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 6.28,
+      "wer_percent": 12.73,
+      "median_seconds": 1.754
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "uk-UA",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 9.99,
+      "wer_percent": 14.93,
+      "median_seconds": 2.158
+    },
+    {
+      "file": "asr-results.jsonl",
+      "locale": "ur-PK",
+      "engine": "auto",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 9.11,
+      "wer_percent": 22.97,
+      "median_seconds": 2.531
+    },
+    {
+      "file": "extra-asr.jsonl",
+      "locale": "am-ET",
+      "engine": "omni_candidate",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 9.57,
+      "wer_percent": 33.14,
+      "median_seconds": 2.181
+    },
+    {
+      "file": "extra-asr.jsonl",
+      "locale": "ti-ET",
+      "engine": "omni_candidate",
+      "attempts": 4,
+      "completed": 4,
+      "cer_percent": 86.84,
+      "wer_percent": 95.45,
+      "median_seconds": 1.407
+    },
+    {
+      "file": "extra-asr.jsonl",
+      "locale": "ku-TR",
+      "engine": "omni_candidate",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 9.01,
+      "wer_percent": 39.89,
+      "median_seconds": 1.459
+    },
+    {
+      "file": "extra-asr.jsonl",
+      "locale": "so-SO",
+      "engine": "omni_candidate",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 15.91,
+      "wer_percent": 49.66,
+      "median_seconds": 2.214
+    },
+    {
+      "file": "extra-asr.jsonl",
+      "locale": "ps-AF",
+      "engine": "omni_candidate",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 17.27,
+      "wer_percent": 44.01,
+      "median_seconds": 2.418
+    },
+    {
+      "file": "ti-native-asr.jsonl",
+      "locale": "ti-ET",
+      "engine": "omni_candidate",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 25.34,
+      "wer_percent": 68.24,
+      "median_seconds": 2.352
+    },
+    {
+      "file": "additional-asr.jsonl",
+      "locale": "fa-AF",
+      "engine": "google_candidate",
+      "attempts": 30,
+      "completed": 30,
+      "cer_percent": 2.71,
+      "wer_percent": 10.02,
+      "median_seconds": 1.131
+    },
+    {
+      "file": "additional-asr.jsonl",
+      "locale": "fa-AF",
+      "engine": "omni_candidate",
+      "attempts": 30,
+      "completed": 30,
+      "cer_percent": 6.19,
+      "wer_percent": 32.52,
+      "median_seconds": 1.568
+    },
+    {
+      "file": "additional-asr.jsonl",
+      "locale": "ti-ET",
+      "engine": "google_candidate",
+      "attempts": 50,
+      "completed": 50,
+      "cer_percent": 26.17,
+      "wer_percent": 49.17,
+      "median_seconds": 2.924
+    },
+    {
+      "file": "additional-asr.jsonl",
+      "locale": "am-ET",
+      "engine": "google_candidate",
+      "attempts": 20,
+      "completed": 20,
+      "cer_percent": 16.26,
+      "wer_percent": 33.43,
+      "median_seconds": 3.07
+    },
+    {
+      "file": "google-candidate-asr.jsonl",
+      "locale": "am-ET",
+      "engine": "google-candidate",
+      "attempts": 10,
+      "completed": 10,
+      "cer_percent": 20.22,
+      "wer_percent": 40.33,
+      "median_seconds": 3.003
+    },
+    {
+      "file": "google-candidate-asr.jsonl",
+      "locale": "ti-ET",
+      "engine": "google-candidate",
+      "attempts": 10,
+      "completed": 10,
+      "cer_percent": 13.88,
+      "wer_percent": 43.08,
+      "median_seconds": 3.203
+    },
+    {
+      "file": "google-candidate-asr.jsonl",
+      "locale": "om-ET",
+      "engine": "google-candidate",
+      "attempts": 10,
+      "completed": 10,
+      "cer_percent": 23.51,
+      "wer_percent": 60.78,
+      "median_seconds": 2.942
+    },
+    {
+      "file": "google-candidate-asr.jsonl",
+      "locale": "ckb-IQ",
+      "engine": "google-candidate",
+      "attempts": 10,
+      "completed": 8,
+      "cer_percent": 99.77,
+      "wer_percent": 100.0,
+      "median_seconds": 2.755
+    },
+    {
+      "file": "google-candidate-asr.jsonl",
+      "locale": "ku-TR",
+      "engine": "google-candidate",
+      "attempts": 10,
+      "completed": 10,
+      "cer_percent": 79.5,
+      "wer_percent": 105.63,
+      "median_seconds": 1.202
+    },
+    {
+      "file": "google-candidate-asr.jsonl",
+      "locale": "sd-PK",
+      "engine": "google-candidate",
+      "attempts": 10,
+      "completed": 10,
+      "cer_percent": 100.0,
+      "wer_percent": 100.0,
+      "median_seconds": 3.418
+    },
+    {
+      "file": "google-candidate-asr.jsonl",
+      "locale": "fa-AF",
+      "engine": "google-candidate",
+      "attempts": 10,
+      "completed": 10,
+      "cer_percent": 2.59,
+      "wer_percent": 6.81,
+      "median_seconds": 2.438
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "am-ET",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 10.18,
+      "wer_percent": 36.36,
+      "median_seconds": 2.619
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "am-ET",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 9.09,
+      "wer_percent": 32.47,
+      "median_seconds": 2.571
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "am-ET",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 8.36,
+      "wer_percent": 62.34,
+      "median_seconds": 2.383
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ps-AF",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 9.21,
+      "wer_percent": 31.46,
+      "median_seconds": 2.932
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ps-AF",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 9.69,
+      "wer_percent": 30.34,
+      "median_seconds": 2.967
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ps-AF",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 10.5,
+      "wer_percent": 34.27,
+      "median_seconds": 3.097
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "sd-PK",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 19.71,
+      "wer_percent": 56.12,
+      "median_seconds": 2.567
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "sd-PK",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 20.59,
+      "wer_percent": 55.1,
+      "median_seconds": 2.314
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "sd-PK",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 23.82,
+      "wer_percent": 56.12,
+      "median_seconds": 2.683
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "fa-IR",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 3.28,
+      "wer_percent": 8.89,
+      "median_seconds": 2.082
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "fa-IR",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 3.83,
+      "wer_percent": 10.0,
+      "median_seconds": 2.43
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "fa-IR",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 3.83,
+      "wer_percent": 11.11,
+      "median_seconds": 1.777
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "fa-AF",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 5.4,
+      "wer_percent": 13.75,
+      "median_seconds": 0.903
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "fa-AF",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 5.4,
+      "wer_percent": 13.75,
+      "median_seconds": 1.126
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "fa-AF",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 5.71,
+      "wer_percent": 15.0,
+      "median_seconds": 0.977
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ti-ET",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 25.28,
+      "wer_percent": 48.65,
+      "median_seconds": 1.366
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ti-ET",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 40.52,
+      "wer_percent": 56.76,
+      "median_seconds": 1.468
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ti-ET",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 24.91,
+      "wer_percent": 47.3,
+      "median_seconds": 1.499
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "om-ET",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 25.62,
+      "wer_percent": 80.0,
+      "median_seconds": 2.065
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "om-ET",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 26.68,
+      "wer_percent": 82.22,
+      "median_seconds": 2.031
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "om-ET",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 24.2,
+      "wer_percent": 81.11,
+      "median_seconds": 2.037
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ckb-IQ",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 5.39,
+      "wer_percent": 46.88,
+      "median_seconds": 1.97
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ckb-IQ",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 5.97,
+      "wer_percent": 46.88,
+      "median_seconds": 1.984
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ckb-IQ",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 6.74,
+      "wer_percent": 51.04,
+      "median_seconds": 2.002
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ku-TR",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 2.18,
+      "wer_percent": 27.66,
+      "median_seconds": 1.499
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ku-TR",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 2.18,
+      "wer_percent": 27.66,
+      "median_seconds": 1.507
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "ku-TR",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 4.37,
+      "wer_percent": 36.17,
+      "median_seconds": 1.506
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "so-SO",
+      "engine": "clean",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 13.62,
+      "wer_percent": 45.74,
+      "median_seconds": 2.191
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "so-SO",
+      "engine": "quiet",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 13.43,
+      "wer_percent": 44.68,
+      "median_seconds": 2.116
+    },
+    {
+      "file": "candidate-scenarios.jsonl",
+      "locale": "so-SO",
+      "engine": "noise20dB",
+      "attempts": 5,
+      "completed": 5,
+      "cer_percent": 16.98,
+      "wer_percent": 53.19,
+      "median_seconds": 2.135
+    },
+    {
+      "file": "additional-google.jsonl",
+      "locale": "so-SO",
+      "engine": "google_candidate",
+      "attempts": 10,
+      "completed": 10,
+      "cer_percent": 17.5,
+      "wer_percent": 48.54,
+      "median_seconds": null
+    },
+    {
+      "file": "additional-google.jsonl",
+      "locale": "ps-AF",
+      "engine": "google_candidate",
+      "attempts": 10,
+      "completed": 9,
+      "cer_percent": 100.59,
+      "wer_percent": 100.0,
+      "median_seconds": null
+    }
+  ]
+}

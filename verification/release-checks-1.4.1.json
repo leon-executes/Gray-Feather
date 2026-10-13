@@ -1,0 +1,29 @@
+{
+  "version": "1.4.1",
+  "successful": true,
+  "source_tests": {
+    "tests": 498,
+    "passed": 498,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "packaged_tests": {
+    "tests": 498,
+    "passed": 492,
+    "skipped": 6,
+    "failures": 0,
+    "errors": 0
+  },
+  "native_checks": 9,
+  "speech_checks": 15,
+  "live_default_completed": 20,
+  "live_index_outage_completed": 8,
+  "index_outage_repair_retries": 0,
+  "all_retained_assets_match_previous_release": true,
+  "retained_assets": 622,
+  "removed_offline_text_assets": 34,
+  "offline_text_ai_bundled": false,
+  "personal_history_bundled": false,
+  "release_scope": "Verified on this Windows x64 PC; no universal semantic, microphone, clean-VM or service-availability certification."
+}

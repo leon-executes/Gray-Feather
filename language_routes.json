@@ -26,14 +26,6 @@
       "family": "server_defined",
       "access": "configured server; languages and access must be checked live"
     },
-    "hy_mt_local": {
-      "family": "tencent_hy_mt2",
-      "access": "optional measured local model; exact allowlist"
-    },
-    "gemma_local": {
-      "family": "google_gemma",
-      "access": "optional model; support/quality not assumed"
-    },
     "azure": {
       "family": "microsoft",
       "access": "explicit configured official key"

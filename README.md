@@ -1,109 +1,65 @@
 ![Gray Feather — interpret forward](https://github.com/user-attachments/assets/088d7f6f-97ae-4e9b-b584-715e4299b8b6)
 # Gray Feather
 
-**Multi-Engine Reinforced Translation with Voice and Dictation in a Portable Windows App.**
+**Reinforced translation, voice and dictation. One portable Windows app.**
 
 [Download](https://github.com/leon-executes/Gray-Feather/releases/latest) · [Dependencies](DEPENDENCIES.md) · [Manual](docs/MANUAL.md) · [Build](BUILD.md) · [Licence](LICENSE)
 
-<!-- Banner slot: replace assets/banner.svg with your final wide artwork. See assets/README.md. -->
 ![Gray Feather — interpret ahead](https://github.com/user-attachments/assets/cc9c591f-48bc-4b73-b226-9782cd770bf3)
-
 
 ## Run
 
-1. Download **GrayFeather-1.3.0-GitHub-Windows-x64.zip** from Releases. GitHub's automatic **Source code** download is for developers.
-2. Extract it to a writable folder. Keep `_internal`, `licenses` and the other supplied folders beside `GrayFeather.exe`.
-3. Open **GrayFeather.exe**. Choose both languages. Press **Record Speech**, speak, then **Stop recording**.
-4. The app finishes transcription, translates and reads the result when **Voice Enabled** is selected. Or type and press **Translate →**.
+1. Download **GrayFeather-1.4.1-Windows-x64.zip** from [Releases](https://github.com/leon-executes/Gray-Feather/releases/latest).
+2. Extract the ZIP to a writable folder. Keep `_internal`, `licenses` and the supplied folders beside `GrayFeather.exe`.
+3. Open **GrayFeather.exe**. Choose both languages. Press **Record Speech**, speak, then **Stop recording**. Or type and press **Translate →**.
+4. The app completes the translation and reads it when **Voice Enabled** is selected.
 
-Windows 10 version 1903+ or Windows 11, x64. No Python, browser, WebView2, Docker or model installer required. The release is unsigned. Automatic translation uses the internet; **Index 2B · offline AI** is an explicit local option. See [dependencies and language coverage](DEPENDENCIES.md).
+Windows 10 version 1903+ or Windows 11, x64. No Python, browser, WebView2, Docker or model installation. All bundled voices and dictation models are included. The app is unsigned. Text translation needs internet; offline text AI has been removed. Free providers can throttle or change availability.
+
+**Upgrading:** close the old app and copy its `GrayFeather-data` folder beside the new executable. Do not overwrite or delete that folder. Source archives are for developers; they are not needed to run the app.
 
 ## Use
 
-| Control | What it does |
+| Control | Action |
 | --- | --- |
-| **Record Speech** | Live previews while speaking; one final result when recording stops. |
-| **Review** | Inspect alternatives and backtranslation. Add another available opinion. |
-| **Listen / Halt Voice** | Read the result again or stop playback. |
-| **Voice Enabled / Disabled** | Control automatic reading. |
-| **Clear Session** | Start fresh; the previous session remains in Saved sessions. |
+| **Record Speech** | See live previews; stop for the final result. |
+| **Review** | Inspect alternative translations and backtranslation. |
+| **Voice / Listen / Halt Voice** | Control automatic reading, replay or stop. |
+| **Safe Speech** | Mask supported profanity/slurs in displayed translations and speech; originals are retained. |
+| **Clear Session** | Start fresh and keep the previous session saved. |
+| **Saved sessions** | Reopen a session. Tick boxes and choose **Delete selected** to remove several. |
+| **Shred History** | Confirm a purge of sessions, drafts, revisions and automatic backups. No in-app Undo. |
 | **Export** | Save DOCX, TXT, CSV or JSON. Word is not required. |
-| **Settings / Manual** | Change settings immediately or read short usage tips. |
+| **Settings / Manual** | Apply preferences immediately or read short usage tips. |
 
 **Ctrl+Enter:** translate · **Esc:** cancel/stop voice · **Ctrl+Shift+E:** export · **Ctrl+,** settings.
 
-History lives in `GrayFeather-data` beside the executable. **Close the app and keep that folder when upgrading.** See [data, backup and privacy](docs/PRIVACY.md). Free services can throttle or fail. Language support differs between text, dictation and voice; [coverage table](APP-CAPABILITIES.csv).
+History stays in `GrayFeather-data`. Separate exports, backups and system snapshots are outside Shred History; SSD forensic erasure cannot be guaranteed. See [privacy](docs/PRIVACY.md) and [language coverage](APP-CAPABILITIES.csv).
 
-## Build
+## Build and source
 
-Use **CPython 3.12 x64**. Restore the pinned resource packs, then run `build.ps1`. The exact commands, asset downloads and verification steps are in [BUILD.md](BUILD.md). Dependencies are pinned in [requirements-build.txt](requirements-build.txt).
+Use **CPython 3.12 x64** and the pinned [build dependencies](requirements-build.txt). Restore the release resources, then run `build.ps1`; [BUILD.md](BUILD.md) gives the commands.
 
-## Engineering behind Gray Feather
+Runtime modules sit at the root. `tests/` contains regression tests and explicit live checks; `tools/` contains build, packaging and maintenance commands. Tests do not run during normal app use. They remain available through `GrayFeather.exe --self-test` for support and release verification.
 
-Gray Feather brings translation, speech recognition, automatic reinforcement, voice playback and local history into a native Windows application. The default workflow uses free online services without requiring a personal API key. Bundled models provide additional offline capabilities without separate runtime installation.
+## Engineering
 
-### Reinforcement improves the main result
+**Reinforcement improves the displayed result.** Automatic mode consults eligible engines within a shared deadline, compares complete translations against the source, and can select a stronger candidate or apply a narrowly supported repair before displaying it. Supported checks cover numbers, signs, currencies, units, identifiers, contact details and calendar terms. A uniquely corrupted email address can be restored from the source; ambiguous repairs are rejected. CLDR month terminology preserves calendar identity rather than silently converting dates. Eligible conflicts can receive an Index AI repair attempt; that candidate must pass the same checks. This repair stage accepts up to 1,200 source characters. Longer passages retain candidate comparison and deterministic checks.
 
-Automatic mode requests the preferred eligible translation alongside additional consultations within a shared time budget. The reinforcement pipeline evaluates complete translations against the original source, then can select a stronger candidate or apply a narrowly supported correction **before displaying the main result**. Users do not need to inspect the Review pane to receive these improvements.
+**Routing follows the language and task.** Translation, recognition and voice have separate policies. Dari, Persian, Sorani and Kurmanji keep distinct identities. Independent engine families are distinguished from shared-provider alternatives. Quota responses trigger cooldowns; failed consultations do not discard a completed primary translation. Free-service availability is not guaranteed. Practical substitute voices are identified as approximations, not native-language speech.
 
-Checks cover supported patterns involving quantities, explicit positive and negative signs, currencies, units, addresses, identifiers, contact details and calendar terminology. A uniquely identifiable corrupted email address, for example, can be restored from the source when the surrounding protected details remain consistent. Ambiguous mappings are rejected.
+**Speech work stays bounded.** Live previews replace stale pending work instead of building a queue. Stopping commits final recognition and translation. Request ownership prevents late results from overwriting new text or another recording. Voice preparation uses bounded reserves and a preference window; one complete result plays. Windows audio completion controls playback so a duration estimate does not cut off the ending.
 
-Supported Gregorian month corrections use Unicode CLDR terminology without silently converting calendars. Where consequential discrepancies remain, eligible inputs can receive an additional source-based Index AI repair attempt. That candidate must pass the same selection checks before replacing the result. Custom glossary and context conditions also constrain replacement.
+**Speech resources stay bundled.** The complete download includes Whisper dictation, measured sherpa-onnx recognition routes, a Persian Piper reserve and additional language voice resources. Helpers run on demand with bounded work and checked model hashes. The offline text model and its inference runtime have been removed; online reinforcement and all speech resources remain. Advertised language counts are not proof of reliable coverage.
 
-The system preserves original wording and alternative results for inspection. It evaluates complete candidates rather than assembling sentences from unrelated engine fragments.
+**Index outages degrade gracefully.** Eligible Google/Bing results still receive complete-candidate comparison and deterministic source-detail repairs. A failed Index consultation is not retried for repair in the same turn. Service failures briefly pause new Index requests, and HTTP 429 honours a bounded cooldown. Cached complete results remain usable. AI rewriting is unavailable while Index is down; no unverified proxy is silently substituted. If all eligible translation routes fail, the original remains available for retry.
 
-### Routing by language, direction and task
+**Native interface, local records.** PySide6/Qt provides the desktop UI. SQLite stores sessions, drafts and revisions. Exports preserve Unicode and right-to-left text; DOCX uses ZIP/XML without Microsoft Word. Optional credentials use Windows account-bound protection. History and exports are not encrypted. No local web server, resident model server or background updater is required.
 
-Translation, recognition and playback maintain separate eligibility and preference policies. Support for translating a language does not automatically imply support for recognizing or speaking it.
-
-Translation routes distinguish direction and language identities such as Persian, Dari, Sorani and Kurmanji. Provider provenance matters: Google, Microsoft and Index represent distinct engine families, while mixed-provenance services are not counted as independent confirmation.
-
-Failed routes can fall back to other eligible providers. Quota responses trigger cooldowns; unavailable optional consultations do not discard an otherwise completed primary result. Requests have bounded deadlines, and incomplete responses are rejected rather than presented as finished translations.
-
-### Live speech without a growing processing queue
-
-Recording produces provisional transcription and translation previews. Preview processing uses a replaceable pending snapshot, keeping recent speech useful without accumulating an ever-growing queue.
-
-Stopping recording cancels preview work and requests final recognition. Request ownership checks prevent an obsolete response from overwriting a newer recording, edited text or changed language selection.
-
-Voice playback prepares eligible reserve routes through bounded parallel work. A completed reserve can reduce fallback delay, while a short preference window gives the preferred voice an opportunity to finish. Only one selected result plays. Cancellation prevents abandoned work from producing delayed playback.
-
-### Local intelligence, bundled and controlled
-
-The portable release includes **Index-Translate-2B in Q4_K_M format**, executed through **llama.cpp** as an explicit offline translation option. Quantization reduces the model's storage and memory requirements. CPU threads are bounded, model integrity is checked, and inference supports cancellation and memory checks.
-
-The model runs when requested rather than remaining loaded as a background service. Explicit offline translation does not silently fall back to an online provider.
-
-Other bundled components include Whisper-based dictation, Omnilingual recognition through sherpa-onnx for validated routes, and a Piper Persian voice reserve. Offline coverage follows the application's supported mappings; a model's advertised language count is not treated as proof that every language works reliably.
-
-The local translation model is an optional engine, not an always-running judge of semantic correctness.
-
-### Native Windows architecture
-
-The interface uses **Qt through PySide6**. Translation, audio, persistence and interface responsibilities are separated so each can handle its own failures and cancellation boundaries.
-
-**SQLite** stores conversation history, revisions and drafts locally. DOCX export uses ZIP/XML assembly without requiring Microsoft Word. TXT, CSV and JSON exports provide additional ways to retain or reuse conversations, with Unicode and right-to-left text handling.
-
-The portable folder carries its Python runtime, shared libraries, native helpers and model weights. No browser shell, WebView2 installation, database server or resident model server is required. There is no background updater or automatic model download.
-
-### Local records and explicit online boundaries
-
-Conversation history stays in the application's local data folder. Backup verification and recoverable storage behavior support moving or upgrading the portable installation. Optional provider credentials use Windows account-bound protection; conversation history and exported documents are not encrypted by the app.
-
-Online translation sends relevant text to its providers. Online recognition sends audio, and online playback sends the text to be spoken. Translation, recognition and voice settings are independent, so choosing offline translation alone does not make every stage offline.
-
-### Verification with defined limits
-
-Source tests, packaged application checks, native model execution, asset hashes and release identity records cover different parts of the system. Packaging verification checks that the distributed executable and resources match the prepared release.
-
-These safeguards target concrete failure modes. They do not establish universal translation accuracy: fluent wording, matching numbers and agreement between engines can still conceal a meaning error.
-
-Additional AI repair currently accepts up to **1,200 source characters**. Longer inputs retain available candidate comparison and deterministic checks. Language coverage and translation quality also differ between providers and directions.
-
-Read the [architecture](docs/ARCHITECTURE.md), [dependency inventory](DEPENDENCIES.md), [privacy details](docs/PRIVACY.md) and [verification findings](docs/VERIFICATION.md) for implementation details and measured limitations.
+Tests cover software behavior, native execution, cancellation, storage and packaging integrity. They do not certify every translation or accent. Agreement between engines and preserved numbers can still conceal meaning errors. Read the [architecture](docs/ARCHITECTURE.md), [verification](docs/VERIFICATION.md) and [dependency inventory](DEPENDENCIES.md).
 
 ## Licence and author
 
 Created by **[Parham (Leon) Faraji](https://github.com/leon-executes)**, from [Forumark's creators](https://forumark.com).
 
-Gray Feather's original code and documentation are **source-available under [PolyForm Noncommercial 1.0.0](LICENSE)**. The full licence defines permitted purposes, including its provisions for noncommercial organizations. For uses outside those permissions, contact the author through the GitHub profile. Third-party code, runtimes, models and datasets retain their [own licences](THIRD-PARTY-NOTICES.md).
+Original code and documentation are source-available under [PolyForm Noncommercial 1.0.0](LICENSE). Third-party code and models retain their [own licences](THIRD-PARTY-NOTICES.md). Corresponding third-party source is supplied as a separate developer archive in the same release; no separate voice download is needed.

@@ -1,0 +1,1376 @@
+{
+  "version": 3,
+  "app_version": "1.3.2",
+  "scope": "All 34 app locales, including explicitly labelled pronunciation approximations. Mapping, live completion, and meaning fidelity are different claims.",
+  "free_defaults": true,
+  "paid_voice_requires_explicit_azure_selection_and_key": true,
+  "hierarchy_rules": [
+    "Language-specific ASR routing comes from paired public recordings; documented unsupported cloud candidates remain disabled.",
+    "Ten measured routes use Omnilingual, often as the default or as a reserve. Its published inventory does not enable every language.",
+    "Edge voice and the best mapped reserve prepare concurrently; a complete reserve may win after 350 ms preference grace.",
+    "Dari prefers female Persian Edge with local Piper reserve, explicitly approximate pronunciation. Working local gap voices stay first. Kurmanji and Sindhi prefer labelled Turkish/Urdu substitutes over robotic voices; recovered webapp routes reserve other gap languages. Offline and Basic never upload text.",
+    "Only validated whole audio can be played. Cancellation kills active worker/helper and never plays a partial passage.",
+    "Recent observed failures change the current session auto order; network services are never declared dependable from a mapping or HEAD request."
+  ],
+  "uncovered_free_dictation": [],
+  "uncovered_mapped_free_voice": [],
+  "source_links": {
+    "azure_speech_languages": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support",
+    "google_cloud_languages_context_only": "https://cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+    "legacy_google_client": "https://github.com/Uberi/speech_recognition/blob/master/speech_recognition/recognizers/google.py",
+    "edge_client": "https://github.com/rany2/edge-tts",
+    "google_tts_language_registry": "https://github.com/pndurette/gTTS/blob/main/gtts/langs.py",
+    "whisper_languages": "https://github.com/openai/whisper/blob/main/whisper/tokenizer.py",
+    "whisper_native": "https://github.com/ggml-org/whisper.cpp",
+    "piper_native_release": "https://github.com/rhasspy/piper/releases/tag/2023.11.14-2",
+    "persian_model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/fa/fa_IR/gyro/medium/MODEL_CARD",
+    "persian_creator_pinned_MIT": "https://huggingface.co/gyroing/Persian-Piper-Model-gyro/blob/e409c5a8fb164ff6e710bfbd07b7b02c1e13949a/README.md",
+    "omnilingual_primary": "https://github.com/facebookresearch/omnilingual-asr",
+    "omnilingual_native_models": "https://k2-fsa.github.io/sherpa/onnx/omnilingual-asr/models.html",
+    "native_recording_publisher": "https://huggingface.co/datasets/google/fleurs"
+  },
+  "language_count": 34,
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "exact_locale": "en-US",
+      "dictation": {
+        "automatic_order": [
+          "offline_whisper",
+          "google_web"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "en-US-JennyNeural",
+        "google_voice_mapping": "en",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "ar",
+      "name": "Arabic",
+      "exact_locale": "ar-SA",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "ar-SA-ZariyahNeural",
+        "google_voice_mapping": "ar",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "exact_locale": "fr-FR",
+      "dictation": {
+        "automatic_order": [
+          "offline_whisper",
+          "google_web"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "fr-FR-DeniseNeural",
+        "google_voice_mapping": "fr",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "exact_locale": "tr-TR",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "tr-TR-EmelNeural",
+        "google_voice_mapping": "tr",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "fa",
+      "name": "Persian / Farsi",
+      "exact_locale": "fa-IR",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "omnilingual"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": false,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Google first with Omnilingual reserve; Whisper stays sidelined.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "offline_piper",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "fa-IR-DilaraNeural",
+        "google_voice_mapping": null,
+        "bundled_voice": {
+          "id": "fa_IR-gyro-medium",
+          "name": "Persian · Gyro (bundled)",
+          "filename": "fa_IR-gyro-medium.onnx",
+          "sample_rate": 22050,
+          "model_bytes": 63122309,
+          "model_sha256": "37dfae43c82ee38ca9e6aac4ffef76a74d6b282ccbc397b27761f35d355c99ba",
+          "espeak_voice": "fa",
+          "model_license": "MIT",
+          "creator_revision": "e409c5a8fb164ff6e710bfbd07b7b02c1e13949a",
+          "source": "https://huggingface.co/gyroing/Persian-Piper-Model-gyro/tree/e409c5a8fb164ff6e710bfbd07b7b02c1e13949a"
+        },
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "offline_piper",
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "prs",
+      "name": "Dari",
+      "exact_locale": "fa-AF",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "omnilingual"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": false,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_persian_approx",
+          "offline_persian_approx",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": null,
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "offline_persian_approx",
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "ps",
+      "name": "Pashto",
+      "exact_locale": "ps-AF",
+      "dictation": {
+        "automatic_order": [
+          "omnilingual",
+          "offline_whisper"
+        ],
+        "online_google_declared": false,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "reference:ps-AF-male",
+          "reference:fa-IR",
+          "windows"
+        ],
+        "edge_voice_mapping": "ps-AF-LatifaNeural",
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": false,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "exact_locale": "ur-PK",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "ur-PK-UzmaNeural",
+        "google_voice_mapping": "ur",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "exact_locale": "hi-IN",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "hi-IN-SwaraNeural",
+        "google_voice_mapping": "hi",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "bn",
+      "name": "Bengali / Bangla",
+      "exact_locale": "bn-BD",
+      "dictation": {
+        "automatic_order": [
+          "google_web"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "bn-BD-NabanitaNeural",
+        "google_voice_mapping": "bn",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi (Gurmukhi)",
+      "exact_locale": "pa-IN",
+      "dictation": {
+        "automatic_order": [
+          "google_web"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "pa-IN-VaaniNeural",
+        "google_voice_mapping": "pa",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "sd",
+      "name": "Sindhi",
+      "exact_locale": "sd-PK",
+      "dictation": {
+        "automatic_order": [
+          "omnilingual"
+        ],
+        "online_google_declared": false,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "reference:ur-PK",
+          "reference_google:ur-PK",
+          "reference:ur-PK-male",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": null,
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "am",
+      "name": "Amharic",
+      "exact_locale": "am-ET",
+      "dictation": {
+        "automatic_order": [
+          "omnilingual",
+          "google_web"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "am-ET-MekdesNeural",
+        "google_voice_mapping": "am",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "ti",
+      "name": "Tigrinya",
+      "exact_locale": "ti-ET",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "omnilingual"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": false,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "offline_neural",
+          "reference:am-ET",
+          "reference_google:am-ET",
+          "windows"
+        ],
+        "edge_voice_mapping": null,
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "offline_neural",
+          "windows"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "om",
+      "name": "Oromo",
+      "exact_locale": "om-ET",
+      "dictation": {
+        "automatic_order": [
+          "omnilingual",
+          "google_web"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": false,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "offline_neural",
+          "reference:so-SO",
+          "reference_google:sw-KE",
+          "reference:so-SO-male",
+          "reference:sw-KE",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": null,
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "offline_neural",
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "so",
+      "name": "Somali",
+      "exact_locale": "so-SO",
+      "dictation": {
+        "automatic_order": [
+          "omnilingual",
+          "google_web"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "offline_neural",
+          "windows"
+        ],
+        "edge_voice_mapping": "so-SO-UbaxNeural",
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "offline_neural",
+          "windows"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "sw",
+      "name": "Swahili",
+      "exact_locale": "sw-KE",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "sw-KE-ZuriNeural",
+        "google_voice_mapping": "sw",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "ckb",
+      "name": "Kurdish Sorani / Central Kurdish",
+      "exact_locale": "ckb-IQ",
+      "dictation": {
+        "automatic_order": [
+          "omnilingual"
+        ],
+        "online_google_declared": false,
+        "bundled_whisper_declared": false,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "offline_neural",
+          "reference:ar-IQ",
+          "reference_google:ar-SA",
+          "reference:fa-IR",
+          "reference:ar-SA",
+          "windows"
+        ],
+        "edge_voice_mapping": null,
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "offline_neural",
+          "windows"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "kmr",
+      "name": "Kurdish Kurmanji / Northern Kurdish",
+      "exact_locale": "ku-TR",
+      "dictation": {
+        "automatic_order": [
+          "omnilingual"
+        ],
+        "online_google_declared": false,
+        "bundled_whisper_declared": false,
+        "bundled_omnilingual_measured_route": true,
+        "bundled_omnilingual_assets_present": true,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": false,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "reference:tr-TR",
+          "reference_google:tr-TR",
+          "reference:tr-TR-male",
+          "reference:en-US-multilingual",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": null,
+        "google_voice_mapping": null,
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Paired public-reference ASR tests and voice diagnostics are reported in verification/gap-validation-20261012.md. These are not native-listener voice ratings or universal semantic accuracy scores.",
+      "measurement_status": "Public reference recordings plus synthetic voice diagnostics; see gap-validation report."
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "exact_locale": "es-ES",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "es-ES-ElviraNeural",
+        "google_voice_mapping": "es",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "exact_locale": "de-DE",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "de-DE-KatjaNeural",
+        "google_voice_mapping": "de",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "exact_locale": "it-IT",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "it-IT-ElsaNeural",
+        "google_voice_mapping": "it",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese (Portugal)",
+      "exact_locale": "pt-PT",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "pt-PT-RaquelNeural",
+        "google_voice_mapping": "pt-PT",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "exact_locale": "ru-RU",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "ru-RU-SvetlanaNeural",
+        "google_voice_mapping": "ru",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "zh",
+      "name": "Chinese (Simplified)",
+      "exact_locale": "zh-CN",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "zh-CN-XiaoxiaoNeural",
+        "google_voice_mapping": "zh-CN",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "exact_locale": "ja-JP",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "ja-JP-NanamiNeural",
+        "google_voice_mapping": "ja",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "exact_locale": "ko-KR",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "ko-KR-SunHiNeural",
+        "google_voice_mapping": "ko",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "exact_locale": "nl-NL",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "nl-NL-ColetteNeural",
+        "google_voice_mapping": "nl",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "exact_locale": "pl-PL",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "pl-PL-ZofiaNeural",
+        "google_voice_mapping": "pl",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "ro",
+      "name": "Romanian",
+      "exact_locale": "ro-RO",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "ro-RO-AlinaNeural",
+        "google_voice_mapping": "ro",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "uk",
+      "name": "Ukrainian",
+      "exact_locale": "uk-UA",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "uk-UA-PolinaNeural",
+        "google_voice_mapping": "uk",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "el",
+      "name": "Greek",
+      "exact_locale": "el-GR",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "el-GR-AthinaNeural",
+        "google_voice_mapping": "el",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "he",
+      "name": "Hebrew",
+      "exact_locale": "he-IL",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "he-IL-HilaNeural",
+        "google_voice_mapping": "iw",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    },
+    {
+      "code": "id",
+      "name": "Indonesian",
+      "exact_locale": "id-ID",
+      "dictation": {
+        "automatic_order": [
+          "google_web",
+          "offline_whisper"
+        ],
+        "online_google_declared": true,
+        "bundled_whisper_declared": true,
+        "bundled_omnilingual_measured_route": false,
+        "bundled_omnilingual_assets_present": false,
+        "omnilingual_language_conditioned": false,
+        "optional_azure_declared": true,
+        "policy": "Review names, quantities and negation.",
+        "gap": null
+      },
+      "voice": {
+        "automatic_order": [
+          "edge_free",
+          "google_web",
+          "windows",
+          "offline_basic"
+        ],
+        "edge_voice_mapping": "id-ID-GadisNeural",
+        "google_voice_mapping": "id",
+        "bundled_voice": null,
+        "bundled_assets_present": true,
+        "windows_requires_exact_installed_locale": true,
+        "offline_selection_order": [
+          "windows",
+          "offline_basic"
+        ],
+        "gap": null
+      },
+      "quality_basis": "Exact provider/model mapping only; no representative semantic accuracy claim is made for this locale.",
+      "measurement_status": "Declared mapping; completion and fidelity must be evaluated separately."
+    }
+  ]
+}

@@ -57,7 +57,7 @@ def main():
                 shutil.copyfile(source,temporary)
             if not valid(temporary,expected):raise RuntimeError('Copied asset failed SHA-256; partial retained: '+name)
             os.replace(temporary,target);restored+=1
-        report={'version':'1.3.0','verified':present+restored,'restored':restored,'already_present':present,'network_used':False}
+        report={'version':'1.4.1','verified':present+restored,'restored':restored,'already_present':present,'network_used':False}
         (ROOT/'.assets-ready.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
         print(json.dumps(report))
     finally:

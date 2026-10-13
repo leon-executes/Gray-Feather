@@ -1,16 +1,21 @@
-# Gray Feather 1.3.0
+# Gray Feather 1.4.1
 
-Portable Windows translation for two speakers, by **Parham (Leon) Faraji / leon-executes**.
+Complete portable Windows x64 release. All dictation models and voices are included.
 
-**Download `GrayFeather-1.3.0-GitHub-Windows-x64.zip`. Extract the whole folder. Open `GrayFeather.exe`.** No Python installation or personal API key is needed for the default free online workflow.
+## Download
 
-- Record speech with interim previews, final translation and optional automatic voice.
-- Compare complete free-engine translations and apply bounded source-based repairs.
-- Use the bundled Index 2B model when you explicitly choose offline translation.
-- Keep local sessions, copy results and export DOCX, TXT, CSV or JSON.
+Download **GrayFeather-1.4.1-Windows-x64.zip** and use Windows **Extract All**. Open **GrayFeather.exe**. No separate voice pack or joiner.
 
-Windows 10 1903+ / Windows 11, x64. The build is unsigned. Automatic translation uses the internet; language and offline coverage vary. Free providers can throttle. Verify consequential content.
+**Upgrade:** close the old app and copy `GrayFeather-data` beside the new executable to keep sessions and settings. Keep your previous copy until the upgrade is confirmed.
 
-This distribution adds PolyForm Noncommercial 1.0.0 and publication documentation without changing the tested app. Third-party components retain their own terms. Developers can download the clean source and separate third-party source archive. Check the SHA-256 file before installing.
+## Since 1.3.0
 
-When upgrading, close the app and keep your `GrayFeather-data` folder.
+- Added practical voice reserves for gap languages; female Persian/Dari preference and complete-passage playback.
+- Added Safe Speech controls, clearer inset Voice controls and checkbox selection for deleting saved sessions.
+- Added confirmed Shred History for local sessions, revisions, drafts and automatic backups. Separate exports/backups remain; forensic erasure is not guaranteed.
+- Reorganized tests and build tools; reduced download overhead without changing model weights.
+- One complete Windows ZIP using standard DEFLATE compression. Developer-only third-party sources are a separate archive.
+
+Free online services can throttle or fail. Substitute voices are approximate, and translation accuracy varies by language and subject. The release is unsigned. See the repository's verification and coverage notes.
+
+Offline text AI and its runtime have been removed. Online reinforcement and all speech resources remain. Index outages preserve available Google/Bing translations and source checks, without an immediate second repair request. Extract the single Windows ZIP with Windows Extract All.

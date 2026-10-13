@@ -1,143 +1,7 @@
 {
-  "version": "1.3.0",
-  "scope": "Exact existing resource and corresponding-source assets. Source code has a separate release identity.",
+  "version": "1.4.1",
+  "scope": "Pinned runtime assets and corresponding sources. All runtime assets ship in the Windows ZIP; corresponding sources ship in the same release.",
   "files": {
-    "resources/local-ai/ASSETS.json": {
-      "bytes": 3688,
-      "sha256": "cd809d7e110cdd461f8cf30a38ee73da2e17373395ef3b4a0b25665b38494ec7"
-    },
-    "resources/local-ai/Index-Translate-2B.Q4_K_M.gguf": {
-      "bytes": 1312164352,
-      "sha256": "044b313d29342bd3b2c77cbb64023ca0d209bd9b3247763f9d162767ef2d746a"
-    },
-    "resources/local-ai/LOCAL-AI.md": {
-      "bytes": 5174,
-      "sha256": "8252b8bddc220019c00c106dbc962f170ffc5ad9eb0c2adb626b01e2aa56d811"
-    },
-    "resources/local-ai/notices/Apache-2.0.txt": {
-      "bytes": 11358,
-      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
-    },
-    "resources/local-ai/notices/Index-Translate-Apache-LICENSE.txt": {
-      "bytes": 11358,
-      "sha256": "c95bae1d1ce0235ecccd3560b772ec1efb97f348a79f0fbe0a634f0c2ccefe2c"
-    },
-    "resources/local-ai/notices/index_local-model-card.md": {
-      "bytes": 5732,
-      "sha256": "a7cf4090f6ecff7b8c4e5d0f8b4cdab1522d23eb4b990da988b73d052ce2ee03"
-    },
-    "resources/local-ai/notices/index_local-repository-info.json": {
-      "bytes": 9901,
-      "sha256": "88cc8e475310f4dc66534a82d81f08f9c7c99de131e8fe68ec099be77361d760"
-    },
-    "resources/local-ai/notices/llama.cpp-MIT-LICENSE.txt": {
-      "bytes": 1078,
-      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
-    },
-    "resources/local-ai/notices/SOURCES.json": {
-      "bytes": 1437,
-      "sha256": "c7bed59bee769a2696ce0f415e718c7cf3b9e7ff9a9d5d392606951fd251758f"
-    },
-    "resources/local-ai/runtime/ggml-base.dll": {
-      "bytes": 803840,
-      "sha256": "4256e88c2c3c24895e94c87c4e5968f30f196d7aa292762a1f28a99547a11886"
-    },
-    "resources/local-ai/runtime/ggml-cpu-alderlake.dll": {
-      "bytes": 1435136,
-      "sha256": "2136fad5df63ba8df1e4322cbe264e5ecc28d0b838d7d89a0fb106d6203d8ac0"
-    },
-    "resources/local-ai/runtime/ggml-cpu-cannonlake.dll": {
-      "bytes": 1614848,
-      "sha256": "941beee525e392aeee0048408fc8ed0193b15ed4f01be696f9e13c4b005dc1d2"
-    },
-    "resources/local-ai/runtime/ggml-cpu-cascadelake.dll": {
-      "bytes": 1599488,
-      "sha256": "a0bd14bf069a998ea32874f2d5f3fad324293a8140795305db9ae01a10e7fb01"
-    },
-    "resources/local-ai/runtime/ggml-cpu-cooperlake.dll": {
-      "bytes": 1609216,
-      "sha256": "34c0340d6c19002dd598704aa6bb2cd324779a9597f2a0287141b25aa25895fd"
-    },
-    "resources/local-ai/runtime/ggml-cpu-haswell.dll": {
-      "bytes": 1439744,
-      "sha256": "199804f41103c9cf0c1e98787a5b398052de1817891cdf0167a7e821c934302a"
-    },
-    "resources/local-ai/runtime/ggml-cpu-icelake.dll": {
-      "bytes": 1606656,
-      "sha256": "76710b6d2edb0b9872c4737485dc8b8d116426fca8f01e0b176adad3ef9c2c90"
-    },
-    "resources/local-ai/runtime/ggml-cpu-ivybridge.dll": {
-      "bytes": 1315328,
-      "sha256": "902e07819659a93f50b78605fa3e8ed9e904979bf8a75eb1b0ef481648625af2"
-    },
-    "resources/local-ai/runtime/ggml-cpu-piledriver.dll": {
-      "bytes": 1308160,
-      "sha256": "5da106c34b8788ab81004b61216b5305bd124a4e02a44df5269a4c176d96bec3"
-    },
-    "resources/local-ai/runtime/ggml-cpu-sandybridge.dll": {
-      "bytes": 1290240,
-      "sha256": "439dcdeb0ddc2709cbccdabc75f84cdffd3365c11240e927f82ccbca3029d0eb"
-    },
-    "resources/local-ai/runtime/ggml-cpu-sapphirerapids.dll": {
-      "bytes": 1886208,
-      "sha256": "434b7673cefa5525583b93f5edc638019b4ccf8c9d2534bb70bc69c4658cbc6c"
-    },
-    "resources/local-ai/runtime/ggml-cpu-skylakex.dll": {
-      "bytes": 1608704,
-      "sha256": "8676deed08b612a713e3bfdc6d926abf1b3690a7eb466df49c4c6a08f5997435"
-    },
-    "resources/local-ai/runtime/ggml-cpu-sse42.dll": {
-      "bytes": 915968,
-      "sha256": "9dc9f6e91e78deab8e6ffa7e0fcfb850a37af7640bd2f4f04e25684a4f991383"
-    },
-    "resources/local-ai/runtime/ggml-cpu-x64.dll": {
-      "bytes": 908800,
-      "sha256": "48ffe29f1ab14114fc312699e7ed20c1b7e5369a0b66026933e15a06a85a1c09"
-    },
-    "resources/local-ai/runtime/ggml-cpu-zen4.dll": {
-      "bytes": 1615872,
-      "sha256": "57f228e9a8d5d3c76177f24f6d2f1034a0872bd97fd200af19963bd76d5f5d15"
-    },
-    "resources/local-ai/runtime/ggml.dll": {
-      "bytes": 79872,
-      "sha256": "7f989e4b412bb37c6fbd4560e65778875896296897eb85df62646dff1e354b70"
-    },
-    "resources/local-ai/runtime/libomp.dll": {
-      "bytes": 768000,
-      "sha256": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c"
-    },
-    "resources/local-ai/runtime/LICENSE-LLVM-OpenMP": {
-      "bytes": 19741,
-      "sha256": "fdad1758a9e1f9d5a81e18879b3406772115edc92c24bfa36b70c654f325e8e4"
-    },
-    "resources/local-ai/runtime/llama-common.dll": {
-      "bytes": 8002048,
-      "sha256": "a0de53be1af1163fef996e26ce9af4de74199733e2ddae0d9ed3904ec5ee72bb"
-    },
-    "resources/local-ai/runtime/llama-completion-impl.dll": {
-      "bytes": 140288,
-      "sha256": "339323e33efc15da30e22fd4c861d6fc044ce98b2b93338f4d13cf722519a8bc"
-    },
-    "resources/local-ai/runtime/llama-completion.exe": {
-      "bytes": 9216,
-      "sha256": "d6fa5ddb62628e04c83fd32f86fe5da0c98c37c483c841687f919fddd08465b3"
-    },
-    "resources/local-ai/runtime/llama.dll": {
-      "bytes": 3382784,
-      "sha256": "1cc496b95394f2fa718ab77a83f5bf64163c5ae718e024022ddf9656dc864a43"
-    },
-    "resources/local-ai/runtime/msvcp140.dll": {
-      "bytes": 549176,
-      "sha256": "fd4a8c046fa3fea9ca6132f50cf8a56cf1e783b2d3093ba5c85fa063bc6b3845"
-    },
-    "resources/local-ai/runtime/vcruntime140.dll": {
-      "bytes": 116024,
-      "sha256": "de617641d82eac15595d2e39394163ac33e49bb032cf2c2ea0044ed39d3675e9"
-    },
-    "resources/local-ai/runtime/vcruntime140_1.dll": {
-      "bytes": 41272,
-      "sha256": "fa577d54bd10a91e52472da784a619da6cf241af45f0a0c48b27e91fa0fe6104"
-    },
     "resources/offline-voice/download-evidence.json": {
       "bytes": 740,
       "sha256": "4e1f222ba2a4378a900456c98cbc74d96db7c0cf9a9d31877963266fd64ddca1"
@@ -1910,6 +1774,594 @@
       "bytes": 25242,
       "sha256": "07f3d81af34853bcb91b95657df431c082911c39b38048e0a1572383f8b14e5c"
     },
+    "resources/voice-reserve/catalog.json": {
+      "bytes": 3670,
+      "sha256": "5c5bf20bb0985856cad22124468e828e4e2765975a1e19228a9ac6db26ca4980"
+    },
+    "resources/voice-reserve/helper/_internal/_asyncio.pyd": {
+      "bytes": 75056,
+      "sha256": "6b8466f190e973f7fb42bc928839eb0d2a8b95ef142bf19534b524ba84375029"
+    },
+    "resources/voice-reserve/helper/_internal/_bz2.pyd": {
+      "bytes": 88880,
+      "sha256": "861f0743d5ccb82886894ae76217b314b0d5394743c4f021cd8578c997a4b2fc"
+    },
+    "resources/voice-reserve/helper/_internal/_ctypes.pyd": {
+      "bytes": 131888,
+      "sha256": "926df1f47c2a782ba154d6824a84aee7197a32eb6b781c2fc33120851e0fb53b"
+    },
+    "resources/voice-reserve/helper/_internal/_decimal.pyd": {
+      "bytes": 263984,
+      "sha256": "ff83d946d36a108f72475a274ef97d00210ce7616ca6498212557e800b082a35"
+    },
+    "resources/voice-reserve/helper/_internal/_hashlib.pyd": {
+      "bytes": 70448,
+      "sha256": "6b7e1eb9676af48db2e4a2812ab0825379e20e76b6f901631589a9cdb8f96ff6"
+    },
+    "resources/voice-reserve/helper/_internal/_lzma.pyd": {
+      "bytes": 168240,
+      "sha256": "00d365936c7860dd887bcec422168c3404fcae221dea40e4e6a677adcaebd6b5"
+    },
+    "resources/voice-reserve/helper/_internal/_multiprocessing.pyd": {
+      "bytes": 39728,
+      "sha256": "10553874fffc57a649b42d63509f5e87a4cd4cf2c40e2a6a0657b1c2ac805647"
+    },
+    "resources/voice-reserve/helper/_internal/_overlapped.pyd": {
+      "bytes": 59696,
+      "sha256": "57b9635e180fa1b89f9ff0d44b9dff121ce7c05a3dc6dd0371cbc13dbfa487e8"
+    },
+    "resources/voice-reserve/helper/_internal/_queue.pyd": {
+      "bytes": 36144,
+      "sha256": "300aba733854beb48a9426c955627c0d0e945e5b76175e5f2b68c5fe5aa81201"
+    },
+    "resources/voice-reserve/helper/_internal/_socket.pyd": {
+      "bytes": 87344,
+      "sha256": "6be442ce5355de1c9d7f2c1bd3d911f37eda93b43c30acf8b1eeccfc58a5df37"
+    },
+    "resources/voice-reserve/helper/_internal/_ssl.pyd": {
+      "bytes": 180528,
+      "sha256": "65dcf1f0a513ee4c7f4717da11aa1ec098acb00446341c7277b8ee740425b4ff"
+    },
+    "resources/voice-reserve/helper/_internal/_uuid.pyd": {
+      "bytes": 29488,
+      "sha256": "cd456dce0f6d88f0e05ca4f273fb39e91ef1fbe1e035c7ec4d27c37cbe7b4b03"
+    },
+    "resources/voice-reserve/helper/_internal/_wmi.pyd": {
+      "bytes": 41264,
+      "sha256": "effc630565fa74e4ece15d574c47e0ef3af58af7ed4700c041155f9dc0eafbeb"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-console-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "015bd08815c7b934a8952c3a7578e9ce59f21136e8a880d42bbd414bec2c6058"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-datetime-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "5534812cdbdae94ba45cb216e5eb9af686b853948df54365103555abbbaf9d9a"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-debug-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "837d2b1b2cd03e03fc6ccb050698b6b5763af17c201304872342a5eae9e0a2d2"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-errorhandling-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "de43b165f568c276c00e95acd454e3092f352a18e95874595f4f4658c06d2ec7"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-fibers-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "3cebc45bf479ad74cfabf2c6bfd4994d7ad639ed1221025981d19cedf9ce0416"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-fibers-l1-1-1.dll": {
+      "bytes": 22872,
+      "sha256": "5ef70308bcca628ce6b0e2856b15b1c7ae340c3f9bbbc4c1071d8c191a34a5c3"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-file-l1-1-0.dll": {
+      "bytes": 27008,
+      "sha256": "250ac829f2617bcac1c6e5b8c4f630462e20765863ba573526a3e11bbfb94a9a"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-file-l1-2-0.dll": {
+      "bytes": 22888,
+      "sha256": "ae14079a114733f60ce87b92cba42acd8083c2cd67594e53bc37dc0b97a4b465"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-file-l2-1-0.dll": {
+      "bytes": 22912,
+      "sha256": "914bf26a298713119477ea0a8e7bd43171b91344ebe24fb47ad77c49686e3d87"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-handle-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "ab5489955e371b15f77906c08ec3c7affe2c7a46a08c514ca628768b4478974b"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-heap-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "c70f9644d8377fa39c5b71f2e9734c1400d7598904fdeb772e8502099982dcb7"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-interlocked-l1-1-0.dll": {
+      "bytes": 22888,
+      "sha256": "f8129710188e407bb0e6f46d30aeba277d67b947ece5fe09e883fde2323f3ae6"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-kernel32-legacy-l1-1-1.dll": {
+      "bytes": 22888,
+      "sha256": "5200b16cb2ddc61cfc07373a9a84aa85a3ab50806ca96c879c883275832944c1"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-libraryloader-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "48786fb88b001dcd1f63acea903d3ca9cc0b3060d5a325e3f2f3cbc3bfd53166"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-localization-l1-2-0.dll": {
+      "bytes": 22872,
+      "sha256": "9ec3898f7eba91faa28b51616c211a2689e3a13aeef8de6e13cb674e49d689eb"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-memory-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "3a6cbc524c99e1cd80d5368f5601402a37ad602528b1ab628093573ef638eb3b"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-namedpipe-l1-1-0.dll": {
+      "bytes": 22888,
+      "sha256": "97145ef89c44949fcf0f04ac834a8bc7d687ef49ee73ae9fc32f3c11136b7201"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-processenvironment-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "8bc7c10b1851aea644e9c9f381cdb935e091fee6b0be3d3aedc6fffaac96adb7"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-processthreads-l1-1-0.dll": {
+      "bytes": 22912,
+      "sha256": "d8030b777617c71f0f94564607699dbf7561487d779db9756aed378c5675213f"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-processthreads-l1-1-1.dll": {
+      "bytes": 22872,
+      "sha256": "f5e676713340f73a03a3d41a6ec9883b431da7d16c7f07bd0a920fb80e6c0753"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-profile-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "f023d47e44d3eea6b0743580f57e8c6ba81e79d5ebfa7da26250076c647b980e"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-rtlsupport-l1-1-0.dll": {
+      "bytes": 22888,
+      "sha256": "9746d8930704153578a628c010638a5f818ffe5a927e25591b108e256dc6afca"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-string-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "7c53ae24c982d16ffd1bf7f918d115b11b7f30e57bc7feaa18cb9781e4abb926"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-synch-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "56d9d62ca5dba79a6581b8d574a7d8b2a64a5ecb71e47dcf06ed0285708b1859"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-synch-l1-2-0.dll": {
+      "bytes": 22888,
+      "sha256": "f6482bbec5612c39ecb4822787a333f2b7570f7a5f922a4059be41ba957bb372"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-sysinfo-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "272d02765fdd3582618236c2d309abba069642f9bc1062ede069d0c144e17007"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-sysinfo-l1-2-0.dll": {
+      "bytes": 22912,
+      "sha256": "8a0900788859d0eb51c2f48f50cc6ed376a120b518100fa20e11d7702ccde260"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-timezone-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "ff35de6c03812b332e140f17dade25c5dd4775156da9eeb1eaae3fddd27236ec"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-core-util-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "191ef3e98641a57296f19d572d8eb62489470ff1ef6030d136af170c2f835173"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-conio-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "54ee5ec719a051496ff60aa00dbeaa94b9a7d2cdac27fe9b7317f1a666b6a2aa"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-convert-l1-1-0.dll": {
+      "bytes": 26992,
+      "sha256": "8b94662429171019fcd63c70bbf2095a075170599704a5e7dcdbe3da13f3a429"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-environment-l1-1-0.dll": {
+      "bytes": 22912,
+      "sha256": "39e5929593709e8af3bc9e0a75ec1155778d6f4a247f4cdfc58928ad6db88434"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-filesystem-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "5a8ecebac32edf4e1f3c5c6c1c8ea1a1add6cda4f9c9cb26f752fb295bea6865"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-heap-l1-1-0.dll": {
+      "bytes": 22872,
+      "sha256": "c71080cbcb43bf1f8f3e391deb12a582eb0abefc80946f340675a2c616e4feb4"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-locale-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "6c68648e524187e03c4ad9aaa4a99113c6ee9f29fb39cc0ed93f951975138e63"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-math-l1-1-0.dll": {
+      "bytes": 31064,
+      "sha256": "d4fbcccbe29371cbce431e43b2eb4f7ba9a6f04a3d740a071f02457a505e9dc8"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-private-l1-1-0.dll": {
+      "bytes": 76120,
+      "sha256": "29bf3d90617d3781d19b332d6ceb9f20ba5ce082ec74bf6c34d5d4aee56e48a1"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-process-l1-1-0.dll": {
+      "bytes": 22896,
+      "sha256": "47c1935942e3ac0812e4dcf18c0e265e565f0194a3349111c299712f5565f7ac"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-runtime-l1-1-0.dll": {
+      "bytes": 26968,
+      "sha256": "72adc1b3677e0814d9c4ebf0964000e84bb2acf67336c8963061665e44f78029"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-stdio-l1-1-0.dll": {
+      "bytes": 26968,
+      "sha256": "900afc3989673c9bb1a687ed38c192f46db9e6ba6d11a668898a539e7fc23798"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-string-l1-1-0.dll": {
+      "bytes": 26968,
+      "sha256": "fcf12466cc12fd3b73611fc0763a5a1f9d44e90349513c34a0c83b0f36421793"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-time-l1-1-0.dll": {
+      "bytes": 22912,
+      "sha256": "886e57c4a6adb299b38f02945369f590a67da4e79a798359fc60aaa067212d7c"
+    },
+    "resources/voice-reserve/helper/_internal/api-ms-win-crt-utility-l1-1-0.dll": {
+      "bytes": 22912,
+      "sha256": "5f8f26b216ade615b67a41f6fbbb910972fc6153315a65bb8f09912be50215b1"
+    },
+    "resources/voice-reserve/helper/_internal/base_library.zip": {
+      "bytes": 1333490,
+      "sha256": "3741710b89b0e8ddd0dc1615f8066c91b6a317b81f29e727fcf203d83ecb0eb2"
+    },
+    "resources/voice-reserve/helper/_internal/charset_normalizer/cd.cp312-win_amd64.pyd": {
+      "bytes": 115712,
+      "sha256": "2bdbc0805f85565d76f8d6166e451bfafa6d5490b06b36c9f423cd0102b4f149"
+    },
+    "resources/voice-reserve/helper/_internal/charset_normalizer/md.cp312-win_amd64.pyd": {
+      "bytes": 208384,
+      "sha256": "b08be5d29125f39a92e22d0abe4b9160753f7a790fffd07258319a8e16394afa"
+    },
+    "resources/voice-reserve/helper/_internal/libcrypto-3-x64.dll": {
+      "bytes": 8003376,
+      "sha256": "0d54af54cd69b602b22d8478c3e4e8d82ad2a53f4d2f4a64f156b42d02a1339e"
+    },
+    "resources/voice-reserve/helper/_internal/libffi-8.dll": {
+      "bytes": 43824,
+      "sha256": "f39e5a9ff36f4c3dd74b72bce4726e07b8b77ceec92d4a8d5b788e7f0bc061af"
+    },
+    "resources/voice-reserve/helper/_internal/libssl-3-x64.dll": {
+      "bytes": 1599280,
+      "sha256": "593232feba3cfaf89692ce9de507af6965f78ddf41f2d4f7f0cc89746f7972a6"
+    },
+    "resources/voice-reserve/helper/_internal/msvcp140.dll": {
+      "bytes": 643512,
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    },
+    "resources/voice-reserve/helper/_internal/MSVCP140_1.dll": {
+      "bytes": 35768,
+      "sha256": "206c931bf90fdad8816de3b5e2ef80b2bcaa9406c89ecc05fe6fddffe251e982"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/_core/_multiarray_tests.cp312-win_amd64.pyd": {
+      "bytes": 64000,
+      "sha256": "24adbe4bbf7b2a6208aeb800d11b8b6957c925d3c796552b3a55e1b4e278754e"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/_core/_multiarray_umath.cp312-win_amd64.pyd": {
+      "bytes": 4178432,
+      "sha256": "d98a8f4ce703bf7158f639d24ff4a55ece2753a306a3f7074b4fa670660afee5"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/fft/_pocketfft_umath.cp312-win_amd64.pyd": {
+      "bytes": 279040,
+      "sha256": "25cc37acd3d849c0fde1e0dc0112979dec4ec4279b7826d1a45395fe966068c9"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/linalg/_umath_linalg.cp312-win_amd64.pyd": {
+      "bytes": 108032,
+      "sha256": "88c8d38d7b2f483542442292e149ca335462d1467b8e835b00a71a8b27125cf5"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/_bounded_integers.cp312-win_amd64.pyd": {
+      "bytes": 208384,
+      "sha256": "0434a5b271f935deb8623bb8663f33132a70a8f4d1936c14432e16d4f6eb46fc"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/_common.cp312-win_amd64.pyd": {
+      "bytes": 152064,
+      "sha256": "9a39d43e0ef73dfb5a8b1abce92ff0063bffcd580d8be275f468961b24b153af"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/_generator.cp312-win_amd64.pyd": {
+      "bytes": 714752,
+      "sha256": "6dde7168fc52dcad27779d45dcc6828b91ec0d05bb6094c86d6aff8a1ee8e1b3"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/_mt19937.cp312-win_amd64.pyd": {
+      "bytes": 83456,
+      "sha256": "3331809b214fc30e2fc167f742ca3b1a84b567d185d4194fa8893a032010eeb4"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/_pcg64.cp312-win_amd64.pyd": {
+      "bytes": 93696,
+      "sha256": "448b71a0b7d9037d9655008fbc3081070fa801f757b83f9a3ee6e0934c095aa8"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/_philox.cp312-win_amd64.pyd": {
+      "bytes": 77312,
+      "sha256": "9c989e7b0fc383e2fa5aa15de2f17c5875b690dc64c44891ee1e1d54ce7cac4a"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/_sfc64.cp312-win_amd64.pyd": {
+      "bytes": 60416,
+      "sha256": "5732d38725cb5177c9de1e1d4bdb67389283a53986f87a5e52ca9255ec98c733"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/bit_generator.cp312-win_amd64.pyd": {
+      "bytes": 163328,
+      "sha256": "eef81bf02fa9f387d6c4a18d52b22af58b737c01608f0d594130586a06022807"
+    },
+    "resources/voice-reserve/helper/_internal/numpy/random/mtrand.cp312-win_amd64.pyd": {
+      "bytes": 603136,
+      "sha256": "339f40f24231643777de36d5ff8121a07ccf2c4a66add63307d25f9d431c9928"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/DELVEWHEEL": {
+      "bytes": 446,
+      "sha256": "513b04bcaa783e2cee07d76110f470d50fd5f12599006a93953588607f61c953"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/entry_points.txt": {
+      "bytes": 172,
+      "sha256": "e265c336124343d187a8c05e449f01dcf962c531669171aa537455b9a736d2ad"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/INSTALLER": {
+      "bytes": 4,
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/LICENSE.txt": {
+      "bytes": 47709,
+      "sha256": "14256cc3a2c9d32ac284da96b937feb44f72dd90bee2317ac3020166846ad99d"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/METADATA": {
+      "bytes": 60844,
+      "sha256": "229f3544b02805e0f6a12030e155d8a45fd3a4100b3291574175e6a76f20e1e1"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/RECORD": {
+      "bytes": 108709,
+      "sha256": "e5590273c5cce3d2f51314e1767f4325146e94b54fcf04c3600742a34273f509"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/REQUESTED": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "resources/voice-reserve/helper/_internal/numpy-2.2.6.dist-info/WHEEL": {
+      "bytes": 85,
+      "sha256": "e743de01ba6503a3e4234858398a1e69c07d512d51e8482ec9f3a7b1c707d165"
+    },
+    "resources/voice-reserve/helper/_internal/numpy.libs/libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll": {
+      "bytes": 20390912,
+      "sha256": "6547e9fb966e9773caee2755e91a8bf4d6f3a2f0eebf9646b0158f8675ea4ab5"
+    },
+    "resources/voice-reserve/helper/_internal/numpy.libs/msvcp140-263139962577ecda4cd9469ca360a746.dll": {
+      "bytes": 575056,
+      "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+    },
+    "resources/voice-reserve/helper/_internal/onnxruntime/capi/onnxruntime.dll": {
+      "bytes": 15709728,
+      "sha256": "462ea8e85b881b26388c595f96b1b9b39e57565aa4725fe29136695c1ead179f"
+    },
+    "resources/voice-reserve/helper/_internal/onnxruntime/capi/onnxruntime_providers_shared.dll": {
+      "bytes": 22048,
+      "sha256": "2bd2e339386d268a3770b0214844ea94824194652319ab11064a4ef13f9a4abb"
+    },
+    "resources/voice-reserve/helper/_internal/onnxruntime/capi/onnxruntime_pybind11_state.pyd": {
+      "bytes": 19322440,
+      "sha256": "b35dc29d1caac3ea8d835023ddfff0aef822d35162f1ba4eb7eaaa66cb4a74bb"
+    },
+    "resources/voice-reserve/helper/_internal/pyexpat.pyd": {
+      "bytes": 226096,
+      "sha256": "fff5b9efc872724bef995e189977b66339e6222d2161c19d0a360904d6017c80"
+    },
+    "resources/voice-reserve/helper/_internal/pyreadline3-3.5.6.dist-info/INSTALLER": {
+      "bytes": 4,
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508"
+    },
+    "resources/voice-reserve/helper/_internal/pyreadline3-3.5.6.dist-info/licenses/LICENSE.md": {
+      "bytes": 2250,
+      "sha256": "8fc4d8de61b40533023b16e64528d13371a2e9c68677df79ed5e93ba570471bd"
+    },
+    "resources/voice-reserve/helper/_internal/pyreadline3-3.5.6.dist-info/METADATA": {
+      "bytes": 4671,
+      "sha256": "2f978d86139385f1cfd49f456ac474bec6f61781b08a6e41d09df3f43bc487dc"
+    },
+    "resources/voice-reserve/helper/_internal/pyreadline3-3.5.6.dist-info/RECORD": {
+      "bytes": 7824,
+      "sha256": "dcc9834411a07ef21599b5a4b76c1be9a26888ea0ac2aca052c4ba235f82b396"
+    },
+    "resources/voice-reserve/helper/_internal/pyreadline3-3.5.6.dist-info/top_level.txt": {
+      "bytes": 21,
+      "sha256": "8c5019700560d56cddb148e881866fcaa48c68100ddfcb2a5197a671a0f117d1"
+    },
+    "resources/voice-reserve/helper/_internal/pyreadline3-3.5.6.dist-info/WHEEL": {
+      "bytes": 91,
+      "sha256": "69e6228a0d35958183cc1812f07c565ce837b95eb51bd8a33acba9fa4f68d6c9"
+    },
+    "resources/voice-reserve/helper/_internal/python312.dll": {
+      "bytes": 6985520,
+      "sha256": "8bb70bceffd5877733a957b31c392ca027bd2f84230e00de1654f994422fa2af"
+    },
+    "resources/voice-reserve/helper/_internal/regex/_regex.cp312-win_amd64.pyd": {
+      "bytes": 736768,
+      "sha256": "4beee916c5d638552d1a71c6fd25e45d83ae8369ac9cb38009060e8bedcdc5dc"
+    },
+    "resources/voice-reserve/helper/_internal/select.pyd": {
+      "bytes": 34608,
+      "sha256": "63db102d9edcdbd1fbdab77ba62d40c7653ec7d684f8e98ebb50d0542f2e0245"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/INSTALLER": {
+      "bytes": 4,
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/LICENSE": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/METADATA": {
+      "bytes": 4648,
+      "sha256": "6a7b90effee1e09d5b484cdf7232016a43e2d9cc9543bcbb8e494b1ec05e1f59"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/RECORD": {
+      "bytes": 2518,
+      "sha256": "0d8d3c6eeb9ebbe86cac7d60861552433c329da9ea51248b61d02be2e5e64030"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/REQUESTED": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/top_level.txt": {
+      "bytes": 19,
+      "sha256": "08eddf0fdcb29403625e4acca38a872d5fe6a972f6b02e4914a82dd725804fe0"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/importlib_metadata-8.0.0.dist-info/WHEEL": {
+      "bytes": 91,
+      "sha256": "9a0b8c95618c5fe5479cca4a3a38d089d228d6cb1194216ee1ae26069cf5b363"
+    },
+    "resources/voice-reserve/helper/_internal/setuptools/_vendor/jaraco/text/Lorem ipsum.txt": {
+      "bytes": 1335,
+      "sha256": "37fedcffbf73c4eb9f058f47677cb33203a436ff9390e4d38a8e01c9dad28e0b"
+    },
+    "resources/voice-reserve/helper/_internal/ucrtbase.dll": {
+      "bytes": 1362264,
+      "sha256": "3239227d27667ba20d10a880751924e5719de0078f9fce232d149d383f7681f6"
+    },
+    "resources/voice-reserve/helper/_internal/unicodedata.pyd": {
+      "bytes": 1143600,
+      "sha256": "6fd49b72920f549c8582b31796320cef6870ba7d464098e58c1f4235dd608849"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/Chinese_to_Pinyin.txt": {
+      "bytes": 268458,
+      "sha256": "87f8d3ecc611de26c2f8e6257201a44bc63c32b1cd9cee5a078eafcd55707c5a"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/ISO-639-3-list.txt": {
+      "bytes": 47176,
+      "sha256": "080877ff269dd95ead22c28b8069d89ce3cec32c03dc7a79c18cbfca26a12c1b"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/language-properties.txt": {
+      "bytes": 1722,
+      "sha256": "f9352ef312a9e3842693e53e400b681db42ead13b07121cf306f7679323ee77c"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/NumProps.jsonl": {
+      "bytes": 178899,
+      "sha256": "d983ac1408355eac8633dc955c0fc18d05dbe88cf026bec239efb64ecb33dac7"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/romanization-auto-table.txt": {
+      "bytes": 978837,
+      "sha256": "c127d7ed0b4b2539585b5385e2616d9f22c76552876affa00e92a6e841b6491d"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/romanization-table-arabic-block.txt": {
+      "bytes": 9157,
+      "sha256": "a870cbd578c7126046ed5cdbd44da08921cc2f3d1004ac7b03dae847073fde31"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/romanization-table.txt": {
+      "bytes": 91528,
+      "sha256": "5c729da66c154f3fb1ecbed85e681592c8f1351bcc1e5a5149691862a7e735c3"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/Scripts.txt": {
+      "bytes": 5040,
+      "sha256": "6eccea6258a81da1cd6744e941bef5c5dbcb2ba7f357a4347bf8c0ead58d139d"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/UnicodeData.txt": {
+      "bytes": 1914200,
+      "sha256": "2fc713e6a31a87c4850a37fe2caffa4218180fadb5de86b43a143ddb4581fb86"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/UnicodeDataOverwrite.txt": {
+      "bytes": 23601,
+      "sha256": "f35ed3396471bd7ae61d115403e6b9354137a26f3e5c1b15f7d550aa8ec760ef"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/UnicodeDataProps.txt": {
+      "bytes": 86598,
+      "sha256": "6ebafe83d7df46bdbe97adffb73b2a1a493c5617b7794ebf39ff8e89fff205ff"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/UnicodeDataPropsCJK.txt": {
+      "bytes": 347453,
+      "sha256": "a3f303607e9a5f32ef9f7ae22f80417167a3ee9bb61dce3e2dc3020b71392405"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/data/UnicodeDataPropsHangul.txt": {
+      "bytes": 33839,
+      "sha256": "1f88d2a48630c2f4d561c0ee61b0dc2f5398fe78838c546d98ad0f314e34370f"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/mini-test/fas.txt": {
+      "bytes": 2090,
+      "sha256": "4871d3a063b45cffbc422c48466f1e9796953c9e29a1fe96c464454fd8133b71"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/mini-test/hin.txt": {
+      "bytes": 2433,
+      "sha256": "67c7203c0ee933384202029122e6bce74e3feef54169616d5e8fccd935cdc7e2"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/mini-test/line_with_non_utf8.txt": {
+      "bytes": 19,
+      "sha256": "c5a9a3c2e97766f845dfe77d268f1aa97d547c043afe4d4fe20eb95ac07d4fdb"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/mini-test/multi-script.txt": {
+      "bytes": 10787,
+      "sha256": "9ddee1f7ff4e64b7eba2ed6240c3a79aeb654dfd96aab76362309d2450f17948"
+    },
+    "resources/voice-reserve/helper/_internal/uroman/mini-test/multi-script.uroman-ref.txt": {
+      "bytes": 5732,
+      "sha256": "efffe4ef5bdf6c614cc75be23ae8ac982130466d81e52a0b9e63ee801d678e31"
+    },
+    "resources/voice-reserve/helper/_internal/vcruntime140.dll": {
+      "bytes": 178616,
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    "resources/voice-reserve/helper/_internal/vcruntime140_1.dll": {
+      "bytes": 50112,
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    "resources/voice-reserve/helper/_internal/yaml/_yaml.cp312-win_amd64.pyd": {
+      "bytes": 253952,
+      "sha256": "4fd0e84f50261ed0886cffcdd8008b055af3352546e649c3d741b50eae1f9b5f"
+    },
+    "resources/voice-reserve/helper/GrayFeatherVoice.exe": {
+      "bytes": 6531150,
+      "sha256": "fbd0603e7b4e3d1d09bc47439206119ac120a6730714627880816555d750c377"
+    },
+    "resources/voice-reserve/models/ckb-IQ/config.json": {
+      "bytes": 1690,
+      "sha256": "fb13ff182624e8519979b44dcc178634a29ef6bb55bb718368b1fc678601cba1"
+    },
+    "resources/voice-reserve/models/ckb-IQ/model.onnx": {
+      "bytes": 77071526,
+      "sha256": "92a30317e6e9a5bf7f61cca4e6f37d7ecff495677169e83e085757760c033f39"
+    },
+    "resources/voice-reserve/models/om-ET/config.json": {
+      "bytes": 1641,
+      "sha256": "d568b958d22fe39d7b83754e1687c2ce193c07fc404451282cf1560ae62c199f"
+    },
+    "resources/voice-reserve/models/om-ET/model.onnx": {
+      "bytes": 114203518,
+      "sha256": "a4149d9ceccdc3aaf2bd7304228069faa3ae9d8d0f06fff899b2d990d53f91b9"
+    },
+    "resources/voice-reserve/models/om-ET/tokenizer_config.json": {
+      "bytes": 287,
+      "sha256": "67c327b16c3144aac3642c5c003780925a8ce518876900393dd20dac75cc3db5"
+    },
+    "resources/voice-reserve/models/om-ET/vocab.json": {
+      "bytes": 312,
+      "sha256": "068a26ebb1cf2057fce0af7e057ce75a47ccb00bf52cd2295ef8404080c87486"
+    },
+    "resources/voice-reserve/models/so-SO/config.json": {
+      "bytes": 1641,
+      "sha256": "dea2b227ff3c02a13b4f75dc25d3d693c7d047beb77f7b17bdeb6234ddcf9123"
+    },
+    "resources/voice-reserve/models/so-SO/model.onnx": {
+      "bytes": 114201982,
+      "sha256": "39a43445264536e9ab80bb7bb3800962486de7c8c22ab73dd53966398b518f34"
+    },
+    "resources/voice-reserve/models/so-SO/tokenizer_config.json": {
+      "bytes": 287,
+      "sha256": "58f7e8277b7532a83ce77268c15aff9956385e9056601ef220bd8036946c715d"
+    },
+    "resources/voice-reserve/models/so-SO/vocab.json": {
+      "bytes": 290,
+      "sha256": "41c156453f5aaed28fe142f3504c77b33c4af3c0ec4a4d1d78870ff695ab1f08"
+    },
+    "resources/voice-reserve/models/ti-ET/config.json": {
+      "bytes": 1641,
+      "sha256": "dea2b227ff3c02a13b4f75dc25d3d693c7d047beb77f7b17bdeb6234ddcf9123"
+    },
+    "resources/voice-reserve/models/ti-ET/model.onnx": {
+      "bytes": 114201982,
+      "sha256": "8062bd6711b71ed1c764f068b6fabcaa05f0f3b45b5b11d5e07477b7c160261f"
+    },
+    "resources/voice-reserve/models/ti-ET/tokenizer_config.json": {
+      "bytes": 286,
+      "sha256": "cf6fdbc91183488ecd6189e2820580af1753954f40d0966a9582337bb365a20a"
+    },
+    "resources/voice-reserve/models/ti-ET/vocab.json": {
+      "bytes": 290,
+      "sha256": "a07287509379fb6a2337f2342f4abd9602c42fa42ead319d2fedf748ce162504"
+    },
     "runtime-source/edge_tts/__init__.py": {
       "bytes": 468,
       "sha256": "81588b78d7a2decf86b1eb2063f788f5684e8c6ce45b306049ea90f74bf41a56"
@@ -1978,10 +2430,6 @@
       "bytes": 851582,
       "sha256": "ede1b6b42188163a3f2e0f25ad5c0637eca564bd8df74d02e31a311dd6b37ad8"
     },
-    "runtime-source/offline-voice/onnxruntime-1.14.1.tar.gz": {
-      "bytes": 199524576,
-      "sha256": "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de"
-    },
     "runtime-source/offline-voice/piper-2023.11.14-2.tar.gz": {
       "bytes": 25602353,
       "sha256": "8b684e102cfe23af097830db9555a8641f17735725853c531a1daeb34b6ed1a8"
@@ -1997,6 +2445,50 @@
     "runtime-source/omnilingual/sherpa-onnx-1.13.8.tar.gz": {
       "bytes": 11642707,
       "sha256": "b0374cc56dbc186d442ae73d5de743bb092470b640c4c50ce7b029044c0c4fa8"
+    },
+    "runtime-source/voice-reserve/build_voice_helper.ps1": {
+      "bytes": 2112,
+      "sha256": "ff5bc1c0e91bf8675a4a7a1f434fee02a4781334b375bcbe14145603fa23f60d"
+    },
+    "runtime-source/voice-reserve/COPYING": {
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    "runtime-source/voice-reserve/export_mms.py": {
+      "bytes": 2131,
+      "sha256": "9422137142dfaab79134dc8e214105662303018628fac7f2516f1babb1621c25"
+    },
+    "runtime-source/voice-reserve/LICENSE-voice-text.txt": {
+      "bytes": 1138,
+      "sha256": "5ab1dac9f788d342b6ea214638414f6d2afb4f7c38ee34907a599828b7b16746"
+    },
+    "runtime-source/voice-reserve/MODEL-SOURCES.json": {
+      "bytes": 3700,
+      "sha256": "af7f65f8d1d43deea7aab662cd0d9c51e40682a54489cd86857cb2bf11193cf3"
+    },
+    "runtime-source/voice-reserve/README.md": {
+      "bytes": 1734,
+      "sha256": "aafb308718922a1aa9b149aa3cf8a832c731a9d915f57ded42e40dd29072728a"
+    },
+    "runtime-source/voice-reserve/requirements-export.txt": {
+      "bytes": 102,
+      "sha256": "1f921e673724366ed0e7c75e8466a3c5ce90a10513c4c0b4f8fdef389742d557"
+    },
+    "runtime-source/voice-reserve/requirements-voice-build.txt": {
+      "bytes": 337,
+      "sha256": "417cb32013654a434ff437e28209f81e121a9f6cdaa868394c4c1d0e919482a6"
+    },
+    "runtime-source/voice-reserve/voice_helper.py": {
+      "bytes": 6591,
+      "sha256": "9ede3e19094de190438eaecfb57e3e3505fd0ca473c6fef1b01728df40b427a0"
+    },
+    "runtime-source/voice-reserve/voice_text.py": {
+      "bytes": 2290,
+      "sha256": "324d4bba57738718256334ce324f85683792ab7e3cd5c7c8b1172309dfbf3090"
+    },
+    "runtime-source/offline-voice/onnxruntime-1.14.1.tar.xz": {
+      "bytes": 127442876,
+      "sha256": "fe310efbaf61bea980e5a0ffd2574644db18632eabd25f41bbaa266659c22e5c"
     }
   }
 }

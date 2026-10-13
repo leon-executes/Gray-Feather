@@ -23,7 +23,9 @@ class OmniError(Exception): pass
 
 # Published support does not automatically add an operational route. These
 # two exact locales have actual native-speaker recording proofs in verification.
-LOCALES={'om-ET':'orm_Latn','ckb-IQ':'ckb_Arab'}
+LOCALES={'om-ET':'orm_Latn','ckb-IQ':'ckb_Arab','fa-IR':'pes_Arab',
+         'am-ET':'amh_Ethi','ti-ET':'tir_Ethi','ku-TR':'kmr_Latn',
+         'so-SO':'som_Latn','ps-AF':'pbt_Arab','sd-PK':'snd_Arab','fa-AF':'prs_Arab'}
 ENGINE='Omnilingual CTC 300M int8 · sherpa-onnx 1.13.8'
 MODEL_FILES={
     'sherpa-onnx-offline.exe':(18751488,'3a0177956d7ffc3c4d4eda8cd2b5386984861574783b89afb50379c7822bd24a'),
@@ -162,7 +164,7 @@ def recognize(audio,locale,config=None,cancel=None):
             if cancel.is_set(): raise OmniError('Speech cancelled.')
             text=' '.join(texts)
             letters=[unicodedata.name(char,'') for char in text if char.isalpha()]
-            script='ARABIC' if locale=='ckb-IQ' else 'LATIN'
+            script={'Arab':'ARABIC','Ethi':'ETHIOPIC','Latn':'LATIN'}[LOCALES[locale].split('_')[-1]]
             if not text or not any(script in name for name in letters):
                 raise OmniError('Multilingual dictation returned a different or unclear script. Review or type this turn.')
             return {'text':text,'provider':'omnilingual','locale':locale,'engine':ENGINE,'offline':True,

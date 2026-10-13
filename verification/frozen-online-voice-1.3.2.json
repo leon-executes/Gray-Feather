@@ -1,0 +1,23 @@
+{
+  "scope": "Real final-executable Edge worker synthesis; decoded full audio, no physical playback.",
+  "rows": [
+    {
+      "locale": "fa-IR",
+      "successful": true,
+      "audio_seconds": 3.72,
+      "seconds": 1.89
+    },
+    {
+      "locale": "tr-TR",
+      "successful": true,
+      "audio_seconds": 4.176,
+      "seconds": 2.172
+    },
+    {
+      "locale": "ur-PK",
+      "successful": true,
+      "audio_seconds": 3.552,
+      "seconds": 2.625
+    }
+  ]
+}

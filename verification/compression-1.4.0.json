@@ -1,0 +1,114 @@
+{
+  "baseline_zip_bytes": 2620630453,
+  "sample_comparisons": [
+    {
+      "file": "local-ai/Index-Translate-2B.Q4_K_M.gguf",
+      "sample_bytes": 25165824,
+      "methods": {
+        "deflate6": {
+          "bytes": 24787690,
+          "seconds": 1.03
+        },
+        "deflate9": {
+          "bytes": 24787648,
+          "seconds": 1.05
+        },
+        "lzma6": {
+          "bytes": 24823968,
+          "seconds": 11.39
+        }
+      }
+    },
+    {
+      "file": "omni-asr/model.int8.onnx",
+      "sample_bytes": 25165824,
+      "methods": {
+        "deflate6": {
+          "bytes": 18240457,
+          "seconds": 1.25
+        },
+        "deflate9": {
+          "bytes": 18240471,
+          "seconds": 1.23
+        },
+        "lzma6": {
+          "bytes": 17746656,
+          "seconds": 13.72
+        }
+      }
+    },
+    {
+      "file": "voice-reserve/models/ti-ET/model.onnx",
+      "sample_bytes": 25165824,
+      "methods": {
+        "deflate6": {
+          "bytes": 23387889,
+          "seconds": 1.36
+        },
+        "deflate9": {
+          "bytes": 23387889,
+          "seconds": 1.36
+        },
+        "lzma6": {
+          "bytes": 23284216,
+          "seconds": 11.86
+        }
+      }
+    }
+  ],
+  "trim": {
+    "removed": [
+      {
+        "file": "espeak-ng.dll",
+        "bytes": 380928,
+        "retained": "offline-voice/piper/espeak-ng.dll"
+      },
+      {
+        "file": "onnxruntime.dll",
+        "bytes": 9271704,
+        "retained": "offline-voice/piper/onnxruntime.dll"
+      },
+      {
+        "file": "piper_phonemize.dll",
+        "bytes": 407040,
+        "retained": "offline-voice/piper/piper_phonemize.dll"
+      },
+      {
+        "file": "ggml-base.dll",
+        "bytes": 803840,
+        "retained": "local-ai/runtime/ggml-base.dll"
+      },
+      {
+        "file": "libomp.dll",
+        "bytes": 768000,
+        "retained": "local-ai/runtime/libomp.dll"
+      },
+      {
+        "file": "llama-common.dll",
+        "bytes": 8002048,
+        "retained": "local-ai/runtime/llama-common.dll"
+      },
+      {
+        "file": "llama-completion-impl.dll",
+        "bytes": 140288,
+        "retained": "local-ai/runtime/llama-completion-impl.dll"
+      },
+      {
+        "file": "llama.dll",
+        "bytes": 3382784,
+        "retained": "local-ai/runtime/llama.dll"
+      }
+    ],
+    "bytes_saved": 23156632
+  },
+  "source_recompression": {
+    "original_archive": "onnxruntime-1.14.1.tar.gz",
+    "original_sha256": "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de",
+    "original_bytes": 199524576,
+    "repacked_archive": "onnxruntime-1.14.1.tar.xz",
+    "repacked_sha256": "fe310efbaf61bea980e5a0ffd2574644db18632eabd25f41bbaa266659c22e5c",
+    "repacked_bytes": 127442876,
+    "identical_uncompressed_tar_sha256": "fd0e435b7be1bca025c762246323548440e01c7eab9e218fc697f91bb9236191"
+  },
+  "constraints": "Unchanged model weights, all voices retained, standard DEFLATE ZIP; no UPX or runtime unpacking layer."
+}

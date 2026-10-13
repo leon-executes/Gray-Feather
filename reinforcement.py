@@ -18,7 +18,6 @@ import unicodedata
 from decimal import Decimal, InvalidOperation
 
 LANGUAGE_CODES = tuple("en ar fr tr fa prs ps ur hi bn pa sd am ti om so sw ckb kmr es de it pt ru zh ja ko nl pl ro uk el he id".split())
-HY_LANGUAGES = frozenset("en ar fr tr fa ur hi bn es de it pt ru zh ja ko nl pl uk he id".split())
 
 @dataclass(frozen=True)
 class Candidate:
@@ -63,8 +62,6 @@ def route_order(source_code, target_code, enabled):
         approximate = False
         if provider in ("bing_web", "azure") and "om" in (source_code, target_code):
             supported = False
-        elif provider == "hy_mt_local":
-            supported = {source_code, target_code} <= HY_LANGUAGES
         elif provider == "index_web":
             supported = "prs" not in (source_code, target_code) and (source_code, target_code) != ("om", "en")
         elif provider == "deepl":
@@ -474,7 +471,7 @@ def reinforce(source, source_code, target_code, primary, alternatives=(), *, pol
         if method == "unchanged" and policy == "source_anchored_model":
             for item, check in zip(candidates[1:], checks[1:]):
                 meta = item.metadata
-                if (_valid(item) and item.provider in ("hy_mt_local", "gemma_local", "index_web") and meta.get("operation") == "repair"
+                if (_valid(item) and item.provider == "index_web" and meta.get("operation") == "repair"
                     and meta.get("source_sha256") == _sha(source) and meta.get("candidate_sha256") == _sha(primary.text)
                     and meta.get("direction_approved") is True and isinstance(meta.get("evidence_id"), str) and bool(meta["evidence_id"].strip())
                     and check["literal_complete"] and item.text != primary.text

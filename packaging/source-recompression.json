@@ -1,0 +1,9 @@
+{
+  "original_archive": "onnxruntime-1.14.1.tar.gz",
+  "original_sha256": "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de",
+  "original_bytes": 199524576,
+  "repacked_archive": "onnxruntime-1.14.1.tar.xz",
+  "repacked_sha256": "fe310efbaf61bea980e5a0ffd2574644db18632eabd25f41bbaa266659c22e5c",
+  "repacked_bytes": 127442876,
+  "identical_uncompressed_tar_sha256": "fd0e435b7be1bca025c762246323548440e01c7eab9e218fc697f91bb9236191"
+}

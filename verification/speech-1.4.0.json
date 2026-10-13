@@ -1,0 +1,209 @@
+{
+  "version": "1.4.0",
+  "successful": true,
+  "scope": "Actual bundled speech libraries, live free online dictation and voice, native offline recognition, same-executable preview/reserve workers and hard cancellation. Injected provider failures verify real surviving routes. Public-domain/synthetic fixtures only; no personal microphone capture or paid calls. Decode/preparation are real; physical playback is verified in the separate UI workflow.",
+  "tests": 15,
+  "results": [
+    {
+      "case": "dictation-google_web",
+      "successful": true,
+      "text": "answer my fellow Americans ask not what your country can do for you ask what you can do for your country",
+      "provider": "google_web",
+      "seconds": 2.613
+    },
+    {
+      "case": "dictation-offline",
+      "successful": true,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "provider": "offline",
+      "seconds": 2.943
+    },
+    {
+      "case": "auto-English-local-primary",
+      "successful": true,
+      "provider": "offline",
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "online_upload": false
+    },
+    {
+      "case": "auto-French-local-primary",
+      "successful": true,
+      "provider": "offline",
+      "text": "Ne payez pas 50 livres. Apportez deux copies, pas trois.",
+      "online_upload": false
+    },
+    {
+      "case": "actual-Arabic-offline-fallback",
+      "successful": true,
+      "provider": "offline",
+      "text": "لا تدفع خمسين جنيها أحضر نسختين وليس ثلاث نسخ",
+      "injected_online_failure": true
+    },
+    {
+      "case": "free-voice-en-US",
+      "successful": true,
+      "provider": "edge_free",
+      "decoded_duration_seconds": 2.4,
+      "seconds": 1.467,
+      "physical_playback": false,
+      "preparation": {
+        "voice": "en-US-JennyNeural",
+        "provider": "edge_free",
+        "locale": "en-US",
+        "characters": 24,
+        "decoded": true,
+        "synthesis_attempts": 1,
+        "preparation_trace": []
+      }
+    },
+    {
+      "case": "free-voice-fr-FR",
+      "successful": true,
+      "provider": "edge_free",
+      "decoded_duration_seconds": 1.872,
+      "seconds": 1.317,
+      "physical_playback": false,
+      "preparation": {
+        "voice": "fr-FR-DeniseNeural",
+        "provider": "edge_free",
+        "locale": "fr-FR",
+        "characters": 8,
+        "decoded": true,
+        "synthesis_attempts": 1,
+        "preparation_trace": []
+      }
+    },
+    {
+      "case": "free-voice-fa-IR",
+      "successful": true,
+      "provider": "edge_free",
+      "decoded_duration_seconds": 2.544,
+      "seconds": 1.131,
+      "physical_playback": false,
+      "preparation": {
+        "voice": "fa-IR-DilaraNeural",
+        "provider": "edge_free",
+        "locale": "fa-IR",
+        "characters": 22,
+        "decoded": true,
+        "synthesis_attempts": 1,
+        "preparation_trace": []
+      }
+    },
+    {
+      "case": "free-voice-ps-AF",
+      "successful": true,
+      "provider": "edge_free",
+      "decoded_duration_seconds": 2.832,
+      "seconds": 1.251,
+      "physical_playback": false,
+      "preparation": {
+        "voice": "ps-AF-LatifaNeural",
+        "provider": "edge_free",
+        "locale": "ps-AF",
+        "characters": 30,
+        "decoded": true,
+        "synthesis_attempts": 1,
+        "preparation_trace": []
+      }
+    },
+    {
+      "case": "google-free-voice-fallback",
+      "successful": true,
+      "decoded_duration_seconds": 2.112,
+      "physical_playback": false
+    },
+    {
+      "case": "isolated-free-online-preview-worker",
+      "successful": true,
+      "text": "ne payez pas 50 livres apporter de copies pas 3",
+      "provider": "google_web",
+      "seconds": 1.728,
+      "scope": "Actual same-executable worker and free recognition; the UI alone marks provisional status."
+    },
+    {
+      "case": "complete-reserve-router-fr-FR",
+      "successful": true,
+      "result": {
+        "voice": "Free Google Translate voice",
+        "provider": "google_web",
+        "locale": "fr-FR",
+        "characters": 30,
+        "decoded": true,
+        "synthesis_attempts": 1,
+        "preparation_trace": [],
+        "cache_hit": false,
+        "complete": true,
+        "cancelled": false,
+        "selected_provider": "auto",
+        "preferred_provider": "edge_free",
+        "prepared_providers": [
+          "google_web"
+        ],
+        "trace": [
+          "Preferred edge_free voice was not ready within the short quality grace; used the complete google_web reserve."
+        ]
+      },
+      "seconds": 0.964,
+      "physical_playback": false
+    },
+    {
+      "case": "complete-reserve-router-fa-IR",
+      "successful": true,
+      "result": {
+        "voice": "fa-IR-DilaraNeural",
+        "provider": "edge_free",
+        "locale": "fa-IR",
+        "characters": 22,
+        "decoded": true,
+        "synthesis_attempts": 1,
+        "preparation_trace": [],
+        "cache_hit": false,
+        "complete": true,
+        "cancelled": false,
+        "selected_provider": "auto",
+        "preferred_provider": "edge_free",
+        "prepared_providers": [
+          "edge_free",
+          "offline_piper"
+        ],
+        "trace": []
+      },
+      "seconds": 1.219,
+      "physical_playback": false
+    },
+    {
+      "case": "actual-google-voice-reserve-after-edge-failure",
+      "successful": true,
+      "result": {
+        "voice": "Free Google Translate voice",
+        "provider": "google_web",
+        "locale": "en-US",
+        "characters": 24,
+        "decoded": true,
+        "synthesis_attempts": 1,
+        "preparation_trace": [],
+        "cache_hit": false,
+        "complete": true,
+        "cancelled": false,
+        "selected_provider": "auto",
+        "preferred_provider": "edge_free",
+        "prepared_providers": [
+          "google_web"
+        ],
+        "trace": [
+          "edge_free: Injected Edge unavailability to verify actual Google reserve worker."
+        ]
+      },
+      "seconds": 0.577,
+      "injected_edge_failure": true,
+      "physical_playback": false
+    },
+    {
+      "case": "actual-worker-hard-cancellation",
+      "successful": true,
+      "seconds": 0.112,
+      "private_request_files_remaining": 0
+    }
+  ]
+}

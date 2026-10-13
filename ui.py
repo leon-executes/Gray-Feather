@@ -1,6 +1,8 @@
 """Native Gray Feather workspace. The service owns credentials, data and audio."""
 from __future__ import annotations
 
+from safe_speech import mask as safe_mask
+
 import copy
 import datetime as dt
 import threading
@@ -28,8 +30,8 @@ def provider_label(code: str) -> str:
     return {"google_web": "Google Translate", "bing_web": "Microsoft Bing",
             "mymemory": "MyMemory", "lingva": "Lingva", "azure": "Microsoft Azure",
             "google": "Google Cloud", "deepl": "DeepL", "original": "Original text",
-            "offline": "Offline recognition", "hy_mt_local": "Hy-MT · local AI",
-            "gemma_local": "Gemma · local AI", "index_local": "Index · offline AI", "omnilingual": "Omnilingual · offline recognition", "index_web": "Index Translate · free AI", "reinforced": "Reinforced translation"}.get(str(code), str(code))
+            "offline": "Offline recognition", "hy_mt_local": "Hy-MT · retired engine",
+            "gemma_local": "Gemma · retired engine", "index_local": "Index · retired offline engine", "omnilingual": "Omnilingual · offline recognition", "index_web": "Index Translate · free AI", "reinforced": "Reinforced translation"}.get(str(code), str(code))
 
 
 _INFORMATIONAL_CHECKS = {"independent_review", "backtranslation", "fallback", "review_conditions", "dictation_advisory", "reinforcement_applied"}
@@ -322,10 +324,11 @@ class SpeakerPanel(QFrame):
 
     def show_preview(self, text: str, translated: str | None = None) -> None:
         self.preview_active = True
+        self._preview_translation = translated or ""
         self.dictation_preview.setPlainText("Live words · provisional\n" + text)
         self.dictation_preview.show()
         self.received_turn = None
-        self.received.setPlainText(translated or "")
+        self.received.setPlainText(safe_mask(translated or "", getattr(self, "safe_speech", True)))
         self.translation_preview_label.setText("Live translation · provisional · not saved or spoken" if translated else "Live translation pending · provisional")
         self.translation_preview_label.show()
         self.received_label.setText("Live translation")
@@ -337,7 +340,7 @@ class SpeakerPanel(QFrame):
         self.clear_preview()
         self.received_turn = turn
         text = str((turn or {}).get("translated_text", ""))
-        self.received.setPlainText(text)
+        self.received.setPlainText(safe_mask(text, getattr(self, "safe_speech", True)))
         target = (turn or {}).get("target_lang", "")
         direction(self.received, bool(self.languages.get(target, {}).get("rtl")))
         for control in (self.copy_button, self.listen_button, self.review_button):
@@ -390,20 +393,20 @@ class SettingsPane(QWidget):
         services.setRowWrapPolicy(QFormLayout.RowWrapPolicy.WrapAllRows)
         self.provider = QComboBox()
         self.provider.setAccessibleName("Translation provider")
-        for name, value in (("Automatic · reinforced free engines", "auto"), ("Reinforced · compare and repair", "reinforced"), ("Index Translate · free AI", "index_web"), ("Index 2B · offline AI", "index_local"), ("Google Translate · free", "google_web"), ("Microsoft Bing · free", "bing_web"), ("MyMemory · free", "mymemory"), ("Azure · optional API", "azure"), ("Google Cloud · optional API", "google"), ("DeepL · optional API", "deepl")):
+        for name, value in (("Automatic · reinforced free engines", "auto"), ("Reinforced · compare and repair", "reinforced"), ("Index Translate · free AI", "index_web"), ("Google Translate · free", "google_web"), ("Microsoft Bing · free", "bing_web"), ("MyMemory · free", "mymemory"), ("Azure · optional API", "azure"), ("Google Cloud · optional API", "google"), ("DeepL · optional API", "deepl")):
             self.provider.addItem(name, value)
         self.provider.setCurrentIndex(max(0, self.provider.findData(settings.get("provider", "auto"))))
         services.addRow("Translation", self.provider)
         self.speech_provider = QComboBox()
         self.speech_provider.setAccessibleName("Speech recognition service")
-        self.speech_provider.setToolTip("Automatic uses local recognition first for English, French, Oromo and Sorani; free Google first for its other supported languages. Persian recognition is online only.")
-        for name, value in (("Automatic · no key", "auto"), ("Google speech · free online", "google_web"), ("Whisper · offline recognition", "offline"), ("Omnilingual · offline Oromo / Sorani", "omnilingual"), ("Azure Speech · optional API", "azure"), ("Google Cloud Speech · optional API", "google")):
+        self.speech_provider.setToolTip("Automatic uses measured language-specific routing with bundled local reserves. Omnilingual covers ten tested language routes; short clips can still be misidentified.")
+        for name, value in (("Automatic · no key", "auto"), ("Google speech · free online", "google_web"), ("Whisper · offline recognition", "offline"), ("Omnilingual · offline multilingual", "omnilingual"), ("Azure Speech · optional API", "azure"), ("Google Cloud Speech · optional API", "google")):
             self.speech_provider.addItem(name, value)
         self.speech_provider.setCurrentIndex(max(0, self.speech_provider.findData(settings.get("speech_provider", "auto"))))
         services.addRow("Dictation", self.speech_provider)
         self.voice_provider = QComboBox()
         self.voice_provider.setAccessibleName("Voice playback service")
-        for name, value in (("Automatic · free voices", "auto"), ("Offline · bundled and Windows voices", "offline"), ("Microsoft voices · free", "edge_free"), ("Google voice · free", "google_web"), ("Installed Windows voices", "windows"), ("Azure Speech · optional API", "azure")):
+        for name, value in (("Automatic · free voices", "auto"), ("Offline · bundled and Windows voices", "offline"), ("Basic · offline robotic voice", "basic"), ("Microsoft voices · free", "edge_free"), ("Google voice · free", "google_web"), ("Installed Windows voices", "windows"), ("Azure Speech · optional API", "azure")):
             self.voice_provider.addItem(name, value)
         self.voice_provider.setCurrentIndex(max(0, self.voice_provider.findData(settings.get("voice_provider", "auto"))))
         services.addRow("Voice playback", self.voice_provider)
@@ -628,7 +631,7 @@ class TurnDialog(QDialog):
         if turn.get("review_text"):
             self.copy_second_opinion = buttons.addButton("Copy second opinion", QDialogButtonBox.ButtonRole.ActionRole)
             self.copy_second_opinion.setAccessibleName("Copy full second engine translation")
-            self.copy_second_opinion.clicked.connect(lambda: QApplication.clipboard().setText(str(turn["review_text"])))
+            self.copy_second_opinion.clicked.connect(lambda: QApplication.clipboard().setText(safe_mask(str(turn["review_text"]), self.host.preferences.get("safe_speech", True))))
         buttons.addButton("Retranslate reviewed source", QDialogButtonBox.ButtonRole.AcceptRole).setProperty("kind", "primary")
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
@@ -651,7 +654,7 @@ class TurnDialog(QDialog):
         toggle.setProperty("kind", "fold")
         toggle.setCheckable(True)
         toggle.setChecked(expanded)
-        editor = QPlainTextEdit(text)
+        editor = QPlainTextEdit(safe_mask(text, self.host.preferences.get("safe_speech", True)))
         editor.setAccessibleName(title)
         editor.setReadOnly(True)
         editor.setMinimumHeight(100)
@@ -737,6 +740,9 @@ class MainWindow(QMainWindow):
         self.preview_generation = 0
         self.preview_signals = WorkerSignals(self)
         self.preview_signals.preview.connect(self._recording_preview, Qt.ConnectionType.QueuedConnection)
+        self.voice_signals = WorkerSignals(self)
+        self.voice_signals.preview.connect(self._voice_prepared, Qt.ConnectionType.QueuedConnection)
+        self.voice_event = None
         self.draft_versions = {"1": 0, "2": 0}
         self.draft_snapshots = {"1": "", "2": ""}
         self.conversation = self._empty_conversation()
@@ -768,6 +774,9 @@ class MainWindow(QMainWindow):
         self._load_last_draft()
         self._set_status("Ready", "Free translation · Record then Stop to dictate · Saved on this PC")
         self._fit_to_screen(center=True)
+        if self.preferences.get("notice"):
+            self.notice.setText(self.preferences["notice"])
+            self.notice.show()
 
     def _fit_to_screen(self, center: bool = False) -> None:
         screen = self.screen() or QApplication.primaryScreen()
@@ -834,12 +843,12 @@ class MainWindow(QMainWindow):
         self.cancel_button.clicked.connect(self.cancel_jobs)
         toolbar.addWidget(self.cancel_button)
         toolbar.addStretch()
-        self.voice_button = button("Voice Enabled", "Enable automatic voice playback")
+        self.voice_button = button("Enabled", "Enable automatic voice playback")
         self.voice_button.setCheckable(True)
         self.voice_button.setObjectName("voiceToggle")
         self.voice_button.setChecked(bool(self.preferences.get("voice_enabled", self.preferences.get("auto_speak", True))))
         self.voice_button.clicked.connect(lambda: self._toggle_voice(True))
-        self.voice_disabled_button = button("Voice Disabled", "Disable automatic voice playback and halt current voice")
+        self.voice_disabled_button = button("Disabled", "Disable automatic voice playback and halt current voice")
         self.voice_disabled_button.setCheckable(True)
         self.voice_disabled_button.setObjectName("voiceDisabled")
         self.voice_group = QButtonGroup(self)
@@ -854,10 +863,35 @@ class MainWindow(QMainWindow):
         split = QFrame()
         split.setObjectName("splitControl")
         split_layout = QHBoxLayout(split)
-        split_layout.setContentsMargins(0, 0, 0, 0)
+        split_layout.setContentsMargins(6, 6, 6, 6)
         split_layout.setSpacing(0)
+        voice_label = label("Voice")
+        voice_label.setProperty("kind", "toggleLabel")
+        split_layout.addWidget(voice_label)
         split_layout.addWidget(self.voice_button)
         split_layout.addWidget(self.voice_disabled_button)
+        safe_split = QFrame()
+        safe_split.setObjectName("splitControl")
+        safe_layout = QHBoxLayout(safe_split)
+        safe_layout.setContentsMargins(6, 6, 6, 6)
+        safe_layout.setSpacing(0)
+        safe_label = label("Safe Speech")
+        safe_label.setProperty("kind", "toggleLabel")
+        safe_layout.addWidget(safe_label)
+        self.safe_on = button("On", "Mask profanity and slurs in translations and speech")
+        self.safe_off = button("Off", "Show and speak the original translation without masking")
+        self.safe_on.setObjectName("voiceToggle")
+        self.safe_off.setObjectName("voiceDisabled")
+        self.safe_group = QButtonGroup(self)
+        self.safe_group.setExclusive(True)
+        for control in (self.safe_on, self.safe_off):
+            control.setCheckable(True)
+            self.safe_group.addButton(control)
+            safe_layout.addWidget(control)
+        self.safe_on.clicked.connect(lambda: self._toggle_safe_speech(True))
+        self.safe_off.clicked.connect(lambda: self._toggle_safe_speech(False))
+        safe_split.setToolTip("Local profanity/slur masking. Neutral medical and safeguarding terms remain. Original history is preserved; this is not a comprehensive content classifier.")
+        toolbar.addWidget(safe_split)
         toolbar.addWidget(split)
         toolbar.addWidget(self.settings_button)
         layout.addLayout(toolbar)
@@ -946,14 +980,23 @@ class MainWindow(QMainWindow):
         self.history_search.textChanged.connect(self._filter_history)
         history_layout.addWidget(self.history_search)
         self.history_list = QListWidget()
-        self.history_list.setAccessibleName("Saved conversations, double-click to reopen")
+        self.history_list.setAccessibleName("Saved conversations. Check boxes to delete several; double-click a title to reopen.")
+        self.history_list.itemChanged.connect(self._history_check_changed)
         self.history_list.itemDoubleClicked.connect(lambda *_: self.open_history())
         history_layout.addWidget(self.history_list)
         history_actions = QHBoxLayout()
-        for text, handler in (("Open", self.open_history), ("Rename", self.rename_history), ("Delete", self.delete_history)):
+        for text, handler in (("Open", self.open_history), ("Rename", self.rename_history)):
             value = button(text, text + " selected saved conversation")
             value.clicked.connect(handler)
             history_actions.addWidget(value)
+        self.delete_history_button = button("Delete selected", "Delete checked sessions, including checked sessions hidden by search")
+        self.delete_history_button.setEnabled(False)
+        self.delete_history_button.clicked.connect(self.delete_history)
+        history_actions.addWidget(self.delete_history_button)
+        self.shred_history_button = button("Shred History", "Purge all sessions and the app's automatic history backups")
+        self.shred_history_button.setProperty("kind", "destructive")
+        self.shred_history_button.clicked.connect(self.shred_history)
+        history_actions.addWidget(self.shred_history_button)
         history_actions.addStretch()
         self.backup_button = button("Back up history", "Back up all saved conversations to a SQLite archive")
         self.backup_button.clicked.connect(self.backup_history)
@@ -1020,11 +1063,12 @@ class MainWindow(QMainWindow):
             ("Speak or type", "Choose each speaker's language. Record Speech starts a turn. Stop Recording commits the recognized words, translates them and reads the final result when Voice is enabled. Recordings stop at 50 seconds."),
             ("Live previews", "Live words and translations are provisional. They are never saved or spoken. Final recognition uses the completed recording. Review unusual names, quantities and terminology."),
             ("Automatic improvement", "Complete engine outputs are compared before the final result appears. Source-based checks repair supported calendar and critical-detail conflicts automatically. Accurate controls are preserved; engine agreement alone is not treated as proof."),
-            ("Offline AI", "Index 2B translates on this PC without uploading text. It is a separate choice in Settings and needs about 2 GB of working memory. It has known terminology and weaker-language errors, so Automatic does not silently substitute it. Offline recognition and voice are separate settings."),
+            ("Online translation, local speech", "Text translation needs internet. Supported bundled recognition and voice routes can run locally. If Index is unavailable, Automatic keeps eligible Google/Bing results and local source-detail checks; AI rewriting waits for the service to recover."),
             ("Review a translation", "Review opens the preserved source, the full engine opinions and advisory back translation. Additional distinct engines appear only when available. MyMemory uses mixed sources and is not an independent opinion."),
+            ("Safe Speech", "On masks known profanity and slurs in displayed translations and playback. Off restores unmasked output. Neutral clinical and safeguarding terms are retained. Original history and exports remain unmodified; the filter is not universal."),
             ("Voice controls", "Voice Enabled reads completed translations automatically. Halt Voice stops current playback. Listen plays a final translation again. Flagged turns need your review before playback."),
             ("Your saved work", "Original words remain unchanged. A reviewed source is stored separately. Clear Session opens a fresh session and keeps earlier work in Saved sessions. Removed turns can be restored with Undo."),
-            ("Free services and privacy", "Free translation and supported voices need no key. Online routes receive the text or audio they process and can become unavailable. Bundled dictation supports selected languages; Persian recognition is online only. Optional API accounts are available in Settings."),
+            ("Free services and privacy", "Free translation and supported voices need no key. Online routes receive the text or audio they process and can become unavailable. Bundled dictation supports selected languages, including Persian. Basic voices can sound robotic; Dari uses approximate Persian pronunciation. Optional API accounts are available in Settings."),
             ("Useful keys", "Ctrl+Enter translates the focused speaker. Alt+1 and Alt+2 focus a source. Ctrl+N starts a fresh session. Ctrl+S saves. Ctrl+Shift+E exports. Ctrl+, opens Settings. Escape cancels the active task and stops voice."),
             ("Recovery", "Export saves a Word document, readable text, CSV or JSON. Back up history creates a consistent database copy. Move the whole Portable folder to keep the app, bundled models and portable data together."),
         ):
@@ -1052,9 +1096,19 @@ class MainWindow(QMainWindow):
                 self._show_error("Preferences could not be reset: " + str(exc))
         else:
             value = copy.deepcopy(self.preferences)
-            value.update(theme="dark", text_size=12, provider="auto", speech_provider="auto", voice_provider="auto", voice_enabled=True, auto_speak=True, reinforce=True, backtranslate=True, free_fallback=True)
+            value.update(theme="dark", text_size=12, provider="auto", speech_provider="auto", voice_provider="auto", voice_enabled=True, auto_speak=True, safe_speech=True, reinforce=True, backtranslate=True, free_fallback=True)
             self._save_settings(value)
             self._replace_settings_pane()
+
+    def _toggle_safe_speech(self, enabled: bool) -> None:
+        self._stop_voice()
+        value = copy.deepcopy(self.preferences)
+        value['safe_speech'] = enabled
+        self.preferences['safe_speech'] = enabled
+        self.settings_pane.original['safe_speech'] = enabled
+        self._save_settings(value)
+        self._apply_theme()
+        self._refresh_turns()
 
     def _toggle_voice(self, enabled: bool) -> None:
         if not enabled:
@@ -1091,6 +1145,8 @@ class MainWindow(QMainWindow):
     def _apply_theme(self) -> None:
         c = ({"bg": "#11161b", "panel": "#1a2229", "field": "#12191f", "line": "#35424b", "text": "#edf2ef", "muted": "#adbac2", "accent": "#c4d7b6", "accentink": "#1d3127", "hover": "#29363e", "warn": "#ebcc99", "notice": "#25352f", "selection": "#354d43"} if self.preferences.get("theme", "dark") != "light" else
              {"bg": "#f2f4ef", "panel": "#ffffff", "field": "#f8faf6", "line": "#c8d2c9", "text": "#20332d", "muted": "#566b61", "accent": "#315745", "accentink": "#ffffff", "hover": "#e7eee5", "warn": "#765020", "notice": "#e7efe3", "selection": "#d7e5d3"})
+        c.update({"housing": "#272d32", "segment": "#41484e", "segmentHover": "#515b63", "segmentChecked": "#59665f", "segmentLine": "#667078"} if self.preferences.get("theme", "dark") != "light" else
+                 {"housing": "#d9dedd", "segment": "#f0f2f1", "segmentHover": "#ffffff", "segmentChecked": "#c4d4c7", "segmentLine": "#9aa7a0"})
         c["reading"] = str(round(int(self.preferences.get("text_size", 12)) * 4 / 3))
         self.setStyleSheet("""
           QMainWindow, QDialog, QDockWidget, QWidget { background: %(bg)s; color: %(text)s; }
@@ -1131,9 +1187,15 @@ class MainWindow(QMainWindow):
           QPushButton[kind="record"][recording="true"] { background: #843c3c; color: #fff1ed; border-color: #c77a73; }
           QPushButton[kind="fold"] { text-align: left; font-weight: 600; }
           QPushButton:checked { border: 1px solid %(accent)s; background: %(selection)s; }
-          QPushButton#voiceToggle { border-top-right-radius: 0; border-bottom-right-radius: 0; }
-          QPushButton#voiceDisabled { border-top-left-radius: 0; border-bottom-left-radius: 0; }
-          QPushButton#voiceToggle:!checked, QPushButton#voiceDisabled:!checked { color: %(muted)s; }
+          QFrame#splitControl { background: %(housing)s; border: 1px solid %(line)s; border-radius: 9px; }
+          QLabel[kind="toggleLabel"] { background: transparent; color: %(text)s; border: none; padding: 0px 10px 0px 4px; font-weight: 600; }
+          QPushButton#voiceToggle, QPushButton#voiceDisabled { background: %(segment)s; border: 1px solid %(segmentLine)s; padding: 4px 10px; min-height: 16px; color: %(text)s; }
+          QPushButton#voiceToggle { border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+          QPushButton#voiceDisabled { border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
+          QPushButton#voiceToggle:hover, QPushButton#voiceDisabled:hover { background: %(segmentHover)s; border-color: %(accent)s; }
+          QPushButton#voiceToggle:checked, QPushButton#voiceDisabled:checked { background: %(segmentChecked)s; border-color: %(accent)s; color: %(text)s; }
+          QPushButton#voiceToggle:focus, QPushButton#voiceDisabled:focus { border: 2px solid %(accent)s; padding: 3px 9px; }
+          QPushButton#voiceToggle:pressed, QPushButton#voiceDisabled:pressed { background: %(selection)s; }
           QPushButton[kind="primary"]:disabled { background: %(hover)s; color: %(muted)s; }
           QTabWidget::pane { border: 1px solid %(line)s; border-radius: 7px; background: %(panel)s; }
           QTabBar::tab { background: transparent; padding: 9px 14px; color: %(muted)s; border-bottom: 2px solid transparent; }
@@ -1152,6 +1214,9 @@ class MainWindow(QMainWindow):
           QSplitter::handle { background: transparent; }
           QSplitter::handle:horizontal { width: 14px; }
           QSplitter::handle:vertical { height: 14px; }
+          QPushButton[kind="destructive"] { color: %(warn)s; }
+          QListWidget::indicator { width: 14px; height: 14px; border: 1px solid %(muted)s; border-radius: 3px; background: %(field)s; }
+          QListWidget::indicator:checked { border: 2px solid %(accent)s; background: %(selection)s; }
           QCheckBox { spacing: 8px; background: transparent; }
           QCheckBox::indicator { width: 16px; height: 16px; border: 1px solid %(muted)s; border-radius: 3px; background: %(field)s; }
           QCheckBox::indicator:checked { border: 2px solid %(accent)s; background: %(selection)s; }
@@ -1173,6 +1238,13 @@ class MainWindow(QMainWindow):
         self.voice_button.setChecked(enabled)
         self.voice_disabled_button.setChecked(not enabled)
         self.voice_button.blockSignals(False)
+        safe = bool(self.preferences.get('safe_speech', True))
+        self.safe_on.setChecked(safe)
+        self.safe_off.setChecked(not safe)
+        for panel in self.panels.values():
+            panel.safe_speech = safe
+            if panel.preview_active:
+                panel.received.setPlainText(safe_mask(getattr(panel, '_preview_translation', ''), safe))
         for credit, before, linked, after, url in self.credit_links:
             credit.setText(f'<span style="color: {c["muted"]};">{before}</span><a href="{url}" style="color: {c["accent"]}; text-decoration: underline; text-decoration-color: {c["line"]};">{linked}</a><span style="color: {c["muted"]};">{after}</span>')
         self.settings_close_button.setIcon(line_icon("close", c["muted"]))
@@ -1415,6 +1487,8 @@ class MainWindow(QMainWindow):
             QTimer.singleShot(0, self._launch_pending_preview)
         if self.voice_token == token:
             self.voice_token = None
+            if self.voice_event is not None: self.voice_event.set()
+            self.voice_event = None
             self.stop_voice_button.setEnabled(False)
         if not self.closed:
             self._update_busy()
@@ -1767,12 +1841,26 @@ class MainWindow(QMainWindow):
         self._stop_voice()
         event = threading.Event()
         self.stop_voice_button.setEnabled(True)
-        self._set_status("Speaking", "Stop voice or Esc ends playback.")
+        self.voice_event = event
+        self._set_status("Preparing voice", "Stop voice or Esc cancels preparation and playback.")
         text, code = panel.received.toPlainText(), str(turn["target_lang"])
-        self.voice_token = self._run(lambda: self.service.speak(text, code, event),
-                                     lambda _: self._set_status("Playback complete", "Translation and original remain available."), event=event)
+        def speak():
+            if hasattr(self.service, 'speak_with_feedback'):
+                return self.service.speak_with_feedback(text, code, event,
+                    lambda value: self.voice_signals.preview.emit({'event':event,'value':value}))
+            return self.service.speak(text, code, event)
+        self.voice_token = self._run(speak,
+                                     lambda result: self._set_status("Playback complete", " · ".join(result.get("warnings", [])) or "Translation and original remain available."), event=event)
+
+    def _voice_prepared(self, payload) -> None:
+        if self.closed or payload['event'] is not self.voice_event or payload['event'].is_set():
+            return
+        value=payload['value']
+        self._set_status("Speaking", " · ".join(value.get('warnings',[])) or str(value.get('voice') or 'Stop voice or Esc ends playback.'))
 
     def _stop_voice(self) -> None:
+        if self.voice_event is not None: self.voice_event.set()
+        self.voice_event = None
         if self.voice_token and self.voice_token in self.jobs:
             self.jobs[self.voice_token][1].set()
             self.cancelled_tokens.add(self.voice_token)
@@ -1801,7 +1889,7 @@ class MainWindow(QMainWindow):
                 stamp = ""
             state, warnings = str(turn.get("status", "complete")), review_messages(turn)
             review = "Pending…" if state == "pending" else (state.capitalize() if state != "complete" else (f"{len(warnings)} check(s)" if warnings else "Review available" if turn.get("review_text") or turn.get("extra_opinions") else "Ready"))
-            values = [stamp, str(turn.get("speaker", "")), str(turn.get("raw_source", "")), str(turn.get("translated_text", "")), review]
+            values = [stamp, str(turn.get("speaker", "")), str(turn.get("raw_source", "")), safe_mask(str(turn.get("translated_text", "")), self.preferences.get("safe_speech", True)), review]
             for column, value in enumerate(values):
                 item = QTableWidgetItem(value.replace("\n", " "))
                 item.setData(Qt.ItemDataRole.UserRole, turn["id"])
@@ -1875,7 +1963,7 @@ class MainWindow(QMainWindow):
             text = str(turn.get("raw_source", ""))
             if turn.get("reviewed_source") != turn.get("raw_source"):
                 text += "\n\nReviewed source:\n" + str(turn.get("reviewed_source", ""))
-            QApplication.clipboard().setText(text + "\n\n" + str(turn.get("translated_text", "")))
+            QApplication.clipboard().setText(text + "\n\n" + safe_mask(str(turn.get("translated_text", "")), self.preferences.get("safe_speech", True)))
             self._set_status("Turn copied", "Original and translation copied to the clipboard.")
 
     def remove_selected_turn(self) -> None:
@@ -1935,6 +2023,8 @@ class MainWindow(QMainWindow):
             return
         current = self.history_list.currentItem()
         selected_id = current.data(Qt.ItemDataRole.UserRole) if current else None
+        checked = {item.data(Qt.ItemDataRole.UserRole) for item in self._checked_history_items()}
+        self.history_list.blockSignals(True)
         self.history_list.clear()
         for entry in entries:
             title, stamp = str(entry.get("title", "Conversation")), str(entry.get("updated_at", entry.get("created_at", "")))
@@ -1946,11 +2036,24 @@ class MainWindow(QMainWindow):
             item = QListWidgetItem(f"{title}\n{stamp}  ·  {count} turns")
             item.setData(Qt.ItemDataRole.UserRole, entry["id"])
             item.setData(Qt.ItemDataRole.UserRole + 1, title)
+            item.setFlags(item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
+            item.setCheckState(Qt.CheckState.Checked if entry["id"] in checked else Qt.CheckState.Unchecked)
             item.setSizeHint(QSize(200, 57))
             self.history_list.addItem(item)
             if entry["id"] == selected_id:
                 self.history_list.setCurrentItem(item)
+        self.history_list.blockSignals(False)
+        self._history_check_changed()
         self._filter_history(self.history_search.text())
+
+    def _checked_history_items(self) -> list:
+        return [self.history_list.item(i) for i in range(self.history_list.count())
+                if self.history_list.item(i).checkState() == Qt.CheckState.Checked]
+
+    def _history_check_changed(self, *_: Any) -> None:
+        count = len(self._checked_history_items())
+        self.delete_history_button.setEnabled(bool(count))
+        self.delete_history_button.setText(f"Delete selected ({count})" if count else "Delete selected")
 
     def _filter_history(self, query: str) -> None:
         for index in range(self.history_list.count()):
@@ -1994,25 +2097,64 @@ class MainWindow(QMainWindow):
             self._show_error("Conversation could not be renamed: " + str(exc))
 
     def delete_history(self) -> None:
-        item = self.history_list.currentItem()
-        if item is None:
+        items = self._checked_history_items()
+        if not items:
             return
-        identity = item.data(Qt.ItemDataRole.UserRole)
-        answer = QMessageBox.question(self, "Delete saved conversation", f"Delete “{item.data(Qt.ItemDataRole.UserRole + 1)}” from active history? Existing backup files may retain an earlier copy.", QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
+        identities = [item.data(Qt.ItemDataRole.UserRole) for item in items]
+        hidden = sum(item.isHidden() for item in items)
+        detail = f"Delete {len(identities)} checked session(s)?"
+        if hidden:
+            detail += f" Includes {hidden} hidden by the search filter."
+        detail += "\nExisting backups and exports are kept."
+        answer = QMessageBox.question(self, "Delete selected sessions", detail, QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
         if answer != QMessageBox.StandardButton.Yes:
             return
         try:
-            if identity == self.conversation["id"]:
+            current_deleted = self.conversation["id"] in identities
+            if current_deleted:
                 self.cancel_jobs()
+                self._stop_voice()
                 self.draft_timer.stop()
-                self.service.delete_conversation(identity)
+            self.service.delete_conversations(identities)
+            if current_deleted:
                 self._load_conversation(self._empty_conversation())
-            else:
-                self.service.delete_conversation(identity)
             self._refresh_history()
-            self._set_status("Conversation deleted", "The saved copy has been removed from this PC.")
+            self._set_status("Sessions deleted", f"Removed {len(identities)} checked sessions.")
         except Exception as exc:
-            self._show_error("Conversation could not be deleted: " + str(exc))
+            self._show_error("Selected sessions could not be deleted: " + str(exc))
+
+    def shred_history(self) -> None:
+        confirm = QMessageBox(self)
+        confirm.setWindowTitle("Shred all history")
+        confirm.setIcon(QMessageBox.Icon.Warning)
+        confirm.setText("Purge every saved session and the current session?")
+        confirm.setInformativeText("Deletes drafts, originals, translations, stored revisions and the app's automatic backups. There is no Undo.\n\nSeparate exports/backups and other app copies remain. SSDs and system backups prevent a guarantee of forensic erasure. Settings are kept.")
+        confirm.addButton(QMessageBox.StandardButton.Cancel)
+        shred = confirm.addButton("Shred History", QMessageBox.ButtonRole.DestructiveRole)
+        confirm.setDefaultButton(QMessageBox.StandardButton.Cancel)
+        confirm.setEscapeButton(QMessageBox.StandardButton.Cancel)
+        confirm.exec()
+        if confirm.clickedButton() != shred:
+            return
+        self.cancel_jobs()
+        self._stop_voice()
+        self.draft_timer.stop()
+        # Discard callbacks from reviews/previews as well as the main translation.
+        for token, (_, event) in self.jobs.items():
+            event.set()
+            self.cancelled_tokens.add(token)
+        try:
+            result = self.service.shred_history()
+        except Exception as exc:
+            self._show_error("History purge could not complete: " + str(exc))
+            return
+        self._load_conversation(self._empty_conversation())
+        self.history_search.clear()
+        self._refresh_history()
+        if result.get("issues"):
+            self._show_error("History deleted; purge needs attention: " + " ".join(result["issues"]))
+        else:
+            self._set_status("History shredded", "Sessions and automatic backups purged. Separate exports and backups are unaffected.")
 
     def export_conversation(self) -> None:
         if not self._save():

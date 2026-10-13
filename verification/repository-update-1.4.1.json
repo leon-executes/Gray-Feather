@@ -1,0 +1,11 @@
+{
+  "successful": true,
+  "dry_run_unchanged": true,
+  "old_test_path_removed": true,
+  "retired_source_removed": true,
+  "readme_replaced_exactly": true,
+  "git_history_preserved": true,
+  "dirty_clone_rejected": true,
+  "all_publishable_files_unignored": true,
+  "remote_push_performed": false
+}

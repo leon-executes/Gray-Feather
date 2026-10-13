@@ -1,0 +1,15 @@
+[
+  "fetch_local_ai.py",
+  "local_ai.py",
+  "resources/local-ai/ASSETS.json",
+  "resources/local-ai/LOCAL-AI.md",
+  "resources/local-ai/notices/Apache-2.0.txt",
+  "resources/local-ai/notices/Index-Translate-Apache-LICENSE.txt",
+  "resources/local-ai/notices/SOURCES.json",
+  "resources/local-ai/notices/index_local-model-card.md",
+  "resources/local-ai/notices/index_local-repository-info.json",
+  "resources/local-ai/notices/llama.cpp-MIT-LICENSE.txt",
+  "test_local_ai.py",
+  "tests/test_local_ai.py",
+  "tools/fetch_local_ai.py"
+]
