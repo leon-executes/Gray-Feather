@@ -5,7 +5,7 @@
 
 [Download](https://github.com/leon-executes/Gray-Feather/releases/latest) · [Dependencies](DEPENDENCIES.md) · [Manual](docs/MANUAL.md) · [Build](BUILD.md) · [Licence](LICENSE)
 
-![Gray Feather — interpret ahead](https://github.com/user-attachments/assets/cc9c591f-48bc-4b73-b226-9782cd770bf3)
+![Gray Feather — interpret ahead](https://github.com/user-attachments/assets/d32b0436-92bf-496e-9817-2912cf0683a5)
 
 ## Run
 
